@@ -1,0 +1,88 @@
+---
+import ImageComp from "./ImageComp.astro";
+import ImageWithZoomEffect from "./ProgramSlug/ImageWithZoomEffect.astro";
+
+interface Props {
+  title: string;
+  subtitle: string;
+  description: string;
+  stats: {
+    value: string;
+    label: string;
+  }[];
+  image?: {
+    src: string;
+    alt: string;
+  };
+  cta?: {
+    text: string;
+    href: string;
+  };
+}
+
+const { title, subtitle, description, stats, image, cta } = Astro.props;
+---
+
+<section class="py-16 md:py-24 bg-linear-to-br from-muted-50 to-white">
+  <div class="max-w-7xl mx-auto px-5 md:px-8 lg:px-12">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+      <!-- Content Side -->
+      <div class="order-2 lg:order-1">
+        <span class="subtitle !text-monza-600">
+          {subtitle}
+        </span>
+
+        <h2 class="title !text-lucky-950">
+          {title}
+        </h2>
+
+        <p class="text-lg text-gray-600 mb-8 leading-relaxed" set:html={description}>
+          
+        </p>
+
+        <!-- Stats Grid -->
+        {
+          stats && stats.length > 0 && (
+          <div class="grid grid-cols-2 gap-6 mt-10 mb-8">
+            {stats.map((stat) => (
+              <div class="group bg-white rounded-lg p-6 shadow flex flex-col items-center justify-center border border-muted-100 hover:border-gray-900 hover:shadow-lg transition hover:scale-105 duration-300">
+                <div class="font-ubuntu text-3xl font-bold text-lucky-950 mb-0">
+                  {stat.value}
+                </div>
+                <div class="text-sm/5 font-ubuntu text-center text-muted-500 transition-colors duration-300 group-hover:text-gray-800">
+                  {stat.label}
+                </div>
+              </div>
+            ))}
+          </div>
+          )
+        }
+        {
+          cta && (
+            <div class="flex justify-center gap-4">
+              <a
+                href={cta.href}
+                class="w-full lg:w-1/2 btn-primary text-center shadow"
+              >
+                {cta.text}
+              </a>
+            </div>
+          )
+        }
+      </div>
+
+      <!-- Image Side -->
+      {
+        image && (
+          <div class="order-1 lg:order-2 h-full relative rounded-2xl overflow-hidden shadow-2xl">
+            <ImageWithZoomEffect
+              src={image.src}
+              alt={image.alt}
+              class="w-full h-full object-cover animate-slow-zoom"
+            />
+          </div>
+        )
+      }
+    </div>
+  </div>
+</section>

@@ -1,0 +1,100 @@
+---
+import { Image } from "astro:assets";
+import { formatDate } from "./utils";
+import type { CollectionEntry } from "astro:content";
+import ImageComp from "../ImageComp.astro";
+
+const { blogEntry, smallCard = false, index = 0 } = Astro.props;
+
+interface Props {
+  blogEntry: CollectionEntry<"blog">;
+  smallCard?: boolean;
+  index?: number;
+}
+---
+
+<a
+  class={`blog-card opacity-0 translate-y-10 transition-all duration-1100 ease-out ${
+    smallCard
+      ? "group block overflow-hidden outline-hidden border-gray-200 border-2 flex-1"
+      : "group block overflow-hidden outline-hidden shadow-lg shadow-gray-400 transition duration-300 hover:scale-105 focus-visible:scale-105"
+  }`}
+  style={`transition-delay: ${index * 150}ms;`}
+  href={`/blog/${blogEntry.slug}/`}
+  data-astro-prefetch
+>
+  {
+    !smallCard && (
+      <div class="relative h-[350px] w-full shrink-0 overflow-hidden">
+        <ImageComp
+          class="size-full object-cover"
+          src={blogEntry.data.image}
+          alt={blogEntry.data.title}
+        />
+      </div>
+    )
+  }
+
+  <div class="px-4 py-4 sm:px-6 bg-white border-b-gray-300 border-b">
+    <div>
+      <div class="flex h-full flex-col">
+        <div class="flex items-center">
+          <div class="shrink-0 flex items-center justify-center bg-white rounded-full aspect-square p-2">
+            <ImageComp
+              class="h-[26px] w-auto object-contain"
+              src="/src/assets/M2A-symbol.png"
+              alt="M2A Logo"
+            />
+          </div>
+
+          <div class="ms-2.5 sm:ms-4">
+            <h4 class="font-bold text-lucky-950">
+              {blogEntry.data.author}
+            </h4>
+            <p class="text-xs text-black">
+              {formatDate(blogEntry.data.pubDate)}
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="bg-white w-full px-4 sm:px-6 py-4">
+    <div class="flex h-full flex-col">
+      <h3
+        class={
+          smallCard
+            ? " text-lg font-bold text-lucky-950 transition-colors duration-300 group-hover:text-monza-700 sm:text-xl"
+            : " text-lg font-bold text-lucky-950 sm:text-3xl"
+        }
+      >
+        {blogEntry.data.title}
+      </h3>
+      <p class="mt-2 text-pretty text-madison-950">
+        {blogEntry.data.description}
+      </p>
+    </div>
+  </div>
+</a>
+
+<script>
+  const observerOptions = {
+    root: null,
+    threshold: 0.1,
+  };
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.remove("opacity-0", "translate-y-10");
+        entry.target.classList.add("opacity-100", "translate-y-0");
+        observer.unobserve(entry.target);
+      }
+    });
+  }, observerOptions);
+
+  document.querySelectorAll(".blog-card").forEach((card) => {
+    observer.observe(card);
+  });
+</script>

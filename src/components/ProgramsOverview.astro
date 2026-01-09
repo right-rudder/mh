@@ -1,0 +1,92 @@
+---
+import { getCollection } from "astro:content";
+import type { CollectionEntry } from "astro:content";
+import ImageComp from "./ImageComp.astro";
+
+type Program = CollectionEntry<"programs">;
+
+const programs = await getCollection("programs");
+const sortedPrograms = programs.sort(
+  (a: Program, b: Program) => (a.data.order || 999) - (b.data.order || 999)
+);
+---
+
+<section class="py-16 md:py-24 bg-linear-to-b from-white to-muted-50/30">
+  <div class="max-w-7xl mx-auto px-5 md:px-8 lg:px-12">
+    <!-- Section Header -->
+    <div class="text-center flex flex-col items-center mb-12 md:mb-16">
+      <div class="inline-block mb-4">
+        <span class="subtitle">Professional Multi-Engine Training</span>
+      </div>
+      <h2 class="title !text-lucky-950">Transparent Pricing, No Hidden Costs</h2>
+      <p class="text-lg text-gray-600 mb-8 leading-relaxed max-w-5xl">
+        Whether you are pursuing our all-inclusive 8 to 10 month Professional Track or seeking individual Part 141 and Part 61 ratings, we provide a clear path to success. With senior instructors, on-site housing options, and a fleet of technologically advanced aircraft, we eliminate the waitlists and hidden fees common in flight training.
+      </p>
+    </div>
+
+    <!-- Programs Grid -->
+    <div class="flex flex-wrap justify-center gap-6">
+      {sortedPrograms.map((program) => (
+        <article class="group w-full lg:w-[45%] relative flex flex-col bg-white rounded-2xl overflow-hidden shadow-md group hover:shadow-2xl transition-all duration-300 border border-muted-100">
+          <!-- Top Image Container -->
+          <ImageComp
+            src={program.data.image}
+            alt={program.data.alt || program.data.title}
+            class="absolute inset-0 w-full h-full object-cover animate-fast-zoom lg:animate-none group-hover:animate-fast-zoom"
+          />
+          <!-- Decorative gradient header -->
+          <div class="absolute top-0 left-0 right-0 h-1 bg-linear-to-r from-lucky-950 via-lucky-950 to-monza-400"></div>
+          
+          <!-- Card Content -->
+          <div class="relative bg-white/90 lg:bg-white group-hover:bg-white/90 p-8 flex-1 flex flex-col lg:translate-y-3/5 group-hover:translate-y-0 transition duration-500">
+            <!-- Badge & Duration -->
+            <div class="flex items-center justify-between mb-6">
+              <div class="flex items-center gap-3">
+                {program.data.programIntroduction?.highlights?.find(h => h.highlightName.toLowerCase().includes('duration')) && (
+                  <div class="flex items-center gap-1.5 text-sm text-muted-600 bg-muted-100 px-3 py-1.5 rounded-full">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                    </svg>
+                    <span class="font-medium">{program.data.programIntroduction.highlights.find(h => h.highlightName.toLowerCase().includes('duration'))?.highlightValue}</span>
+                  </div>
+                )}
+              </div>
+              {program.data.programIntroduction?.highlights?.find(h => h.highlightName.toLowerCase().includes('cost') || h.highlightName.toLowerCase().includes('price')) && (
+                <div class="text-sm font-bold text-monza-600">
+                  {program.data.programIntroduction.highlights.find(h => h.highlightName.toLowerCase().includes('cost') || h.highlightName.toLowerCase().includes('price'))?.highlightValue}
+                </div>
+              )}
+            </div>
+
+            <!-- Title -->
+            <h3 class="text-2xl font-title font-bold text-gray-900 mb-3 group-hover:text-lucky-950 transition-colors duration-700">
+              {program.data.title}
+            </h3>
+
+            <!-- Description -->
+            <p class="text-gray-600 pb-12 mb-6 leading-relaxed flex-1">
+              {program.data.description}
+            </p>
+
+            <!-- CTA Link -->
+            <a 
+              href={`/programs/${program.slug}`}
+              class="group/btn font-ubuntu relative inline-flex items-center justify-center w-full px-6 py-3.5 font-semibold text-white bg-linear-to-r from-monza-600 to-monza-500 rounded-xl overflow-hidden transition-all duration-300 hover:shadow-lg hover:shadow-monza-500/30 hover:-translate-y-0.5"
+            >
+              <span class="relative z-10 flex items-center gap-2">
+                View Program Details
+                <svg class="w-5 h-5 group-hover/btn:translate-x-1 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
+                </svg>
+              </span>
+              <div class="absolute inset-0 bg-linear-to-r from-monza-700 to-monza-600 opacity-0 group-hover/btn:opacity-100 transition-opacity duration-300"></div>
+            </a>
+          </div>
+
+          <!-- Hover effect overlay -->
+          <div class="absolute inset-0 border-2 border-lucky-950 ease-out rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
+        </article>
+      ))}
+    </div>
+  </div>
+</section>
