@@ -11,43 +11,44 @@ import ExpectationsWithImage from "../components/ExpectationsWithImage.astro";
 import CrewCTASection from "../components/CrewCTASection.astro";
 import BlogFeed from "../components/Blog/BlogFeed.astro";
 import VideoCardWithCTASection from "../components/VideoCardWithCTASection.astro";
+import IntroductionSection from "../components/IntroductionSection.astro";
 
 const heroData = {
   image: {
-    src: "/src/assets/3-aircraft-fleet-og.jpg",
-    alt: "Pilot student and instructor in multi-engine aircraft cockpit",
+    src: "/src/assets/facilities/mh-aviation-facilities-front.jpg",
+    alt: "MH Aviation fleet and maintenance hangar at Fox Field",
   },
-  eyebrow: `Call Us: ${PHONE_NUMBER}`,
-  title: "Zero to Airline <br>Pilot in 8-10 months",
-  subTitle: `Professional Part 141 Airline Pilot Training<br> in ${AIRPORT} (${AIRPORT_CODE})`,
+  eyebrow: `Trust the G.O.A.T. Support: ${PHONE_NUMBER}`,
+  title: "Family-Owned Excellence<br>Providing Aviation Training<br>& Full-Service Maintenance",
+  subTitle: `The Antelope Valley’s Only One-Stop Aviation Hub for<br> Professional Multi-Engine Training & Part 145 Certified Maintenance at ${AIRPORT} (${AIRPORT_CODE})`,
   cta: [
     {
       url: "/programs",
-      text: "View Programs",
+      text: "Explore Programs",
       variant: "primary",
     },
     {
       url: "/contact",
-      text: "Schedule a Tour",
+      text: "Book a Discovery Flight",
       variant: "secondary",
     },
   ],
 };
 
 const valuePropositionData = {
-  title: "Rigorous Training Built on Excellence",
-  subtitle: "The M2A Standard",
-  description:
-    "M2A Aviation Academy is dedicated to a single mission: your success. Rooted in discipline and excellence, our academy offers a comprehensive Professional Track covering 6 FAA checkrides—from Private Pilot to Multi-Engine Instructor. Led by a senior cadre with centuries of experience across general aviation, commercial operations (Parts 91, 121, 125, and 135), and military flying, we provide the mentorship and network needed to reach the majors.<br><br>Because we treat you as a future wingman from day one, we set the bar high: we expect you to treat this training like the career it will become, with a full-time commitment of at least 8 hours a day, Monday through Friday. It is an intensive pace designed to master the craft, and you won’t walk it alone. In return for your dedication, we provide the unwavering support, senior-level mentorship, and the industry network required to fast-track your seat in a professional cockpit.",
-  stats: [
-    { value: "Part 141", label: "Flight School" },
-    { value: "8 months", label: "Average timeline for the Professional Airline Pilot Track" },
-    { value: "8+ hours", label: "Daily Professional Duty" },
-    { value: "$85,000", label: "Professional Airline Pilot Track cost" },
-  ],
+  title: "More Than Training and Services —<br>Your Aviation Home",
+  subtitle: "A Legacy of Integrity & Safety",
+description: [
+    "MH Aviation has been a <strong>cornerstone of the Fox Field community</strong> for over two decades. Originally founded as a specialist maintenance shop, we have evolved under the leadership of Jessica and Jeff Haney into a <strong>premier full-service aviation hub</strong>. We don’t just teach you to fly; we personally maintain the aircraft you train in, ensuring the <strong>safety and reliability</strong> that only a family-owned <strong>FAA Part 145 Repair Station</strong> can provide.",
+    
+    "Our mission is to offer a <strong>catered, honest experience</strong> that large academies simply cannot match. Whether you are pursuing a Private Pilot certificate or our <strong>exclusive Multi-Engine training</strong>—the only such program within 100 miles—you are treated as <strong>part of the family</strong>. We provide a <strong>modern fleet</strong>, Garmin-equipped cockpits, and the senior-level mentorship required to reach your goals with confidence.",
+    
+    "Located in the heart of the <strong>Antelope Valley</strong>, we provide everything a pilot needs <strong>under one roof</strong>: rigorous flight instruction, expert maintenance, and full FBO services. At MH Aviation, <strong>your success is our tradition</strong>, and we are dedicated to supporting your journey from the first <strong>discovery flight</strong> to your final checkride."
+],
+imageCentering: "object-[60%_50%]",
   image: {
-    src: "/src/assets/M2A-Pilot-Happy-Multiengine.jpg",
-    alt: "Pilot training at M2A Aviation Academy",
+    src: "/src/assets/instructing/mh-aviation-instructing-student-02.jpg",
+    alt: "Pilot training and student instructing at MH Aviation",
   },
   cta: {
     text: "Learn Entry Requirements",
@@ -100,19 +101,19 @@ const processSteps = [
 
 const testimonials = [
   {
-    quote: "M2A Aviation Academy's transparent pricing and professional instruction exceeded my expectations. No hidden costs, no surprises—just quality training with airline captains.",
+    quote: "MH Aviation's transparent pricing and professional instruction exceeded my expectations. No hidden costs, no surprises—just quality training with airline captains.",
     author: "Peter Gibbons",
     role: "Commercial Pilot & CFI",
     rating: 5,
   },
   {
-    quote: "The multi-engine training at M2A was exceptional. Real IMC flying, immediate checkride scheduling, and instructors who genuinely care about your success.",
+    quote: "The multi-engine training at  was exceptional. Real IMC flying, immediate checkride scheduling, and instructors who genuinely care about your success.",
     author: "Sarah Johnson",
     role: "Regional Airline First Officer",
     rating: 5,
   },
   {
-    quote: "From zero experience to regional airline first officer in 24 months. M2A's Zero to Airlines program delivered everything they promised.",
+    quote: "From zero experience to regional airline first officer in 24 months. 's Zero to Airlines program delivered everything they promised.",
     author: "Mike Reynolds",
     role: "SkyWest Airlines First Officer",
     rating: 5,
@@ -136,7 +137,7 @@ const testimonials = [
     rating: 5,
   },
   {
-    quote: "Joining M2A was joining a family of wingmen. The network they offer is as valuable as the ratings themselves. I had multiple interview invites before even finishing my hours because of their industry reputation.",
+    quote: "Joining  was joining a family of wingmen. The network they offer is as valuable as the ratings themselves. I had multiple interview invites before even finishing my hours because of their industry reputation.",
     author: "Robert Vance",
     role: "Commercial Multi-Engine Pilot",
     rating: 5,
@@ -146,7 +147,7 @@ const testimonials = [
 const ctaData = {
   title: "Define Your Mission. Let’s Reach the Majors Together.",
   description:
-    "Your first step at M2A is defining that goal, as it will shape your standards, timeline, and path to the cockpit. Whether you are aiming for the airlines or mastering a new rating, we are here to provide the roadmap and the mentorship to get you there. Define your mission today, and let’s start your training plan.",
+    "Your first step at  is defining that goal, as it will shape your standards, timeline, and path to the cockpit. Whether you are aiming for the airlines or mastering a new rating, we are here to provide the roadmap and the mentorship to get you there. Define your mission today, and let’s start your training plan.",
   image: {
     src: "/src/assets/sebastian-zzWYD-tc_jI-unsplash.jpg",
     alt: "Training aircraft in flight",
@@ -162,10 +163,10 @@ const ctaData = {
 };
 const crewCtaData = {
   title: "Meet the Cadre<br>Guiding Your Journey",
-  description: "At M2A, you aren’t just a student; you are a future wingman training with the real deal. Our cadre of airline pilots and USAF veterans built this academy on mentorship and hard work.",
+  description: "At , you aren’t just a student; you are a future wingman training with the real deal. Our cadre of airline pilots and USAF veterans built this academy on mentorship and hard work.",
   image: {
-    src: "/src/assets/m2a-whole-crew.png",
-    alt: "M2A Aviation Academy professional instructor cadre and crew",
+    src: "/src/assets/brand/MH Aviation.png",
+    alt: "MH Aviation professional instructor cadre and crew",
   },
   primaryCTA: {
     text: "Meet Our Crew",
@@ -176,7 +177,7 @@ const crewCtaData = {
 const info = {
   title: "Master the Skies<br>with the Elite",
   descriptionParagraphs: [
-    "M2A Aviation Academy is a labor of love from a group of professionals 'paying it forward.' We aren't just looking for students; we are looking for our future first officers, copilots, and wingmen to join our ranks.",
+    "MH Aviation is a labor of love from a group of professionals 'paying it forward.' We aren't just looking for students; we are looking for our future first officers, copilots, and wingmen to join our ranks.",
   ],
   listItems: [
     "Centuries of collective GA, military, and commercial experience.",
@@ -185,14 +186,14 @@ const info = {
     "Guaranteed CFI employment for those who excel in the course.",
     "Direct career incentives and paths to our Part 135 companies."
   ],
-  mainImage: "/src/assets/m2a-everyone-at-the-tables.jpg",
-  mainImageAlt: "M2A Aviation Academy professional flight training"
+  mainImage: "/src/assets/brand/MH Aviation.png",
+  mainImageAlt: "MH Aviation professional flight training"
 };
 const shortFieldTechnical = {
   title: "Master the Art of Precision",
   subtitle: "Advanced Short Field Tactics",
   description: "Short field operations are where true pilots are forged. Watch our precise approach and maximum-performance climb techniques in action. We don't just teach you how to fly; we teach you how to master the aircraft's limits with absolute safety and control.",
-  videoSrc: "/videos/m2a-short-field-pt-1.mp4",
+  videoSrc: "/videos/-short-field-pt-1.mp4",
   textSide: "left",
   cta: { text: "Master These Skills", href: "/enroll" }
 };
@@ -200,23 +201,22 @@ const shortFieldAction = {
 title: "The Ultimate Energy Management",
   subtitle: "Power-Off 180 Accuracy",
   description: "Precision is non-negotiable when the engine goes quiet. The Power-Off 180 maneuver is the true test of a pilot's judgment and energy management. Watch how we train our students to hit the mark every single time, ensuring total confidence in any landing scenario.",
-  videoSrc: "/videos/m2a-alex-power-off-180.mp4",
+  videoSrc: "/videos/-alex-power-off-180.mp4",
   textSide: "right",
   cta: { text: "Refine Your Technique", href: "/enroll" }
 };
 
 const metaProps = {
-  siteTitle: "M2A Aviation Academy | Professional Pilot Training in North Carolina",
-  siteDescription: "Visit M2A Aviation Academy at Wayne Executive Jetport. Contact our team to schedule a tour, discuss financing, or start your professional flight training journey.",
-  siteKeywords: "contact M2A Aviation, flight school tour, pilot training info, Wayne Executive Jetport address, M2A phone number, aviation academy North Carolina"
+  siteTitle: "MH Aviation | Professional Pilot Training in North Carolina",
+  siteDescription: "Visit MH Aviation at Wayne Executive Jetport. Contact our team to schedule a tour, discuss financing, or start your professional flight training journey.",
+  siteKeywords: "contact  Aviation, flight school tour, pilot training info, Wayne Executive Jetport address,  phone number, aviation academy North Carolina"
 };
 ---
 
 <BaseLayout {...metaProps}>
-  <!-- <HeroScreen data={heroData} /> -->
   <HeroLandingPage data={heroData}/>
   
-  <ValueProposition {...valuePropositionData} />
+  <IntroductionSection {...valuePropositionData} />
 
   <ProcessSteps
     title="How to Get Started"

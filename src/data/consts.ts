@@ -2,48 +2,49 @@
 // Site Metadata
 // ==============================
 
-export const SITE_TITLE = "M2A Aviation Academy | Professional Pilot Training";
+export const SITE_TITLE = "MH Aviation | Flight Training & Aircraft Maintenance";
 
 export const SITE_DESCRIPTION =
-  "M2A Aviation Academy is a Part 141 flight school in Pikeville, North Carolina, focused on rigorous, full-time pilot training for individuals pursuing professional aviation careers.";
+  "MH Aviation is a family-owned flight school, FBO, and FAA Repair Station at Gen. William Fox Airfield in Lancaster, CA, offering single and multi-engine training and full maintenance services.";
 
 // ==============================
 // SEO Keywords
 // ==============================
 
 export const KEYWORDS = [
-  "M2A Aviation Academy",
-  "flight school North Carolina",
-  "professional pilot training",
-  "Part 141 flight school",
-  "pilot training Pikeville NC",
-  "Wayne Executive Jetport flight training",
-  "commercial pilot training",
-  "instrument rating training",
+  "MH Aviation",
+  "flight school Lancaster CA",
+  "Gen. William Fox Airfield flight training",
+  "aircraft maintenance Lancaster",
+  "multi-engine training",
   "private pilot training",
-  "flight instructor training",
+  "instrument rating training",
+  "FBO Lancaster CA",
+  "MH Fuels",
+  "FAA repair station 145",
+  "pilot training Antelope Valley",
 ].join(", ");
 
 export const PRIMARY_KEYWORDS = {
   informational:
-    "how to become a professional pilot, Part 141 flight training, pilot training requirements, FAA pilot ratings",
+    "how to become a pilot, flight training requirements, aircraft annual inspection cost, FAA repair station services, multi-engine rating requirements",
   navigational:
-    "M2A Aviation Academy, M2A flight school, Wayne Executive Jetport training",
+    "MH Aviation, MH Fuels, Fox Field flight school, MH Aviation Lancaster",
   commercial:
-    "professional pilot training program, Part 141 pilot school North Carolina",
+    "flight training Lancaster CA, multi-engine rating near me, aircraft maintenance shop, learn to fly Fox Field",
   transactional:
-    "schedule flight school tour, enroll in pilot training, contact flight school",
+    "schedule discovery flight, contact MH Aviation, book aircraft maintenance, flight instruction Lancaster CA",
 };
 
 export const PROGRAM_KEYWORDS = {
   privatePilot:
-    "private pilot certificate, PPL training, Part 141 private pilot",
+    "private pilot training, PPL Lancaster CA, learn to fly single engine",
   instrumentRating:
-    "instrument rating training, IFR pilot certification",
+    "instrument rating training, IFR certification, instrument flight rules training",
   commercialPilot:
-    "commercial pilot certificate, professional pilot training",
+    "commercial pilot training, CPL certificate, professional pilot career",
   flightInstructor:
-    "CFI training, CFII training, flight instructor certification",
+    "CFI training, CFII instructor job, MEI training, multi-engine instructor",
 };
 
 // ==============================
@@ -51,55 +52,56 @@ export const PROGRAM_KEYWORDS = {
 // ==============================
 
 export const LOCATION_KEYWORDS = {
-  primary: "Wayne Executive Jetport flight training, Pikeville NC flight school",
+  primary: "Gen. William Fox Airfield flight training, Lancaster CA flight school",
   secondary:
-    "North Carolina flight school, eastern North Carolina pilot training",
+    "Antelope Valley pilot training, Palmdale flight school, Quartz Hill aviation, Rosamond flight training",
 };
 
 // ==============================
 // Brand Assets
 // ==============================
 
-export const OG_IMAGE = "/M2A-og-image.png";
+export const OG_IMAGE = "/MH Aviation.png";
 export const FAVICON = "/favicon.png";
-export const LOGO = "/M2A-logo.png";
+export const LOGO = "/-logo.png"; // CONTEXT MISSING
 
-export const LOGO_ASSETS = "/src/assets/M2A-logo.png";
-export const LOGO_ASSETS_2 = "/src/assets/M2A-logo-white.png";
-export const LOGO_ASSETS_3 = "/src/assets/M2A-logo-vertical.png";
+export const LOGO_ASSETS = "/src/assets/brand/MH Aviation.png";
+export const LOGO_ASSETS_ALTERNATIVE = "/src/assets/brand/MH Aviation Alternative.png";
+export const LOGO_ASSETS_2 = "/src/assets/brand/MH Aviation White.png";
+export const LOGO_ASSETS_3 = "/src/assets/brand/MH Aviation Black.png"; 
 
 // ==============================
 // Business Information
 // ==============================
 
-export const COMPANY_NAME = "M2A Aviation Academy";
-export const COMPANY_NAME_CAPS = "M2A AVIATION ACADEMY";
-export const COMPANY_NICKNAME = "M2A";
+export const COMPANY_NAME = "MH Aviation";
+export const COMPANY_NAME_CAPS = "MH AVIATION";
+export const COMPANY_NICKNAME = "MH Aviation";
 
-export const PHONE_NUMBER = "(910) 900-8043";
-export const PHONE_NUMBER_HEADER = "(910) 900-8043";
+export const PHONE_NUMBER = "(661) 948-7779";
+export const PHONE_NUMBER_HEADER = "(661) 948-7779";
 
-export const ADDRESS_LINE_1 = "278 Aviation Rd.";
-export const ADDRESS_LINE_2 = "Pikeville, NC 27863";
+export const ADDRESS_LINE_1 = "4651 William J Barnes Avenue";
+export const ADDRESS_LINE_2 = "Lancaster, CA 93536";
 
-export const ADDRESS = "278 Aviation Rd., Pikeville, NC 27863";
-export const ADDRESS_CITY = "Pikeville";
-export const ADDRESS_STATE = "North Carolina";
-export const ADDRESS_ZIP = "27863";
+export const ADDRESS = "4651 William J Barnes Avenue, Lancaster, CA 93536";
+export const ADDRESS_CITY = "Lancaster";
+export const ADDRESS_STATE = "California";
+export const ADDRESS_ZIP = "93536";
 
-export const AIRPORT = "Wayne Executive Jetport";
-export const AIRPORT_CODE = "KGWW";
+export const AIRPORT = "Gen. William Fox Airfield";
+export const AIRPORT_CODE = "KWJF";
 
-export const GMAPS = "";
-export const EMAIL_ADDRESS = "info@mail.m2aaviationacademy.com";
+export const GMAPS = ""; // CONTEXT MISSING
+export const EMAIL_ADDRESS = "info@mhaviation.com";
 
-export const FACEBOOK_URL = "https://www.facebook.com/mil2ATP";
-export const INSTAGRAM_URL = "https://www.instagram.com/mil2ATP";
-export const LINKEDIN_URL = "https://www.linkedin.com/company/mil2atp-inc.";
-export const X_URL = "https://twitter.com/mil2atp";
-export const YOUTUBE_URL = "";
-export const YELP_URL = "";
-export const GITHUB_URL = "";
+export const FACEBOOK_URL = "https://www.facebook.com/mhaviation/"; // CONTEXT MISSING
+export const INSTAGRAM_URL = "https://www.instagram.com/mhaviationinc"; // CONTEXT MISSING
+export const LINKEDIN_URL = ""; // CONTEXT MISSING
+export const X_URL = ""; // CONTEXT MISSING
+export const YOUTUBE_URL = ""; // CONTEXT MISSING
+export const YELP_URL = ""; // CONTEXT MISSING
+export const GITHUB_URL = ""; // CONTEXT MISSING
       
 // ==============================
 // Locations
@@ -107,16 +109,16 @@ export const GITHUB_URL = "";
 
 export const LOCATIONS = [
   {
-    title: "Wayne Executive Jetport",
-    address: "278 Aviation Rd.",
-    city: "Pikeville",
-    state: "NC",
-    zip: "27863",
-    gMaps: "",
-    phone: "(910) 900-8043",
-    forwardPhone: "(910) 900-8043",
-    fullAddress: "278 Aviation Rd., Pikeville, NC 27863",
-    fullAddressLineBreak: "278 Aviation Rd.\nPikeville, NC 27863",
+    title: "Gen. William Fox Airfield",
+    address: "4651 William J Barnes Avenue",
+    city: "Lancaster",
+    state: "CA",
+    zip: "93536",
+    gMaps: "", // CONTEXT MISSING
+    phone: "(661) 948-7779",
+    forwardPhone: "(661) 948-7779",
+    fullAddress: "4651 William J Barnes Avenue, Lancaster, CA 93536",
+    fullAddressLineBreak: "4651 William J Barnes Avenue\nLancaster, CA 93536",
   },
 ];
 
@@ -125,29 +127,36 @@ export const LOCATIONS = [
 // ==============================
 
 export const COURSES = [
-  "Professional Airline Pilot Track",
-  "Private Pilot Certificate (ASEL)",
-  "Instrument Rating (ASEL)",
-  "Commercial Pilot Certificate (ASEL)",
+  "Private Pilot Certificate",
+  "Instrument Rating",
+  "Commercial Pilot Certificate",
+  "Multi-Engine Rating",
   "Certified Flight Instructor (CFI)",
   "Certified Flight Instructor Instrument (CFII)",
-  "Commercial Pilot AMEL",
+  "Multi-Engine Instructor (MEI)",
 ];
 
 // ==============================
 // Other Services (Supported)
 // ==============================
 
-export const OTHER_COURSES = [];
+export const OTHER_COURSES = [
+  "Aircraft Inspections (Annual, 100/50/25 hour)",
+  "Pre-Purchase Inspections",
+  "Sheet Metal Repairs",
+  "Aircraft Modifications",
+  "Emergency AOG Services",
+  "Fueling (MH Fuels)",
+];
 
 // ==============================
 // Fleet (Not specified in master)
 // ==============================
 
-export const FLEET = [];
+export const FLEET = []; // CONTEXT MISSING
 
 // ==============================
 // Videos (None documented)
 // ==============================
 
-export const VIDEOS = [];
+export const VIDEOS = []; // CONTEXT MISSING

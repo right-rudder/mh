@@ -10,7 +10,7 @@ programIntroduction:
   upperheader: "Professional Pilot Training"
   title: "Professional Airline Pilot Track"
   descriptionParagraphs:
-    - "The Professional Airline Pilot Track at M2A Aviation Academy is designed for individuals who want to pursue aviation as a profession and are prepared to commit to a demanding, full-time training environment."
+    - "The Professional Airline Pilot Track at MH Aviation is designed for individuals who want to pursue aviation as a profession and are prepared to commit to a demanding, full-time training environment."
     - "This course is not intended for hobbyists or students seeking only a private pilot certificate. It is built for future professional pilots who want to benefit from structured instruction, high standards, and the experience of senior instructors."
     - "Students are expected to treat this course like a full-time job and a future job interview. Training days typically require at least 8 hours on site, Monday through Friday."
   highlights:
@@ -82,11 +82,11 @@ whyUs:
   title: "What Is a Professional Pilot"
   topicTitle: "Mindset Over Paycheck"
   topicDescriptionParagraphs:
-    - "At M2A, a professional pilot is not simply someone who is paid to fly. A professional pilot treats every flight as an opportunity to improve, never accepts 'good enough', and follows procedures consistently."
+    - "At , a professional pilot is not simply someone who is paid to fly. A professional pilot treats every flight as an opportunity to improve, never accepts 'good enough', and follows procedures consistently."
     - "This mindset is expected from day one and is reinforced throughout the course."
   bulletTitle: "Instructor Experience"
   bulletDescriptionParagraphs:
-    - "M2A’s instructor cadre is built around experience and mentorship. Many senior instructors are also active airline pilots. Their role is not only to teach skills, but to shape professional habits and judgment."
+    - "’s instructor cadre is built around experience and mentorship. Many senior instructors are also active airline pilots. Their role is not only to teach skills, but to shape professional habits and judgment."
   bulletPoints:
     - "Centuries of combined experience"
     - "Backgrounds in General Aviation & Military"
@@ -99,11 +99,11 @@ careerPathways:
     - "Performance matters. Students who excel may be offered additional opportunities, based on competitiveness and demonstrated professionalism."
   opportunities:
     - "Flight Instructor (CFI) employment"
-    - "Multi-Engine Instructor (MEI) training paid for by M2A if selected"
-    - "ATP-CTP paid for by M2A if selected"
-    - "ATP certificate paid for by M2A if selected"
-    - "Potential employment with M2A’s Part 135 companies for top-performers"
-  disclaimer: "These opportunities are not guaranteed and are offered only to those who meet M2A’s competitive standards."
+    - "Multi-Engine Instructor (MEI) training paid for by  if selected"
+    - "ATP-CTP paid for by  if selected"
+    - "ATP certificate paid for by  if selected"
+    - "Potential employment with ’s Part 135 companies for top-performers"
+  disclaimer: "These opportunities are not guaranteed and are offered only to those who meet ’s competitive standards."
 
 targetAudience:
   title: "Who This Program Is For"
@@ -125,10 +125,10 @@ enrollmentProcess:
       description: "Schedule your exam using the FAA Aviation Medical Examiner locator to obtain your FAA First Class Medical Certificate."
     - stepNumber: 3
       title: "Schedule Program"
-      description: "Contact M2A to schedule your program and start date. Applicants will complete an interview."
+      description: "Contact  to schedule your program and start date. Applicants will complete an interview."
     - stepNumber: 4
       title: "Secure Financing"
-      description: "Payment options will be discussed directly with the M2A team. Secure financing or prepare for out-of-pocket payment."
+      description: "Payment options will be discussed directly with the  team. Secure financing or prepare for out-of-pocket payment."
 trainingProgression:
   upperheader: "Program Flow"
   title: "Structured Progression Through Ratings"
@@ -186,7 +186,7 @@ faq:
     - question: "What is included in the $85,000 program cost?"
       answer: "The cost is all-inclusive for this program, covering housing for up to 8 months, a pilot kit (iPad mini, David Clark headset, etc.), 6 FAA written exams, and all flight and ground training through CFI/CFII."
     - question: "Are the incentive-based career opportunities guaranteed upon completion?"
-      answer: "No. Opportunities such as CFI employment, paid MEI training, or ATP-CTP funding are not guaranteed. They are offered to top-performers based on competitiveness, professionalism, and M2A’s standards."
+      answer: "No. Opportunities such as CFI employment, paid MEI training, or ATP-CTP funding are not guaranteed. They are offered to top-performers based on competitiveness, professionalism, and ’s standards."
     - question: "What medical certificate do I need to enroll?"
       answer: "Applicants are required to hold an FAA First Class Medical Certificate to participate in the Professional Airline Pilot Track."
     - question: "How long does it take to complete the entire training track?"

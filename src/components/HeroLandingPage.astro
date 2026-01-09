@@ -1,6 +1,5 @@
 ---
 import ImageComp from "./ImageComp.astro";
-import { PHONE_NUMBER } from "../data/consts";
 
 interface ctaProp {
   url: string;
@@ -24,34 +23,32 @@ const { data } = Astro.props;
 ---
 
 <section
-  class="hero-section relative overflow-hidden flex justify-center items-center lg:items-end lg:pb-24 text-white min-h-[90vh]"
+  class="hero-section relative overflow-hidden flex justify-center items-center lg:items-end lg:pb-40 text-white min-h-[100vh]"
   aria-label="Hero section"
 >
 
   <ImageComp
     src={data.image.src}
     alt={data.image.alt}
-    class="absolute inset-0 h-full w-full object-cover object-left lg:object-center brightness-75 animate-slow-zoom -z-20"
+    class="absolute inset-0 h-full w-full object-cover object-left lg:object-center animate-slow-zoom -z-20"
     loading="eager"
     quality={100}
   />
 
-  <div class="absolute inset-0 -z-10"></div>
+  <div class="absolute inset-0 bg-black/40 lg:bg-black/20 -z-10"></div>
 
   <div class="max-w-7xl w-full px-5 md:px-8 lg:px-12 mx-auto relative z-10">
     <div class="flex flex-col justify-center items-center lg:items-start max-w-4xl">
       <div class="flex flex-col items-center lg:items-start gap-y-6 text-center lg:text-left">
-        <div class="hero-accent-line"></div>
-        
         <h1
-          class="hero-title font-title text-white text-6xl uppercase font-bold"
+          class="hero-title font-title text-white text-4xl uppercase font-bold"
           set:html={data.title}
         />
         
         {
           data.subTitle && (
             <p
-              class="hero-subtitle text-lg/7 sm:text-xl/8 md:text-2xl/9 font-light text-white max-w-2xl"
+              class="hero-subtitle text-lg font-medium text-white max-w-xl"
               set:html={data.subTitle}
             />
           )
@@ -83,33 +80,6 @@ const { data } = Astro.props;
     position: relative;
   }
 
-  .hero-grain {
-    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' /%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.05'/%3E%3C/svg%3E");
-    animation: grain 8s steps(10) infinite;
-  }
-
-  @keyframes grain {
-    0%, 100% { transform: translate(0, 0); }
-    10% { transform: translate(-5%, -10%); }
-    20% { transform: translate(-15%, 5%); }
-    30% { transform: translate(7%, -25%); }
-    40% { transform: translate(-5%, 25%); }
-    50% { transform: translate(-15%, 10%); }
-    60% { transform: translate(15%, 0%); }
-    70% { transform: translate(0%, 15%); }
-    80% { transform: translate(3%, 35%); }
-    90% { transform: translate(-10%, 10%); }
-  }
-
-
-  .hero-accent-line {
-    width: 80px;
-    height: 4px;
-    background: linear-gradient(90deg, #e61c24, #ff6a70);
-    animation: expandLine 1s ease-out forwards;
-    box-shadow: 0 0 20px rgba(230, 28, 36, 0.5);
-  }
-
   @keyframes expandLine {
     0% {
       width: 0;
@@ -124,8 +94,8 @@ const { data } = Astro.props;
   .hero-title {
     animation: titleReveal 1.2s cubic-bezier(0.22, 1, 0.36, 1) forwards;
     text-shadow:
-      0 5px 15px rgba(0, 0, 0, 0.9),
-      0 10px 30px rgba(0, 0, 0, 0.7);
+      0 5px 15px rgba(0, 0, 0, 0.5),
+      0 10px 30px rgba(0, 0, 0, 0.5);
     letter-spacing: 0.02em;
   }
 
@@ -144,7 +114,9 @@ const { data } = Astro.props;
 
   .hero-subtitle {
     animation: subtitleReveal 1.2s cubic-bezier(0.22, 1, 0.36, 1) 0.3s backwards;
-    text-shadow: 0 2px 20px rgba(0, 0, 0, 0.8);
+    text-shadow:
+      0 5px 15px rgba(0, 0, 0, 0.6),
+      0 10px 30px rgba(0, 0, 0, 0.6);
   }
 
   @keyframes subtitleReveal {
@@ -180,7 +152,7 @@ const { data } = Astro.props;
 
   .cta-button:hover {
     box-shadow: 
-      0 15px 50px rgba(230, 28, 36, 0.4),
+      0 15px 50px rgba(0, 0, 0, 0.5),
       0 5px 20px rgba(0, 0, 0, 0.5);
     transform: translateY(-5px) scale(1.05);
   }

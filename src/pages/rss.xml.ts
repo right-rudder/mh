@@ -8,7 +8,7 @@ export const GET: APIRoute = async (context) => {
 
   return rss({
     // Basic feed metadata
-    title: "M2A Aviation Academy | Mil2ATP Blog",
+    title: "MH Aviation | Mil2ATP Blog",
     description: "Expert flight training advice, aircraft insights, and career guides for aspiring pilots.",
     site: context.site || "https://mil2atp.com",
     

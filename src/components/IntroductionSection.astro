@@ -1,0 +1,75 @@
+---
+import ImageWithGradientAndText from './ImageWithGradientAndText.astro';
+
+
+
+interface Props {
+  title: string;
+  subtitle: string;
+  imageCentering?: string;
+  description: string[];
+  stats: {
+    value: string;
+    label: string;
+  }[];
+  image?: {
+    src: string;
+    alt: string;
+  };
+  cta?: {
+    text: string;
+    href: string;
+  };
+}
+
+const { title, subtitle, description, stats, imageCentering, image, cta } = Astro.props;
+---
+
+<section class="py-16 md:py-24 bg-ink-950">
+  <div class="max-w-7xl mx-auto px-5 md:px-8 lg:px-12">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+      <!-- Content Side -->
+      <div class="order-2">
+        <span class="subtitle ">
+          {subtitle}
+        </span>
+
+        <h2 class="title !text-5xl !text-ink-50" set:html={title}>
+          
+        </h2>
+        {
+          description.map((descriptionItem) => (<p class="text-lg !text-ink-50 mb-8 leading-relaxed" set:html={descriptionItem}>
+          
+        </p>))
+        }
+        {
+          cta && (
+            <div class="flex justify-center gap-4 w-full">
+              <a
+                href={cta.href}
+                class="w-full btn-primary text-center shadow uppercase !px-6 max-w-sm"
+              >
+                {cta.text}
+              </a>
+            </div>
+          )
+        }
+      </div>
+
+      <!-- Image Side -->
+      {
+      image && (
+        <div class="order-1 h-64 md:h-[500px] lg:h-full relative rounded-sm overflow-hidden shadow-2xl">
+          <ImageWithGradientAndText
+            title=''
+            subtitle=''
+            src={image.src}
+            alt={image.alt}
+            class={`w-full h-full object-cover ${imageCentering ? imageCentering : 'object-center'}`}
+          />
+        </div>
+      )
+    }
+    </div>
+  </div>
+</section>

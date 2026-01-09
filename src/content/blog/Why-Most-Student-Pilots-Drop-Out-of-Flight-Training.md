@@ -98,9 +98,9 @@ No one says this out loud, but students feel it.
 
 And eventually, they leave.
 
-## Why M2A Is Different
+## Why  Is Different
 
-M2A exists because the normal way of doing flight training is broken.
+ exists because the normal way of doing flight training is broken.
 
 This is not a “come fly when you have time” school.
 
@@ -108,7 +108,7 @@ This is a professional pilot training program.
 
 ## 1. Training Is Your Full-Time Job
 
-At M2A, you are not fitting flying into your life.
+At , you are not fitting flying into your life.
 
 This is your life.
 
@@ -137,13 +137,13 @@ Constant instructor changes destroy progress.
 
 Each instructor brings slightly different standards and techniques. When that changes repeatedly, lessons get repeated and progress slows.
 
-At M2A, training is built around consistency. You are not constantly resetting expectations or rebuilding instructor relationships.
+At , training is built around consistency. You are not constantly resetting expectations or rebuilding instructor relationships.
 
 That continuity makes training faster, smoother, and less frustrating.
 
 ## 4. The School Is Built to Produce Airline Pilots
 
-M2A is not a flying club or a hobby shop.
+ is not a flying club or a hobby shop.
 
 It is part of a pipeline designed to take pilots from zero time to the airline cockpit.
 
@@ -169,6 +169,6 @@ Most students don’t fail.
 
 They get worn down by a broken system.
 
-M2A fixes the system.
+ fixes the system.
 
 When the system works, motivated people succeed.

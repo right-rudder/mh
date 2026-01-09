@@ -37,17 +37,17 @@ const relatedPosts = post.data.tags
       )
       .slice(0, 3)
   : [];
-const eagleAirLogo = "/src/assets/M2A-logo-vertical.png";
+const eagleAirLogo = "/src/assets/-logo-vertical.png";
 
 const heroData = {
   image: { 
-    src: post.data.image || "/src/assets/M2A-Multiengine-training.jpg", 
+    src: post.data.image || "/src/assets/-Multiengine-training.jpg", 
     alt: post.data.title || "Background" 
   },
   upperHeader: "Latest Insights",
   title: post.data.title || "Stay Informed <br> About Aviation and Flight Training",
   subTitle:
-    post.data.description || "Explore articles, tips, and updates from M2A Aviation Academy. Learn from our instructors, discover industry news, and enhance your pilot knowledge.",
+    post.data.description || "Explore articles, tips, and updates from MH Aviation. Learn from our instructors, discover industry news, and enhance your pilot knowledge.",
   cta: [
     { url: "/new-to-flying", text: "New to Flying?" },
     { url: "/about", text: "Meet Our Team" },
@@ -57,7 +57,7 @@ const heroData = {
 const ctaData = {
   title: "Define Your Mission. Let’s Reach the Majors Together.",
   description:
-    "Your first step at M2A is defining that goal, as it will shape your standards, timeline, and path to the cockpit. Whether you are aiming for the airlines or mastering a new rating, we are here to provide the roadmap and the mentorship to get you there. Define your mission today, and let’s start your training plan.",
+    "Your first step at  is defining that goal, as it will shape your standards, timeline, and path to the cockpit. Whether you are aiming for the airlines or mastering a new rating, we are here to provide the roadmap and the mentorship to get you there. Define your mission today, and let’s start your training plan.",
   image: {
     src: "/src/assets/sebastian-zzWYD-tc_jI-unsplash.jpg",
     alt: "Training aircraft in flight",
@@ -73,14 +73,14 @@ const ctaData = {
 };
 
 const metaProps = {
-  siteTitle: `${post.data.title} | M2A Aviation Academy`,
-  siteDescription: post.data.description || "Stay updated with the latest flight training insights, pilot career advice, and academy news from the experts at M2A Aviation Academy.",
-  siteKeywords: `${post.data.title}, M2A Aviation blog, flight training tips, aviation news North Carolina, professional pilot insights`
+  siteTitle: `${post.data.title} | MH Aviation`,
+  siteDescription: post.data.description || "Stay updated with the latest flight training insights, pilot career advice, and academy news from the experts at MH Aviation.",
+  siteKeywords: `${post.data.title},  Aviation blog, flight training tips, aviation news North Carolina, professional pilot insights`
 };
 ---
 
 <BaseLayout
-  siteTitle={`${post.data.title} | M2A Aviation Academy Blog`}
+  siteTitle={`${post.data.title} | MH Aviation Blog`}
   siteDescription={post.data.description}
   siteImage={post.data.image}
 >
@@ -104,7 +104,7 @@ const metaProps = {
             <ImageComp
             class="w-5"
             src={eagleAirLogo}
-            alt="M2A Aviation Academy logo"/>
+            alt="MH Aviation logo"/>
             </div>
             <span >{post.data.author}</span>
             <span>|</span>

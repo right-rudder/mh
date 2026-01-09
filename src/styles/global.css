@@ -4,7 +4,8 @@
 @theme {
   --font-title: 'Orbitron Variable', 'serif';
   --font-ubuntu: 'Ubuntu Sans Variable', 'sans-serif';
-  --font-sans: 'Poppins', 'sans-serif';
+  /* --font-sans: 'Poppins', 'sans-serif'; */
+  --font-sans: 'Inter Variable', 'sans-serif';
 
   --color-muted-50: #f5f6f6;
   --color-muted-100: #e4e7e9;
@@ -42,6 +43,31 @@
   --color-lucky-900: #272881;
   --color-lucky-950: #242362;
 
+
+  --color-ochre-50: #fdf8ed;
+  --color-ochre-100: #f9eed3;
+  --color-ochre-200: #f1daa5;
+  --color-ochre-300: #e7bf6e;
+  --color-ochre-400: #db9f41;
+  --color-ochre-500: #d08b35;
+  --color-ochre-600: #bd7633; /* Base original website color */
+  --color-ochre-700: #9d5a2b;
+  --color-ochre-800: #804928;
+  --color-ochre-900: #6a3e24;
+  --color-ochre-950: #3b1f11;
+
+  --color-ink-50: #f6f6f6;
+  --color-ink-100: #e7e7e7;
+  --color-ink-200: #d1d1d1;
+  --color-ink-300: #b0b0b0;
+  --color-ink-400: #888888;
+  --color-ink-500: #6d6d6d;
+  --color-ink-600: #5d5d5d;
+  --color-ink-700: #4f4f4f;
+  --color-ink-800: #454545;
+  --color-ink-900: #3d3d3d;
+  --color-ink-950: #0e0e0e;
+
   --animate-slow-zoom: slow-zoom 27s ease forwards;
   --animate-fast-zoom: fast-zoom 9s ease alternate infinite;
   --animate-medium-zoom: medium-zoom 15s ease-in-out forwards;
@@ -76,19 +102,19 @@
 
 
 .btn-primary {
-  @apply bg-monza-600 border border-monza-600 text-white font-semibold px-5 py-2 flex items-center rounded-sm justify-center gap-2 cursor-pointer hover:bg-white hover:border-monza-900 hover:text-monza-600 transition duration-200 hover:scale-105;
+  @apply bg-ochre-600 border border-ochre-600 text-white font-semibold px-5 py-2 flex items-center rounded-sm justify-center gap-2 cursor-pointer hover:bg-white hover:border-ochre-700 hover:text-ochre-700 transition duration-200 hover:scale-105;
 }
 
 .btn-transparent {
-  @apply bg-transparent rounded-sm border border-white px-5 py-2 text-white font-semibold cursor-pointer hover:bg-white hover:text-monza-600 transition duration-200 hover:scale-105;
+  @apply bg-transparent rounded-sm border border-white px-5 py-2 text-white font-semibold cursor-pointer hover:bg-white hover:text-ochre-600 transition duration-200 hover:scale-105;
 }
 
 .title {
-  @apply font-title text-3xl md:text-4xl lg:text-5xl font-bold text-monza-600 mb-4 italic
+  @apply font-sans text-3xl md:text-4xl lg:text-5xl mb-4
 }
 
 .subtitle {
-  @apply text-lg md:text-xl text-gray-600 max-w-3xl mx-auto
+  @apply text-lg md:text-xl font-bold text-ochre-600 max-w-3xl mx-auto
 }
 
 .key-detail-title {
@@ -105,5 +131,5 @@
 }
 
 h1, h2, h3, h4, h5, h6 {
-  @apply font-title italic
+  @apply font-sans font-black
 }
