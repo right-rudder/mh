@@ -184,19 +184,19 @@ const { pathname } = Astro.props;
       {
         sortedPrograms && (
           <li class="mobile-item">
-            <a href="/programs">Programs</a>
+            <a class="hover:cursor-pointer">Programs</a>
             {sortedPrograms.length >= 1 ? (
               <ul class="mobile-submenu">
                 {sortedPrograms.map((program: Program) => (
                   <li>
                     <a
-                      href={`/programs/${program.slug}`}
+                      
                       class={
                         (`/programs/${program.slug}` === pathname ||
                           `/programs/${program.slug}/` === pathname) &&
                         `/programs/${program.slug}` !== "/programs/"
-                          ? "menu-link-hover"
-                          : ""
+                          ? "menu-link-hover hover:cursor-pointer"
+                          : "hover:cursor-pointer"
                       }
                     >
                       {program.data.title}
@@ -219,13 +219,13 @@ const { pathname } = Astro.props;
                 {item.children.map((child) => (
                   <li>
                     <a
-                      href={child.url}
+                     
                       class={
                         (child.url === pathname ||
                           child.url + "/" === pathname) &&
                         child.url !== "/"
-                          ? "menu-link-hover"
-                          : ""
+                          ? "menu-link-hover hover:cursor-pointer"
+                          : "hover:cursor-pointer"
                       }
                     >
                       {child.label}
@@ -466,7 +466,7 @@ const { pathname } = Astro.props;
 
     a:has(+ .mobile-submenu.open),
     a:has(+ .mobile-submenu .menu-link-hover) {
-      color: #e61c24;
+      color: #bd7633;
     }
 
     .mobile-submenu li a {
@@ -477,7 +477,7 @@ const { pathname } = Astro.props;
     }
 
     .mobile-submenu li a:hover {
-      background: #e61c24;
+      background: #bd7633;
       color: #f3f4f6;
       font-weight: bold;
     }
