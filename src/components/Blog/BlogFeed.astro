@@ -16,18 +16,22 @@ const mostRecentPost: CollectionEntry<"blog"> = blogPosts.splice(0, 1)[0];
 const threeMorePosts: CollectionEntry<"blog">[] = blogPosts.splice(0, 2);
 
 const data = {
-  title: "MH Aviation Blog",
-  subTitle: "Mission-focused insights, training tips from the cadre, and industry news for future wingmen.",
+  eyebrow: "MH Aviation's",
+  title: "Aviation Blog",
+  subTitle: "Mission-focused insights, training tips from the cadre, and industry news for future pilots.",
 };
 ---
 
 <section class="mx-auto max-w-7xl my-12 px-4 lg:px-0 py-6 lg:py-12 flex flex-col items-center">
-    <h2
-        class="title !text-lucky-950 text-center"
+  <h2 class="font-sans font-medium text-ochre-600">
+     {data.eyebrow}
+  </h2>
+    <h3
+        class="title text-center"
         >
         {data.title}
-    </h2>
-    <h3 class="!font-sans !not-italic !text-xl max-w-xl !text-muted-950 text-center mb-8">
+    </h3>
+    <h3 class="font-sans font-medium max-w-xl !text-ink-950 text-center mb-8">
     {data.subTitle}
     </h3>
 

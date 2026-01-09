@@ -1,0 +1,73 @@
+---
+import ImageWithGradientAndText from "./ImageWithGradientAndText.astro";
+import { FaUsers } from "react-icons/fa";
+
+interface Props {
+  data: {
+    eyebrow: string;
+    title: string;
+    description: string;
+    quote: string;
+    image: {
+      src: string;
+      alt: string;
+    };
+    cta: {
+      text: string;
+      href: string;
+    };
+  };
+}
+
+const { data } = Astro.props;
+---
+
+<section class="py-16 md:py-24 bg-white">
+  <div class="max-w-7xl mx-auto px-5 md:px-8 lg:px-12">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+      
+      <div class="relative aspect-[3/4] w-full rounded-sm overflow-hidden shadow-2xl group order-2">
+        <ImageWithGradientAndText
+          src={data.image.src}
+          alt={data.image.alt}
+          class="w-full h-full object-cover object-[60%_30%] transition-transform duration-700 group-hover:scale-105"
+        />
+        <div class="absolute bottom-6 left-6 bg-white/95 backdrop-blur-sm p-4 rounded-sm shadow-lg border-l-4 border-ochre-600 max-w-xs">
+          <div class="flex items-center gap-3 mb-2">
+            <FaUsers className="text-ochre-600 text-xl" />
+            <span class="font-bold text-ink-950 text-sm uppercase tracking-wide">Family-Owned Focus</span>
+          </div>
+          <p class="text-xs text-ink-600 font-medium leading-relaxed">
+            At MH Aviation, you’re never just a tail number. You are a future pilot mentored by a team that treats your success personally.
+          </p>
+        </div>
+      </div>
+
+      <div class="order-1">
+        <div class="flex items-center gap-3 mb-4">
+          <span class="h-px w-8 bg-ochre-600"></span>
+          <p class="text-ochre-600 font-bold uppercase tracking-widest text-sm">
+            {data.eyebrow}
+          </p>
+        </div>
+
+        <h2 class="title text-ink-950 mb-6 leading-tight" set:html={data.title} />
+
+        <div class="bg-muted-50 border-l-4 border-ink-200 p-6 mb-8 rounded-r-sm">
+           <p class="text-ink-700 font-medium italic text-lg leading-relaxed">
+             "{data.quote}"
+           </p>
+        </div>
+
+        <p class="paragraph-text text-ink-600 mb-8" set:html={data.description} />
+
+        <div class="flex flex-col sm:flex-row gap-4">
+          <a href={data.cta.href} class="btn-primary w-fit shadow-lg shadow-ochre-100">
+             {data.cta.text}
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>

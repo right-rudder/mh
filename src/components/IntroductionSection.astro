@@ -8,10 +8,6 @@ interface Props {
   subtitle: string;
   imageCentering?: string;
   description: string[];
-  stats: {
-    value: string;
-    label: string;
-  }[];
   image?: {
     src: string;
     alt: string;
@@ -22,7 +18,7 @@ interface Props {
   };
 }
 
-const { title, subtitle, description, stats, imageCentering, image, cta } = Astro.props;
+const { title, subtitle, description, imageCentering, image, cta } = Astro.props;
 ---
 
 <section class="py-16 md:py-24 bg-ink-950">

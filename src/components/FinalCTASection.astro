@@ -1,0 +1,51 @@
+---
+import ImageWithGradientAndText from "./ImageWithGradientAndText.astro";
+
+interface Props {
+  data: {
+    eyebrow: string;
+    headline: string;
+    bodyCopy: string;
+    cta: {
+      text: string;
+      subtext: string;
+    };
+    image: {
+      src: string;
+      alt: string;
+    };
+  };
+}
+
+const { data } = Astro.props;
+---
+
+<section class="relative py-32 bg-ink-950 overflow-hidden">
+    <div class="absolute inset-0 z-0">
+        <ImageWithGradientAndText
+          src={data.image.src}
+          alt={data.image.alt}
+          class="w-full h-full object-cover object-[50%_30%] opacity-40 mix-blend-overlay"
+        />
+        <div class="absolute inset-0 bg-gradient-to-t from-ink-950 via-ink-950/80 to-transparent"></div>
+    </div>
+  
+  <div class="max-w-4xl mx-auto px-5 md:px-8 lg:px-12 relative z-10 text-center">
+    <p class="text-ochre-400 font-bold uppercase tracking-widest text-sm mb-4">
+      {data.eyebrow}
+    </p>
+    <h2 class="title text-ink-50 mb-6" set:html= {data.headline}>
+     
+    </h2>
+    <p class="font-sans font-medium text-ink-50 mb-10 text-xl font-light" set:html={data.bodyCopy}>
+    </p>
+    
+    <div class="flex flex-col items-center gap-4">
+         <button class="btn-primary text-lg px-8 py-3 w-full sm:w-auto">
+          {data.cta.text}
+        </button>
+        <p class="text-ink-300 text-sm font-semibold tracking-wide">{data.cta.subtext}</p>
+    </div>
+   
+  </div>
+</section>

@@ -1,0 +1,48 @@
+---
+import ImageComp from "./ImageComp.astro";
+import ImageWithGradientAndText from "./ImageWithGradientAndText.astro";
+
+interface Props {
+  data: {
+    eyebrow: string;
+    headline: string;
+    bodyCopy: string;
+    cta: {
+      text: string;
+      href: string;
+    };
+    image: {
+      src: string;
+      alt: string;
+    };
+  };
+}
+
+const { data } = Astro.props;
+---
+
+<section class="py-16 md:py-24 bg-ink-950 text-center relative">
+  <div class="absolute inset-0 z-0 opacity-20">
+     <ImageComp
+          src={data.image.src}
+          alt={data.image.alt}
+          class="w-full h-full object-cover object-center"
+        />
+  </div>
+  <div class="max-w-4xl mx-auto px-5 md:px-8 lg:px-12 relative z-10">
+     <p class="text-ochre-400 font-bold uppercase tracking-widest text-sm mb-4">
+      {data.eyebrow}
+    </p>
+    <h2 class="title text-white mb-6" set:html={data.headline}>
+      
+    </h2>
+    <p class="font-sans font-medium text-ink-50 mb-10 max-w-2xl mx-auto" set:html={data.bodyCopy}>
+      
+    </p>
+    <div class="flex justify-center">
+       <a href={data.cta.href} class="btn-primary">
+          {data.cta.text}
+        </a>
+    </div>
+  </div>
+</section>
