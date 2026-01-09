@@ -5,6 +5,7 @@
   --font-title: 'Orbitron Variable', 'serif';
   --font-ubuntu: 'Ubuntu Sans Variable', 'sans-serif';
   /* --font-sans: 'Poppins', 'sans-serif'; */
+  /* --font-main-title: "Changa One", sans-serif; */
   --font-sans: 'Inter Variable', 'sans-serif';
 
   --color-muted-50: #f5f6f6;
@@ -68,6 +69,7 @@
   --color-ink-900: #3d3d3d;
   --color-ink-950: #0e0e0e;
 
+  --animate-super-slow-zoom: slow-zoom 37s ease forwards;
   --animate-slow-zoom: slow-zoom 27s ease forwards;
   --animate-fast-zoom: fast-zoom 9s ease alternate infinite;
   --animate-medium-zoom: medium-zoom 15s ease-in-out forwards;
@@ -133,3 +135,4 @@
 h1, h2, h3, h4, h5, h6 {
   @apply font-sans font-black
 }
+

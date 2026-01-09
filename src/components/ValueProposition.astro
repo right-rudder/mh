@@ -31,7 +31,6 @@ interface Props {
 
 const { data } = Astro.props;
 
-// Helper to select an icon for stats based on keyword matching or index
 const getStatIcon = (label: string, index: number) => {
   const lowerLabel = label.toLowerCase();
   if (lowerLabel.includes("star") || lowerLabel.includes("rate")) return FaStar;
@@ -42,7 +41,7 @@ const getStatIcon = (label: string, index: number) => {
 
 ---
 
-<section class="relative min-h-screen flex items-center bg-ink-950 overflow-hidden">
+<section class="relative min-h-screen flex items-center bg-ink-950 overflow-hidden reveal-section">
   <div class="absolute inset-0 z-0 h-full w-full">
     <ImageWithGradientAndText
       src={data.image.src}
@@ -54,7 +53,7 @@ const getStatIcon = (label: string, index: number) => {
 
   <div class="max-w-7xl mx-auto px-5 md:px-8 lg:px-12 relative z-10 w-full py-16 md:py-24">
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-      <div class="order-2 lg:order-1 text-white">
+      <div class="order-2 lg:order-1 text-white opacity-0 translate-y-10 transition-all duration-1000 ease-out reveal-content">
         <p class="text-ochre-500 font-bold uppercase tracking-widest text-sm mb-2">
           {data.eyebrow}
         </p>
@@ -109,7 +108,7 @@ const getStatIcon = (label: string, index: number) => {
 
         {data.cta && (
           <div class="flex flex-col sm:flex-row gap-4  w-full">
-            <a class="btn-primary !w-full !px-4 !py-3 uppercase w-full sm:w-auto text-center shadow-lg shadow-ochre-900/20">
+            <a href={data.cta.href} class="btn-primary !w-full !px-4 !py-3 uppercase w-full sm:w-auto text-center shadow-lg shadow-ochre-900/20">
               {data.cta.text}
             </a>
           </div>
@@ -121,3 +120,26 @@ const getStatIcon = (label: string, index: number) => {
     </div>
   </div>
 </section>
+
+<script>
+  const observerOptions = {
+    threshold: 0.1
+  };
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        const revealContent = entry.target.querySelector('.reveal-content');
+        if (revealContent) {
+          revealContent.classList.remove('opacity-0', 'translate-y-10');
+          revealContent.classList.add('opacity-100', 'translate-y-0');
+        }
+        observer.unobserve(entry.target);
+      }
+    });
+  }, observerOptions);
+
+  document.querySelectorAll('.reveal-section').forEach((section) => {
+    observer.observe(section);
+  });
+</script>

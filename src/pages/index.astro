@@ -17,10 +17,20 @@ import ImageSliderWithCopySection from "../components/ImageSliderWithCopySection
 import ProgramsOverviewSection from "../components/ProgramsOverview/ProgramsOverviewSection.astro";
 
 const heroData = {
-  image: {
-    src: "/src/assets/facilities/mh-aviation-facilities-front.jpg",
-    alt: "MH Aviation fleet and maintenance hangar at Fox Field",
-  },
+  images: [
+    {
+      src: "/src/assets/facilities/mh-aviation-facilities-front-sd.webp",
+      alt: "MH Aviation fleet and maintenance hangar at Fox Field",
+    },
+    {
+      src: "/src/assets/instructing/mh-aviation-instructing-on-top-of-plane.jpg",
+      alt: "MH Aviation instructing on top of multi-engine aircraft",
+    },
+    {
+      src: "/src/assets/instructing/mh-aviation-instructing-student-05.jpg",
+      alt: "MH Aviation instructing with checklist on hands",
+    },
+  ],
   eyebrow: `Trust the G.O.A.T. Support: ${PHONE_NUMBER}`,
   title: "Family-Owned Excellence<br>Providing Aviation Training<br>& Full-Service Maintenance",
   subTitle: `The Antelope Valley’s Only One-Stop Aviation Hub for<br> Professional Multi-Engine Training & Part 145 Certified Maintenance at ${AIRPORT} (${AIRPORT_CODE})`,
@@ -286,8 +296,8 @@ const metaProps = {
   <Testimonials testimonials={testimonials} />
   <ProgramsOverviewSection/>
   <TrainingPhilosophySection data={mentorshipData}/>
-  <BlogFeed/>
   <TeamAndCultureSection data={teamCultureData}/>
+  <BlogFeed/>
   <LocationSection data={locationData}/>
   <FinalCTASection data={finalCtaData}/>
 
