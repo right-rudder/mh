@@ -2,91 +2,99 @@
 import { getCollection } from "astro:content";
 import type { CollectionEntry } from "astro:content";
 import ImageComp from "./ImageComp.astro";
+import { FaClock, FaTag, FaArrowRight } from "react-icons/fa";
 
 type Program = CollectionEntry<"programs">;
 
 const programs = await getCollection("programs");
-const sortedPrograms = programs.sort(
-  (a: Program, b: Program) => (a.data.order || 999) - (b.data.order || 999)
-);
+const sortedPrograms = programs
+  .sort((a: Program, b: Program) => (a.data.order || 999) - (b.data.order || 999))
+  .slice(0, 4);
 ---
 
-<section class="py-16 md:py-24 bg-linear-to-b from-white to-muted-50/30">
+<section class="py-16 md:py-24 bg-ink-50">
   <div class="max-w-7xl mx-auto px-5 md:px-8 lg:px-12">
-    <!-- Section Header -->
-    <div class="text-center flex flex-col items-center mb-12 md:mb-16">
-      <div class="inline-block mb-4">
-        <span class="subtitle">Professional Multi-Engine Training</span>
+    
+    <div class="text-center max-w-3xl mx-auto mb-16">
+      <div class="flex items-center justify-center mb-4">
+        <span class="text-ochre-600 font-bold uppercase tracking-widest text-sm">
+          MH Aviation Training
+        </span>
       </div>
-      <h2 class="title !text-ink-950">Transparent Pricing,<br> No Hidden Costs</h2>
-      <p class="text-lg text-gray-600 mb-8 leading-relaxed max-w-5xl">
-        Whether you are pursuing our all-inclusive 8 to 10 month Professional Track or seeking individual Part 141 and Part 61 ratings, we provide a clear path to success. With senior instructors, on-site housing options, and a fleet of technologically advanced aircraft, we eliminate the waitlists and hidden fees common in flight training.
+      
+      <h2 class="title text-ink-950 mb-6">
+        Family-Owned,<br> Integrity-Driven Training
+      </h2>
+      
+      <p class="paragraph-text text-ink-600">
+        From our family to yours, we offer fair, honest, and safety-focused flight instruction. Whether you're launching a professional career or fulfilling a lifelong dream, experience the difference of a true one-stop aviation hub at Fox Field.
       </p>
     </div>
 
-    <!-- Programs Grid -->
-    <div class="flex flex-wrap justify-center gap-6">
-      {sortedPrograms.map((program) => (
-        <article class="group w-full lg:w-[45%] relative flex flex-col bg-white rounded-2xl overflow-hidden shadow-md group hover:shadow-2xl transition-all duration-300 border border-muted-100">
-          <!-- Top Image Container -->
-          <ImageComp
-            src={program.data.image}
-            alt={program.data.alt || program.data.title}
-            class="absolute inset-0 w-full h-full object-cover animate-fast-zoom lg:animate-none group-hover:animate-fast-zoom"
-          />
-          <!-- Decorative gradient header -->
-          <div class="absolute top-0 left-0 right-0 h-1 bg-linear-to-r from-lucky-950 via-lucky-950 to-monza-400"></div>
-          
-          <!-- Card Content -->
-          <div class="relative bg-white/90 lg:bg-white group-hover:bg-white/90 p-8 flex-1 flex flex-col lg:translate-y-3/5 group-hover:translate-y-0 transition duration-500">
-            <!-- Badge & Duration -->
-            <div class="flex items-center justify-between mb-6">
-              <div class="flex items-center gap-3">
-                {program.data.programIntroduction?.highlights?.find(h => h.highlightName.toLowerCase().includes('duration')) && (
-                  <div class="flex items-center gap-1.5 text-sm text-muted-600 bg-muted-100 px-3 py-1.5 rounded-full">
-                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-                    </svg>
-                    <span class="font-medium">{program.data.programIntroduction.highlights.find(h => h.highlightName.toLowerCase().includes('duration'))?.highlightValue}</span>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
+      {sortedPrograms.map((program) => {
+        const duration = program.data.programIntroduction?.highlights?.find(h => h.highlightName.toLowerCase().includes('duration') || h.highlightName.toLowerCase().includes('timeline'))?.highlightValue;
+        const cost = program.data.programIntroduction?.highlights?.find(h => h.highlightName.toLowerCase().includes('cost') || h.highlightName.toLowerCase().includes('price'))?.highlightValue;
+
+        return (
+          <article class="group relative flex flex-col bg-white rounded-sm shadow-md hover:shadow-2xl hover:shadow-ink-950/10 transition-all duration-500 overflow-hidden border-b-0 border-x border-t-4 border-muted-200  hover:border-t-ochre-600 hover:-translate-y-2">
+            
+            <div class="relative h-72 overflow-hidden bg-ink-950">
+              <ImageComp
+                src={program.data.image}
+                alt={program.data.alt || program.data.title}
+                class="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-110 opacity-90 group-hover:opacity-100"
+              />
+              
+              <div class="absolute inset-0 bg-gradient-to-t from-ink-950/80 to-transparent opacity-60"></div>
+
+              <div class="absolute bottom-6 left-6 right-6 flex justify-between items-end">
+                {duration && (
+                  <div class="flex items-center gap-2 bg-ink-950/80 backdrop-blur-md text-white text-xs font-bold px-3 py-1.5 rounded-sm uppercase tracking-wide ">
+                    <FaClock className="text-ochre-500" />
+                    {duration}
+                  </div>
+                )}
+                {cost && (
+                   <div class="flex items-center gap-2 bg-white/95 backdrop-blur-md text-ink-950 text-xs font-black px-3 py-1.5 rounded-sm shadow-lg">
+                    <FaTag className="text-ochre-600" />
+                    {cost}
                   </div>
                 )}
               </div>
-              {program.data.programIntroduction?.highlights?.find(h => h.highlightName.toLowerCase().includes('cost') || h.highlightName.toLowerCase().includes('price')) && (
-                <div class="text-sm font-bold text-monza-600">
-                  {program.data.programIntroduction.highlights.find(h => h.highlightName.toLowerCase().includes('cost') || h.highlightName.toLowerCase().includes('price'))?.highlightValue}
-                </div>
-              )}
             </div>
 
-            <!-- Title -->
-            <h3 class="text-2xl font-title font-bold text-gray-900 mb-3 group-hover:text-lucky-950 transition-colors duration-700">
-              {program.data.title}
-            </h3>
+            <div class="p-8 flex flex-col flex-1">
+              <h3 class="text-2xl font-title font-bold text-ink-950 mb-3 group-hover:text-ochre-600 transition-colors duration-300">
+                {program.data.title}
+              </h3>
 
-            <!-- Description -->
-            <p class="text-gray-600 pb-12 mb-6 leading-relaxed flex-1">
-              {program.data.description}
-            </p>
+              <p class="text-ink-600 text-sm leading-relaxed mb-8 flex-1 line-clamp-3">
+                {program.data.description}
+              </p>
 
-            <!-- CTA Link -->
-            <a 
-              href={`/programs/${program.slug}`}
-              class="group/btn font-ubuntu relative inline-flex items-center justify-center w-full px-6 py-3.5 font-semibold text-white bg-linear-to-r from-monza-600 to-monza-500 rounded-xl overflow-hidden transition-all duration-300 hover:shadow-lg hover:shadow-monza-500/30 hover:-translate-y-0.5"
-            >
-              <span class="relative z-10 flex items-center gap-2">
-                View Program Details
-                <svg class="w-5 h-5 group-hover/btn:translate-x-1 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
-                </svg>
-              </span>
-              <div class="absolute inset-0 bg-linear-to-r from-monza-700 to-monza-600 opacity-0 group-hover/btn:opacity-100 transition-opacity duration-300"></div>
-            </a>
-          </div>
+              <a 
+                
+                class="relative hover:cursor-pointer w-full inline-flex items-center justify-center gap-3 px-6 py-4 font-bold text-sm tracking-wider uppercase text-ink-50 bg-ink-950 rounded-sm overflow-hidden transition-all duration-300 group-hover:bg-ochre-600 group-hover:text-white"
+              >
+                <span class="relative z-10">View Program Details</span>
+                <FaArrowRight className="relative z-10 text-ochre-600 group-hover:text-white transition-transform duration-300 group-hover:translate-x-1" />
+              </a>
+            </div>
 
-          <!-- Hover effect overlay -->
-          <div class="absolute inset-0 border-2 border-lucky-950 ease-out rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
-        </article>
-      ))}
+          </article>
+        );
+      })}
     </div>
+
+    <div class="text-center">
+      <a 
+        class="inline-flex hover:cursor-pointer items-center gap-3 px-8 py-4 bg-ochre-600 text-white font-bold uppercase tracking-wider text-sm rounded-sm hover:bg-ochre-700 transition-colors shadow-lg shadow-ochre-600/20"
+      >
+        See Other Programs
+        <FaArrowRight />
+      </a>
+    </div>
+
   </div>
 </section>

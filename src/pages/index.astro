@@ -2,15 +2,10 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 import ValueProposition from "../components/ValueProposition.astro";
 import ProgramsOverview from "../components/ProgramsOverview.astro";
-import ProcessSteps from "../components/ProcessSteps.astro";
 import Testimonials from "../components/Testimonials.astro";
-import CTASection from "../components/CTASection.astro";
 import { PHONE_NUMBER, AIRPORT, AIRPORT_CODE } from "../data/consts";
 import HeroLandingPage from "../components/HeroLandingPage.astro";
-import ExpectationsWithImage from "../components/ExpectationsWithImage.astro";
-import CrewCTASection from "../components/CrewCTASection.astro";
 import BlogFeed from "../components/Blog/BlogFeed.astro";
-import VideoCardWithCTASection from "../components/VideoCardWithCTASection.astro";
 import IntroductionSection from "../components/IntroductionSection.astro";
 import LocationSection from "../components/LocationSection.astro";
 import FinalCTASection from "../components/FinalCTASection.astro";
@@ -19,6 +14,7 @@ import TrainingPhilosophySection from "../components/TrainingPhilosophySection.a
 import RoadmapSection from "../components/RoadmapSection.astro";
 import SocialProofSection from "../components/SocialProofSection.astro";
 import ImageSliderWithCopySection from "../components/ImageSliderWithCopySection.astro";
+import ProgramsOverviewSection from "../components/ProgramsOverview/ProgramsOverviewSection.astro";
 
 const heroData = {
   image: {
@@ -43,14 +39,14 @@ const heroData = {
 };
 
 const valuePropositionData = {
-  title: "More Than Training and Services —<br>Your Aviation Home",
+  title: "More Than Training <br>and Services —<br>Your Aviation Home",
   subtitle: "A Legacy of Integrity & Safety",
-description: [
-    "A <strong>cornerstone of the Fox Field community</strong> for over 20 years, we have evolved into a <strong>premier full-service aviation hub</strong> under the Haney family. As a family-owned <strong>FAA Part 145 Repair Station</strong>, we personally maintain every aircraft to ensure <strong>unmatched safety and reliability</strong>.",
+  description: [
+    "A <strong>Fox Field cornerstone</strong> for over 20 years, the Haney family has built a <strong>premier aviation hub</strong>. As an <strong>FAA Part 145 Repair Station</strong>, we personally maintain our fleet to ensure <strong>unmatched safety</strong> for every student.",
     
-    "We offer a <strong>catered, honest experience</strong> where you are always treated as <strong>part of the family</strong>. From Private Pilot to our <strong>exclusive Multi-Engine training</strong>—the only program within 100 miles—we provide a <strong>modern fleet</strong> and Garmin-equipped cockpits to build your confidence.",
+    "Experience <strong>catered, honest training</strong> where you're treated like family. We offer a <strong>modern Garmin-equipped fleet</strong> and the only <strong>Multi-Engine program</strong> within 100 miles, giving you a competitive edge others can't match.",
     
-    "Located in the <strong>Antelope Valley</strong>, we provide everything a pilot needs <strong>under one roof</strong>: flight instruction, expert maintenance, and full FBO services. At MH Aviation, <strong>your success is our tradition</strong>, from your first <strong>discovery flight</strong> to your final checkride."
+    "Everything a pilot needs is <strong>under one roof</strong> at our Antelope Valley FBO. From your <strong>discovery flight</strong> to professional ratings, we provide the maintenance and mentorship to make <strong>your success our tradition</strong>."
 ],
 imageCentering: "object-[60%_50%]",
   image: {
@@ -74,7 +70,7 @@ const socialProofData = {
   },
 };
 
-const featuresCarouselData = {
+const imageSliderData = {
   eyebrow: "Comprehensive Aviation Services",
   title: "Flight Training, Maintenance & FBO Services in Perfect Sync",
   paragraphs: [
@@ -148,7 +144,7 @@ const valueAdvantageData = {
 
 const roadmapData = {
   eyebrow: "Your Roadmap to the Cockpit",
-  headline: "Cleared for Takeoff<br> in 4 Simple Steps.",
+  headline: "Cleared for Takeoff<br> in 4 Simple Steps",
   cards: [
     {
       title: "Book a Discovery Flight",
@@ -197,7 +193,7 @@ const finalCtaData = {
 
 const teamCultureData = {
   eyebrow: "Meet the Team",
-  headline: "Professional Mentorship in a Family Environment.",
+  headline: "Professional Mentorship in a Family Environment",
   bodyCopy:
     "At MH Aviation, you aren't just a number. From our President Jeff Haney to our Shop Lead Palomo Olmedo, our entire team is dedicated to your safety and progress. We offer private briefing rooms, a comfortable break area, and a supportive culture that feels like family.",
   cta: {
@@ -259,6 +255,7 @@ const mentorshipData = {
   eyebrow: "The MH Aviation Legacy",
   title: "Where Family Values<br>Meet Professional Precision",
   quote: "We don’t just train students; we mentor future colleagues. At MH Aviation, you’re part of a family-owned legacy that has served Fox Field for over two decades.",
+  quoteAuthor: "President Jeff Haney",
   description:
     "Founded by Mike Haney in 1988 and led today by Jeff and Jessica, MH Aviation is a <strong>one-stop aviation hub</strong>. By training at an active FAA Part 145 Repair Station and FBO, you gain a professional edge that 'pilot mills' can't match. You’ll learn in a <strong>modern, glass-panel fleet</strong> and benefit from our exclusive <strong>multi-engine training</strong>—all while supported by a team that treats your success as a personal mission.",
   image: {
@@ -266,8 +263,8 @@ const mentorshipData = {
     alt: "MH Aviation flight instructor mentoring a student pilot at Fox Field",
   },
   cta: {
-    text: "Meet Our Team",
-    href: "/about",
+    text: "Contact Us",
+    href: "/contact",
   },
 };
 
@@ -285,13 +282,13 @@ const metaProps = {
   <ValueProposition data={valueAdvantageData}/>
   <RoadmapSection data={roadmapData}/>
   <SocialProofSection data={socialProofData}/>
-  <ImageSliderWithCopySection data={featuresCarouselData}/>
+  <ImageSliderWithCopySection data={imageSliderData}/>
   <Testimonials testimonials={testimonials} />
+  <ProgramsOverviewSection/>
   <TrainingPhilosophySection data={mentorshipData}/>
+  <BlogFeed/>
   <TeamAndCultureSection data={teamCultureData}/>
   <LocationSection data={locationData}/>
   <FinalCTASection data={finalCtaData}/>
-  <ProgramsOverview />
-  <BlogFeed/>
 
 </BaseLayout>

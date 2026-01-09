@@ -26,11 +26,11 @@ const { title, subtitle, description, imageCentering, image, cta } = Astro.props
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
       <!-- Content Side -->
       <div class="order-2">
-        <span class="subtitle ">
+        <span class="font-sans font-medium text-ochre-600 uppercase">
           {subtitle}
         </span>
 
-        <h2 class="title !text-5xl !text-ink-50" set:html={title}>
+        <h2 class="title !text-4xl !text-ink-50" set:html={title}>
           
         </h2>
         {
@@ -42,7 +42,7 @@ const { title, subtitle, description, imageCentering, image, cta } = Astro.props
           cta && (
             <div class="flex justify-center gap-4 w-full">
               <a
-                href={cta.href}
+               
                 class="w-full btn-primary text-center shadow uppercase !px-6 max-w-sm"
               >
                 {cta.text}

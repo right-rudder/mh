@@ -3,7 +3,7 @@ title: "What’s on the Multi-Engine Checkride? (ACS, FARs, and What You’re Ac
 description: "A plain-language breakdown of the multi-engine checkride, including the ACS, required FARs, oral exam topics, and flight maneuvers you will actually be tested on."
 pubDate: 2025-12-22
 author: "Chris K."
-image: "/src/assets/-alex-flying.png"
+image: "/src/assets/instructing/mh-aviation-instructing-student-04.jpg"
 tags:
   - "multi-engine"
   - "checkride"

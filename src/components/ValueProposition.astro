@@ -59,13 +59,9 @@ const getStatIcon = (label: string, index: number) => {
           {data.eyebrow}
         </p>
         
-        <h2 class="title text-white mb-2 leading-tight" set:html={data.headline}>
+        <h2 class="title !text-5xl text-white mb-2 leading-tight" set:html={data.headline}>
           
         </h2>
-        
-        <p class="text-ink-200 text-lg italic font-medium mb-6">
-            {data.subtitle}
-        </p>
 
         <div class="space-y-4 mb-8 text-ink-100/90 leading-relaxed text-base md:text-lg">
             {data.description.map((paragraph) => (
@@ -113,7 +109,7 @@ const getStatIcon = (label: string, index: number) => {
 
         {data.cta && (
           <div class="flex flex-col sm:flex-row gap-4  w-full">
-            <a href={data.cta.href} class="btn-primary !w-full !px-4 !py-3 uppercase w-full sm:w-auto text-center shadow-lg shadow-ochre-900/20">
+            <a class="btn-primary !w-full !px-4 !py-3 uppercase w-full sm:w-auto text-center shadow-lg shadow-ochre-900/20">
               {data.cta.text}
             </a>
           </div>

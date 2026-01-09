@@ -23,7 +23,7 @@ const { data } = Astro.props;
 ---
 
 <section
-  class="hero-section relative overflow-hidden flex justify-center items-center lg:items-end lg:pb-40 text-white min-h-[100vh]"
+  class="hero-section relative overflow-hidden flex justify-center items-center lg:items-end lg:pb-30 text-white min-h-[100vh]"
   aria-label="Hero section"
 >
 
@@ -41,7 +41,7 @@ const { data } = Astro.props;
     <div class="flex flex-col justify-center items-center lg:items-start max-w-4xl">
       <div class="flex flex-col items-center lg:items-start gap-y-6 text-center lg:text-left">
         <h1
-          class="hero-title font-title text-white text-4xl uppercase font-bold"
+          class="hero-title font-title text-white text-4xl   uppercase font-bold"
           set:html={data.title}
         />
         
@@ -60,7 +60,6 @@ const { data } = Astro.props;
           <div class="hero-cta mt-12 flex flex-col gap-4 items-center sm:flex-row lg:items-start w-full sm:w-auto">
             {data.cta.map((item, index) => (
               <a
-                href={item.url}
                 class={`cta-button ${index === 0 ? "btn-primary" : "btn-transparent"} text-base sm:text-lg md:text-xl px-10 py-5 min-w-[220px] text-center font-bold transition-all duration-500 hover:scale-110 relative overflow-hidden group`}
                 aria-label={item.text}
               >

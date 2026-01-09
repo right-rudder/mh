@@ -1,5 +1,5 @@
 ---
-import ImageWithGradientAndText from "./ImageWithGradientAndText.astro";
+import ImageComp from "./ImageComp.astro";
 
 interface Props {
   data: {
@@ -20,7 +20,7 @@ const { data } = Astro.props;
   <div class="max-w-7xl mx-auto px-5 md:px-8 lg:px-12">
     <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
       <div class="h-80 md:h-full min-h-[400px]">
-        <ImageWithGradientAndText
+        <ImageComp
           src={data.image.src}
           alt={data.image.alt}
           class="w-full h-full object-cover object-center rounded-sm shadow-xl"
