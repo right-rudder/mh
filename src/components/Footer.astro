@@ -131,8 +131,8 @@ const today = new Date();
           sortedPrograms && (
             <div class="w-1/2 px-8">
               <a
-                class="font-sans font-black  text-2xl capitalize transition-colors duration-200 ease-in-out hover:text-ochre-600"
-                href={sortedPrograms[0].collection}
+                class="font-sans hover:cursor-pointer font-black  text-2xl capitalize transition-colors duration-200 ease-in-out hover:text-ochre-600"
+                
               >
                 {sortedPrograms[0].collection}
               </a>
@@ -141,8 +141,8 @@ const today = new Date();
                   {sortedPrograms.map((program) => (
                     <li class="text-sm my-1">
                       <a
-                        href={`/programs/${program.slug}`}
-                        class="transition-colors duration-200 ease-in-out text-accent-800 hover:text-ochre-600"
+                       
+                        class="hover:cursor-pointer transition-colors duration-200 ease-in-out text-accent-800 hover:text-ochre-600"
                       >
                         {program.data.title}
                       </a>
@@ -157,8 +157,8 @@ const today = new Date();
           footerMenu.map((item) => (
             <div class="w-1/2 px-8">
               <a
-                class="font-sans font-black text-2xl transition-colors duration-200 ease-in-out hover:text-ochre-600"
-                href={item.url}
+                class="font-sans hover:cursor-pointer font-black text-2xl transition-colors duration-200 ease-in-out hover:text-ochre-600"
+                
               >
                 {item.label}
               </a>
@@ -167,8 +167,8 @@ const today = new Date();
                   item.children.map((item) => (
                     <li class="text-sm my-1">
                       <a
-                        href={item.url}
-                        class="transition-colors duration-200 ease-in-out text-accent-800 hover:text-ochre-600"
+                       
+                        class="transition-colors hover:cursor-pointer duration-200 ease-in-out text-accent-800 hover:text-ochre-600"
                       >
                         {item.label}
                       </a>
@@ -185,9 +185,9 @@ const today = new Date();
       >
         <p class="font-sans font-black text-2xl text-center">Location</p>
         <a
-          href={LOCATIONS[0].gMaps || "#"}
+          
           target="_blank"
-          class="mt-1 flex items-center text-base gap-2 font-semibold justify-center transition-colors duration-200 ease-in-out md:justify-normal hover:text-ochre-600"
+          class="mt-1 hover:cursor-pointer flex items-center text-base gap-2 font-semibold justify-center transition-colors duration-200 ease-in-out md:justify-normal hover:text-ochre-600"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -250,14 +250,14 @@ const today = new Date();
     </p>
     <p class="inline-block text-center sm:w-1/3">
       <a
-        href="/privacy-policy"
-        class="transition-colors duration-200 hover:text-ochre-600"
+       
+        class="hover:cursor-pointer transition-colors duration-200 hover:text-ochre-600"
         >Privacy Policy</a
       >
       •
       <a
-        href="/terms-of-service"
-        class="transition-colors duration-200 hover:text-ochre-600"
+       
+        class="hover:cursor-pointer transition-colors duration-200 hover:text-ochre-600"
         >Terms of Service</a
       >
     </p>

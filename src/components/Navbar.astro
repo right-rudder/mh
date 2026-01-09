@@ -28,7 +28,7 @@ export const menu: MenuItem[] = [
     ],
   },
   {
-    label: "About MH Aviation",
+    label: "About Us",
     url: "/about",
     children: [
       { label: "About MH Aviation", url: "/about" },
@@ -81,19 +81,19 @@ const { pathname } = Astro.props;
           <li
             class={`menu-item ${sortedPrograms.length >= 1 ? "has-children" : ""}`}
           >
-            <a href="/programs">{sortedPrograms[0].collection}</a>
+            <a  class="hover:cursor-pointer">{sortedPrograms[0].collection}</a>
             {sortedPrograms.length >= 1 ? (
               <ul class="sub-menu">
                 {sortedPrograms.map((program: Program) => (
                   <li>
                     <a
-                      href={`/programs/${program.slug}`}
+                      
                       class={
                         (`/programs/${program.slug}` === pathname ||
                           `/programs/${program.slug}/` === pathname) &&
                         `/programs/${program.slug}` !== "/programs/"
-                          ? "menu-link-hover"
-                          : ""
+                          ? "menu-link-hover hover:cursor-pointer"
+                          : "hover:cursor-pointer"
                       }
                     >
                       {program.data.title}
@@ -113,20 +113,20 @@ const { pathname } = Astro.props;
             class={`menu-item ${item.children ? "has-children" : ""}`}
             data-index={index}
           >
-            <a href={item.url} target={item.url.includes("http") ? "_blank" : ""}>{item.label}</a>
+            <a class="hover:cursor-pointer" target={item.url.includes("http") ? "_blank" : ""}>{item.label}</a>
             {item.children && (
               <ul class="sub-menu">
                 {item.children.map((child) => (
                   <li>
                     <a
-                      href={child.url}
+                     
                       target={child.url.includes("http") ? "_blank" : ""}
                       class={
                         (child.url === pathname ||
                           child.url + "/" === pathname) &&
                         child.url !== "/"
-                          ? "menu-link-hover"
-                          : ""
+                          ? "menu-link-hover  hover:cursor-pointer"
+                          : " hover:cursor-pointer"
                       }
                     >
                       {child.label}
@@ -141,7 +141,7 @@ const { pathname } = Astro.props;
     </ul>
 
     <div class="buttons">
-      <a href="/contact" class="btn-primary !text-md">
+      <a  class="btn-primary !text-md hover:cursor-pointer">
         CONTACT US
       </a>
     </div>
