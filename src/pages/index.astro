@@ -1,7 +1,6 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import ValueProposition from "../components/ValueProposition.astro";
-import ProgramsOverview from "../components/ProgramsOverview.astro";
 import Testimonials from "../components/Testimonials.astro";
 import { PHONE_NUMBER, AIRPORT, AIRPORT_CODE } from "../data/consts";
 import HeroLandingPage from "../components/HeroLandingPage.astro";
@@ -97,9 +96,9 @@ const socialProofData = {
 const repairStationData = {
   eyebrow: "Fox Field’s Premier Aviation Hub",
   headline: "A Fully Integrated<br>Aviation Ecosystem",
-  bodyCopy: `We are redefining what it means to be a flight school by operating as a complete aviation authority. MH Aviation is not just a place to learn; it is a major player at Fox Field, anchoring the community with our <strong>FAA Part 145 Repair Station (#MHAR0094E)</strong>. We ensure every aircraft—whether ours or yours—is maintained to airline-grade standards.<br><br>
+  bodyCopy: `We are redefining what it means to be a flight school by operating as a complete aviation authority. MH Aviation is not just a place to learn; it is a major player at Fox Field, anchoring the community with our <strong class=\"text-ochre-600\">FAA Part 145 Repair Station (#MHAR0094E)</strong>. We ensure every aircraft—whether ours or yours—is maintained to airline-grade standards.<br><br>
   
-  Our "One-Stop Shop" capabilities extend beyond maintenance. Through <strong>MH Fuels</strong>, we provide essential fueling services, and via <strong>Avlink Direct</strong>, we offer comprehensive aircraft management and acquisition support. We are the professional infrastructure that powers your aviation journey.`,
+  Our "One-Stop Shop" capabilities extend beyond maintenance. Through <strong class=\"text-ochre-600\">MH Fuels</strong>, we provide essential fueling services, and via <strong class=\"text-ochre-600\">Avlink Direct</strong>, we offer comprehensive aircraft management and acquisition support. We are the professional infrastructure that powers your aviation journey.`,
   image: {
     src: "/src/assets/facilities/mh-aviation-repair-station.jpg",
     alt: "FAA Part 145 Repair Station hangar at MH Aviation",
