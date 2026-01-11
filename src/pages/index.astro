@@ -15,24 +15,37 @@ import RoadmapSection from "../components/RoadmapSection.astro";
 import SocialProofSection from "../components/SocialProofSection.astro";
 import ImageSliderWithCopySection from "../components/ImageSliderWithCopySection.astro";
 import ProgramsOverviewSection from "../components/ProgramsOverview/ProgramsOverviewSection.astro";
+import SocialProofLeftSection from "../components/SocialProofLeftSection.astro";
 
 const heroData = {
   images: [
     {
       src: "/src/assets/facilities/mh-aviation-facilities-front-sd.webp",
       alt: "MH Aviation fleet and maintenance hangar at Fox Field",
+      imageCentering: ""
     },
     {
       src: "/src/assets/instructing/mh-aviation-instructing-on-top-of-plane.jpg",
       alt: "MH Aviation instructing on top of multi-engine aircraft",
+      imageCentering: "object-[50%_50%]"
     },
     {
-      src: "/src/assets/instructing/mh-aviation-instructing-student-05.jpg",
-      alt: "MH Aviation instructing with checklist on hands",
+      src: "/src/assets/instructing/mh-aviation-instructing-student-with-checklist.webp",
+      alt: "MH Aviation instructing with pilot checklist on hands",
+      imageCentering: ""
+    },
+    {
+      src: "/src/assets/general/mh-aviation-jet-fueling-services.webp",
+      alt: "MH Aviation jet fueling services",
+      imageCentering: ""
+    },
+    {
+      src: "/src/assets/fleet/mh-aviation-the-baron-aircraft.webp",
+      alt: "MH Aviation The Baron aircraft",
+      imageCentering: ""
     },
   ],
-  eyebrow: `Trust the G.O.A.T. Support: ${PHONE_NUMBER}`,
-  title: "Family-Owned Excellence<br>Providing Aviation Training<br>& Full-Service Maintenance",
+  title: "Family-Owned <span class=\"\">Excellence<span></br>Providing Aviation Training<br>& Full-Service Maintenance",
   subTitle: `The Antelope Valley’s Only One-Stop Aviation Hub for<br> Professional Multi-Engine Training & Part 145 Certified Maintenance at ${AIRPORT} (${AIRPORT_CODE})`,
   cta: [
     {
@@ -80,12 +93,25 @@ const socialProofData = {
   },
 };
 
+
+const repairStationData = {
+  eyebrow: "Fox Field’s Premier Aviation Hub",
+  headline: "A Fully Integrated<br>Aviation Ecosystem",
+  bodyCopy: `We are redefining what it means to be a flight school by operating as a complete aviation authority. MH Aviation is not just a place to learn; it is a major player at Fox Field, anchoring the community with our <strong>FAA Part 145 Repair Station (#MHAR0094E)</strong>. We ensure every aircraft—whether ours or yours—is maintained to airline-grade standards.<br><br>
+  
+  Our "One-Stop Shop" capabilities extend beyond maintenance. Through <strong>MH Fuels</strong>, we provide essential fueling services, and via <strong>Avlink Direct</strong>, we offer comprehensive aircraft management and acquisition support. We are the professional infrastructure that powers your aviation journey.`,
+  image: {
+    src: "/src/assets/facilities/mh-aviation-repair-station.jpg",
+    alt: "FAA Part 145 Repair Station hangar at MH Aviation",
+  },
+};
+
 const imageSliderData = {
   eyebrow: "Comprehensive Aviation Services",
   title: "Flight Training, Maintenance & FBO Services in Perfect Sync",
   paragraphs: [
-    "At MH Aviation, we understand that a pilot's needs go beyond just lessons. That is why we built a <strong>complete ecosystem</strong> at Fox Field. While you focus on mastering the skies in our <strong>modern Garmin-equipped fleet</strong>, our on-site <strong>FAA Part 145 Repair Station</strong> works tirelessly to ensure every aircraft is mission-ready.",
-    "Our integrated approach means <strong>less downtime</strong> for maintenance and <strong>more flight time</strong> for you. Combined with our full-service FBO providing fueling and hangar services, we offer a seamless, professional environment that respects your time and investment."
+    "At MH Aviation, we understand that a pilot's needs go beyond just lessons. That is why we built a <strong class=\"text-ochre-600\">complete ecosystem</strong> at Fox Field. While you focus on mastering the skies in our <strong class=\"text-ochre-600\">modern Garmin-equipped fleet</strong>, our on-site <strong class=\"text-ochre-600\">FAA Part 145 Repair Station</strong> works tirelessly to ensure every aircraft is mission-ready.",
+    "Our integrated approach means <strong class=\"text-ochre-600\">less downtime</strong> for maintenance and <strong class=\"text-ochre-600\">more flight time</strong> for you. Combined with our full-service FBO providing fueling and hangar services, we offer a seamless, professional environment that respects your time and investment."
   ],
   cta: {
     text: "Explore Our Services",
@@ -181,14 +207,14 @@ const roadmapData = {
 
 const locationData = {
   eyebrow: "Strategic Location",
-  headline: "Train Where the Skies Are Clear.",
+  headline: "Train Where The<br> Skies Are Clear",
   bodyCopy:
     "Located at Gen. William Fox Airfield (KWJF) in Lancaster, CA. Enjoy the scenic high desert views and learn to master real-world wind conditions without the heavy congestion of busy city airports.",
 };
 
 const finalCtaData = {
   eyebrow: "Ready to Fly?",
-  headline: "Your Aviation Journey<br>Begins Here.",
+  headline: "Your Aviation Journey<br>Begins Here",
   bodyCopy:
     "Whether you are looking for a Discovery Flight, aircraft maintenance,<br> or fueling services, MH Aviation is ready to serve you.",
   cta: {
@@ -203,7 +229,7 @@ const finalCtaData = {
 
 const teamCultureData = {
   eyebrow: "Meet the Team",
-  headline: "Professional Mentorship in a Family Environment",
+  headline: "Professional Mentorship<br> in a Family Environment",
   bodyCopy:
     "At MH Aviation, you aren't just a number. From our President Jeff Haney to our Shop Lead Palomo Olmedo, our entire team is dedicated to your safety and progress. We offer private briefing rooms, a comfortable break area, and a supportive culture that feels like family.",
   cta: {
@@ -263,7 +289,7 @@ const testimonials = [
 
 const mentorshipData = {
   eyebrow: "The MH Aviation Legacy",
-  title: "Where Family Values<br>Meet Professional Precision",
+  title: "Where Family Values<br>Meet Professional Precision and Care",
   quote: "We don’t just train students; we mentor future colleagues. At MH Aviation, you’re part of a family-owned legacy that has served Fox Field for over two decades.",
   quoteAuthor: "President Jeff Haney",
   description:
@@ -287,11 +313,11 @@ const metaProps = {
 
 <BaseLayout {...metaProps}>
   <HeroLandingPage data={heroData}/>
-  
   <IntroductionSection {...valuePropositionData} />
   <ValueProposition data={valueAdvantageData}/>
   <RoadmapSection data={roadmapData}/>
   <SocialProofSection data={socialProofData}/>
+  <SocialProofLeftSection data={repairStationData}/>
   <ImageSliderWithCopySection data={imageSliderData}/>
   <Testimonials testimonials={testimonials} />
   <ProgramsOverviewSection/>

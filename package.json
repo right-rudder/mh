@@ -18,6 +18,8 @@
     "@fontsource/changa-one": "^5.2.8",
     "@fontsource/marcellus": "^5.2.8",
     "@fontsource/poppins": "^5.2.7",
+    "@fontsource/protest-strike": "^5.2.7",
+    "@fontsource/vina-sans": "^5.2.8",
     "@tailwindcss/vite": "^4.1.17",
     "@types/react": "^19.2.6",
     "@types/react-dom": "^19.2.3",

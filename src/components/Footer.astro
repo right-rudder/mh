@@ -25,7 +25,7 @@ const sortedPrograms = programs.sort(
 const today = new Date();
 ---
 
-<footer class="w-full pt-12 text-accent-900 bg-muted-50">
+<footer class="w-full pt-12 text-ink-50 bg-ink-950">
   <div class="relative z-10 mx-auto sm:max-w-xl md:max-w-full lg:max-w-7xl">
     <div class="flex flex-wrap justify-center items-center">
       <div
@@ -131,7 +131,7 @@ const today = new Date();
           sortedPrograms && (
             <div class="w-1/2 px-8">
               <a
-                class="font-sans hover:cursor-pointer font-black  text-2xl capitalize transition-colors duration-200 ease-in-out hover:text-ochre-600"
+                class="font-main-header uppercase tracking-wide hover:cursor-pointer font-black  text-2xl capitalize transition-colors duration-200 ease-in-out hover:text-ochre-600"
                 
               >
                 {sortedPrograms[0].collection}
@@ -157,7 +157,7 @@ const today = new Date();
           footerMenu.map((item) => (
             <div class="w-1/2 px-8">
               <a
-                class="font-sans hover:cursor-pointer font-black text-2xl transition-colors duration-200 ease-in-out hover:text-ochre-600"
+                class="font-main-header uppercase tracking-wide hover:cursor-pointer font-black text-2xl transition-colors duration-200 ease-in-out hover:text-ochre-600"
                 
               >
                 {item.label}
@@ -181,9 +181,9 @@ const today = new Date();
       </div>
 
       <div
-        class="mb-4 w-full md:w-1/2 lg:w-1/4 bg-muted-100 pt-6 pb-10 px-12 flex justify-left items-center flex-col gap-2 min-w-40 lg:items-start rounded-xl"
+        class="mb-4 w-full md:w-1/2 lg:w-1/4 bg-ink-100 text-ink-950 pt-6 pb-10 px-12 flex justify-left items-center flex-col gap-2 min-w-40 lg:items-start rounded-xl"
       >
-        <p class="font-sans font-black text-2xl text-center">Location</p>
+        <p class="font-main-header tracking-wide uppercase font-black text-2xl text-center">Location</p>
         <a
           
           target="_blank"

@@ -51,9 +51,9 @@ const { data } = Astro.props;
           </p>
         </div>
 
-        <h2 class="title text-ink-950 mb-6 leading-tight" set:html={data.title} />
+        <h2 class="title !text-[2.5rem] uppercase !font-main-header tracking-wide !text-ink-950 mb-6" set:html={data.title} />
 
-        <div class="bg-muted-50 border-l-4 border-ink-200 p-6 mb-8 rounded-r-sm">
+        <div class="bg-ink-100 border-l-4  border-ink-200 p-6 mb-8 rounded-r-sm">
            <p class="text-ink-700 font-medium italic text-lg leading-relaxed font-sans">
              "{data.quote}"
            </p>
