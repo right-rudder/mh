@@ -2,7 +2,7 @@
 title: "The Real Reasons Flight Training Breaks Down (And How  Fixes Them)"
 description: "An honest look at the systemic reasons flight training fails and how  was built to eliminate inconsistency, delays, and breakdowns."
 pubDate: 2025-10-26
-author: "Chris K."
+author: "MH Aviation"
 image: "/src/assets/-Multiengine-training.jpg"
 tags:
   - "flight training"
