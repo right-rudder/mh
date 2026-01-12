@@ -114,7 +114,7 @@ export const LOCATIONS = [
     city: "Lancaster",
     state: "CA",
     zip: "93536",
-    gMaps: "", // CONTEXT MISSING
+    gMaps: "https://maps.app.goo.gl/xFh24wDBdqwYerwx6", 
     phone: "(661) 948-7779",
     forwardPhone: "(661) 948-7779",
     fullAddress: "4651 William J Barnes Avenue, Lancaster, CA 93536",
