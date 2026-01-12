@@ -38,12 +38,7 @@ export const menu: MenuItem[] = [
   },
   {
     label: "Maintenance & FBO",
-    url: "/about",
-    children: [
-      { label: "About MH Aviation", url: "/about" },
-      { label: "Our Fleet", url: "/aircraft" },
-      { label: "Our Blog", url: "/blog" },
-    ],
+    url: "/about"
   },
 ];
 
@@ -67,7 +62,7 @@ const { pathname } = Astro.props;
 
 <nav id="navbar" class="navbar font-ubuntu">
   <div class="container px-4 md:px-0">
-    <a href="/" class="object-contain h-auto mx-auto lg:mx-0">
+    <a class="hover:cursor-pointer object-contain h-auto mx-auto lg:mx-0">
       <ImageComp
         class="mx-4 w-24 md:w-24"
         src={LOGO_ASSETS}
@@ -213,7 +208,7 @@ const { pathname } = Astro.props;
       {
         menu.map((item, index) => (
           <li class="mobile-item" data-index={index}>
-            <a href={item.url}>{item.label}</a>
+            <a class="hover:cursor-pointer ">{item.label}</a>
             {item.children && (
               <ul class="mobile-submenu">
                 {item.children.map((child) => (
@@ -240,7 +235,7 @@ const { pathname } = Astro.props;
     </ul>
 
     <div class="mobile-buttons">
-      <a href="/contact" class="btn-primary !text-lg">
+      <a class="btn-primary !text-lg hover:cursor-pointer ">
         CONTACT US
       </a>
     </div>
