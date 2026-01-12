@@ -1,53 +1,79 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import ValueProposition from "../components/ValueProposition.astro";
-import ProgramsOverview from "../components/ProgramsOverview.astro";
-import ProcessSteps from "../components/ProcessSteps.astro";
 import Testimonials from "../components/Testimonials.astro";
-import CTASection from "../components/CTASection.astro";
 import { PHONE_NUMBER, AIRPORT, AIRPORT_CODE } from "../data/consts";
 import HeroLandingPage from "../components/HeroLandingPage.astro";
-import ExpectationsWithImage from "../components/ExpectationsWithImage.astro";
-import CrewCTASection from "../components/CrewCTASection.astro";
 import BlogFeed from "../components/Blog/BlogFeed.astro";
-import VideoCardWithCTASection from "../components/VideoCardWithCTASection.astro";
+import IntroductionSection from "../components/IntroductionSection.astro";
+import LocationSection from "../components/LocationSection.astro";
+import FinalCTASection from "../components/FinalCTASection.astro";
+import TeamAndCultureSection from "../components/TeamAndCultureSection.astro";
+import TrainingPhilosophySection from "../components/TrainingPhilosophySection.astro";
+import RoadmapSection from "../components/RoadmapSection.astro";
+import SocialProofSection from "../components/SocialProofSection.astro";
+import ImageSliderWithCopySection from "../components/ImageSliderWithCopySection.astro";
+import ProgramsOverviewSection from "../components/ProgramsOverview/ProgramsOverviewSection.astro";
+import SocialProofLeftSection from "../components/SocialProofLeftSection.astro";
 
 const heroData = {
-  image: {
-    src: "/src/assets/3-aircraft-fleet-og.jpg",
-    alt: "Pilot student and instructor in multi-engine aircraft cockpit",
-  },
-  eyebrow: `Call Us: ${PHONE_NUMBER}`,
-  title: "Zero to Airline <br>Pilot in 8-10 months",
-  subTitle: `Professional Part 141 Airline Pilot Training<br> in ${AIRPORT} (${AIRPORT_CODE})`,
+  images: [
+    {
+      src: "/src/assets/facilities/mh-aviation-facilities-front-sd.webp",
+      alt: "MH Aviation fleet and maintenance hangar at Fox Field",
+      imageCentering: ""
+    },
+    {
+      src: "/src/assets/instructing/mh-aviation-instructing-on-top-of-plane.jpg",
+      alt: "MH Aviation instructing on top of multi-engine aircraft",
+      imageCentering: "object-[50%_30%]" // change this to change the position of the image!
+    },
+    {
+      src: "/src/assets/instructing/mh-aviation-instructing-student-with-checklist.webp",
+      alt: "MH Aviation instructing with pilot checklist on hands",
+      imageCentering: ""
+    },
+    {
+      src: "/src/assets/general/mh-aviation-jet-fueling-services.webp",
+      alt: "MH Aviation jet fueling services",
+      imageCentering: ""
+    },
+    {
+      src: "/src/assets/fleet/mh-aviation-the-baron-aircraft.webp",
+      alt: "MH Aviation The Baron aircraft",
+      imageCentering: ""
+    },
+  ],
+  title: "Family-Owned <span class=\"\">Excellence<span></br>Providing Aviation Training<br>& Full-Service Maintenance",
+  subTitle: `The Antelope Valley’s Only One-Stop Aviation Hub for<br> Professional Multi-Engine Training & Part 145 Certified Maintenance at ${AIRPORT} (${AIRPORT_CODE})`,
   cta: [
     {
       url: "/programs",
-      text: "View Programs",
+      text: "Explore Programs",
       variant: "primary",
     },
     {
       url: "/contact",
-      text: "Schedule a Tour",
+      text: "Book a Discovery Flight",
       variant: "secondary",
     },
   ],
 };
 
 const valuePropositionData = {
-  title: "Rigorous Training Built on Excellence",
-  subtitle: "The M2A Standard",
-  description:
-    "M2A Aviation Academy is dedicated to a single mission: your success. Rooted in discipline and excellence, our academy offers a comprehensive Professional Track covering 6 FAA checkrides—from Private Pilot to Multi-Engine Instructor. Led by a senior cadre with centuries of experience across general aviation, commercial operations (Parts 91, 121, 125, and 135), and military flying, we provide the mentorship and network needed to reach the majors.<br><br>Because we treat you as a future wingman from day one, we set the bar high: we expect you to treat this training like the career it will become, with a full-time commitment of at least 8 hours a day, Monday through Friday. It is an intensive pace designed to master the craft, and you won’t walk it alone. In return for your dedication, we provide the unwavering support, senior-level mentorship, and the industry network required to fast-track your seat in a professional cockpit.",
-  stats: [
-    { value: "Part 141", label: "Flight School" },
-    { value: "8 months", label: "Average timeline for the Professional Airline Pilot Track" },
-    { value: "8+ hours", label: "Daily Professional Duty" },
-    { value: "$85,000", label: "Professional Airline Pilot Track cost" },
-  ],
+  title: "More Than Training <br>and Services —<br>Your Aviation Home",
+  subtitle: "A Legacy of Integrity & Safety",
+  description: [
+    "A <strong class=\"text-ochre-600\">Fox Field cornerstone</strong> for over 20 years, the Haney family has built a premier aviation hub. As an <strong class=\"text-ochre-600\">FAA Part 145 Repair Station</strong>, we personally maintain our fleet to ensure <strong class=\"text-ochre-600\">unmatched safety</strong> for every student.",
+    
+    "Experience <strong class=\"text-ochre-600\">catered, honest training</strong> where you're treated like family. We offer a <strong class=\"text-ochre-600\">modern Garmin-equipped fleet</strong> and the only <strong class=\"text-ochre-600\">Multi-Engine program</strong> within 100 miles, giving you a competitive edge others can't match.",
+    
+    "Everything a pilot needs is <strong class=\"text-ochre-600\">under one roof</strong> at our Antelope Valley FBO. From your <strong class=\"text-ochre-600\">discovery flight</strong> to professional ratings, we provide the maintenance and mentorship to make <strong class=\"text-ochre-600\">your success our tradition</strong>."
+],
+imageCentering: "object-[60%_50%]",
   image: {
-    src: "/src/assets/M2A-Pilot-Happy-Multiengine.jpg",
-    alt: "Pilot training at M2A Aviation Academy",
+    src: "/src/assets/instructing/mh-aviation-instructing-student-03.jpg",
+    alt: "Pilot training at MH Aviation",
   },
   cta: {
     text: "Learn Entry Requirements",
@@ -55,64 +81,181 @@ const valuePropositionData = {
   },
 };
 
-const processSteps = [
-  {
-    number: 1,
-    title: "Schedule Your Tour",
-    description:
-      "See our fleet and meet the instructors at Wayne Executive Jetport. Out of town? Call us at (910) 900-8043 to discuss your goals remotely.",
-    cta: {
-      text: "Contact Us",
-      href: "/contact",
-    },
+const socialProofData = {
+  eyebrow: "Trusted by Aerospace Leaders",
+  headline: "Maintenance Quality Approved by Industry",
+  bodyCopy:
+    "We don't just maintain training aircraft; we support the fleets that keep the aerospace industry moving. MH Aviation is proud to provide <strong class=\"text-ochre-600\">'G.O.A.T. Support' (Greatest of All Time)</strong> to <strong class=\"text-ochre-600\">Lockheed Martin’s</strong> local flight operations. If the industry giants trust our maintenance, you can trust us with your training.",
+  image: {
+    src: "/src/assets/instagram/goat-badge-from-lockhead-and-martin.jpg",
+    alt: "Lockheed Martin Recognition Badge",
   },
-  {
-    number: 2,
-    title: "Secure Your FAA Medical",
-    description:
-      "A First Class FAA Medical Certificate is required for the Professional Track. Find an authorized examiner near you to get started.",
-    cta: {
-      text: "Find an AME",
-      href: "https://www.faa.gov/pilots/amelocator",
-    },
+};
+
+
+const repairStationData = {
+  eyebrow: "Fox Field’s Premier Aviation Hub",
+  headline: "A Fully Integrated<br>Aviation Ecosystem",
+  bodyCopy: `We are redefining what it means to be a flight school by operating as a complete aviation authority. MH Aviation is not just a place to learn; it is a major player at Fox Field, anchoring the community with our <strong class=\"text-ochre-600\">FAA Part 145 Repair Station (#MHAR0094E)</strong>. We ensure every aircraft—whether ours or yours—is maintained to airline-grade standards.<br><br>
+  
+  Our "One-Stop Shop" capabilities extend beyond maintenance. Through <strong class=\"text-ochre-600\">MH Fuels</strong>, we provide essential fueling services, and via <strong class=\"text-ochre-600\">Avlink Direct</strong>, we offer comprehensive aircraft management and acquisition support. We are the professional infrastructure that powers your aviation journey.`,
+  image: {
+    src: "/src/assets/facilities/mh-aviation-repair-station.jpg",
+    alt: "FAA Part 145 Repair Station hangar at MH Aviation",
   },
-  {
-    number: 3,
-    title: "Schedule Your Program",
-    description:
-      "Select your program and secure a start date. Professional Pilot applicants will undergo an interview and assessment to ensure a career fit.",
-    cta: {
-      text: "View Programs",
-      href: "/programs",
-    },
+};
+
+const imageSliderData = {
+  eyebrow: "Comprehensive Aviation Services",
+  title: "Flight Training, Maintenance & FBO Services in Perfect Sync",
+  paragraphs: [
+    "At MH Aviation, we understand that a pilot's needs go beyond just lessons. That is why we built a <strong class=\"text-ochre-600\">complete ecosystem</strong> at Fox Field. While you focus on mastering the skies in our <strong class=\"text-ochre-600\">modern Garmin-equipped fleet</strong>, our on-site <strong class=\"text-ochre-600\">FAA Part 145 Repair Station</strong> works tirelessly to ensure every aircraft is mission-ready.",
+    "Our integrated approach means <strong class=\"text-ochre-600\">less downtime</strong> for maintenance and <strong class=\"text-ochre-600\">more flight time</strong> for you. Combined with our full-service FBO providing fueling and hangar services, we offer a seamless, professional environment that respects your time and investment."
+  ],
+  cta: {
+    text: "Explore Our Services",
+    href: "/services",
   },
-  {
-    number: 4,
-    title: "Secure Your Financing",
-    description:
-      "Whether paying out-of-pocket or through our lending partners, we'll help you secure the funding to fuel your 8 to 10 month training journey.",
-    cta: {
-      text: "Discuss Financing",
-      href: "/contact",
+  images: [
+    {
+      imageSrc: "/src/assets/instructing/mh-aviation-instructing-student-02.jpg",
+      imageAlt: "MH Aviation maintenance team working on aircraft engine",
     },
+    {
+      imageSrc: "/src/assets/instructing/mh-aviation-instructing-on-top-of-plane.jpg",
+      imageAlt: "Student pilot pre-flighting a multi-engine aircraft",
+    },
+    {
+      imageSrc: "/src/assets/facilities/mh-aviation-facilities-front.jpg",
+      imageAlt: "MH Aviation FBO and hangars at Fox Field",
+    },
+  ],
+};
+
+
+const valueAdvantageData = {
+  eyebrow: "MH Aviation",
+  title: "A Higher Standard of Training",
+  headline: "Why Pilots<br>Choose Us",
+  subtitle: "A Legacy of Integrity & Safety",
+  description: [
+    "A <strong class=\"text-ochre-600\">cornerstone of Fox Field</strong> for over 20 years, we are a premier aviation hub under the Haney family. As an <strong class=\"text-ochre-600\">FAA Part 145 Repair Station</strong>, we maintain our own fleet to ensure the <strong class=\"text-ochre-600\">safety and reliability</strong> you deserve.",
+    
+    "Experience a <strong class=\"text-ochre-600\">catered, honest environment</strong> where you are always part of the family. From Private Pilot to our <strong class=\"text-ochre-600\">exclusive Multi-Engine program</strong>—the only one within 100 miles—we use <strong class=\"text-ochre-600\">Garmin glass cockpits</strong> to accelerate your learning.",
+    
+    "In the <strong class=\"text-ochre-600\">Antelope Valley</strong>, we provide everything <strong class=\"text-ochre-600\">under one roof</strong>: flight training, expert maintenance, and FBO services. At MH Aviation, your success is our tradition, from your first discovery flight to your professional checkride."
+  ],
+  bodyCopy: [
+    {
+      title: "Unmatched Availability",
+      text: "We are the only provider of Multi-Engine training within 100 miles. Skip the congested LA airspace and train locally at your own pace.",
+    },
+    {
+      title: "Modern Fleet & Safety",
+      text: "Train with glass-panel Garmin G5s and 180 hp engine conversions. Since we own the maintenance shop, our planes stay flight-ready.",
+    },
+    {
+      title: "Competitive Rates",
+      text: "Get premium instruction for less. Our multi-engine rates are roughly $155/hr, significantly lower than the $205/hr regional average.",
+    },
+  ],
+  stats: [
+    { value: "100 Miles", label: "Only Multi-Engine training in the region" },
+    { value: "$155/hr", label: "Highly competitive Multi-Engine rates" },
+    { value: "G5 Glass", label: "Modern Garmin-equipped training fleet" },
+    { value: "Part 145", label: "On-site FAA Certified Repair Station" },
+  ],
+  cta: {
+    text: "Enroll Now",
+    href: "/enroll",
   },
-];
+  image: {
+    src: "/src/assets/instructing/mh-aviation-instructing-student-02.jpg",
+    alt: "MH Aviation modern fleet training at Fox Field",
+  },
+  imageCentering: "object-[60%_50%]",
+};
+
+
+const roadmapData = {
+  eyebrow: "Your Roadmap to the Cockpit",
+  headline: "Cleared for Takeoff<br> in 4 Simple Steps",
+  cards: [
+    {
+      title: "Book a Discovery Flight",
+      text: "Take the controls for the first time over the scenic Antelope Valley and see if aviation is right for you.",
+      icon: "flight",
+    },
+    {
+      title: "Meet Your Instructor",
+      text: "Consult with our experienced CFIs to build a tailored training plan that fits your schedule and goals.",
+      icon: "instructor",
+    },
+    {
+      title: "Train & Master",
+      text: "Progress from Private Pilot to Multi-Engine ratings in our structured, safety-first environment.",
+      icon: "train",
+    },
+    {
+      title: "Earn Your Wings",
+      text: "Pass your checkride with confidence and join the ranks of certified pilots.",
+      icon: "wings",
+    },
+  ],
+};
+
+const locationData = {
+  eyebrow: "Strategic Location",
+  headline: "Train Where The<br> Skies Are Clear",
+  bodyCopy:
+    "Located at Gen. William Fox Airfield (KWJF) in Lancaster, CA. Enjoy the scenic high desert views and learn to master real-world wind conditions without the heavy congestion of busy city airports.",
+};
+
+const finalCtaData = {
+  eyebrow: "Ready to Fly?",
+  headline: "Your Aviation Journey<br>Begins Here",
+  bodyCopy:
+    "Whether you are looking for your first flight, aircraft maintenance,<br> or fueling services, MH Aviation is ready to serve you.",
+  cta: {
+    text: "Schedule a Visit",
+    subtext: `Call us directly at ${PHONE_NUMBER}`,
+  },
+  image: {
+    src: "/src/assets/instructing/mh-aviation-instructing-on-top-of-plane.jpg",
+    alt: "Runway view at sunset",
+  },
+};
+
+const teamCultureData = {
+  eyebrow: "Meet the Team",
+  headline: "Professional Mentorship<br> in a Family Environment",
+  bodyCopy:
+    "At MH Aviation, you aren't just a number. From our President Jeff Haney to our Shop Lead Palomo Olmedo, our entire team is dedicated to your safety and progress. We offer private briefing rooms, a comfortable break area, and a supportive culture that feels like family.",
+  cta: {
+    text: "Meet Our Staff",
+    href: "/about",
+  },
+  image: {
+    src: "/src/assets/instructing/mh-aviation-instructing-student-02.jpg",
+    alt: "MH Aviation team and facilities",
+  },
+};
 
 const testimonials = [
   {
-    quote: "M2A Aviation Academy's transparent pricing and professional instruction exceeded my expectations. No hidden costs, no surprises—just quality training with airline captains.",
+    quote: "MH Aviation's transparent pricing and professional instruction exceeded my expectations. No hidden costs, no surprises—just quality training with airline captains.",
     author: "Peter Gibbons",
     role: "Commercial Pilot & CFI",
     rating: 5,
   },
   {
-    quote: "The multi-engine training at M2A was exceptional. Real IMC flying, immediate checkride scheduling, and instructors who genuinely care about your success.",
+    quote: "The multi-engine training at  was exceptional. Real IMC flying, immediate checkride scheduling, and instructors who genuinely care about your success.",
     author: "Sarah Johnson",
     role: "Regional Airline First Officer",
     rating: 5,
   },
   {
-    quote: "From zero experience to regional airline first officer in 24 months. M2A's Zero to Airlines program delivered everything they promised.",
+    quote: "From zero experience to regional airline first officer in 24 months. 's Zero to Airlines program delivered everything they promised.",
     author: "Mike Reynolds",
     role: "SkyWest Airlines First Officer",
     rating: 5,
@@ -129,110 +272,58 @@ const testimonials = [
     role: "Private Pilot",
     rating: 5,
   },
-  {
-    quote: "Finally a school that treats you like a future colleague rather than just a number.",
-    author: "Emily Watson",
-    role: "CFI Student",
-    rating: 5,
-  },
-  {
-    quote: "Joining M2A was joining a family of wingmen. The network they offer is as valuable as the ratings themselves. I had multiple interview invites before even finishing my hours because of their industry reputation.",
-    author: "Robert Vance",
-    role: "Commercial Multi-Engine Pilot",
-    rating: 5,
-  },
+  // {
+  //   quote: "Finally a school that treats you like a future colleague rather than just a number.",
+  //   author: "Emily Watson",
+  //   role: "CFI Student",
+  //   rating: 5,
+  // },
+  // {
+  //   quote: "Joining  was joining a family of wingmen. The network they offer is as valuable as the ratings themselves. I had multiple interview invites before even finishing my hours because of their industry reputation.",
+  //   author: "Robert Vance",
+  //   role: "Commercial Multi-Engine Pilot",
+  //   rating: 5,
+  // },
 ];
 
-const ctaData = {
-  title: "Define Your Mission. Let’s Reach the Majors Together.",
+const mentorshipData = {
+  eyebrow: "The MH Aviation Legacy",
+  title: "Where Family Values<br>Meet Professional Precision and Care",
+  quote: "We don’t just train students; we mentor future colleagues. At MH Aviation, you’re part of a family-owned legacy that has served Fox Field for over two decades.",
+  quoteAuthor: "President Jeff Haney",
   description:
-    "Your first step at M2A is defining that goal, as it will shape your standards, timeline, and path to the cockpit. Whether you are aiming for the airlines or mastering a new rating, we are here to provide the roadmap and the mentorship to get you there. Define your mission today, and let’s start your training plan.",
+    "Founded by Mike Haney in 1988 and led today by Jeff and Jessica, MH Aviation is a <strong class=\"text-ochre-600\">one-stop aviation hub</strong>. By training at an active FAA Part 145 Repair Station and FBO, you gain a professional edge that 'pilot mills' can't match. You’ll learn in a <strong class=\"text-ochre-600\">modern, glass-panel fleet</strong> and benefit from our exclusive <strong class=\"text-ochre-600\">multi-engine training</strong>—all while supported by a team that treats your success as a personal mission.",
   image: {
-    src: "/src/assets/sebastian-zzWYD-tc_jI-unsplash.jpg",
-    alt: "Training aircraft in flight",
+    src: "/src/assets/instructing/mh-aviation-instructing-student-03.jpg", 
+    alt: "MH Aviation flight instructor mentoring a student pilot at Fox Field",
   },
-  primaryCTA: {
-    text: "Schedule a Tour",
+  cta: {
+    text: "Contact Us",
     href: "/contact",
   },
-  secondaryCTA: {
-    text: "Enroll Now",
-    href: "/enroll",
-  },
-};
-const crewCtaData = {
-  title: "Meet the Cadre<br>Guiding Your Journey",
-  description: "At M2A, you aren’t just a student; you are a future wingman training with the real deal. Our cadre of airline pilots and USAF veterans built this academy on mentorship and hard work.",
-  image: {
-    src: "/src/assets/m2a-whole-crew.png",
-    alt: "M2A Aviation Academy professional instructor cadre and crew",
-  },
-  primaryCTA: {
-    text: "Meet Our Crew",
-    href: "/about",
-  },
-};
-
-const info = {
-  title: "Master the Skies<br>with the Elite",
-  descriptionParagraphs: [
-    "M2A Aviation Academy is a labor of love from a group of professionals 'paying it forward.' We aren't just looking for students; we are looking for our future first officers, copilots, and wingmen to join our ranks.",
-  ],
-  listItems: [
-    "Centuries of collective GA, military, and commercial experience.",
-    "Mentorship from active airline pilots who advocate for your success.",
-    "A mission-focused environment built on professional standards.",
-    "Guaranteed CFI employment for those who excel in the course.",
-    "Direct career incentives and paths to our Part 135 companies."
-  ],
-  mainImage: "/src/assets/m2a-everyone-at-the-tables.jpg",
-  mainImageAlt: "M2A Aviation Academy professional flight training"
-};
-const shortFieldTechnical = {
-  title: "Master the Art of Precision",
-  subtitle: "Advanced Short Field Tactics",
-  description: "Short field operations are where true pilots are forged. Watch our precise approach and maximum-performance climb techniques in action. We don't just teach you how to fly; we teach you how to master the aircraft's limits with absolute safety and control.",
-  videoSrc: "/videos/m2a-short-field-pt-1.mp4",
-  textSide: "left",
-  cta: { text: "Master These Skills", href: "/enroll" }
-};
-const shortFieldAction = {
-title: "The Ultimate Energy Management",
-  subtitle: "Power-Off 180 Accuracy",
-  description: "Precision is non-negotiable when the engine goes quiet. The Power-Off 180 maneuver is the true test of a pilot's judgment and energy management. Watch how we train our students to hit the mark every single time, ensuring total confidence in any landing scenario.",
-  videoSrc: "/videos/m2a-alex-power-off-180.mp4",
-  textSide: "right",
-  cta: { text: "Refine Your Technique", href: "/enroll" }
 };
 
 const metaProps = {
-  siteTitle: "M2A Aviation Academy | Professional Pilot Training in North Carolina",
-  siteDescription: "Visit M2A Aviation Academy at Wayne Executive Jetport. Contact our team to schedule a tour, discuss financing, or start your professional flight training journey.",
-  siteKeywords: "contact M2A Aviation, flight school tour, pilot training info, Wayne Executive Jetport address, M2A phone number, aviation academy North Carolina"
+  siteTitle: "MH Aviation | Professional Pilot Training in North Carolina",
+  siteDescription: "Visit MH Aviation at Wayne Executive Jetport. Contact our team to schedule a tour, discuss financing, or start your professional flight training journey.",
+  siteKeywords: "contact  Aviation, flight school tour, pilot training info, Wayne Executive Jetport address,  phone number, aviation academy North Carolina"
 };
 ---
 
 <BaseLayout {...metaProps}>
-  <!-- <HeroScreen data={heroData} /> -->
   <HeroLandingPage data={heroData}/>
-  
-  <ValueProposition {...valuePropositionData} />
-
-  <ProcessSteps
-    title="How to Get Started"
-    subtitle="Four steps to plan your training and start date"
-    steps={processSteps}
-  />
-
-  <ExpectationsWithImage data={info}/>
-
-  <ProgramsOverview />
-
+  <IntroductionSection {...valuePropositionData} />
+  <ValueProposition data={valueAdvantageData}/>
+  <RoadmapSection data={roadmapData}/>
+  <SocialProofSection data={socialProofData}/>
+  <SocialProofLeftSection data={repairStationData}/>
+  <ImageSliderWithCopySection data={imageSliderData}/>
   <Testimonials testimonials={testimonials} />
-
+  <ProgramsOverviewSection/>
+  <TrainingPhilosophySection data={mentorshipData}/>
+  <TeamAndCultureSection data={teamCultureData}/>
   <BlogFeed/>
-  <CrewCTASection {...crewCtaData}/>
-  <VideoCardWithCTASection {...shortFieldTechnical} />
-  <VideoCardWithCTASection {...shortFieldAction} />
-  <CTASection {...ctaData} />
+  <LocationSection data={locationData}/>
+  <FinalCTASection data={finalCtaData}/>
+
 </BaseLayout>

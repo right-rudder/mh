@@ -2,7 +2,7 @@
 title: "How Long Does It Take to Become an Airline Pilot?"
 description: "A realistic breakdown of the airline pilot timeline, why most paths take 4 to 6 years, and how a structured, full-time program can cut that time nearly in half."
 pubDate: 2025-12-08
-author: "Chris K."
+author: "MH Aviation"
 image: "/src/assets/sebastian-zzWYD-tc_jI-unsplash.jpg"
 tags:
   - "airline pilot"
@@ -64,9 +64,9 @@ Training becomes something you fit into your life instead of something you focus
 
 That lack of structure adds years.
 
-## How M2A Is Different
+## How  Is Different
 
-M2A was built like a professional pilot training program, not a flying club.
+ was built like a professional pilot training program, not a flying club.
 
 Training here is:
 
@@ -94,7 +94,7 @@ From there, you move directly into time building inside the same system, with:
 
 Because aircraft, instructors, and schedules are controlled, students are not fighting for flight slots or losing months to disorganization.
 
-Most M2A pilots reach airline minimums in about **24 to 36 months total** from day one.
+Most  pilots reach airline minimums in about **24 to 36 months total** from day one.
 
 That is roughly half the time of a traditional training path.
 
@@ -119,7 +119,7 @@ If the question is:
 The honest answer is:
 
 - Traditional path: **4 to 6 years** for most people  
-- Structured, full-time path like M2A: **about 2.5 to 3 years**  
+- Structured, full-time path like : **about 2.5 to 3 years**  
 
 Same licenses. Same FAA requirements. Very different execution.
 

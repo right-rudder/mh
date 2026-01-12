@@ -1,7 +1,7 @@
 import type { APIRoute } from "astro";
 
 /**
- * Robots.txt Generator for M2A Aviation Academy (Mil2ATP)
+ * Robots.txt Generator for MH Aviation (Mil2ATP)
  * Locked to PRODUCTION mode. May need to update to get enviroment like the RRM Astro project does
  * Optimized for a Flight School SEO, security, and AI scraping protection
  */
@@ -10,7 +10,7 @@ const getRobotsTxt = (baseURL: string) => {
   const sitemapURL = new URL("sitemap-index.xml", baseURL);
 
   // 1. HEADER & GLOBAL RULES
-  let robotsContent = `# M2A Aviation Academy - Robots.txt
+  let robotsContent = `# MH Aviation - Robots.txt
 # Generated: ${new Date().toISOString()}
 # Mode: Production (Forced)
 # Optimized for Flight School SEO

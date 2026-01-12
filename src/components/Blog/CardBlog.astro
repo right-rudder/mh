@@ -1,98 +1,91 @@
 ---
-import { Image } from "astro:assets";
 import { formatDate } from "./utils";
 import type { CollectionEntry } from "astro:content";
 import ImageComp from "../ImageComp.astro";
-
-const { blogEntry, smallCard = false, index = 0 } = Astro.props;
+import { FaArrowRight, FaCalendarAlt } from "react-icons/fa";
 
 interface Props {
   blogEntry: CollectionEntry<"blog">;
   smallCard?: boolean;
   index?: number;
 }
+
+const { blogEntry, smallCard = false, index = 0 } = Astro.props;
+
+// Dynamic classes based on card type
+const containerClasses = smallCard
+  ? "flex flex-col sm:flex-row h-full" // Removed gap-4, handling spacing via padding in content
+  : "flex flex-col h-full";
+
+const imageContainerClasses = smallCard
+  ? "w-full sm:w-2/5 h-48 sm:h-auto relative overflow-hidden shrink-0" // Increased width slightly to 2/5 for better balance
+  : "w-full h-64 md:h-80 relative overflow-hidden shrink-0";
+
+const contentClasses = smallCard
+  ? "flex-1 p-6 flex flex-col justify-center" // Added p-6 to give text breathing room on all sides
+  : "p-8 flex flex-col flex-1";
 ---
 
 <a
-  class={`blog-card opacity-0 translate-y-10 transition-all duration-1100 ease-out ${
-    smallCard
-      ? "group block overflow-hidden outline-hidden border-gray-200 border-2 flex-1"
-      : "group block overflow-hidden outline-hidden shadow-lg shadow-gray-400 transition duration-300 hover:scale-105 focus-visible:scale-105"
-  }`}
+  class={`hover:cursor-pointer group block bg-ink-900 overflow-hidden border-t-4 border-muted-700 hover:border-ochre-600 transition-all duration-500 ease-out hover:-translate-y-1 shadow-lg hover:shadow-2xl hover:shadow-black/50 opacity-0 translate-y-8 blog-card`}
   style={`transition-delay: ${index * 150}ms;`}
-  href={`/blog/${blogEntry.slug}/`}
   data-astro-prefetch
 >
-  {
-    !smallCard && (
-      <div class="relative h-[350px] w-full shrink-0 overflow-hidden">
-        <ImageComp
-          class="size-full object-cover"
-          src={blogEntry.data.image}
-          alt={blogEntry.data.title}
-        />
-      </div>
-    )
-  }
-
-  <div class="px-4 py-4 sm:px-6 bg-white border-b-gray-300 border-b">
-    <div>
-      <div class="flex h-full flex-col">
-        <div class="flex items-center">
-          <div class="shrink-0 flex items-center justify-center bg-white rounded-full aspect-square p-2">
-            <ImageComp
-              class="h-[26px] w-auto object-contain"
-              src="/src/assets/M2A-symbol.png"
-              alt="M2A Logo"
-            />
-          </div>
-
-          <div class="ms-2.5 sm:ms-4">
-            <h4 class="font-bold text-lucky-950">
-              {blogEntry.data.author}
-            </h4>
-            <p class="text-xs text-black">
-              {formatDate(blogEntry.data.pubDate)}
-            </p>
-          </div>
-        </div>
-      </div>
+  <article class={containerClasses}>
+    {/* Image Section */}
+    <div class={imageContainerClasses}>
+      <ImageComp
+        class="absolute inset-0 size-full object-cover transition-transform duration-700 group-hover:scale-110 opacity-90 group-hover:opacity-100"
+        src={blogEntry.data.image}
+        alt={blogEntry.data.title}
+      />
+      <div class="absolute inset-0 bg-gradient-to-t from-ink-950/60 to-transparent opacity-60 group-hover:opacity-40 transition-opacity duration-500"></div>
     </div>
-  </div>
 
-  <div class="bg-white w-full px-4 sm:px-6 py-4">
-    <div class="flex h-full flex-col">
+    {/* Content Section */}
+    <div class={contentClasses}>
+      {/* Meta Data */}
+      <div class="flex items-center gap-3 text-xs font-bold uppercase tracking-wider text-ochre-500 mb-3">
+        <span class="flex items-center gap-1.5">
+          <FaCalendarAlt />
+          {formatDate(blogEntry.data.pubDate)}
+        </span>
+        {/* Optional: Add Author if needed, but keeping it clean for small cards often helps */}
+        <span class="w-1 h-1 bg-ink-700 rounded-full"></span>
+        <span class="text-ink-400 truncate max-w-[100px]">
+           {blogEntry.data.author}
+        </span>
+      </div>
+
       <h3
-        class={
-          smallCard
-            ? " text-lg font-bold text-lucky-950 transition-colors duration-300 group-hover:text-monza-700 sm:text-xl"
-            : " text-lg font-bold text-lucky-950 sm:text-3xl"
-        }
+        class={`font-title font-bold text-white transition-colors duration-300 group-hover:text-ochre-500 mb-3 ${
+          smallCard ? "text-lg md:text-xl line-clamp-2" : "text-2xl md:text-3xl"
+        }`}
       >
         {blogEntry.data.title}
       </h3>
-      <p class="mt-2 text-pretty text-madison-950">
+
+      <p class={`text-ink-300 text-sm leading-relaxed mb-4 ${smallCard ? "line-clamp-2" : "line-clamp-3"}`}>
         {blogEntry.data.description}
       </p>
+
+      <div class={`mt-auto flex items-center gap-2 text-sm font-bold uppercase tracking-widest text-white group-hover:text-ochre-500 transition-colors`}>
+        Read Article
+        <FaArrowRight class="text-ochre-600 group-hover:translate-x-1 transition-transform duration-300" />
+      </div>
     </div>
-  </div>
+  </article>
 </a>
 
 <script>
-  const observerOptions = {
-    root: null,
-    threshold: 0.1,
-  };
-
   const observer = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
       if (entry.isIntersecting) {
-        entry.target.classList.remove("opacity-0", "translate-y-10");
-        entry.target.classList.add("opacity-100", "translate-y-0");
+        entry.target.classList.remove("opacity-0", "translate-y-8");
         observer.unobserve(entry.target);
       }
     });
-  }, observerOptions);
+  }, { threshold: 0.1 });
 
   document.querySelectorAll(".blog-card").forEach((card) => {
     observer.observe(card);

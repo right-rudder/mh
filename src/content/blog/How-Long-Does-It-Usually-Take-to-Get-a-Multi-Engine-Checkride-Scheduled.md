@@ -2,7 +2,7 @@
 title: "How Long Does It Usually Take to Get a Multi-Engine Checkride Scheduled?"
 description: "Why multi-engine checkride delays are so common, how long students typically wait, and how built-in examiner access changes the timeline."
 pubDate: 2025-10-12
-author: "Chris K."
+author: "MH Aviation"
 image: "/src/assets/N33JR-piper-seneca-ii.jpg"
 tags:
   - "multi-engine"
@@ -50,11 +50,11 @@ In high-demand areas, it can be even worse.
 
 Even if training itself was efficient, the system often slows you down right at the finish line.
 
-## How M2A Is Different
+## How  Is Different
 
-This is one of the major structural advantages of the M2A program.
+This is one of the major structural advantages of the  program.
 
-At M2A, both the owner and the chief pilot are **Designated Pilot Examiners**.
+At , both the owner and the chief pilot are **Designated Pilot Examiners**.
 
 That changes the entire process.
 
@@ -86,6 +86,6 @@ Mentally, it is also difficult to feel finished but not actually be finished.
 The honest comparison looks like this:
 
 - At many schools: **weeks or even months**  
-- At M2A: **checkrides are built into the program**, not left to chance  
+- At : **checkrides are built into the program**, not left to chance  
 
 It is a small structural detail that makes a major difference in how fast, smooth, and predictable your training experience is.

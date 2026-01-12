@@ -1,163 +1,101 @@
 ---
-title: "Multi-Engine Rating "
-description: "An intensive, 1-week accelerated course designed to transition single-engine pilots to complex, multi-engine aircraft operations with a focus on asymmetric thrust safety."
-order: 5
-image: "/src/assets/M2A-Fleet-2.jpg"
-alt: "Multi-Engine Aircraft Training"
+title: "Multi-Engine Rating"
+description: "The only multi-engine training program within 100 miles, offering competitive rates, modern avionics, and exceptional availability."
+order: 2
+image: "/src/assets/instructing/mh-aviation-instructing-student-01.jpg"
+alt: "Multi-Engine Flight Training"
 top: true
 
 programIntroduction:
-  upperheader: "Advanced Ratings"
-  title: "Commercial Multi-Engine Land "
+  upperheader: "Advanced Training"
+  title: "Multi-Engine Rating"
   descriptionParagraphs:
-    - "The M2A Aviation Academy Multi-Engine Rating is an accelerated, 1-week program designed for pilots ready to step up to high-performance, complex aircraft. This isn't just about adding a second engine; it's about mastering energy management, asymmetric aerodynamics, and split-second decision-making."
-    - "We leverage the deep experience of our military and airline background instructors to teach you not just how to pass the checkride, but how to safely manage an engine failure in critical phases of flight."
-    - "This course is fast-paced and demanding. Expect a full immersion into multi-engine systems and procedures."
+    - "MH Aviation offers local exclusivity in multi-engine training within roughly 60 to 100 miles of our location. We provide a high-quality, affordable path to earning your multi-engine rating."
+    - "Our program is designed to be cost-effective without compromising on safety or equipment quality."
   highlights:
-    - highlightName: "Training Type"
-      highlightValue: "Accelerated, Part 141"
-    - highlightName: "Timeline"
-      highlightValue: "1 Week"
-    - highlightName: "Program Cost"
-      highlightValue: "$8,000"
-      pricingObservation: "All-inclusive flight and ground instruction"
+    - highlightName: "Exclusivity"
+      highlightValue: "Only ME training in 100 miles"
+    - highlightName: "Rate"
+      highlightValue: "$155/hr (Approx.)"
+      pricingObservation: "Significantly lower than the $205/hr competition"
+    - highlightName: "Avionics"
+      highlightValue: "Brand New / Autopilot"
   programHighlights:
     benefits:
-      - "Accelerated 1-week completion timeline"
-      - "Instruction from senior pilots with heavy multi-engine experience"
-      - "Focus on real-world engine-out safety and management"
-      - "Structured Part 141 curriculum"
+      - "Rates are much cheaper compared to the competition"
+      - "Brand new avionics and autopilot/complex configurations"
+      - "High aircraft availability—planes don't get grounded for long"
+      - "Training available for PPL through to CFII"
     requirements:
-      - "Hold a valid Private or Commercial Pilot Certificate (ASEL)"
-      - "Current FAA Medical Certificate"
-      - "Proof of U.S. citizenship or TSA approval"
-      - "Proficiency in English"
+      - "Private Pilot Certificate (ASEL)"
+      - "Current FAA Medical"
 
 programExpectations:
-  mainImage: "/src/assets/M2A-Fleet-2.jpg"
-  mainImageAlt: "Instructor and student pre-flighting a multi-engine aircraft"
-  title: "Intensity and Focus"
+  mainImage: "/src/assets/instructing/mh-aviation-instructing-student-01.jpg"
+  mainImageAlt: "Multi-Engine Aircraft"
+  title: "Training Standards"
   descriptionParagraphs:
-    - "Because this course is compressed into a single week, the pace is intense. You are expected to arrive prepared and ready to work."
-    - "The focus is heavily weighted toward emergency operations. You will perform airwork and landings with a simulated failed engine on nearly every flight until it becomes muscle memory."
+    - "We set ourselves apart with a newer, better-equipped fleet. While competitors may lack glass cockpits or availability, we ensure you train on modern systems."
+    - "Safety is always the priority. Our on-site maintenance team ensures our multi-engine aircraft are ready when you are."
   listItems:
-    - "Daily ground briefings and flight blocks"
-    - "Rigorous drilling of Vmc demonstrations and single-engine approaches"
-    - "Expectation of professional study habits outside of flight hours"
+    - "Complex aircraft training with Autopilot"
+    - "Focus on safety and regulatory compliance"
+    - "Catered service with responsive communication"
 
 whatIsIncluded:
-  upperheader: "All-Inclusive Package"
-  title: "What the Program Includes"
+  upperheader: "The MH Advantage"
+  title: "Program Features"
   descriptionParagraphs:
-    - "Our Multi-Engine Rating is a turnkey package designed to get you rated and back to your career or hobby without hidden fees."
+    - "We offer a complete multi-engine training environment supported by our full-service FBO and maintenance facilities."
   bulletPointLists:
-    - title: "Flight & Ground Training"
+    - title: "Aircraft & Equipment"
       items:
-        - "Up to 10 hours of Multi-Engine flight time"
-        - "20 hours of ground instruction and flight briefings"
-        - "Proprietary online ground school access"
-    - title: "Testing & Certification"
+        - "Multi-engine aircraft fleet"
+        - "Glass-panel Garmin G5"
+        - "Garmin GPS"
+        - "Autopilot equipped"
+    - title: "Support"
       items:
-        - "Endorsement for the practical test"
-        - "1 FAA Practical Test (Checkride)"
+        - "On-site fueling (MH Fuels)"
+        - "Emergency AOG services if needed"
+        - "Remodeled facilities with private rooms"
 
 whyUs:
-  upperheader: "Experience Matters"
-  title: "Learn from Heavy Metal Pilots"
-  topicTitle: "Real-World Multi-Engine Experience"
+  upperheader: "Competitive Edge"
+  title: "Why Choose MH For Multi-Engine"
+  topicTitle: "Unmatched Value"
   topicDescriptionParagraphs:
-    - "Multi-engine aerodynamics are unforgiving. You want to learn these skills from instructors who have managed complex aircraft in the most demanding environments possible—from combat zones to airline operations."
-  bulletTitle: "The M2A Difference"
+    - "Our rates are significantly more affordable than the competition, sitting around $155/hr compared to $205/hr elsewhere. We believe in fair and honest service."
+  bulletTitle: "Availability & Speed"
   bulletDescriptionParagraphs:
-    - "We don't just teach you to pass a test. We teach you the discipline required to command a complex machine safely. Our instructors bring centuries of combined experience to the cockpit."
+    - "We are the only provider of this training within a vast radius. With our own maintenance shop (FAA Repair Station 145), we minimize downtime so you can finish your rating faster."
   bulletPoints:
-    - "Military-grade procedural discipline"
-    - "Safety-first approach to Vmc and engine-out training"
-    - "Efficient, results-oriented syllabus"
-
-careerPathways:
-  upperheader: "Career Progression"
-  title: "The Gateway to the Airlines"
-  descriptionParagraphs:
-    - "A Multi-Engine rating is the mandatory gatekeeper for any pilot seeking a career in the airlines or corporate aviation."
-  opportunities:
-    - "Eligibility for Regional and Major Airline hiring"
-    - "Corporate and Charter (Part 135) operations"
-    - "Pathway to Multi-Engine Instructor (MEI) ratings"
-  disclaimer: "Completion of this rating allows you to act as PIC of a multi-engine aircraft but does not guarantee airline employment without meeting total time requirements."
-
-targetAudience:
-  title: "Who This Rating Is For"
-  items:
-    - "Commercial pilots building credentials for airline careers"
-    - "Private pilots seeking to upgrade to faster, more capable aircraft"
-    - "Pilots who need an accelerated, no-nonsense training footprint"
-  notFor: "Student pilots who have not yet achieved a Private Pilot Certificate."
+    - "Local exclusivity in multi-engine training"
+    - "Weather generally better than LA for consistent scheduling"
+    - "Family-owned business that truly cares about your progress"
 
 enrollmentProcess:
-  title: "Get Rated in One Week"
+  title: "Get Rated"
   steps:
     - stepNumber: 1
-      title: "Prerequisites Check"
-      description: "Ensure you hold a current Private or Commercial ASEL certificate and a valid medical."
+      title: "Inquire"
+      description: "Contact us for specific inquiries regarding multi-engine availability."
     - stepNumber: 2
-      title: "Schedule Your Week"
-      description: "Contact M2A to book your dedicated 1-week training block. Availability fills quickly."
+      title: "Schedule"
+      description: "Call (661) 948-7779 to book your slot."
     - stepNumber: 3
-      title: "Secure Financing"
-      description: "Payment or financing must be secured prior to the start of the training block."
-    - stepNumber: 4
-      title: "Arrival & Training"
-      description: "Arrive at KGGS ready to fly. You will likely fly twice a day to meet the timeline."
-
-trainingProgression:
-  upperheader: "Syllabus Overview"
-  title: "The 1-Week Roadmap"
-  descriptionParagraphs:
-    - "This course moves fast. We utilize a structured Part 141 approach to ensure every hour is efficient and directed toward the checkride."
-  phases:
-    - phaseTitle: "Days 1-2: Systems & Basic Control"
-      phaseBulletPoints:
-        - "Multi-engine aerodynamics and systems ground school"
-        - "Normal takeoffs, landings, and maneuvering"
-        - "Introduction to single-engine operations"
-    - phaseTitle: "Days 3-4: Emergency Procedures"
-      phaseBulletPoints:
-        - "Engine failure after takeoff"
-        - "Single-engine approaches and go-arounds"
-        - "Vmc demonstrations and drag demos"
-    - phaseTitle: "Day 5: Checkride Prep"
-      phaseBulletPoints:
-        - "Mock checkride flight"
-        - "Final review of oral knowledge areas"
-    - phaseTitle: "Day 6-7: Evaluation"
-      phaseBulletPoints:
-        - "FAA Practical Test (Checkride)"
-  outcome: "Issuance of Commercial or Private Pilot Multi-Engine Land Rating."
+      title: "Train"
+      description: "Fly our glass-panel equipped multi-engine aircraft."
 
 finalCTA:
-  mainImage: "/src/assets/M2A-Fleet-2.jpg"
-  mainImageAlt: "Multi-engine aircraft on the ramp"
-  upperheader: "Ready to Upgrade?"
-  title: "Expand Your Horizons"
+  mainImage: "/src/assets/instructing/mh-aviation-instructing-student-01.jpg"
+  mainImageAlt: "MH Aviation Multi-Engine"
+  upperheader: "Upgrade Your Certificate"
+  title: "Fly Multi-Engine Today"
   descriptionParagraphs:
-    - "Adding a multi-engine rating is one of the most rewarding challenges in aviation. It opens the door to higher performance, greater speed, and professional careers."
-    - "If you are ready to work hard for one week to achieve this milestone, we are ready to teach you."
-  mainButtonText: "Schedule Your Week"
+    - "Don't overpay for older aircraft. Train with MH Aviation for the best rates and equipment in the region."
+  mainButtonText: "Contact Us"
   mainButtonLink: "/contact"
-  secondButtonText: "Call (910) 900-8043"
-  secondButtonLink: "tel:9109008043"
-
-faq:
-  upperheader: "Q&A"
-  title: "Multi-Engine Questions"
-  qnas:
-    - question: "Can I really finish in one week?"
-      answer: "Yes, provided you arrive proficient in instrument and commercial maneuvers, have studied the provided materials beforehand, and weather permits. The syllabus is designed for efficiency."
-    - question: "Do I need a Commercial Pilot License first?"
-      answer: "No. You can add a Multi-Engine rating to a Private Pilot certificate. However, most career-track students add it to their Commercial certificate."
-    - question: "What happens if I need more than 10 hours?"
-      answer: "The package includes up to 10 hours. If additional proficiency is required to meet safety standards, additional flight time will be billed at our standard hourly rates."
-    - question: "Is this course Part 141 or Part 61?"
-      answer: "We offer this course under Part 141, ensuring a structured and approved syllabus, though Part 61 options may be available depending on your specific needs."
+  secondButtonText: "Call (661) 948-7779"
+  secondButtonLink: "tel:6619487779"
 ---
