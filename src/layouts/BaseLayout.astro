@@ -13,6 +13,7 @@ import Footer from "../components/Footer.astro";
 import { SITE_TITLE, SITE_DESCRIPTION, KEYWORDS, OG_IMAGE } from "../data/consts";
 import Navbar from "../components/Navbar.astro";
 import HeaderContact from "../components/HeaderContact.astro";
+import ChatWidgetDebounced from "../components/ChatWidgetDebounced.astro";
 
 const { pathname } = Astro.url;
 const { siteTitle, siteDescription, siteImage, siteKeywords, customBreadcrumbs, navBarBG = false } = Astro.props;
@@ -186,5 +187,6 @@ const breadcrumbs = generateBreadcrumbs(pathname, customBreadcrumbs);
       )}
     </main>
     <Footer />
+    <ChatWidgetDebounced/>
   </body>
 </html>
