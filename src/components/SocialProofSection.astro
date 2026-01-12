@@ -10,6 +10,10 @@ interface Props {
       src: string;
       alt: string;
     };
+    cta?: {
+      text?: string;
+      href?: string;
+    }
   };
 }
 
@@ -37,6 +41,9 @@ const { data } = Astro.props;
         </h2>
         <p class="font-sans text-ink-50" set:html={data.bodyCopy}>
         </p>
+        {
+          data.cta &&  (<a class="btn-primary !max-w-[200px] mt-4">Meet Our Services</a>)
+        }
       </div>
     </div>
   </div>
