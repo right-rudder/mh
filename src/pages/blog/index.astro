@@ -1,0 +1,58 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import { getCollection } from "astro:content";
+import HeroGeneralPages from "../../components/HeroGeneralPages.astro";
+import { AIRPORT, AIRPORT_CODE, COMPANY_NAME, PHONE_NUMBER } from "../../data/consts";
+import FinalCTASection from "../../components/FinalCTASection.astro";
+import BlogFeedSection from "../../components/Blog/BlogFeedSection.astro";
+
+const heroData = {
+  images: [
+    {
+      src: "/src/assets/fleet/mh-aviation-the-baron-aircraft.webp",
+      alt: "MH Aviation The Baron aircraft",
+      imageCentering: ""
+    },
+  ],
+  title: "OUR BLOG",
+  subTitle: `Expert Perspectives on Professional Flight Training, <br>Part 145 Maintenance Standards, and Life in the Antelope Valley Skies at ${AIRPORT} (${AIRPORT_CODE})`,
+  cta: [
+    {
+      url: "/programs",
+      text: "Explore Programs",
+      variant: "primary",
+    },
+    {
+      url: "/contact",
+      text: "Book a Discovery Flight",
+      variant: "secondary",
+    },
+  ] 
+};
+
+const finalCtaData = {
+  eyebrow: "Fly This Aircraft",
+  headline: "Ready for Takeoff?",
+  bodyCopy: "Schedule your flight training or rental block with this aircraft today.",
+  cta: {
+    text: "Book Now",
+    subtext: `Call us at ${PHONE_NUMBER}`,
+  },
+  image: {
+    src: "/src/assets/instructing/mh-aviation-instructing-on-top-of-plane.jpg",
+    alt: "Student pilot preparing for flight",
+  },
+};
+
+const metaProps = {
+  siteTitle: `Aviation Blog & Training Insights | ${COMPANY_NAME}`,
+  siteDescription: `Read the latest flight training tips, academy news, and career advice from the senior instructor cadre at ${COMPANY_NAME}.`,
+  siteKeywords: `${COMPANY_NAME} blog, flight training tips, airline pilot career advice, student pilot news, aviation articles, learn to fly blog North Carolina`
+};
+---
+
+<BaseLayout {...metaProps}>
+  <HeroGeneralPages data={heroData} />
+    <BlogFeedSection/>
+    <FinalCTASection data={finalCtaData} />
+</BaseLayout>

@@ -1,0 +1,184 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import { getCollection } from "astro:content";
+import type { GetStaticPaths } from "astro";
+import HeroGeneralPages from "../../components/HeroGeneralPages.astro";
+import FinalCTASection from "../../components/FinalCTASection.astro";
+import BlogFeedSectionCard from "../../components/Blog/BlogFeedSectionCard.astro";
+import { FaFacebookF, FaTwitter, FaLinkedinIn, FaArrowLeft, FaCalendarAlt } from "react-icons/fa";
+import { PHONE_NUMBER } from "../../data/consts";
+import ImageComp from "../../components/ImageComp.astro";
+
+export const getStaticPaths = (async () => {
+  const blogPosts = await getCollection("blog");
+  return blogPosts.map((post) => ({
+    params: { slug: post.slug },
+    props: { post },
+  }));
+}) satisfies GetStaticPaths;
+
+const { post } = Astro.props;
+const { Content } = await post.render();
+
+const formatDate = (date: Date) => {
+  return new Intl.DateTimeFormat("en-US", {
+    year: "numeric",
+    month: "long",
+    day: "numeric",
+  }).format(date);
+};
+
+const allPosts = await getCollection("blog");
+const relatedPosts = post.data.tags
+  ? allPosts
+      .filter(
+        (p) =>
+          p.slug !== post.slug &&
+          p.data.tags?.some((tag) => post.data.tags?.includes(tag))
+      )
+      .slice(0, 3)
+  : [];
+
+const heroData = {
+  images: [
+    { 
+        src: post.data.image, 
+        alt: post.data.title || "Blog Post Header" 
+    }
+  ],
+  title: post.data.title || "Aviation Insights",
+  subTitle: post.data.description || "Expert perspectives from the flight deck.",
+};
+
+const finalCtaData = {
+  eyebrow: "Start Your Journey",
+  headline: "Ready to Turn Inspiration<br>Into Action?",
+  bodyCopy:
+    "Whether you're looking to start your private pilot training or advance your career, MH Aviation provides the mentorship and aircraft you need.",
+  cta: {
+    text: "Contact Us",
+    subtext: `Call us at ${PHONE_NUMBER}`,
+  },
+  image: {
+    src: "/src/assets/instructing/mh-aviation-instructing-on-top-of-plane.jpg",
+    alt: "Student pilot preparing for flight",
+  },
+};
+
+const metaProps = {
+  siteTitle: `${post.data.title} | MH Aviation Blog`,
+  siteDescription: post.data.description || "Stay updated with the latest flight training insights from MH Aviation.",
+  siteKeywords: `${post.data.title}, aviation blog, flight training tips`
+};
+---
+
+<BaseLayout {...metaProps} siteImage={post.data.image}>
+  
+  <HeroGeneralPages data={heroData} />
+
+  <article class="py-16 md:py-24 bg-ink-50 px-4">
+    <div class="max-w-4xl mx-auto">
+
+      <div class="mb-8">
+        <a href="/blog" class="inline-flex items-center gap-2 text-ochre-600 hover:text-ochre-700 font-bold uppercase tracking-widest text-xs transition-colors">
+            <FaArrowLeft />
+            Back to Flight Log
+        </a>
+      </div>
+
+      <div class="bg-white p-8 md:p-12 shadow-xl rounded-sm border-t-4 border-ochre-600">
+        
+        <div class="flex flex-wrap items-center gap-4 text-sm text-ink-400 mb-8 pb-8 border-b border-ink-100">
+            <div class="flex items-center gap-2">
+                <span class="w-11 h-11 p-2 rounded-full bg-ink-950 flex items-center justify-center  font-bold text-xs">
+                    <ImageComp 
+                      src={"/src/assets/brand/MH Aviation.png"}
+                      alt={"MH Aviation logo"}
+                      class=""
+                    />
+                </span>
+                <span class="font-bold text-ink-900">{post.data.author}</span>
+            </div>
+            <span class="text-ink-200">|</span>
+            <div class="flex items-center gap-2">
+                <FaCalendarAlt className="text-ochre-600"/>
+                <time datetime={post.data.pubDate.toISOString()}>
+                    {formatDate(post.data.pubDate)}
+                </time>
+            </div>
+        </div>
+
+        {post.data.tags && post.data.tags.length > 0 && (
+          <div class="flex flex-wrap gap-2 mb-8">
+            {post.data.tags.map((tag) => (
+              <span class="bg-ink-50 text-ink-600 border border-ink-100 text-[10px] uppercase font-bold px-3 py-1 rounded-sm tracking-wider">
+                {tag}
+              </span>
+            ))}
+          </div>
+        )}
+
+       <div class="prose prose-lg prose-headings:!font-main-header prose-headings:uppercase prose-headings:text-ink-950 prose-p:text-ink-600 prose-a:text-ochre-600 prose-strong:text-ink-900 max-w-none">
+          <Content />
+        </div>
+        <div class="mt-12 pt-8 border-t border-ink-100">
+            <h3 class="font-main-header text-xl text-ink-950 uppercase mb-4">Share Intel</h3>
+            <div class="flex gap-4">
+                <a
+                    href={`https://twitter.com/intent/tweet?text=${encodeURIComponent(post.data.title)}&url=${encodeURIComponent(Astro.url.toString())}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="w-10 h-10 rounded-sm bg-ink-900 text-white flex items-center justify-center hover:bg-ochre-600 transition-colors duration-300"
+                >
+                    <FaTwitter />
+                </a>
+                <a
+                    href={`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(Astro.url.toString())}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="w-10 h-10 rounded-sm bg-ink-900 text-white flex items-center justify-center hover:bg-ochre-600 transition-colors duration-300"
+                >
+                    <FaFacebookF />
+                </a>
+                <a
+                    href={`https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(Astro.url.toString())}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="w-10 h-10 rounded-sm bg-ink-900 text-white flex items-center justify-center hover:bg-ochre-600 transition-colors duration-300"
+                >
+                    <FaLinkedinIn />
+                </a>
+            </div>
+        </div>
+
+      </div>
+
+    </div>
+  </article>
+
+  {relatedPosts.length > 0 && (
+    <section class="py-20 bg-ink-950 px-4 border-t border-ink-900">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-12">
+                <span class="text-ochre-600 font-bold uppercase tracking-widest text-sm mb-2 block">
+                    Continue Briefing
+                </span>
+                <h2 class="text-3xl md:text-4xl !font-main-header text-ink-50 uppercase tracking-wide">
+                    Related Articles
+                </h2>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                {relatedPosts.map((relatedPost) => (
+                    <div class="h-full">
+                        <BlogFeedSectionCard blogEntry={relatedPost} class="h-full" />
+                    </div>
+                ))}
+            </div>
+        </div>
+    </section>
+  )}
+
+  <FinalCTASection data={finalCtaData} />
+
+</BaseLayout>

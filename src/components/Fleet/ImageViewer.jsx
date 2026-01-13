@@ -93,12 +93,6 @@ const VisualTourGallery = ({ images }) => {
           >
             <FaTimes size={30} />
           </button>
-
-          {/* Image Wrapper 
-              - 'relative' allows absolute positioning of buttons inside it.
-              - 'max-w/max-h' constraints ensure it fits in viewport.
-              - 'group' allows hovering ONLY on the image to trigger buttons.
-          */}
           <div 
             className="relative max-w-[90vw] max-h-[90vh] group"
             onClick={(e) => e.stopPropagation()} 
