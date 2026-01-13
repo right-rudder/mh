@@ -1,7 +1,7 @@
 ---
 title: "Multi-Engine Rating"
 description: "The only multi-engine training program within 100 miles, offering competitive rates, modern avionics, and exceptional availability."
-order: 2
+order: 3
 image: "/src/assets/instructing/mh-aviation-instructing-student-01.jpg"
 alt: "Multi-Engine Flight Training"
 top: true

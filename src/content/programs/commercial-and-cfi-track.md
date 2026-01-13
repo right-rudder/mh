@@ -1,7 +1,7 @@
 ---
 title: "Commercial & Flight Instructor Track"
 description: "A comprehensive pathway from Private to CFII, utilizing our modern fleet and experienced mentorship to prepare you for a professional career."
-order: 3
+order: 2
 image: "/src/assets/instructing/mh-aviation-instructing-student-02.jpg"
 alt: "Commercial and CFI Training"
 top: true
