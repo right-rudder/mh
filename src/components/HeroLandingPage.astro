@@ -24,7 +24,7 @@ const { data } = Astro.props;
 ---
 
 <section
-  class="pt-40 pb-20 hero-section relative overflow-hidden flex justify-center items-center lg:items-end lg:pb-30 text-white min-h-[100vh]"
+  class="pt-40 pb-20 hero-section relative overflow-hidden flex justify-center items-center lg:items-end lg:pb-30 text-white min-h-[80vh]"
   aria-label="Hero section"
 >
   <div class="absolute inset-0 -z-20 w-full h-full">
@@ -36,7 +36,7 @@ const { data } = Astro.props;
         <ImageComp
           src={img.src}
           alt={img.alt}
-          class={`w-full h-full object-cover animate-super-slow-zoom ${img.imageCentering || "object-left lg:object-center"}`}
+          class={`w-full h-full object-cover ${data.images.length > 1 ? "animate-super-slow-zoom" : ""} ${img.imageCentering || "object-left lg:object-center"}`}
           loading={index === 0 ? "eager" : "lazy"}
           quality={100}
         />

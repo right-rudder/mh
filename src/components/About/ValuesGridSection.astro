@@ -1,0 +1,75 @@
+---
+import { FaHeart, FaShieldAlt, FaComments, FaPlane } from "react-icons/fa";
+
+interface Props {
+  data: {
+    eyebrow: string;
+    title: string;
+    values: {
+      title: string;
+      text: string;
+    }[];
+  };
+}
+
+const { data } = Astro.props;
+
+const getIcon = (index: number) => {
+  switch (index) {
+    case 0: return FaHeart;
+    case 1: return FaShieldAlt;
+    case 2: return FaComments;
+    case 3: return FaPlane;
+    default: return FaHeart;
+  }
+};
+---
+
+<section class="py-16 md:py-24 bg-ink-950 text-white">
+  <div class="max-w-7xl mx-auto px-5 md:px-8 lg:px-12">
+    
+    <div class="text-center max-w-3xl mx-auto mb-16 reveal-fade opacity-0 translate-y-8 transition-all duration-1000 ease-out">
+      <span class="text-ochre-600 font-bold uppercase tracking-widest text-sm">
+        {data.eyebrow}
+      </span>
+      <h2 class="title !text-[2.5rem] uppercase !font-main-header tracking-wide !text-ink-50 mt-2" set:html={data.title}></h2>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+      {data.values.map((item, index) => {
+        const Icon = getIcon(index);
+        return (
+          <div 
+            class="bg-ink-900/50 p-8 border border-ink-800 rounded-sm hover:border-ochre-600 hover:-translate-y-2 transition-all duration-300 group reveal-card opacity-0 translate-y-8"
+            style={`transition-delay: ${index * 150}ms`}
+          >
+            <div class="mb-6 inline-block p-3 rounded-full bg-ink-800 text-ochre-600 group-hover:bg-ochre-600 group-hover:text-white transition-colors duration-300">
+              <Icon className="text-2xl" />
+            </div>
+            <h3 class="text-xl font-bold text-white mb-4 group-hover:text-ochre-500 transition-colors">
+              {item.title}
+            </h3>
+            <p class="text-ink-300 text-sm leading-relaxed">
+              {item.text}
+            </p>
+          </div>
+        );
+      })}
+    </div>
+
+  </div>
+</section>
+
+<script>
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.remove('opacity-0', 'translate-y-8');
+        entry.target.classList.add('opacity-100', 'translate-y-0');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1 });
+
+  document.querySelectorAll('.reveal-fade, .reveal-card').forEach((el) => observer.observe(el));
+</script>
