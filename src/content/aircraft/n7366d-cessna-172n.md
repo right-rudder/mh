@@ -8,11 +8,11 @@ images:
   - src: "/src/assets/fleet/N7366D/mh-aviation-cessna-172n-aircraft-at-lancaster-california.webp"
     alt: "N7366D Cessna 172N taxiing at Fox Field"
   - src: "/src/assets/fleet/N7366D/mh-aviation-piper-standard-analog-six-pack-panel-aircraft-at-lancaster-california.webp"
-    alt: "Side profile of the Cessna 172N"
+    alt: "Cockpit view of Cessna 172N N7366D"
   - src: "/src/assets/fleet/N7366D/mh-aviation-cessna-172n-aircraft-front-of-hangar-at-lancaster-california.webp"
-    alt: "Cockpit view of N7366D"
+    alt: "Side front view of the Cessna 172N N7366D"
   - src: "/src/assets/fleet/N7366D/mh-aviation-cessna-172n-aircraft-front-of-hangar-backview-at-lancaster-california.webp"
-    alt: "Cockpit view of N7366D"
+    alt: "Side back view of the Cessna 172N N7366D"
 specifications:
   engine: "Lycoming O-320 Series"
   horsepower: 180

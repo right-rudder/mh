@@ -13,20 +13,6 @@ const crewCollection = defineCollection({
   }),
 });
 
-// const programsCollection = defineCollection({
-//   type: "content",
-//   schema: z.object({
-//     title: z.string(),
-//     description: z.string(),
-//     duration: z.string(),
-//     cost: z.string().optional(),
-//     image: z.string(),
-//     order: z.number().optional(),
-//     highlights: z.array(z.string()).optional(),
-//     requirements: z.array(z.string()).optional(),
-//   }),
-// });
-
 const programsCollection = defineCollection({
   type: "content",
   schema: z.object({
