@@ -5,13 +5,13 @@ import HeroGeneralPages from "../../components/HeroGeneralPages.astro";
 import FinalCTASection from "../../components/FinalCTASection.astro";
 import { PHONE_NUMBER } from "../../data/consts";
 
-import ImageViewer from "../../components/Fleet/ImageViewer.jsx"
+// Import the new React Component
+import ImageViewer from "../../components/Fleet/ImageViewer.astro"
 
+// Icons
 import { FaTachometerAlt, FaUsers, FaPlane, FaWeightHanging, FaCogs, FaCheck } from "react-icons/fa";
 import { IoMdPhotos } from "react-icons/io";
-import MaintenancePhilosophy from "../../components/Fleet/MaintenancePhilosophy.astro";
-import LocationSectionBlack from "../../components/LocationSectionBlack.astro";
-
+// 1. Generate Static Paths for all aircraft
 export async function getStaticPaths() {
   const aircraftEntries = await getCollection("aircraft");
   return aircraftEntries.map((entry) => ({
@@ -20,18 +20,22 @@ export async function getStaticPaths() {
   }));
 }
 
+// 2. Get Data from Props
 const { entry } = Astro.props;
 const { data } = entry;
 
+// 3. Prepare Hero Data (Using the first image)
 const firstImage = data.images && data.images.length > 0 ? data.images[0] : null;
 const heroData = {
   images: firstImage ? [firstImage] : [],
   title: data.name || "Our Aircraft",
-  subTitle: `<span class="text-ochre-600 bg-ink-950 border-l-2 border-ochre-600 py-2 px-3">Tail Number: ${data.tailNumber}</span>`,
+  subTitle: `<span class=\"text-ochre-500\ bg-ink-950 border-l-2 border-ochre-600 py-2 px-3">Tail Number: ${data.tailNumber}</span>`,
 };
- 
+
+// 4. Prepare Gallery Images (Exclude the first one used in Hero)
 const galleryImages = data.images && data.images.length > 1 ? data.images.slice(1) : [];
- 
+
+// 5. Meta Data
 const metaProps = {
   siteTitle: `${data.name} (${data.tailNumber}) | MH Aviation`,
   siteDescription: data.description || `Detailed specifications and features for our ${data.name}.`,
@@ -51,31 +55,23 @@ const finalCtaData = {
     alt: "Student pilot preparing for flight",
   },
 };
-
-const locationData = {
-  eyebrow: "Strategic Location",
-  headline: "Train Where The<br> Skies Are Clear",
-  bodyCopy:
-    "Located at Gen. William Fox Airfield (KWJF) in Lancaster, CA. Enjoy the scenic high desert views and learn to master real-world wind conditions without the heavy congestion of busy city airports.",
-};
 ---
 
 <BaseLayout {...metaProps}>
   <HeroGeneralPages data={heroData} />
 
-  <section class="py-16 md:py-24 bg-ink-50 px-4 overflow-hidden">
+  <section class="py-16 md:py-24 bg-ink-50 px-4">
     <div class="max-w-7xl mx-auto">
       <div class="flex flex-col lg:flex-row gap-12 lg:gap-20">
-        
         <div class="lg:w-7/12 order-2 lg:order-1">
-          
           <div class="mb-8 reveal-element opacity-0 translate-y-8 transition-all duration-1000 ease-out">
-            <span class="text-ochre-600 font-bold uppercase tracking-widest text-sm block">
+            <span class="text-ochre-600 font-bold uppercase tracking-widest text-sm mb-2 block">
               Aircraft Profile
             </span>
             <h2 class="text-3xl md:text-4xl !font-main-header text-ink-950 uppercase tracking-wide">
               {data.model}
             </h2>
+            <div class="h-1 w-20 bg-ochre-600 mt-4 rounded-full"></div>
           </div>
 
           <div class="prose prose-lg text-ink-600 mb-12 leading-relaxed reveal-element opacity-0 translate-y-8 transition-all duration-1000 ease-out delay-100">
@@ -84,7 +80,7 @@ const locationData = {
 
           {data.features && (
             <div class="mb-12 reveal-element opacity-0 translate-y-8 transition-all duration-1000 ease-out delay-200">
-              <h3 class="text-xl text-ink-950 !font-main-header uppercase tracking-wide mb-6 flex items-center gap-3">
+              <h3 class="text-xl font-main-header text-ink-950 !font-main-header uppercase tracking-wide mb-6 flex items-center gap-3">
                 <FaCogs className="text-ochre-600" />
                 Key Equipment & Features
               </h3>
@@ -102,12 +98,12 @@ const locationData = {
           )}
 
           {galleryImages.length > 0 && (
-            <div class="mt-16 reveal-element opacity-0 translate-y-8 transition-all duration-1000 ease-out delay-300">
-               <h3 class="text-xl !font-main-header text-ink-950 uppercase tracking-wide mb-6 flex items-center gap-3">
-                <IoMdPhotos className="text-ochre-600" />
+            <div class="mt-16">
+               <h3 class="text-xl !font-main-header text-ink-950 uppercase tracking-wide flex items-center gap-3 mb-6 reveal-element opacity-0 translate-y-8 transition-all duration-1000 ease-out delay-300">
+                <IoMdPhotos className="text-ochre-600"/>
                 Visual Tour
               </h3>
-              <ImageViewer client:load images={galleryImages} />
+              <ImageViewer images={galleryImages} />
             </div>
           )}
         </div>
@@ -207,8 +203,7 @@ const locationData = {
       </div>
     </div>
   </section>
-    <MaintenancePhilosophy/>
-  <LocationSectionBlack data={locationData}/>
+
   <FinalCTASection data={finalCtaData} />
 </BaseLayout>
 
@@ -217,10 +212,10 @@ const locationData = {
     const observerOptions = {
       root: null,
       rootMargin: '0px',
-      threshold: 0.1 
+      threshold: 0.1
     };
 
-    const observer = new IntersectionObserver((entries, observer) => {
+    const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
           entry.target.classList.remove('opacity-0', 'translate-y-8');
