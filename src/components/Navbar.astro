@@ -62,7 +62,7 @@ const { pathname } = Astro.props;
 
 <nav id="navbar" class="navbar font-ubuntu">
   <div class="container px-4 md:px-0">
-    <a class="hover:cursor-pointer object-contain h-auto mx-auto lg:mx-0">
+    <a href="/" class="hover:cursor-pointer object-contain h-auto mx-auto lg:mx-0">
       <ImageComp
         class="mx-4 w-24 md:w-24"
         src={LOGO_ASSETS}
@@ -108,13 +108,13 @@ const { pathname } = Astro.props;
             class={`menu-item ${item.children ? "has-children" : ""}`}
             data-index={index}
           >
-            <a class="hover:cursor-pointer" target={item.url.includes("http") ? "_blank" : ""}>{item.label}</a>
+            <a class="hover:cursor-pointer" href={item.url} target={item.url.includes("http") ? "_blank" : ""}>{item.label}</a>
             {item.children && (
               <ul class="sub-menu">
                 {item.children.map((child) => (
                   <li>
                     <a
-                     
+                     href={child.url}
                       target={child.url.includes("http") ? "_blank" : ""}
                       class={
                         (child.url === pathname ||

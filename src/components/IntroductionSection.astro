@@ -37,8 +37,10 @@ const { title, subtitle, description, imageCentering, image, cta } = Astro.props
         
         {
           cta && (
-            <div class="flex justify-center gap-4 w-full">
+            <div class="flex justify-start max-w-[200px] gap-4 w-full">
               <a
+                href={cta.href}
+                target={cta.href.includes("http") ? "_blank" : ""}
                 class="w-full btn-primary text-center shadow uppercase !px-6 max-w-sm hover:cursor-pointer"
               >
                 {cta.text}

@@ -164,17 +164,23 @@ const programsCollection = defineCollection({
 const aircraftCollection = defineCollection({
   type: "content",
   schema: z.object({
-    name: z.string(),
-    model: z.string(),
-    description: z.string(),
+    name: z.string().optional(),
+    model: z.string().optional(),
+    description: z.string().optional(),
     tailNumber: z.string().optional(),
-    image: z.string(),
+    images: z.array(
+      z.object({
+        src: z.string(),
+        alt: z.string(),
+      })
+    ).optional(),
     specifications: z
       .object({
-        engines: z.number().optional(),
+        engine: z.string().optional(),
+        horsepower: z.number().optional(),
         seats: z.number().optional(),
-        range: z.string().optional(),
         cruiseSpeed: z.string().optional(),
+        maxWeight: z.string().optional(),
       })
       .optional(),
     features: z.array(z.string()).optional(),

@@ -35,7 +35,7 @@ const { data } = Astro.props;
     <h2 class="title !text-[2.5rem] uppercase !font-main-header tracking-wide !text-ink-50 mb-6" set:html={data.headline} />
     <p class="font-sans font-medium text-ink-50 mb-10 max-w-2xl mx-auto" set:html={data.bodyCopy} />
     <div class="flex justify-center">
-      <a  class="btn-primary hover:cursor-pointer">
+      <a href={data.cta.href} target={data.cta.href.includes("http") ? "_blank" : ""} class="btn-primary hover:cursor-pointer">
         {data.cta.text}
       </a>
     </div>

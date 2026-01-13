@@ -1,0 +1,79 @@
+---
+import { getCollection } from "astro:content";
+import FleetOverviewSectionCard from "./FleetOverviewSectionCard.astro";
+import { FaArrowRight } from "react-icons/fa";
+
+interface Props {
+  all?: boolean;
+}
+
+const { all = false } = Astro.props;
+
+const allAircraft = await getCollection("aircraft");
+const sortedAircraft = allAircraft.sort((a, b) => {
+  return (a.data.order || 99) - (b.data.order || 99);
+});
+
+const displayedAircraft = all ? sortedAircraft : sortedAircraft.slice(0, 4);
+---
+
+<section class="py-20 md:py-32 bg-ink-50 overflow-hidden">
+  <div class="max-w-7xl mx-auto px-5 md:px-8 lg:px-12">
+    
+    <div class="text-center max-w-3xl mx-auto mb-16 reveal-text opacity-0 translate-y-4 transition-all duration-1000 ease-in-out">
+      <span class="text-ochre-600 font-bold uppercase tracking-widest text-sm block">
+        Our Fleet
+      </span>
+      <h2 class="title text-[2.5rem] md:text-[3.5rem] uppercase !font-main-header tracking-wide text-ink-950">
+        Modern Aircraft,<br> Excellence Standard
+      </h2>
+      <p class="mt-6 text-lg text-ink-600">
+        We maintain our aircraft to FAA Part 145 standards, <br>ensuring you train in the safest, most reliable fleet in the valley.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      {displayedAircraft.map((aircraft, index) => (
+        <div 
+          class="reveal-card opacity-0 translate-y-12 transition-all duration-1000 ease-[cubic-bezier(0.4,0,0.2,1)]"
+          style={`transition-delay: ${index * 150}ms;`}
+        >
+          <FleetOverviewSectionCard aircraft={aircraft} />
+        </div>
+      ))}
+    </div>
+
+    {!all && (
+      <div class="mt-16 text-center reveal-text opacity-0 translate-y-4 transition-all duration-1000 ease-in-out delay-500">
+        <a href="/fleet" class="inline-flex items-center justify-center px-8 py-4 bg-ochre-600 text-white font-bold uppercase tracking-widest text-sm hover:bg-ochre-700 transition-colors duration-300 rounded-sm group">
+          Meet Our Full Fleet
+          <FaArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" />
+        </a>
+      </div>
+    )}
+
+  </div>
+</section>
+
+<script>
+  const observerOptions = {
+    threshold: 0.1,
+    rootMargin: '0px 0px -50px 0px'
+  };
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        const reveals = entry.target.querySelectorAll('.reveal-card, .reveal-text');
+        reveals.forEach((el) => {
+          el.classList.remove('opacity-0', 'translate-y-12', 'translate-y-4');
+          el.classList.add('opacity-100', 'translate-y-0');
+        });
+        observer.unobserve(entry.target);
+      }
+    });
+  }, observerOptions);
+
+  const section = document.querySelector('section.bg-ink-50');
+  if (section) observer.observe(section);
+</script>

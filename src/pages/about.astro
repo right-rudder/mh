@@ -1,6 +1,5 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
-import HeroLandingPage from "../components/HeroLandingPage.astro";
 import IntroductionSection from "../components/IntroductionSection.astro";
 import HistoryTimelineSection from "../components/About/HistoryTimelineSection.astro";
 import TeamGridSection from "../components/About/TeamGridSection.astro";
@@ -11,6 +10,8 @@ import { PHONE_NUMBER } from "../data/consts";
 import MissionPrecisionSection from "../components/About/MissionPrecisionSection.astro";
 import RepairStationSection from "../components/About/RepairStationSection.astro";
 import LocationSection from "../components/LocationSection.astro";
+import FleetOverviewSection from "../components/Fleet/FleetOverviewSection.astro";
+import HeroGeneralPages from "../components/HeroGeneralPages.astro";
 
 const heroData = {
   images: [
@@ -52,6 +53,10 @@ const introData = {
     alt: "MH Aviation founders and current owners",
   },
   imageCentering: "object-center",
+    cta: {
+    text: "Enroll With Us",
+    href: "/enroll"
+  }
 };
 
 const historyData = {
@@ -121,38 +126,22 @@ const teamData = {
     {
       name: "Jeff Haney",
       role: "President",
+      imageSrc: "/src/assets/crew/mh-aviation-crew-member-jeff-haney.webp",
     },
     {
       name: "Jessica Haney",
       role: "Vice President",
-    },
-    {
-      name: "Mike Haney",
-      role: "Founder & Chief Inspector",
+      imageSrc: "/src/assets/crew/mh-aviation-crew-member-jessica-haney.webp",
     },
     {
       name: "Palomo Olmedo",
       role: "Shop Lead",
-    },
-    {
-      name: "Arminta Bishop",
-      role: "Office Manager",
-    },
-    {
-      name: "Michael Graves",
-      role: "Maintenance Technician",
-    },
-    {
-      name: "Bubba Ocegueda",
-      role: "Shop Hand",
+      imageSrc: "/src/assets/crew/mh-aviation-crew-member-palomo-olmedo.webp",
     },
     {
       name: "Wyatt Evan",
       role: "Supervisor of All Things",
-    },
-    {
-      name: "Weston Dean",
-      role: "Supervisor in Training",
+      imageSrc: "/src/assets/crew/mh-aviation-crew-member-wyatt-evan.webp",
     }
   ]
 };
@@ -225,7 +214,7 @@ const metaProps = {
 ---
 
 <BaseLayout {...metaProps}>
-  <HeroLandingPage data={heroData} />
+  <HeroGeneralPages data={heroData} />
   <MissionPrecisionSection data={missionData}/>
   <IntroductionSection {...introData} />
   <HistoryTimelineSection data={historyData} />
@@ -233,6 +222,7 @@ const metaProps = {
   <TeamGridSection data={teamData} />
   <RepairStationSection data={repairStationData}/>
   <FacilityFeatureSection data={facilityData} />
+  <FleetOverviewSection all={false}/>
   <LocationSection data={locationData}/>
   <FinalCTASection data={finalCtaData} />
 </BaseLayout>
