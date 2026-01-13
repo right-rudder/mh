@@ -6,7 +6,7 @@ import TeamGridSection from "../components/About/TeamGridSection.astro";
 import ValuesGridSection from "../components/About/ValuesGridSection.astro";
 import FacilityFeatureSection from "../components/About/FacilityFeatureSection.astro";
 import FinalCTASection from "../components/FinalCTASection.astro";
-import { PHONE_NUMBER } from "../data/consts";
+import { COMPANY_NAME, PHONE_NUMBER } from "../data/consts";
 import MissionPrecisionSection from "../components/About/MissionPrecisionSection.astro";
 import RepairStationSection from "../components/About/RepairStationSection.astro";
 import LocationSection from "../components/LocationSection.astro";
@@ -207,9 +207,9 @@ const finalCtaData = {
 };
  
 const metaProps = {
-  siteTitle: "About MH Aviation | Family-Owned Flight School & Maintenance",
-  siteDescription: "Learn about MH Aviation's history at Fox Field. Family-owned since 1988, offering FAA Part 145 maintenance, flight training, and fueling services.",
-  siteKeywords: "MH Aviation history, Jeff Haney, Jessica Haney, flight school Lancaster CA, Fox Field maintenance, family owned aviation business"
+  siteTitle: `About ${COMPANY_NAME} | Family-Owned Flight School & Maintenance`,
+  siteDescription: `Learn about ${COMPANY_NAME}'s history at Fox Field. Family-owned since 1988, offering FAA Part 145 maintenance, flight training, and fueling services.`,
+  siteKeywords: `${COMPANY_NAME} history, Jeff Haney, Jessica Haney, flight school Lancaster CA, Fox Field maintenance, family owned aviation business`
 };
 ---
 

@@ -1,0 +1,131 @@
+---
+import { FaTachometerAlt, FaUsers, FaPlane } from "react-icons/fa";
+import ImageComp from "../ImageComp.astro";
+
+interface Props {
+  aircraft: {
+    slug: string;
+    data: {
+      name?: string;
+      model?: string;
+      description?: string;
+      tailNumber?: string;
+      images?: { src: string; alt: string }[];
+      specifications?: {
+        horsepower?: number;
+        seats?: number;
+        cruiseSpeed?: string;
+      };
+      features?: string[];
+    };
+  };
+}
+
+const { aircraft } = Astro.props;
+const { data } = aircraft;
+const uniqueId = `list-carousel-${data.tailNumber || Math.random().toString(36).substr(2, 9)}`;
+---
+
+<a 
+  href={`/aircraft/${aircraft.slug}`}
+  class="group relative block bg-white rounded-sm overflow-hidden border-x border-b border-ink-200 border-t-4 border-t-ink-200 hover:border-ochre-600 hover:border-t-ochre-600 transition-all duration-300 shadow-sm hover:shadow-xl hover:-translate-y-1 w-full flex flex-col md:flex-row"
+>
+  
+  <div class="relative w-full md:w-3/4 aspect-video md:aspect-auto min-h-[300px] overflow-hidden bg-ink-900" id={uniqueId}>
+    {data.images && data.images.length > 0 ? (
+      data.images.map((img, index) => (
+        <div 
+          class={`absolute inset-0 w-full h-full transition-opacity duration-1000 ease-in-out ${index === 0 ? 'opacity-100' : 'opacity-0'} carousel-item`}
+          data-index={index}
+        >
+          <ImageComp 
+            src={img.src} 
+            alt={img.alt} 
+            class="w-full h-full object-cover"
+          />
+          <div class="absolute inset-0 bg-gradient-to-t from-ink-950/60 to-transparent opacity-60"></div>
+        </div>
+      ))
+    ) : (
+      <div class="flex items-center justify-center h-full text-ink-400">No Image Available</div>
+    )}
+
+    <div class="absolute top-4 left-4 md:left-auto md:right-4 bg-ochre-600 text-white text-xs font-bold px-3 py-1 rounded-sm uppercase tracking-wider shadow-lg z-10">
+      {data.tailNumber}
+    </div>
+  </div>
+
+  <div class="p-6 flex flex-col w-full md:w-1/4 border-l border-ink-100 bg-white">
+    <div class="mb-4">
+      <h3 class="text-xl font-main-header text-ink-950 uppercase tracking-wide mb-1 group-hover:text-ochre-600 transition-colors duration-300 leading-tight">
+        {data.name}
+      </h3>
+      <p class="text-[10px] font-bold text-ochre-600 uppercase tracking-widest">
+        {data.model}
+      </p>
+    </div>
+
+    <div class="flex flex-col gap-3 border-y border-ink-100 py-4 mb-4">
+      <div class="flex items-center justify-between">
+        <div class="flex items-center gap-2">
+            <FaTachometerAlt className="text-ochre-600 text-xs" />
+            <span class="text-[10px] text-ink-400 uppercase tracking-wider">Speed</span>
+        </div>
+        <span class="text-ink-900 font-bold text-sm">{data.specifications?.cruiseSpeed || "N/A"}</span>
+      </div>
+      
+      <div class="flex items-center justify-between">
+        <div class="flex items-center gap-2">
+            <FaPlane className="text-ochre-600 text-xs" />
+            <span class="text-[10px] text-ink-400 uppercase tracking-wider">HP</span>
+        </div>
+        <span class="text-ink-900 font-bold text-sm">{data.specifications?.horsepower || "N/A"}</span>
+      </div>
+
+      <div class="flex items-center justify-between">
+        <div class="flex items-center gap-2">
+            <FaUsers className="text-ochre-600 text-xs" />
+            <span class="text-[10px] text-ink-400 uppercase tracking-wider">Seats</span>
+        </div>
+        <span class="text-ink-900 font-bold text-sm">{data.specifications?.seats || "N/A"}</span>
+      </div>
+    </div>
+
+    <p class="text-ink-600 text-xs leading-relaxed mb-6 line-clamp-4 md:line-clamp-none">
+      {data.description}
+    </p>
+
+    {data.features && (
+      <div class="mt-auto flex flex-wrap gap-2">
+        {data.features.slice(0, 3).map(feature => (
+          <span class="bg-ink-50 text-ink-600 border border-ink-100 text-[9px] uppercase font-bold px-2 py-1 rounded-sm group-hover:text-ochre-600 group-hover:border-ochre-600 transition-colors duration-300">
+            {feature}
+          </span>
+        ))}
+      </div>
+    )} 
+  </div>
+  
+</a>
+
+<script define:vars={{ uniqueId }}>
+  document.addEventListener('DOMContentLoaded', () => {
+    const container = document.getElementById(uniqueId);
+    if (!container) return;
+
+    const items = container.querySelectorAll('.carousel-item');
+    if (items.length <= 1) return;
+
+    let currentIndex = 0;
+    
+    setInterval(() => {
+      items[currentIndex].classList.remove('opacity-100');
+      items[currentIndex].classList.add('opacity-0');
+      
+      currentIndex = (currentIndex + 1) % items.length;
+      
+      items[currentIndex].classList.remove('opacity-0');
+      items[currentIndex].classList.add('opacity-100');
+    }, 4000); 
+  });
+</script>

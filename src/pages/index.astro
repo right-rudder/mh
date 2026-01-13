@@ -2,7 +2,7 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 import ValueProposition from "../components/ValueProposition.astro";
 import Testimonials from "../components/Testimonials.astro";
-import { PHONE_NUMBER, AIRPORT, AIRPORT_CODE } from "../data/consts";
+import { PHONE_NUMBER, AIRPORT, AIRPORT_CODE, COMPANY_NAME } from "../data/consts";
 import HeroLandingPage from "../components/HeroLandingPage.astro";
 import BlogFeed from "../components/Blog/BlogFeed.astro";
 import IntroductionSection from "../components/IntroductionSection.astro";
@@ -312,9 +312,9 @@ const mentorshipData = {
 };
 
 const metaProps = {
-  siteTitle: "MH Aviation | Professional Pilot Training in North Carolina",
-  siteDescription: "Visit MH Aviation at Wayne Executive Jetport. Contact our team to schedule a tour, discuss financing, or start your professional flight training journey.",
-  siteKeywords: "contact  Aviation, flight school tour, pilot training info, Wayne Executive Jetport address,  phone number, aviation academy North Carolina"
+  siteTitle: `${COMPANY_NAME} | Professional Pilot Training in North Carolina`,
+  siteDescription: `Visit ${COMPANY_NAME}  at ${AIRPORT}. Contact our team to schedule a tour, discuss financing, or start your professional flight training journey.`,
+  siteKeywords: `contact ${COMPANY_NAME} , flight school tour, pilot training info, ${AIRPORT} address,  phone number, aviation academy North Carolina`
 };
 ---
 

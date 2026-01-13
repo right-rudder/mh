@@ -1,0 +1,91 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import { getCollection } from "astro:content";
+import FleetIndexCard from "../../components/Fleet/FleetIndexCard.astro";
+import HeroGeneralPages from "../../components/HeroGeneralPages.astro";
+import FinalCTASection from "../../components/FinalCTASection.astro";
+import { PHONE_NUMBER } from "../../data/consts";
+import LocationSectionBlack from "../../components/LocationSectionBlack.astro";
+import MaintenancePhilosophy from "../../components/Fleet/MaintenancePhilosophy.astro";
+
+const aircraft = await getCollection("aircraft");
+const sortedAircraft = aircraft.sort(
+  (a, b) => (a.data.order || 999) - (b.data.order || 999)
+);
+
+const heroData = {
+  images: [
+    {
+    src: "/src/assets/fleet/mh-aviation-hangar-two-aircraft-hangar-front-at-lancaster-california.webp",
+    alt: "Flight Training Programs",
+  }
+  ],
+  title: "Our Fleet",
+  subTitle:
+    "Train in our well-maintained fleet of modern aircraft equipped with the latest avionics.",
+};
+
+const metaProps = {
+  siteTitle: "Our Training Fleet | MH Aviation",
+  siteDescription: "Explore our exceptionally maintained aircraft. From technologically advanced single-engine trainers to multi-engine aircraft, our fleet is built for professional mastery.",
+  siteKeywords: " Aviation fleet, training aircraft, multi-engine trainer, single-engine airplane, TAA aircraft, flight school fleet North Carolina, aircraft maintenance"
+};
+
+
+const locationData = {
+  eyebrow: "Strategic Location",
+  headline: "Train Where The<br> Skies Are Clear",
+  bodyCopy:
+    "Located at Gen. William Fox Airfield (KWJF) in Lancaster, CA. Enjoy the scenic high desert views and learn to master real-world wind conditions without the heavy congestion of busy city airports.",
+};
+
+const finalCtaData = {
+  eyebrow: "Ready to Fly?",
+  headline: "Your Aviation Journey<br>Begins Here",
+  bodyCopy:
+    "Whether you are looking for your first flight, aircraft maintenance,<br> or fueling services, MH Aviation is ready to serve you.",
+  cta: {
+    text: "Schedule a Visit",
+    subtext: `Call us directly at ${PHONE_NUMBER}`,
+  },
+  image: {
+    src: "/src/assets/instructing/mh-aviation-instructing-on-top-of-plane.jpg",
+    alt: "Runway view at sunset",
+  },
+};
+---
+
+<BaseLayout {...metaProps} >
+  <HeroGeneralPages data={heroData} />
+
+  <section class="py-16 md:py-24 px-4 bg-ink-50">
+    <div class="max-w-5xl mx-auto">
+      
+      <div class="text-center mb-16">
+        <span class="text-ochre-600 font-bold uppercase tracking-widest text-sm block mb-2">
+          Excellence in Maintenance
+        </span>
+        <h1 class="text-3xl md:text-4xl lg:text-5xl !font-main-header text-ink-950 uppercase tracking-wide">
+          Meet The Fleet
+        </h1>
+        <p class="text-lg text-ink-600 mt-4 max-w-2xl mx-auto">
+          Every aircraft in our line is maintained to FAA Part 145 standards, ensuring safety and reliability for every flight hour.
+        </p>
+      </div>
+
+      <div class="flex flex-col gap-8">
+        {
+          sortedAircraft.map((plane) => (
+            <div class="w-full">
+          <FleetIndexCard aircraft={plane} />
+        </div>
+          ))
+        }
+      </div>
+
+    </div>
+  </section>
+  <MaintenancePhilosophy/>
+  <LocationSectionBlack data={locationData}/>
+  <FinalCTASection data={finalCtaData}/>
+</BaseLayout>
