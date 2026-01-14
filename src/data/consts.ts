@@ -61,9 +61,9 @@ export const LOCATION_KEYWORDS = {
 // Brand Assets
 // ==============================
 
-export const OG_IMAGE = "/MH Aviation.png";
+export const OG_IMAGE = "/og-image.png";
 export const FAVICON = "/favicon.png";
-export const LOGO = "/-logo.png"; // CONTEXT MISSING
+export const LOGO = "/MH Aviation.png";
 
 export const LOGO_ASSETS = "/src/assets/brand/MH Aviation.png";
 export const LOGO_ASSETS_ALTERNATIVE = "/src/assets/brand/MH Aviation Alternative.png";
@@ -100,7 +100,7 @@ export const INSTAGRAM_URL = "https://www.instagram.com/mhaviationinc"; // CONTE
 export const LINKEDIN_URL = ""; // CONTEXT MISSING
 export const X_URL = ""; // CONTEXT MISSING
 export const YOUTUBE_URL = ""; // CONTEXT MISSING
-export const YELP_URL = ""; // CONTEXT MISSING
+export const YELP_URL = "https://www.yelp.com/biz/mh-aviation-lancaster";
 export const GITHUB_URL = ""; // CONTEXT MISSING
       
 // ==============================
