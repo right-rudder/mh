@@ -1,0 +1,289 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { EMAIL_ADDRESS, PHONE_NUMBER } from "../data/consts";
+import HeroGeneralPages from "../components/HeroGeneralPages.astro";
+
+const heroData = {
+  images: [
+    {
+      src: "/src/assets/facilities/mh-aviation-facilities-front.jpg",
+      alt: "Privacy Policy",
+      imageCentering: "object-center"
+    }
+  ],
+  title: "Privacy Policy",
+  subTitle:
+    "Your privacy is important to us. Learn how we collect, use, and protect your personal information at MH Aviation.",
+};
+
+const lastUpdated = "January 14, 2026";
+---
+
+<BaseLayout
+  siteTitle="Privacy Policy | MH Aviation"
+  siteDescription="MH Aviation's privacy policy. Learn how we collect, use, and protect your personal information."
+>
+  <HeroGeneralPages data={heroData} />
+
+  <section class="py-16 md:py-24 bg-white">
+    <div class="max-w-4xl mx-auto px-5 md:px-8 lg:px-12">
+      <div class="mb-8 border-b border-ink-100 pb-8">
+        <p class="text-sm text-ink-500">
+          <strong>Last Updated:</strong>
+          {lastUpdated}
+        </p>
+      </div>
+
+      <div class="prose prose-lg max-w-none text-ink-600">
+        <div class="mb-12">
+          <p class="leading-relaxed">
+            MH Aviation ("we," "our," or "us") is committed to
+            protecting your privacy. This Privacy Policy explains how we
+            collect, use, disclose, and safeguard your information when you
+            visit our website, enroll in our flight training programs, schedule maintenance services, or interact with our
+            FBO operations at Gen. William Fox Airfield (KWJF).
+          </p>
+          <p class="leading-relaxed mt-4">
+            Please read this privacy policy carefully. If you do not agree with
+            the terms of this privacy policy, please do not access the site or
+            use our services.
+          </p>
+        </div>
+
+        <div class="mb-12">
+          <h2 class="text-2xl font-bold !font-main-header text-ink-950 uppercase tracking-wide mb-6">
+            Information We Collect
+          </h2>
+
+          <h3 class="text-xl font-bold text-ink-900 mb-3 mt-6">
+            Personal Information
+          </h3>
+          <p class="leading-relaxed mb-4">
+            We may collect personal information that you voluntarily provide to
+            us when you:
+          </p>
+          <ul class="list-disc pl-6 space-y-2 marker:text-ochre-600">
+            <li>Fill out contact forms or enrollment applications</li>
+            <li>Request information about our flight training or maintenance services</li>
+            <li>Subscribe to our newsletter or communications</li>
+            <li>Enroll in our Professional Pilot programs</li>
+            <li>Contact us via phone, email, or in person at our Lancaster facility</li>
+          </ul>
+
+          <p class="leading-relaxed mt-4">
+            This personal information may include:
+          </p>
+          <ul class="list-disc pl-6 space-y-2 marker:text-ochre-600">
+            <li>Name and contact information (email, phone, physical address)</li>
+            <li>Date of birth and citizenship status (for TSA/FAA compliance)</li>
+            <li>Aviation background, logbook hours, and certifications</li>
+            <li>FAA Medical Certificate information</li>
+            <li>Payment and billing information</li>
+            <li>Government-issued identification (Driver's License, Passport)</li>
+            <li>
+              Any other information you choose to provide in communications with
+              us
+            </li>
+          </ul>
+
+          <h3 class="text-xl font-bold text-ink-900 mb-3 mt-6">
+            Automatically Collected Information
+          </h3>
+          <p class="leading-relaxed mb-4">
+            When you visit our website, we may automatically collect certain
+            information about your device and browsing behavior, including:
+          </p>
+          <ul class="list-disc pl-6 space-y-2 marker:text-ochre-600">
+            <li>IP address and geographic location</li>
+            <li>Browser type and version</li>
+            <li>Operating system</li>
+            <li>Pages viewed regarding our fleet or services</li>
+            <li>Referring website addresses</li>
+            <li>Date and time of visits</li>
+          </ul>
+        </div>
+
+        <div class="mb-12">
+          <h2 class="text-2xl font-bold !font-main-header text-ink-950 uppercase tracking-wide mb-6">
+            How We Use Your Information
+          </h2>
+          <p class="leading-relaxed mb-4">
+            We use the information we collect to:
+          </p>
+          <ul class="list-disc pl-6 space-y-2 marker:text-ochre-600">
+            <li>
+              Process enrollment applications and manage student records
+            </li>
+            <li>Coordinate aircraft maintenance schedules and logbook entries</li>
+            <li>Communicate with you about lesson scheduling and weather updates</li>
+            <li>Respond to your inquiries regarding rates and availability</li>
+            <li>Process payments and manage invoicing</li>
+            <li>Improve our website, training curriculum, and FBO amenities</li>
+            <li>Comply with FAA, TSA, and other legal obligations</li>
+            <li>Send relevant aviation updates and marketing communications (with your consent)</li>
+            <li>Prevent fraud and enhance facility security</li>
+          </ul>
+        </div>
+
+        <div class="mb-12">
+          <h2 class="text-2xl font-bold !font-main-header text-ink-950 uppercase tracking-wide mb-6">
+            Information Sharing and Disclosure
+          </h2>
+          <p class="leading-relaxed mb-4">
+            We may share your information in the following circumstances:
+          </p>
+
+          <h3 class="text-xl font-bold text-ink-900 mb-3 mt-6">
+            Service Providers
+          </h3>
+          <p class="leading-relaxed mb-4">
+            We may share your information with third-party service providers who
+            perform services on our behalf, such as:
+          </p>
+          <ul class="list-disc pl-6 space-y-2 marker:text-ochre-600">
+            <li>Flight scheduling software providers</li>
+            <li>Payment processing gateways</li>
+            <li>Website hosting and analytics services</li>
+            <li>Email and communication platforms</li>
+            <li>Customer relationship management (CRM) systems</li>
+          </ul>
+
+          <h3 class="text-xl font-bold text-ink-900 mb-3 mt-6">
+            Regulatory and Legal Compliance
+          </h3>
+          <p class="leading-relaxed mb-4">
+            As a regulated aviation entity, we may disclose your information when required to:
+          </p>
+          <ul class="list-disc pl-6 space-y-2 marker:text-ochre-600">
+            <li>
+              Comply with FAA (Federal Aviation Administration) regulations and reporting
+            </li>
+            <li>
+              Comply with TSA (Transportation Security Administration) requirements for flight training
+            </li>
+            <li>Respond to legal processes or government requests</li>
+            <li>Enforce our terms and conditions</li>
+            <li>Protect the safety of our students, staff, and fleet</li>
+          </ul>
+
+          <h3 class="text-xl font-bold text-ink-900 mb-3 mt-6">
+            Financing Partners
+          </h3>
+          <p class="leading-relaxed">
+            With your explicit consent, we may share necessary training and cost information with our
+            financing partners, such as <strong>Stratus Financial</strong>, to facilitate loan
+            applications for your flight training.
+          </p>
+        </div>
+
+        <div class="mb-12">
+          <h2 class="text-2xl font-bold !font-main-header text-ink-950 uppercase tracking-wide mb-6">
+            Cookies and Tracking
+          </h2>
+          <p class="leading-relaxed mb-4">
+            We use cookies and similar tracking technologies to collect and
+            track information about your use of our website. Cookies are small
+            data files stored on your device.
+          </p>
+
+          <ul class="list-disc pl-6 space-y-2 marker:text-ochre-600">
+            <li>
+              <strong>Essential Cookies:</strong> Necessary for the website to function
+              properly
+            </li>
+            <li>
+              <strong>Analytics Cookies:</strong> Help us understand how visitors
+              use our website
+            </li>
+            <li>
+              <strong>Functional Cookies:</strong> Remember your preferences and settings
+            </li>
+          </ul>
+
+          <p class="leading-relaxed mt-4">
+            You can control cookies through your browser settings. However,
+            disabling cookies may affect your ability to use certain features of
+            our website.
+          </p>
+        </div>
+
+        <div class="mb-12">
+          <h2 class="text-2xl font-bold !font-main-header text-ink-950 uppercase tracking-wide mb-6">Data Security</h2>
+          <p class="leading-relaxed mb-4">
+            We implement appropriate technical and organizational security
+            measures to protect your personal information from unauthorized
+            access, disclosure, alteration, or destruction. These measures
+            include:
+          </p>
+          <ul class="list-disc pl-6 space-y-2 marker:text-ochre-600">
+            <li>Secure SSL/TLS encryption for data transmission</li>
+            <li>Regular security assessments</li>
+            <li>Restricted access to student and maintenance records</li>
+            <li>Secure storage and backup systems</li>
+          </ul>
+          <p class="leading-relaxed mt-4">
+            However, please note that no method of transmission over the
+            Internet or electronic storage is 100% secure. While we strive to
+            protect your information, we cannot guarantee absolute security.
+          </p>
+        </div>
+
+        <div class="mb-12">
+          <h2 class="text-2xl font-bold !font-main-header text-ink-950 uppercase tracking-wide mb-6">Contact Us</h2>
+          <p class="leading-relaxed mb-6">
+            If you have questions or concerns about this Privacy Policy or our
+            privacy practices, please contact us:
+          </p>
+
+          <div class="bg-ink-50 rounded-sm p-8 border-l-4 border-ochre-600 shadow-lg">
+            <p class="text-ink-950 font-bold uppercase tracking-widest text-lg mb-4">MH Aviation</p>
+            <div class="space-y-3 text-ink-700">
+              <p>
+                <strong class="text-ink-950">Address:</strong><br />
+                Gen. William Fox Airfield (KWJF)<br />
+                4651 William J Barnes Avenue<br />
+                Lancaster, California 93536
+              </p>
+              <p>
+                <strong class="text-ink-950">Phone:</strong>
+                <a
+                  href={`tel:${PHONE_NUMBER}`}
+                  class="text-ochre-600 hover:text-ochre-700 font-medium ml-1"
+                >
+                  {PHONE_NUMBER}
+                </a>
+              </p>
+              <p>
+                <strong class="text-ink-950">Email:</strong>
+                <a
+                  href={`mailto:${EMAIL_ADDRESS}`}
+                  class="text-ochre-600 hover:text-ochre-700 font-medium ml-1"
+                >
+                  {EMAIL_ADDRESS}
+                </a>
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div
+          class="bg-ink-950 text-white border-l-4 border-ochre-600 p-8 rounded-r-sm mt-12 shadow-2xl"
+        >
+          <p class="font-bold text-lg mb-2 uppercase tracking-wide text-ochre-500">Your Consent</p>
+          <p class="text-ink-200">
+            By using our website and services, you consent to our Privacy Policy
+            and agree to its terms. If you do not agree with this policy, please
+            discontinue use of our website and services.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .prose h2 {
+    border-bottom: 1px solid #e5e7eb;
+    padding-bottom: 0.75rem;
+  }
+</style>
