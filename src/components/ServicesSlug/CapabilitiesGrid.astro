@@ -1,0 +1,77 @@
+---
+import { FaWrench, FaCogs, FaPlane, FaClipboardCheck } from "react-icons/fa";
+
+interface Props {
+  data: {
+    upperheader: string;
+    title: string;
+    description?: string;
+    serviceList: {
+      title: string;
+      description: string;
+      icon?: string;
+    }[];
+  };
+}
+
+const { data } = Astro.props;
+
+// Simple icon mapper
+const getIcon = (iconName?: string) => {
+  if (iconName?.includes('inspect')) return FaClipboardCheck;
+  if (iconName?.includes('repair')) return FaWrench;
+  if (iconName?.includes('avionics')) return FaCogs;
+  return FaPlane;
+};
+---
+
+<section class="py-20 md:py-24 bg-ink-950 text-white relative overflow-hidden">
+  <div class="max-w-7xl mx-auto px-5 md:px-8 lg:px-12 relative z-10">
+    
+    <div class="max-w-3xl mb-16 reveal-header opacity-0 translate-y-8 transition-all duration-1000 ease-out">
+      <span class="text-ochre-500 font-bold uppercase tracking-widest text-sm mb-3 block">
+        {data.upperheader}
+      </span>
+      <h2 class="text-3xl md:text-4xl !font-main-header uppercase tracking-wide mb-6">
+        {data.title}
+      </h2>
+      {data.description && (
+        <p class="text-ink-200 text-lg leading-relaxed">{data.description}</p>
+      )}
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      {data.serviceList.map((service, index) => {
+        const Icon = getIcon(service.title.toLowerCase());
+        return (
+          <div 
+            class="bg-ink-900/50 border border-ink-800 p-8 rounded-sm hover:border-ochre-600 transition-colors duration-300 group reveal-card opacity-0 translate-y-8"
+            style={`transition-delay: ${index * 100}ms`}
+          >
+            <div class="mb-6 text-ochre-600 text-2xl bg-ink-950 w-12 h-12 flex items-center justify-center rounded-sm shadow-md group-hover:bg-ochre-600 group-hover:text-white transition-all">
+              <Icon />
+            </div>
+            <h3 class="text-xl font-bold text-white mb-3">{service.title}</h3>
+            <p class="text-ink-300 text-sm leading-relaxed">
+              {service.description}
+            </p>
+          </div>
+        );
+      })}
+    </div>
+
+  </div>
+</section>
+
+<script>
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.remove('opacity-0', 'translate-y-8');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1 });
+
+  document.querySelectorAll('.reveal-header, .reveal-card').forEach((el) => observer.observe(el));
+</script>

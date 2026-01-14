@@ -1,0 +1,104 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import { getCollection } from "astro:content";
+import HeroGeneralPages from "../../components/HeroGeneralPages.astro";
+import FinalCTASection from "../../components/FinalCTASection.astro";
+import { PHONE_NUMBER } from "../../data/consts";
+import ServicesOverviewSectionCard from "../../components/Services/ServicesOverviewSectionCard.astro";
+import LocationSectionBlack from "../../components/LocationSectionBlack.astro";
+import MaintenancePhilosophy from "../../components/Fleet/MaintenancePhilosophy.astro";
+
+const servicesEntries = await getCollection("services");
+const sortedServices = servicesEntries.sort((a, b) => {
+  return (a.data.order || 99) - (b.data.order || 99);
+});
+
+const heroData = {
+  images: [
+    {
+      src: "/src/assets/facilities/mh-aviation-facilities-front.jpg",
+      alt: "MH Aviation Maintenance Hangar and FBO",
+    },
+  ],
+  title: "Expert Aviation Services",
+  subTitle: "From FAA Part 145 certified maintenance to premier FBO fueling. We provide the professional infrastructure that powers your flight.",
+};
+
+const finalCtaData = {
+  eyebrow: "Service Excellence",
+  headline: "Experience the<br>MH Difference",
+  bodyCopy:
+    "Whether you need an annual inspection, a quick turn on fuel, or aircraft management, our family-owned team is ready to serve.",
+  cta: {
+    text: "Contact Us",
+    href: "/contact",
+    subtext: `Call us at ${PHONE_NUMBER}`,
+  },
+  image: {
+    src: "/src/assets/old-website/crew-repairing-aircraft.webp",
+    alt: "Mechanics working on aircraft engine",
+  },
+};
+
+const locationData = {
+  eyebrow: "Visit Us",
+  headline: "Fox Field's<br> Premier Hub",
+  bodyCopy:
+    "Located at Gen. William Fox Airfield (KWJF). We offer easy ramp access, pilot amenities, and immediate maintenance support for transient and based aircraft.",
+};
+
+const metaProps = {
+  siteTitle: "Aviation Maintenance & FBO Services | MH Aviation",
+  siteDescription: "FAA Part 145 Repair Station and Full-Service FBO at Fox Field (KWJF). Maintenance, Avionics, Fueling, and Aircraft Management.",
+  siteKeywords: "Aircraft Maintenance Lancaster, FBO Fox Field, Part 145 Repair Station, MH Fuels, Aircraft Management"
+};
+---
+
+<BaseLayout {...metaProps}>
+  
+  <HeroGeneralPages data={heroData} />
+
+  <section class="py-16 md:py-32 bg-ink-50 min-h-screen px-4 overflow-hidden">
+    <div class="max-w-7xl mx-auto">
+      
+      <div class="max-w-3xl mx-auto text-center mb-20 reveal-text opacity-0 translate-y-8 transition-all duration-1000 ease-out">
+        <span class="text-ochre-600 font-bold uppercase tracking-widest text-sm mb-2 block">
+          One-Stop Aviation Hub
+        </span>
+        <h2 class="title text-[2.5rem] md:text-[4rem] uppercase !font-main-header tracking-wide text-ink-950 leading-[1.1]">
+          Total Aircraft <br/>Care & Support
+        </h2>
+        <p class="mt-8 text-xl text-ink-600 leading-relaxed">
+          At MH Aviation, we anchor the community with our <strong class="text-ochre-600">FAA Part 145 Repair Station (#MHAR0094E)</strong> and full-service FBO. We ensure <strong class="text-ochre-600">safety, compliance, and comfort</strong> for every pilot that lands on our ramp.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-16">
+        {sortedServices.map((service, index) => (
+          <ServicesOverviewSectionCard service={service} index={index} />
+        ))}
+      </div>
+
+    </div>
+  </section>
+  <MaintenancePhilosophy/>
+  <LocationSectionBlack data={locationData}/>
+  <FinalCTASection data={finalCtaData} />
+
+</BaseLayout>
+
+<script>
+  const observerOptions = { threshold: 0.1 };
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.remove('opacity-0', 'translate-y-8');
+        entry.target.classList.add('opacity-100', 'translate-y-0');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, observerOptions);
+
+  document.querySelectorAll('.reveal-text, .program-card').forEach((el) => observer.observe(el));
+</script>

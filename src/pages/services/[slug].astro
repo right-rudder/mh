@@ -1,0 +1,117 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import { getCollection } from "astro:content";
+import type { CollectionEntry } from "astro:content";
+
+// Layout Components
+import HeroGeneralPages from "../../components/HeroGeneralPages.astro";
+import FinalCTASection from "../../components/FinalCTASection.astro";
+
+// Service Specific Components
+import ServiceOverview from "../../components/ServicesSlug/ServiceOverview.astro";
+import CapabilitiesGrid from "../../components/ServicesSlug/CapabilitiesGrid.astro";
+import TrustAndLegacy from "../../components/ServicesSlug/TrustAndLegacy.astro";
+import EcosystemPartners from "../../components/ServicesSlug/EcosystemPartners.astro";
+import { PHONE_NUMBER } from "../../data/consts";
+import OperationalStandards from "../../components/ServicesSlug/OperationalStandards.astro";
+import FAQ from "../../components/ProgramsSlug/FAQ.astro";
+import MaintenancePhilosophy from "../../components/Fleet/MaintenancePhilosophy.astro";
+import LocationSectionBlack from "../../components/LocationSectionBlack.astro";
+
+export const getStaticPaths = (async () => {
+  const services = await getCollection("services");
+  return services.map((service) => ({
+    params: { slug: service.slug },
+    props: { service },
+  }));
+});
+
+type Props = {
+  service: CollectionEntry<"services">;
+};
+
+const { service } = Astro.props;
+const { data } = service;
+
+const heroData = {
+  images: [
+    {
+      src: data.image || "/src/assets/instructing/mh-aviation-instructing-student-how-to-repair-at-lancaster-california.webp",
+      alt: data.alt || data.title,
+    },
+  ],
+  title: data.title,
+  subTitle: data.description,
+};
+
+const locationData = {
+  eyebrow: "Visit Us",
+  headline: "Fox Field's<br> Premier Hub",
+  bodyCopy:
+    "Located at Gen. William Fox Airfield (KWJF). We offer easy ramp access, pilot amenities, and immediate maintenance support for transient and based aircraft.",
+};
+
+const finalCtaData = {
+  eyebrow: "Ready to Fly?",
+  headline: "Your Aviation Journey<br>Begins Here",
+  bodyCopy:
+    "Whether you are looking for your first flight, aircraft maintenance,<br> or fueling services, MH Aviation is ready to serve you.",
+  cta: {
+    text: "Schedule a Visit",
+    subtext: `Call us directly at ${PHONE_NUMBER}`,
+    href: "/contact"
+  },
+  image: {
+    src: "/src/assets/instructing/mh-aviation-instructing-on-top-of-plane.jpg",
+    alt: "Runway view at sunset",
+  },
+};
+---
+
+<BaseLayout
+  siteTitle={`${data.title} | MH Aviation`}
+  siteDescription={data.description}
+>
+  <HeroGeneralPages data={heroData} />
+
+  <ServiceOverview 
+    data={data.serviceOverview} 
+    pricingRange={data.pricingRange} 
+  />
+
+  <CapabilitiesGrid data={data.capabilities} />
+
+  <TrustAndLegacy data={data.trustAndLegacy} />
+
+  <OperationalStandards data={data.operationalStandards} />
+
+  <EcosystemPartners data={data.integratedEcosystem} />
+  {
+    data.faq && (
+      <FAQ data={data.faq} />
+    )
+  }
+  <MaintenancePhilosophy/>
+  <LocationSectionBlack data={locationData}/>
+  <FinalCTASection data={finalCtaData} />
+
+
+</BaseLayout>
+
+<script>
+  const observerOptions = {
+    threshold: 0.1,
+    rootMargin: '0px 0px -50px 0px'
+  };
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.remove('opacity-0', 'translate-y-8');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, observerOptions);
+
+  document.querySelectorAll('.reveal-section').forEach((el) => observer.observe(el));
+</script>

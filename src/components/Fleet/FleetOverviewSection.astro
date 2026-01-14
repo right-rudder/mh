@@ -1,20 +1,27 @@
 ---
+/* src/components/FleetOverviewSection.astro */
 import { getCollection } from "astro:content";
 import FleetOverviewSectionCard from "./FleetOverviewSectionCard.astro";
 import { FaArrowRight } from "react-icons/fa";
 
 interface Props {
   all?: boolean;
+  includeOrders?: number[];
 }
 
-const { all = false } = Astro.props;
+const { 
+  all = false, 
+  includeOrders = [1, 2, 3] 
+} = Astro.props;
 
 const allAircraft = await getCollection("aircraft");
-const sortedAircraft = allAircraft.sort((a, b) => {
-  return (a.data.order || 99) - (b.data.order || 99);
-});
 
-const displayedAircraft = all ? sortedAircraft : sortedAircraft.slice(0, 4);
+const displayedAircraft = allAircraft
+  .filter((aircraft) => {
+    if (all) return true;
+    return includeOrders.includes(aircraft.data.order);
+  })
+  .sort((a, b) => (a.data.order || 99) - (b.data.order || 99));
 ---
 
 <section class="py-20 md:py-32 bg-ink-50 overflow-hidden">

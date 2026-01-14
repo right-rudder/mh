@@ -3,7 +3,6 @@ import { defineCollection, z } from "astro:content";
 const programsCollection = defineCollection({
   type: "content",
   schema: z.object({
-    // Standard metadata
     title: z.string().optional(),
     description: z.string().optional(),
     pricingRange: z.string().optional(),
@@ -12,8 +11,6 @@ const programsCollection = defineCollection({
     alt: z.string().optional(),
     reverse: z.boolean().optional(),
     top: z.boolean().optional(),
-
-    // 1. Introduction Section
     programIntroduction: z.object({
       title: z.string().optional(),
       upperheader: z.string().optional(),
@@ -28,8 +25,6 @@ const programsCollection = defineCollection({
         requirements: z.array(z.string()).optional()
       }).optional()
     }).optional(),
-
-    //  Training Environment/Expectations
     programExpectations: z.object({
       title: z.string(),
       upperheader: z.string().optional(),
@@ -38,16 +33,12 @@ const programsCollection = defineCollection({
       descriptionParagraphs: z.array(z.string()),
       listItems: z.array(z.string()).optional()
     }).optional(),
-
-    // 2. First CTA Section
     firstCTA: z.object({
       mainImage: z.string().optional(),
       title: z.string().optional(),
       upperheader: z.string().optional(),
       descriptionParagraphs: z.array(z.string()).optional(),
     }).optional(),
-
-    // 3. What is Included Section
     whatIsIncluded: z.object({
       mainImage: z.string().optional(),
       title: z.string().optional(),
@@ -58,8 +49,6 @@ const programsCollection = defineCollection({
         items: z.array(z.string())
       })).optional()
     }).optional(),
-
-    // 4. Why Us Section
     whyUs: z.object({
       title: z.string().optional(),
       upperheader: z.string().optional(),
@@ -71,8 +60,6 @@ const programsCollection = defineCollection({
       closingTitle: z.string().optional(),
       closingDescriptionParagraphs: z.array(z.string()).optional(),
     }).optional(),
-
-    //  Career/Incentives (Incentive-Based Progression)
     careerPathways: z.object({
       title: z.string(),
       upperheader: z.string().optional(),
@@ -82,15 +69,11 @@ const programsCollection = defineCollection({
       opportunities: z.array(z.string()),
       disclaimer: z.string().optional()
     }).optional(),
-
-    //  Target Audience (Who This Program Is For)
     targetAudience: z.object({
       title: z.string(),
       items: z.array(z.string()),
       notFor: z.string().optional()
     }).optional(),
-
-    // 5. Training Progression Section
     trainingProgression: z.object({
       title: z.string().optional(),
       upperheader: z.string().optional(),
@@ -101,8 +84,6 @@ const programsCollection = defineCollection({
       })).optional(),
       outcome: z.string().optional()
     }).optional(),
-
-    //  Enrollment Process (How to Get Started)
     enrollmentProcess: z.object({
       title: z.string(),
       upperheader: z.string().optional(),
@@ -112,8 +93,6 @@ const programsCollection = defineCollection({
         description: z.string()
       }))
     }).optional(),
-
-    // 6. FAQ Section
     faq: z.object({
       title: z.string().optional(),
       upperheader: z.string().optional(),
@@ -122,8 +101,6 @@ const programsCollection = defineCollection({
         answer: z.string()
       })).optional()
     }).optional(),
-
-    // 7. Final CTA Section
     finalCTA: z.object({
       mainImage: z.string().optional(),
       mainImageAlt: z.string().optional(),
@@ -138,6 +115,82 @@ const programsCollection = defineCollection({
   }),
 });
 
+const servicesCollection = defineCollection({
+  type: "content",
+  schema: z.object({
+    title: z.string(),
+    description: z.string(),
+    image: z.string().optional(),
+    alt: z.string().optional(),
+    order: z.number().optional(),
+    pricingRange: z.string().optional(),
+    serviceOverview: z.object({
+      upperheader: z.string(),
+      title: z.string(),
+      image: z.string().optional(),
+      alt: z.string().optional(),
+      mainParagraphs: z.array(z.string()),
+      stats: z.array(z.object({
+        value: z.string(),
+        label: z.string(),
+      })).optional(),
+    }),
+    capabilities: z.object({
+      upperheader: z.string(),
+      title: z.string(),
+      description: z.string().optional(),
+      serviceList: z.array(z.object({
+        title: z.string(),
+        description: z.string(),
+        icon: z.string().optional(),
+      })),
+    }),
+    trustAndLegacy: z.object({
+      upperheader: z.string(),
+      title: z.string(),
+      storyParagraphs: z.array(z.string()),
+      quote: z.string().optional(),
+      quoteAuthor: z.string().optional(),
+      image: z.string().optional(),
+      alt: z.string().optional(),
+      badges: z.array(z.string()).optional(),
+    }),
+    operationalStandards: z.object({
+      upperheader: z.string(),
+      title: z.string(),
+      mainImage: z.string(),
+      features: z.array(z.string()),
+      aogNote: z.string().optional(),
+    }),
+    integratedEcosystem: z.object({
+      upperheader: z.string(),
+      title: z.string(),
+      description: z.string(),
+      partners: z.array(z.object({
+        name: z.string(),
+        role: z.string(),
+        description: z.string(),
+        href: z.string().optional()
+      })),
+    }),
+    faq: z.object({
+      title: z.string().optional(),
+      upperheader: z.string().optional(),
+      qnas: z.array(z.object({
+        question: z.string(),
+        answer: z.string()
+      })).optional()
+    }).optional(),
+    finalCTA: z.object({
+      mainImage: z.string().optional(),
+      title: z.string().optional(),
+      upperheader: z.string().optional(),
+      descriptionParagraphs: z.array(z.string()).optional(),
+      mainButtonText: z.string().optional(),
+      mainButtonLink: z.string().optional(),
+    }).optional(),
+  }),
+});
 
 const aircraftCollection = defineCollection({
   type: "content",
@@ -182,6 +235,7 @@ const blogCollection = defineCollection({
 
 export const collections = {
   programs: programsCollection,
+  services: servicesCollection,
   aircraft: aircraftCollection,
   blog: blogCollection,
 };

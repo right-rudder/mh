@@ -1,14 +1,20 @@
 ---
 import ImageComp from "./ImageComp.astro";
-import { LOGO_ASSETS, LOGO_ASSETS_ALTERNATIVE } from "../data/consts";
+import { LOGO_ASSETS } from "../data/consts";
 import { getCollection } from "astro:content";
 import type { CollectionEntry } from "astro:content";
 
 type Program = CollectionEntry<"programs">;
+type Service = CollectionEntry<"services">;
 
 const programs = await getCollection("programs");
 const sortedPrograms = programs.sort(
   (a: Program, b: Program) => (a.data.order || 999) - (b.data.order || 999)
+);
+
+const services = await getCollection("services");
+const sortedServices = services.sort(
+  (a: Service, b: Service) => (a.data.order || 999) - (b.data.order || 999)
 );
 
 export type MenuItem = {
@@ -36,10 +42,6 @@ export const menu: MenuItem[] = [
       { label: "Our Blog", url: "/blog" },
     ],
   },
-  {
-    label: "Maintenance & FBO",
-    url: "/about"
-  },
 ];
 
 export const footerMenu: MenuItem[] = [
@@ -59,7 +61,6 @@ export const footerMenu: MenuItem[] = [
 
 const { pathname } = Astro.props;
 ---
-
 <nav id="navbar" class="navbar font-ubuntu">
   <div class="container px-4 md:px-0">
     <a href="/" class="hover:cursor-pointer object-contain h-auto mx-auto lg:mx-0">
@@ -76,7 +77,7 @@ const { pathname } = Astro.props;
           <li
             class={`menu-item ${sortedPrograms.length >= 1 ? "has-children" : ""}`}
           >
-            <a href={`/${sortedPrograms[0].collection}`} class="hover:cursor-pointer">{sortedPrograms[0].collection}</a>
+            <a href={`/${sortedPrograms[0].collection}`} class="hover:cursor-pointer">Programs</a>
             {sortedPrograms.length >= 1 ? (
               <ul class="sub-menu">
                 {sortedPrograms.map((program: Program) => (
@@ -92,6 +93,36 @@ const { pathname } = Astro.props;
                       }
                     >
                       {program.data.title}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            ) : (
+              ""
+            )}
+          </li>
+        )
+      }
+      {
+        sortedServices && (
+          <li
+            class={`menu-item ${sortedServices.length >= 1 ? "has-children" : ""}`}
+          >
+            <a href="/services" class="hover:cursor-pointer">Maintenance & FBO</a>
+            {sortedServices.length >= 1 ? (
+              <ul class="sub-menu">
+                {sortedServices.map((service: Service) => (
+                  <li>
+                    <a
+                      href={`/services/${service.slug}`}
+                      class={
+                        (`/services/${service.slug}` === pathname ||
+                          `/services/${service.slug}/` === pathname)
+                          ? "menu-link-hover hover:cursor-pointer"
+                          : "hover:cursor-pointer"
+                      }
+                    >
+                      {service.data.title}
                     </a>
                   </li>
                 ))}
@@ -136,7 +167,7 @@ const { pathname } = Astro.props;
     </ul>
 
     <div class="buttons">
-      <a  class="btn-primary !text-md hover:cursor-pointer">
+      <a href="/contact" class="btn-primary !text-md hover:cursor-pointer">
         CONTACT US
       </a>
     </div>
@@ -185,7 +216,7 @@ const { pathname } = Astro.props;
                 {sortedPrograms.map((program: Program) => (
                   <li>
                     <a
-                      
+                      href={`/programs/${program.slug}`}
                       class={
                         (`/programs/${program.slug}` === pathname ||
                           `/programs/${program.slug}/` === pathname) &&
@@ -206,6 +237,34 @@ const { pathname } = Astro.props;
         )
       }
       {
+        sortedServices && (
+          <li class="mobile-item">
+            <a class="hover:cursor-pointer">Maintenance & FBO</a>
+            {sortedServices.length >= 1 ? (
+              <ul class="mobile-submenu">
+                {sortedServices.map((service: Service) => (
+                  <li>
+                    <a
+                      href={`/services/${service.slug}`}
+                      class={
+                        (`/services/${service.slug}` === pathname ||
+                          `/services/${service.slug}/` === pathname)
+                          ? "menu-link-hover hover:cursor-pointer"
+                          : "hover:cursor-pointer"
+                      }
+                    >
+                      {service.data.title}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            ) : (
+              ""
+            )}
+          </li>
+        )
+      }
+      {
         menu.map((item, index) => (
           <li class="mobile-item" data-index={index}>
             <a class="hover:cursor-pointer ">{item.label}</a>
@@ -214,7 +273,7 @@ const { pathname } = Astro.props;
                 {item.children.map((child) => (
                   <li>
                     <a
-                     
+                      href={child.url}
                       class={
                         (child.url === pathname ||
                           child.url + "/" === pathname) &&

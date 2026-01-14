@@ -1,0 +1,91 @@
+---
+import ImageWithGradientAndText from "../ImageWithGradientAndText.astro";
+import { FaQuoteLeft } from "react-icons/fa";
+
+interface Props {
+  data: {
+    upperheader: string;
+    title: string;
+    storyParagraphs: string[];
+    quote?: string;
+    quoteAuthor?: string;
+    image?: string;
+    alt?: string;
+    badges?: string[];
+  };
+}
+
+const { data } = Astro.props;
+---
+
+<section class="py-20 md:py-24 bg-white overflow-hidden">
+  <div class="max-w-7xl mx-auto px-5 md:px-8 lg:px-12">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+      
+      <div class="order-2 lg:order-1 reveal-text opacity-0 translate-y-8 transition-all duration-1000 ease-out">
+        <span class="text-ochre-600 font-bold uppercase tracking-widest text-sm mb-3 block">
+          {data.upperheader}
+        </span>
+        <h2 class="text-3xl md:text-4xl !font-main-header text-ink-950 uppercase tracking-wide mb-8" set:html= {data.title}>
+        </h2>
+        
+        <div class="space-y-6 text-ink-600 text-lg leading-relaxed mb-10">
+          {data.storyParagraphs.map(p => <p set:html={p} />)}
+        </div>
+
+        {data.badges && (
+          <div class="flex flex-wrap gap-4 mt-8">
+            {data.badges.map(badge => (
+              <span class="inline-flex items-center px-4 py-2 bg-ink-100 text-ink-800 text-xs font-bold uppercase tracking-widest rounded-sm border border-ink-200">
+                {badge}
+              </span>
+            ))}
+          </div>
+        )}
+      </div>
+
+      <div class="order-1 lg:order-2 relative h-[500px] lg:h-[600px] rounded-sm overflow-hidden shadow-2xl group reveal-image opacity-0 translate-x-8 transition-all duration-1000 ease-out">
+        
+        <ImageWithGradientAndText
+          src={data.image || "/src/assets/instructing/mh-aviation-instructing-student-03.jpg"}
+          alt={data.alt || "MH Aviation Trust and Legacy"}
+          class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+        />
+        
+        <div class="absolute inset-0 bg-gradient-to-t from-ink-950/95 via-ink-950/30 to-transparent pointer-events-none"></div>
+
+        {data.quote && (
+            <div class="absolute bottom-0 left-0 w-full p-8 md:p-10 z-10">
+                
+                <p class="text-white bg-ink-300/20 text-base py-1 font-medium italic leading-relaxed mb-6 border-l-4 border-ochre-600 pl-4 opacity-95">
+                    "{data.quote}"
+                </p>
+                
+                {data.quoteAuthor && (
+                    <div class="flex items-center gap-3 pl-5">
+                        <div class="h-px w-8 bg-ochre-500/60"></div>
+                        <cite class="text-ochre-400 font-bold uppercase tracking-widest text-xs not-italic">
+                            {data.quoteAuthor}
+                        </cite>
+                    </div>
+                )}
+            </div>
+        )}
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<script>
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.remove('opacity-0', 'translate-y-8', 'translate-x-8');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1 });
+
+  document.querySelectorAll('.reveal-text, .reveal-image').forEach((el) => observer.observe(el));
+</script>

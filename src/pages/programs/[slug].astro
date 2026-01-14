@@ -15,6 +15,8 @@ import TimelineProgression from "../../components/ProgramsSlug/TimelineProgressi
 import CareerPathways from "../../components/ProgramsSlug/CareerPathways.astro";
 import EnrollmentProcess from "../../components/ProgramsSlug/EnrollmentProcess.astro";
 import FAQ from "../../components/ProgramsSlug/FAQ.astro";
+import FinalCTASection from "../../components/FinalCTASection.astro";
+import { PHONE_NUMBER } from "../../data/consts";
 
 
 export const getStaticPaths = (async () => {
@@ -41,6 +43,21 @@ const heroData = {
   ],
   title: data.title || "Flight Training Program",
   subTitle: data.description || "Professional pilot training in Lancaster, CA.",
+};
+
+const finalCtaData = {
+  eyebrow: "Fly This Aircraft",
+  headline: "Ready for Takeoff?",
+  bodyCopy: "Schedule your flight training or rental block with this aircraft today.",
+  cta: {
+    text: "Enroll Now",
+    href: "/enroll",
+    subtext: `Call us at ${PHONE_NUMBER}`,
+  },
+  image: {
+    src: "/src/assets/instructing/mh-aviation-instructing-on-top-of-plane.jpg",
+    alt: "Student pilot preparing for flight",
+  },
 };
 
 const metaProps = {
@@ -93,7 +110,7 @@ const metaProps = {
   {data.faq && (
     <FAQ data={data.faq} />
   )}
-
+  <FinalCTASection data={finalCtaData} />
 </BaseLayout>
 
 <script>
