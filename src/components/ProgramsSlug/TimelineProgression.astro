@@ -55,7 +55,7 @@ const { data } = Astro.props;
 
             <div class={`w-full md:w-1/2 pl-12 md:pl-0 ${index % 2 === 0 ? 'md:pr-16' : 'md:pl-16'}`}>
               <div class={`bg-ink-900/80 backdrop-blur-sm p-8 rounded-sm border-l-4 border-ink-800 hover:border-ochre-600 transition-all duration-500 transform opacity-0 timeline-card ${index % 2 === 0 ? '-translate-x-12' : 'translate-x-12'}`}>
-                <h4 class="text-2xl font-main-header text-white mb-6 tracking-wide">{phase.phaseTitle}</h4>
+                <h4 class="text-2xl !font-main-header text-white mb-6 tracking-wide">{phase.phaseTitle}</h4>
                 <ul class="space-y-3">
                   {phase.phaseBulletPoints.map(point => (
                     <li class="text-sm text-ink-200 flex items-start gap-3 group">

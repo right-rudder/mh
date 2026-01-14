@@ -2,6 +2,8 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 import { EMAIL_ADDRESS, LOCATIONS, PHONE_NUMBER } from "../data/consts";
 import HeroGeneralPages from "../components/HeroGeneralPages.astro";
+import FinalCTASection from "../components/FinalCTASection.astro";
+import MaintenancePhilosophy from "../components/Fleet/MaintenancePhilosophy.astro";
 
 const CONTACT_FORM_WEBHOOK_URL = import.meta.env.CONTACT_FORM_WEBHOOK_URL;
 const PORTAL_API_KEY = import.meta.env.PORTAL_API_KEY;
@@ -29,6 +31,21 @@ const heroData = {
   ],
   title: "Contact Us",
   subTitle: "Whether you are ready to fly, need maintenance, or just have a question, our family-owned team is here to help.",
+};
+
+const finalCtaData = {
+  eyebrow: "Want To Enroll already?",
+  headline: "Enroll With Us Now",
+  bodyCopy: "If you'd prefer to start with your enrollment already, click the button bellow",
+  cta: {
+    text: "Enroll Now",
+    href: "/enroll",
+    subtext: `Or call us at ${PHONE_NUMBER}`,
+  },
+  image: {
+    src: "/src/assets/facilities/mh-aviation-facilities-front.jpg",
+    alt: "MH Aviation Facility",
+  },
 };
 
 const metaProps = {
@@ -195,7 +212,7 @@ const metaProps = {
 
         <div class="flex flex-col justify-between">
           <div>
-            <h2 class="text-3xl font-main-header text-ink-950 uppercase tracking-wide mb-8">
+            <h2 class="text-3xl !font-main-header text-ink-950 uppercase tracking-wide mb-8">
               Contact Information
             </h2>
 
@@ -291,9 +308,9 @@ const metaProps = {
     </div>
   </section>
 
-  <section class="py-16 bg-white border-t border-ink-100">
+  <section class="py-16 bg-ink-50">
     <div class="max-w-7xl mx-auto px-5 md:px-8 lg:px-12 text-center">
-      <h2 class="text-3xl font-main-header text-ink-950 uppercase tracking-wide mb-4">
+      <h2 class="text-3xl !font-main-header text-ink-950 uppercase tracking-wide mb-4">
         Prefer to Talk Directly?
       </h2>
       <p class="text-lg text-ink-600 mb-8 max-w-2xl mx-auto">
@@ -310,6 +327,8 @@ const metaProps = {
       </a>
     </div>
   </section>
+  <MaintenancePhilosophy/>
+  <FinalCTASection data={finalCtaData} />
 </BaseLayout>
 
 <script define:vars={{ CONTACT_FORM_WEBHOOK_URL, PORTAL_API_KEY, CP_ACCOUNT_RANDOM_ID }}>

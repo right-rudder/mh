@@ -4,6 +4,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 import { EMAIL_ADDRESS, PHONE_NUMBER } from "../data/consts";
 import HeroGeneralPages from "../components/HeroGeneralPages.astro";
 import FinalCTASection from "../components/FinalCTASection.astro";
+import MaintenancePhilosophy from "../components/Fleet/MaintenancePhilosophy.astro";
 
 // Import environment variables
 const ENROLLMENT_FORM_WEBHOOK_URL = import.meta.env.ENROLLMENT_FORM_WEBHOOK_URL;
@@ -316,7 +317,7 @@ const metaProps = {
       </div>
     </div>
   </section>
-
+  <MaintenancePhilosophy/>
   <FinalCTASection data={finalCtaData} />
 </BaseLayout>
 

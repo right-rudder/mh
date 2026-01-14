@@ -6,7 +6,7 @@ interface Props {
     eyebrow: string;
     headline: string;
     bodyCopy: string;
-    cta: {
+    cta?: {
       text: string;
       href?: string;
       subtext: string;
@@ -42,12 +42,16 @@ const { data } = Astro.props;
     <p class="font-sans font-medium text-ink-50 mb-10 text-xl font-light" set:html={data.bodyCopy}>
     </p>
     
-    <div class="flex flex-col items-center gap-4">
-         <a href={data.cta.href} class="btn-primary text-lg px-8 py-3 w-full sm:w-auto">
-          {data.cta.text}
-         </a>
-        <p class="text-ink-300 text-sm font-semibold tracking-wide">{data.cta.subtext}</p>
-    </div>
+    {
+      data.cta && (
+        <div class="flex flex-col items-center gap-4">
+          <a href={data.cta.href} class="btn-primary text-lg px-8 py-3 w-full sm:w-auto">
+            {data.cta.text}
+          </a>
+          <p class="text-ink-300 text-sm font-semibold tracking-wide">{data.cta.subtext}</p>
+      </div>
+      )
+    }
    
   </div>
 </section>
