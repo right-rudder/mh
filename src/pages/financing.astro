@@ -1,0 +1,111 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import HeroGeneralPages from "../components/HeroGeneralPages.astro";
+import FinalCTASection from "../components/FinalCTASection.astro";
+import { PHONE_NUMBER } from "../data/consts";
+
+// Components
+import FinancingIntro from "../components/Financing/FinancingIntro.astro";
+import StratusPartnership from "../components/Financing/StratusPartnership.astro";
+import CostBreakdown from "../components/Financing/CostBreakdown.astro";
+import WhyInvest from "../components/Financing/WhyInvest.astro";
+
+const heroData = {
+  images: [
+    {
+      src: "/src/assets/instructing/mh-aviation-instructing-on-top-of-plane.jpg",
+      alt: "Student pilot looking at the horizon",
+    },
+  ],
+  title: "Invest in Your Future",
+  subTitle: "We provide accessible financing pathways to turn your aviation dreams into a professional reality.",
+};
+
+const introData = {
+  upperheader: "Financial Clarity",
+  title: "Funding Your Path to the Cockpit",
+  description: [
+    "Flight training is a significant investment, but it shouldn't be a barrier to your dreams. At MH Aviation, we believe in full transparency. Our rates are already among the most competitive in the region ($155/hr vs $205/hr average), but we know that professional training requires capital.",
+    "We have structured our programs and partnerships to help you manage the cost of becoming a pilot, whether you are starting from zero or finishing your commercial ratings."
+  ],
+  image: {
+    src: "/src/assets/instructing/mh-aviation-instructing-student-with-checklist.webp",
+    alt: "Instructor reviewing finances with student"
+  },
+  cta: { text: "View Our Rates", href: "/programs" }
+};
+
+const stratusData = {
+  upperheader: "Our Premier Partner",
+  title: "Powered by<br> Stratus Financial",
+  description: "We have partnered with <strong>Stratus Financial</strong> to offer specialized aviation loans. Unlike traditional lenders, Stratus was founded by pilots, for pilots. They understand that you aren't just a number—you are an aviator in training. They look at your future potential, not just your current history.",
+  features: ["Deferred Payment Options", "Co-Borrower Friendly", "Covers 100% of Training Cost"],
+  image: {
+    src: "/src/assets/general/mh-aviation-facilities-with-stratus-financial-logo-on-top.webp",
+    alt: "Stratus Financial logo on top of MH Aviation facilities picture"
+  },
+  cta: { text: "Apply with Stratus", href: "https://stratus.finance/apply" } // Placeholder link
+};
+
+const breakdownData = {
+  upperheader: "Value Proposition",
+  title: "Where Your<br> Investment Goes",
+  description: "When you finance with us, you are paying for quality, safety, and efficiency. Our Part 145 maintenance support means less downtime, and our open schedule means you finish faster—saving you money on retraining.",
+  image: {
+    src: "/src/assets/facilities/mh-aviation-facilities-front-sd.webp",
+    alt: "MH Aviation facilities and fleet"
+  },
+  points: [
+    { title: "Modern Fleet", text: "Garmin G5 glass cockpits." },
+    { title: "Expert Maintenance", text: "In-house FAA Part 145 station." },
+    { title: "No Waitlists", text: "Consistent flight availability." }
+  ],
+  cta: { text: "Schedule a Visit", href: "/contact" }
+};
+
+const investData = {
+  upperheader: "Return On Investment",
+  title: "A Career That<br> Pays Off",
+  description: "The pilot shortage is real, and airlines are hiring. Financing your training is the bridge to a high-earning career. With our structured training and efficient roadmap, we get you to your checkride faster, maximizing your return on investment.",
+  image: {
+    src: "/src/assets/instructing/mh-aviation-instructing-student-02.jpg",
+    alt: "Student pilot shaking hands with instructor"
+  },
+  cta: { text: "Start Your Application", href: "/contact" }
+};
+
+const finalCtaData = {
+  eyebrow: "Let's Talk Numbers",
+  headline: "Clear Skies &<br>Clear Pricing",
+  bodyCopy: "Contact our team to discuss financing options, review our rate sheet, and build a plan that fits your budget.",
+  cta: {
+    text: "Contact Finance Team",
+    href: "/contact",
+    subtext: `Call us at ${PHONE_NUMBER}`,
+  },
+  image: {
+    src: "/src/assets/instructing/mh-aviation-instructing-student-inside-cockpit-at-lancaster-california.webp",
+    alt: "Pilot inside aircraft cockpit",
+  },
+};
+
+const metaProps = {
+  siteTitle: "Financing Flight Training | MH Aviation",
+  siteDescription: "Learn about flight school loans and financing options with Stratus Financial at MH Aviation. Affordable pilot training in Lancaster, CA.",
+  siteKeywords: "Flight school financing, Stratus Financial, Pilot loan, Learn to fly cost"
+};
+---
+
+<BaseLayout {...metaProps}>
+  <HeroGeneralPages data={heroData} />
+  
+  <FinancingIntro data={introData} />
+  
+  <StratusPartnership data={stratusData} />
+  
+  <CostBreakdown data={breakdownData} />
+  
+  <WhyInvest data={investData} />
+
+  <FinalCTASection data={finalCtaData} />
+</BaseLayout>
