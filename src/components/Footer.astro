@@ -131,6 +131,7 @@ const today = new Date();
           sortedPrograms && (
             <div class="w-1/2 px-8">
               <a
+                href={"/programs"}
                 class="font-main-header uppercase tracking-wide hover:cursor-pointer font-black  text-2xl capitalize transition-colors duration-200 ease-in-out hover:text-ochre-600"
                 
               >
@@ -141,7 +142,7 @@ const today = new Date();
                   {sortedPrograms.map((program) => (
                     <li class="text-sm my-1">
                       <a
-                       
+                        href={`/programs/${program.slug}`}
                         class="hover:cursor-pointer transition-colors duration-200 ease-in-out text-accent-800 hover:text-ochre-600"
                       >
                         {program.data.title}
@@ -158,7 +159,7 @@ const today = new Date();
             <div class="w-1/2 px-8">
               <a
                 class="font-main-header uppercase tracking-wide hover:cursor-pointer font-black text-2xl transition-colors duration-200 ease-in-out hover:text-ochre-600"
-                
+                href={item.url}
               >
                 {item.label}
               </a>
@@ -167,7 +168,7 @@ const today = new Date();
                   item.children.map((item) => (
                     <li class="text-sm my-1">
                       <a
-                       
+                        href={item.url}
                         class="transition-colors hover:cursor-pointer duration-200 ease-in-out text-accent-800 hover:text-ochre-600"
                       >
                         {item.label}
