@@ -1,0 +1,193 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import HeroGeneralPages from "../components/HeroGeneralPages.astro";
+import FinalCTASection from "../components/FinalCTASection.astro";
+import { PHONE_NUMBER } from "../data/consts";
+
+import FlightExperienceIntro from "../components/NewToFlying/FlightExperienceIntro.astro";
+import SafetyFoundation from "../components/NewToFlying/SafetyFoundation.astro";
+import StepByStepRoadmap from "../components/NewToFlying/StepByStepRoadmap.astro";
+import ModernFleetShowcase from "../components/NewToFlying/ModernFleetShowcase.astro";
+import AffordabilitySection from "../components/NewToFlying/AffordabilitySection.astro";
+import DiscoveryFlightDetail from "../components/NewToFlying/DiscoveryFlightDetail.astro";
+import TrainingEnvironment from "../components/NewToFlying/TrainingEnvironment.astro";
+
+const heroData = {
+  images: [
+    {
+      src: "/src/assets/instructing/mh-aviation-instructing-on-top-of-plane.jpg",
+      alt: "Student pilot looking at the horizon",
+    },
+  ],
+  title: "Your Journey Starts Here",
+  subTitle: "Discover the freedom of flight with the Antelope Valley's most trusted, family-owned aviation hub.",
+};
+
+const introData = {
+  upperheader: "The Freedom of Flight",
+  title: "Unlock the Skies Over<br>The High Desert",
+  description: [
+    "Flying is more than a skill; it is a perspective. From the cockpit, the world changes instantly, revealing the scenic Antelope Valley, rolling mountain ranges, and the vast high desert from a vantage point reserved for a select few.",
+    "At MH Aviation, we turn that dream into a structured reality. Whether you are pursuing flight for personal mastery or a professional career, your journey is supported by a family-owned legacy that has served Fox Field for over 35 years with integrity and professional care.",
+    "You aren't just another student on a waitlist; you are part of a community where safety is a tradition and mentorship is personal. From your first discovery flight to your final checkride, we provide the consistent aircraft availability and expert guidance you need to earn your wings with confidence."
+  ],
+  cta: { text: "Learn About Us", href: "/about" },
+  image: {
+    src: "/src/assets/instructing/mh-aviation-instructing-student-with-checklist.webp",
+    alt: "Student pilot preparing for flight"
+  }
+};
+
+const safetyData = {
+  upperheader: "Why Choose MH Aviation",
+  title: "Safety is Our Tradition",
+  description: "We are not just a school; we are a Fox Field cornerstone. As an <strong class=\"text-ochre-600\">FAA Part 145 Repair Station</strong>, we maintain our own fleet to airline-grade standards. You train in aircraft that are meticulously cared for by the same team that teaches you to fly.",
+  stats: [
+    { label: "Years at Fox Field", value: "20+" },
+    { label: "Repair Station", value: "Part 145" },
+    { label: "Family Owned", value: "100%" },
+  ],
+  cta: { text: "Meet Our Services Standard", href: "/services" },
+  image: {
+    src: "/src/assets/facilities/mh-aviation-repair-facilities-at-lancaster-california.webp",
+    alt: "MH Aviation maintenance hangar"
+  }
+};
+
+const roadmapData = {
+  upperheader: "The Process",
+  title: "Cleared for Takeoff in 4 Steps",
+  steps: [
+    {
+      number: "01",
+      title: "Discovery Flight",
+      description: "Take the controls for the first time. See the local mountains and desert scenery while an instructor guides you."
+    },
+    {
+      number: "02",
+      title: "Personalized Plan",
+      description: "Meet with our instructors to build a schedule that fits your life. We offer open availability—no waitlists."
+    },
+    {
+      number: "03",
+      title: "Flight & Ground Training",
+      description: "Master the aircraft and the theory. Train in our modern fleet and utilize our private briefing rooms."
+    },
+    {
+      number: "04",
+      title: "Earn Your Wings",
+      description: "Pass your checkride with confidence. Our students have an exceptional pass rate thanks to our catered instruction."
+    }
+  ],
+  cta: { text: "View Programs", href: "/programs" },
+  image: {
+    src: "/src/assets/instructing/mh-aviation-instructing-student-02.jpg",
+    alt: "Student and instructor reviewing flight path"
+  }
+};
+
+const fleetData = {
+  upperheader: "Modern Technology",
+  title: "Train in a Glass Cockpit",
+  description: "Don't train in the past. We have invested over $150k to upgrade our fleet with <strong>Garmin G5 glass cockpits</strong> and 180 HP engine conversions. You will learn on the same modern avionics used in professional aviation.",
+  features: ["Garmin Avionics", "180 HP Engines", "Autopilot Equipped"],
+  cta: { text: "See Our Fleet", href: "/aircraft" },
+  image: {
+    src: "/src/assets/fleet/mh-aviation-modern-aircraft-cockpit-at-lancaster-california.webp",
+    alt: "Garmin glass cockpit avionics"
+  }
+};
+
+const environmentData = {
+  upperheader: "Strategic Location",
+  title: "Master the Skies<br> at Fox Field",
+  description: "Located at Gen. William Fox Airfield (KWJF), we offer a superior training environment compared to the congested LA basin. You spend less time taxiing and more time flying, while mastering real-world wind conditions that make you a better pilot.",
+  benefits: ["Less Congestion", "Scenic Views", "Efficient Training"],
+  cta: { text: "Schedule a Visit", href: "/contact" },
+  image: {
+    src: "/src/assets/general/mh-aviation-jet-fueling-services.webp",
+    alt: "Fox Field airport ramp view"
+  }
+};
+
+const financeData = {
+  upperheader: "Investment",
+  title: "Accessible & Transparent",
+  description: "We believe in honest, fair pricing. Our aircraft rates are significantly lower than the regional competition (approx. $155/hr vs $205/hr). We also partner with <strong>Stratus Financial</strong> to help you fund your training.",
+  cta: { text: "Financing Options", href: "/financing" },
+  image: {
+    src: "/src/assets/facilities/mh-aviation-facilities-front-sd.webp",
+    alt: "MH Aviation office front"
+  }
+};
+
+const discoveryData = {
+  upperheader: "Your First Step",
+  title: "The Discovery Flight",
+  description: "The best way to know if aviation is for you is to try it. For a flat rate, you'll sit in the pilot's seat, take off, and control the aircraft under the supervision of a certified instructor. No commitment, just flying.",
+  cta: { text: "Meet Our Discovery Flight", href: "/discovery-flight" },
+  image: {
+    src: "/src/assets/instructing/mh-aviation-instructing-student-inside-cockpit-at-lancaster-california.webp",
+    alt: "Happy student pilot in cockpit"
+  }
+};
+
+const finalCtaData = {
+  eyebrow: "Join the Family",
+  headline: "Your Aviation Home<br>Awaits You",
+  bodyCopy: "From your first radio call to your first solo, MH Aviation provides the mentorship, safety, and community you need to succeed.",
+  cta: {
+    text: "Start Today",
+    href: "/contact",
+    subtext: `Call us at ${PHONE_NUMBER}`,
+  },
+  image: {
+    src: "/src/assets/instructing/mh-aviation-instructing-student-how-to-repair-at-lancaster-california.webp",
+    alt: "Instructor and student inside cockpit",
+  },
+};
+
+const metaProps = {
+  siteTitle: "New to Flying? Start Here | MH Aviation",
+  siteDescription: "Start your pilot journey at Fox Field. Learn about our discovery flights, modern fleet, and safety-first training in Lancaster, CA.",
+  siteKeywords: "Learn to fly Lancaster, Discovery Flight Fox Field, Pilot Training Beginners"
+};
+---
+
+<BaseLayout {...metaProps}>
+  <HeroGeneralPages data={heroData} />
+  
+  <FlightExperienceIntro data={introData} />
+  
+  <StepByStepRoadmap data={roadmapData} />
+  
+  <SafetyFoundation data={safetyData} />
+  
+  <ModernFleetShowcase data={fleetData} />
+  
+  <TrainingEnvironment data={environmentData} />
+  
+  <AffordabilitySection data={financeData} />
+  
+  <DiscoveryFlightDetail data={discoveryData} />
+
+  <FinalCTASection data={finalCtaData} />
+</BaseLayout>
+
+<script>
+  const observerOptions = {
+    threshold: 0.1,
+    rootMargin: '0px 0px -50px 0px'
+  };
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.remove('opacity-0', 'translate-y-8', 'translate-x-8', 'translate-x--8');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, observerOptions);
+
+  document.querySelectorAll('.reveal-section, .reveal-left, .reveal-right, .reveal-up').forEach((el) => observer.observe(el));
+</script>

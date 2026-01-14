@@ -1,0 +1,85 @@
+---
+import ImageComp from "../ImageComp.astro";
+import { FaMountain, FaWind, FaMapMarkedAlt, FaStopwatch, FaPlane } from "react-icons/fa";
+
+interface Props {
+  data: {
+    upperheader: string;
+    title: string;
+    description: string;
+    benefits: string[];
+    cta: { text: string; href: string };
+    image: { src: string; alt: string };
+  };
+}
+
+const { data } = Astro.props;
+
+const getIcon = (text: string) => {
+  const lower = text.toLowerCase();
+  if (lower.includes("congestion") || lower.includes("traffic")) return FaMapMarkedAlt;
+  if (lower.includes("views") || lower.includes("scenic")) return FaMountain;
+  if (lower.includes("efficient") || lower.includes("time")) return FaStopwatch;
+  if (lower.includes("wind") || lower.includes("weather")) return FaWind;
+  return FaPlane;
+};
+---
+
+<section class="py-24 bg-ink-50 overflow-hidden reveal-section opacity-0 translate-y-8 transition-all duration-1000 ease-out">
+  <div class="max-w-7xl mx-auto px-5 md:px-8 lg:px-12">
+    <div class="flex flex-col lg:flex-row gap-16 items-center">
+      
+      <div class="lg:w-1/2 relative group">
+        <div class="relative h-[600px] rounded-sm overflow-hidden shadow-2xl border border-ink-200">
+           <ImageComp 
+             src={data.image.src} 
+             alt={data.image.alt} 
+             class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" 
+           />
+           <div class="absolute inset-0 bg-gradient-to-t from-ink-950/60 via-transparent to-transparent opacity-60 pointer-events-none"></div>
+        </div>
+
+        <div class="absolute -bottom-8 -right-4 md:-right-8 bg-ink-950 p-8 rounded-sm shadow-2xl max-w-xs border-l-4 border-ochre-600 hidden md:block transform transition-transform duration-500 hover:-translate-y-2 z-10">
+            <p class="text-white text-sm font-medium leading-relaxed italic opacity-90">
+                "Fox Field offers great access to the scenic Antelope Valley... views of Lancaster, Palmdale, and Mojave."
+            </p>
+        </div>
+      </div>
+
+      <div class="lg:w-1/2 flex flex-col justify-center">
+        <span class="text-ochre-600 font-bold uppercase tracking-widest text-sm block">
+          {data.upperheader}
+        </span>
+        <h2 class="text-3xl md:text-5xl !font-main-header text-ink-950 uppercase tracking-wide mb-6 leading-tight" set:html={data.title}></h2>
+        <p class="text-ink-600 text-lg leading-relaxed mb-10 border-b border-ink-200 pb-8">
+          {data.description}
+        </p>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-5 mb-12">
+            {data.benefits.map((benefit, index) => {
+                const Icon = getIcon(benefit);
+                return (
+                <div 
+                  class="bg-white p-6 rounded-sm shadow-sm border border-ink-100 hover:border-ochre-600 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group/card flex flex-col gap-3 cursor-default"
+                  style={`transition-delay: ${index * 100}ms`}
+                >
+                    <div class="w-10 h-10 rounded-full bg-ink-50 flex items-center justify-center group-hover/card:bg-ochre-600 transition-colors duration-300">
+                        <Icon className="text-ochre-600 text-lg group-hover/card:text-white transition-colors duration-300" />
+                    </div>
+                    <span class="font-bold text-ink-900 text-sm uppercase tracking-wide group-hover/card:text-ochre-700 transition-colors">
+                        {benefit}
+                    </span>
+                </div>
+            )})}
+        </div>
+
+        <div class="w-full flex justify-start">
+            <a href={data.cta.href} class="btn-primary !py-3 shadow-lg shadow-ochre-600/20 hover:shadow-ochre-600/40 hover:cursor-pointer">
+                {data.cta.text}
+            </a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
