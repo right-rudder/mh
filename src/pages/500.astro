@@ -1,19 +1,20 @@
 ---
+/* src/pages/500.astro */
 import BaseLayout from "../layouts/BaseLayout.astro";
 import ImageComp from "../components/ImageComp.astro";
 import { COMPANY_NAME, PHONE_NUMBER } from "../data/consts";
 ---
 
 <BaseLayout
-  siteTitle={`404 - Page Not Found | ${COMPANY_NAME}`}
-  siteDescription="The page you're looking for couldn't be found. Let us get you back on course at MH Aviation."
+  siteTitle={`500 - Server Error | ${COMPANY_NAME}`}
+  siteDescription="We're experiencing a technical issue on our end. Please stand by or contact MH Aviation support."
 >
   <section class="relative min-h-screen flex items-center justify-center bg-ink-950 text-white overflow-hidden pt-[32vh] pb-20 px-5">
     
     <div class="absolute inset-0 z-0 opacity-20">
       <ImageComp
-        src="/src/assets/facilities/mh-aviation-facilities-front.jpg"
-        alt="MH Aviation Facilities"
+        src="/src/assets/facilities/mh-aviation-repair-facilities-at-lancaster-california.webp"
+        alt="MH Aviation Maintenance"
         class="w-full h-full object-cover"
       />
       <div class="absolute inset-0 bg-gradient-to-b from-ink-950 via-transparent to-ink-950"></div>
@@ -23,34 +24,33 @@ import { COMPANY_NAME, PHONE_NUMBER } from "../data/consts";
       
       <div class="mb-6 reveal-content opacity-0 translate-y-8 transition-all duration-1000 ease-out">
         <span class="text-ochre-500 font-bold uppercase tracking-[0.3em] text-sm mb-4 block">
-          Navigation Error
+          Technical Grounding
         </span>
         <h1 class="text-8xl md:text-[12rem] font-main-header leading-none text-white opacity-10 select-none absolute left-1/2 -translate-x-1/2 -top-20 md:-top-32 w-full">
-          404
+          500
         </h1>
         <h2 class="text-4xl md:text-6xl !font-main-header uppercase tracking-wide text-white mb-6">
-          Lost in the Clouds?
+          Mechanical <span class="text-ochre-600">Issue</span>
         </h2>
       </div>
 
       <div class="max-w-2xl mx-auto reveal-content opacity-0 translate-y-8 transition-all duration-1000 ease-out delay-200">
         <p class="text-xl md:text-2xl text-ink-100 mb-8 leading-relaxed">
-          The page you're looking for seems to have taken an unexpected heading. 
-          Let's get you back on course.
+          It looks like we’ve encountered an internal error. Our ground crew is already working to get the system back online.
         </p>
         
         <div class="h-px w-24 bg-ochre-600 mx-auto mb-8"></div>
         
         <p class="text-lg text-ink-300 italic mb-12">
-          The route you requested doesn't exist in our flight plan. <br class="hidden md:block">
-          Check your URL or return to base using the navigation below.
+          This isn't your fault. Please try refreshing the page in a few moments <br class="hidden md:block">
+          or return to the home base using the link below.
         </p>
       </div>
 
       <div class="grid md:grid-cols-2 gap-4 mb-16 max-w-2xl mx-auto reveal-content opacity-0 translate-y-8 transition-all duration-1000 ease-out delay-400">
         <a
           href="/"
-          class="btn-primary flex items-center justify-center gap-3 hover:scale-105 transition-transform"
+          class="btn-primary flex items-center justify-center gap-3 hover:scale-105 transition-transform hover:cursor-pointer"
         >
           <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path>
@@ -58,27 +58,27 @@ import { COMPANY_NAME, PHONE_NUMBER } from "../data/consts";
           Return to Home Page
         </a>
 
-        <a
-          href="/programs"
+        <button
+          onclick="location.reload()"
           class="flex items-center justify-center gap-3 px-8 py-4 bg-white/5 hover:bg-white/10 border border-white/20 rounded-sm font-bold uppercase tracking-widest text-xs transition-all hover:scale-105 hover:cursor-pointer"
         >
           <svg class="w-5 h-5 text-ochre-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path>
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"></path>
           </svg>
-          Explore Programs
-        </a>
+          Retry Link
+        </button>
       </div>
 
       <div class="reveal-content opacity-0 translate-y-8 transition-all duration-1000 ease-out delay-600 bg-ink-900/50 backdrop-blur-md border-l-4 border-ochre-600 p-8 max-w-2xl mx-auto rounded-r-sm shadow-2xl text-left">
-        <h3 class="text-xl font-main-header uppercase tracking-wider mb-2">Need Assistance?</h3>
+        <h3 class="text-xl font-main-header uppercase tracking-wider mb-2">Systems Down?</h3>
         <p class="text-ink-200 mb-6">
-          Our team is standing by to help you find your destination. Give us a call directly for immediate support.
+          If you need immediate assistance with scheduling or maintenance while we fix this, please reach out to our team directly.
         </p>
         <a
           href={`tel:${PHONE_NUMBER}`}
-          class="inline-flex items-center text-ochre-500 hover:text-ochre-400 font-bold uppercase tracking-widest text-sm transition-colors group"
+          class="inline-flex items-center text-ochre-500 hover:text-ochre-400 font-bold uppercase tracking-widest text-sm transition-colors group hover:cursor-pointer"
         >
-          Call {PHONE_NUMBER}
+          Call Operations: {PHONE_NUMBER}
           <svg class="w-4 h-4 ml-2 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
           </svg>
@@ -89,7 +89,6 @@ import { COMPANY_NAME, PHONE_NUMBER } from "../data/consts";
 </BaseLayout>
 
 <script>
-  // Simple scroll reveal logic
   const observer = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
       if (entry.isIntersecting) {
