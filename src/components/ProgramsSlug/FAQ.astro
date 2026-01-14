@@ -1,0 +1,42 @@
+---
+/* src/components/ProgramSlug/FAQ.astro */
+import { FaChevronDown } from "react-icons/fa";
+
+interface Props {
+  data: {
+    title?: string;
+    upperheader?: string;
+    qnas?: {
+      question: string;
+      answer: string;
+    }[];
+  };
+}
+
+const { data } = Astro.props;
+---
+
+<section class="py-20 bg-white reveal-section opacity-0 translate-y-8 transition-all duration-1000 ease-out">
+  <div class="max-w-4xl mx-auto px-5">
+    <div class="text-center mb-12">
+      {data.upperheader && <span class="text-ochre-600 font-bold uppercase tracking-widest text-sm block mb-2">{data.upperheader}</span>}
+      <h2 class="text-3xl md:text-4xl !font-main-header text-ink-950 uppercase tracking-wide">
+        {data.title || "Frequently Asked Questions"}
+      </h2>
+    </div>
+
+    <div class="space-y-4">
+      {data.qnas?.map((item, index) => (
+        <details class="group bg-ink-50 rounded-sm border border-ink-100 open:border-ochre-600/30 transition-colors">
+          <summary class="flex justify-between items-center p-6 cursor-pointer list-none font-bold text-ink-900 hover:text-ochre-700 transition-colors">
+            <span>{item.question}</span>
+            <FaChevronDown class="text-ochre-600 transform transition-transform duration-300 group-open:rotate-180" />
+          </summary>
+          <div class="px-6 pb-6 text-ink-600 leading-relaxed">
+            <p>{item.answer}</p>
+          </div>
+        </details>
+      ))}
+    </div>
+  </div>
+</section>

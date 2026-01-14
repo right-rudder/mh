@@ -1,0 +1,99 @@
+---
+/* src/components/ProgramSlug/WhyUs.astro */
+import { FaCheck, FaQuoteLeft, FaShieldAlt } from "react-icons/fa";
+import ImageComp from "../ImageComp.astro";
+
+interface Props {
+  data: {
+    title?: string;
+    upperheader?: string;
+    topicTitle?: string;
+    topicDescriptionParagraphs?: string[];
+    bulletTitle?: string;
+    bulletDescriptionParagraphs?: string[];
+    bulletPoints?: string[];
+    closingTitle?: string;
+    closingDescriptionParagraphs?: string[];
+    mainImage?: string;
+    mainImageAlt?: string;
+  };
+}
+
+const { data } = Astro.props;
+---
+
+<section class="py-24 bg-ink-950 text-ink-50 relative overflow-hidden reveal-section opacity-0 translate-y-8 transition-all duration-1000 ease-out">
+  
+  <div class="absolute inset-0 z-0 pointer-events-none">
+    <ImageComp
+        src={data.mainImage || "/src/assets/instructing/mh-aviation-instructing-student-how-to-repair-at-lancaster-california.webp"}
+        alt={data.mainImageAlt || "Aviation Excellence"}
+        class="w-full h-full object-cover opacity-10 grayscale mix-blend-overlay" 
+    />
+    <div class="absolute inset-0 bg-gradient-to-b from-ink-950 via-ink-950/90 to-ink-950"></div>
+  </div>
+
+  <div class="max-w-7xl mx-auto px-5 md:px-8 lg:px-12 relative z-10">
+    
+    <div class="text-center mb-16 max-w-4xl mx-auto">
+      {data.upperheader && (
+        <span class="text-ochre-600 font-bold uppercase tracking-widest text-sm mb-3 block">
+          {data.upperheader}
+        </span>
+      )}
+      <h2 class="text-3xl md:text-5xl !font-main-header text-white uppercase tracking-wide leading-tight">
+        {data.title || "The MH Aviation Advantage"}
+      </h2>
+    </div>
+
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+      
+      <div>
+        <h3 class="text-2xl font-bold text-white mb-6 border-l-4 border-ochre-600 pl-6">
+          {data.topicTitle}
+        </h3>
+        <div class="space-y-6 text-lg text-ink-200 leading-relaxed">
+          {data.topicDescriptionParagraphs?.map(p => <p>{p}</p>)}
+        </div>
+      </div>
+
+      <div class="bg-ink-900/40 backdrop-blur-sm border border-ink-800 p-8 md:p-10 rounded-sm relative group hover:border-ochre-600/40 transition-colors duration-500 shadow-2xl">
+        
+        <h3 class="text-xl font-bold text-white mb-6 uppercase tracking-wider flex items-center gap-3">
+            <FaShieldAlt className="text-ochre-500 text-2xl" />
+            {data.bulletTitle}
+        </h3>
+        
+        <div class="space-y-4 text-ink-300 mb-8 text-sm leading-relaxed border-b border-ink-800 pb-6">
+          {data.bulletDescriptionParagraphs?.map(p => <p>{p}</p>)}
+        </div>
+
+        <ul class="space-y-4">
+          {data.bulletPoints?.map(pt => (
+            <li class="flex items-start gap-4 group/item">
+              <div class="mt-0.5 flex-shrink-0 w-6 h-6 rounded-full bg-ink-950 border border-ochre-600/30 flex items-center justify-center text-ochre-500 text-[10px] group-hover/item:bg-ochre-600 group-hover/item:text-white transition-all duration-300">
+                <FaCheck />
+              </div>
+              <span class="text-ink-100 font-medium leading-snug">{pt}</span>
+            </li>
+          ))}
+        </ul>
+      </div>
+
+    </div>
+
+    {(data.closingTitle || data.closingDescriptionParagraphs) && (
+      <div class="mt-24 pt-12 border-t border-ink-800/50 text-center max-w-3xl mx-auto flex flex-col items-center">
+        <FaQuoteLeft className="text-4xl text-ochre-600/30 mb-6" />
+        
+        <h3 class="text-2xl font-main-header text-white uppercase tracking-wide mb-4">
+            {data.closingTitle}
+        </h3>
+        <div class="text-ink-300 text-lg leading-relaxed italic">
+          {data.closingDescriptionParagraphs?.map(p => <p>{p}</p>)}
+        </div>
+      </div>
+    )}
+
+  </div>
+</section>

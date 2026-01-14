@@ -1,102 +1,170 @@
 ---
-title: "Private Pilot Certificate"
-description: "Start your aviation journey in the scenic Antelope Valley with a family-owned school dedicated to safety, integrity, and quality training."
+title: "Private Pilot & Intro Training"
+description: "Start your aviation journey with Discovery Flights and Private Pilot certification in the Antelope Valley."
+pricingRange: "Aircraft Rates starting at ~$155/hr"
 order: 1
 image: "/src/assets/instructing/mh-aviation-instructing-student-03.jpg"
-alt: "Private Pilot Training at Fox Field"
+alt: "Student pilot receiving instruction at MH Aviation"
+reverse: false
 top: true
 
 programIntroduction:
+  title: "Your First Step<br> Into Aviation"
   upperheader: "Begin Your Journey"
-  title: "Private Pilot Certificate"
   descriptionParagraphs:
-    - "MH Aviation began as a maintenance shop building a loyal customer base for over 20 years. Now, we bring that same dedication to flight training."
-    - "Located at Fox Airfield (KWJF), our training offers great access to the scenic Antelope Valley, with views of Lancaster, Palmdale, and the surrounding high desert."
-    - "Whether you are flying for a hobby or starting a career, we offer a catered, honest experience where you are treated like family."
+    - "Fox Airfield offers great access to the scenic Antelope Valley, with views of Lancaster, Palmdale, Mojave, and the surrounding high desert. Our Discovery Flights give new pilots a chance to take in the local mountains, desert scenery, and the busy airport environment around KWJF, a well-known general aviation hub in the area."
+    - "At MH Aviation, everything a pilot needs is under one roof. From your discovery flight to professional ratings, we provide the maintenance and mentorship to make your success our tradition."
   highlights:
-    - highlightName: "Location"
-      highlightValue: "Fox Airfield (KWJF)"
-    - highlightName: "Fleet"
-      highlightValue: "Glass-Panel Garmin G5"
-    - highlightName: "Atmosphere"
+    - highlightName: "Aircraft Rate"
+      highlightValue: "~$155/hr"
+      pricingObservation: "Significantly lower than regional average ($205/hr)"
+    - highlightName: "Environment"
       highlightValue: "Family-Owned"
+    - highlightName: "Location"
+      highlightValue: "KWJF (Fox Field)"
   programHighlights:
     benefits:
-      - "Training in newer, better-equipped fleet with 180 hp conversions"
-      - "Great for learning in windy conditions to build pilot proficiency"
-      - "Safety-first culture backed by an on-site FAA Repair Station"
-      - "Private rooms and nice break area/kitchen available"
+      - "Less weather delays (no marine layer)"
+      - "Less air traffic congestion than LA"
+      - "Learn crosswind techniques"
+      - "Scenic High Desert views"
     requirements:
-      - "Passion for aviation and willingness to learn"
-      - "Meeting FAA medical and age requirements"
+      - "No prior experience required for Discovery Flight"
 
 programExpectations:
+  title: "How The Program Works"
+  upperheader: "What to Expect"
   mainImage: "/src/assets/instructing/mh-aviation-instructing-student-03.jpg"
-  mainImageAlt: "Student pilot in training"
-  title: "Training Environment"
+  mainImageAlt: "Instructor teaching student pilot"
   descriptionParagraphs:
-    - "At MH Aviation, safety is always the priority. Our environment is designed to be supportive, responsive, and respectful."
-    - "You will learn in a busy airport environment around KWJF, a well-known general aviation hub, which prepares you for real-world flying."
+    - "Experience catered, honest training where you are treated like family. We offer a modern Garmin-equipped fleet including 180 hp conversions and glass-panel Garmin G5s."
+    - "Safety is our number one goal. Our aircraft are maintained by our own in-house FAA Part 145 Repair Station, ensuring downtime is minimized and planes remain flight-ready."
   listItems:
-    - "Planes don't get grounded as long due to on-site maintenance"
-    - "Fast and respectful communication"
-    - "Fair and honest service from day one"
+    - "Ground briefings and pre-flight instruction"
+    - "Tailored instruction to individual learning styles"
+    - "Supportive family-owned culture"
+
+firstCTA:
+  mainImage: "/src/assets/instructing/mh-aviation-instructing-student-03.jpg"
+  title: "Book a Discovery Flight"
+  upperheader: "Take the Controls"
+  descriptionParagraphs:
+    - "See if aviation is right for you. Take the controls for the first time over the scenic Antelope Valley."
 
 whatIsIncluded:
-  upperheader: "One-Stop Operation"
-  title: "What We Provide"
+  mainImage: "/src/assets/instructing/mh-aviation-instructing-student-03.jpg"
+  title: "Training Curriculum"
+  upperheader: "Course Content"
   descriptionParagraphs:
-    - "We are a one-stop operation at Fox Field offering maintenance, quality flight training, and fuel under one roof."
+    - "Our instruction covers flight theory, procedures, and practical application in the aircraft."
   bulletPointLists:
-    - title: "The Fleet"
+    - title: "Flight Instruction"
       items:
-        - "Single-engine aircraft"
-        - "Garmin G5 and Garmin GPS equipped"
-        - "180 hp conversions"
-        - "Glass to Six Pack configurations available"
-    - title: "Facilities"
+        - "Pre-flight instruction"
+        - "Safety and regulatory adherence"
+        - "Practical flight training"
+    - title: "Ground Training"
       items:
-        - "Remodeled facilities"
-        - "Private rooms for study"
-        - "Nice break area and kitchen"
-        - "On-site maintenance ensures high aircraft availability"
+        - "Ground briefings"
+        - "Flight theory"
+        - "Constructive feedback and tracking"
 
 whyUs:
-  upperheader: "Our Core Values"
-  title: "Why Train With MH Aviation"
-  topicTitle: "Family-Owned Integrity"
+  title: "Why Pilots Choose MH Aviation"
+  upperheader: "The MH Advantage"
+  topicTitle: "One-Stop Aviation Hub"
   topicDescriptionParagraphs:
-    - "We are a family-owned small business that truly cares about the customer. Our focus is on long-term relationships with customers who return from all over the country."
-  bulletTitle: "Operational Excellence"
+    - "We are a 'One-Stop Shop' operation at Fox Field offering maintenance, quality/affordable flight training, and MH Fuels under one roof."
+    - "We provide private briefing rooms, a comfortable break area, and a nice kitchen area for our students."
+  bulletTitle: "Fox Field Benefits"
   bulletDescriptionParagraphs:
-    - "With over 2 decades of continuous operation as a maintenance shop, we know aircraft inside and out. Our fleet is maintained to the highest standards by our own FAA Repair Station."
+    - "Skip the congested LA airspace and train locally at your own pace."
   bulletPoints:
-    - "Safety-first culture and regulatory compliance"
-    - "Great availability compared to congested LA airspace"
-    - "Weather is generally better for consistent training"
+    - "Less weather delays than LA Basin"
+    - "Real-world crosswind experience"
+    - "Immediate maintenance support (Part 145)"
+  closingTitle: "A Legacy of Safety"
+  closingDescriptionParagraphs:
+    - "Our traffic watch planes flew for over 10 years with 30,000 hours on airframes without a single incident. Safety is our mindset."
+
+careerPathways:
+  title: "From Student to Pilot"
+  upperheader: "Growth Opportunities"
+  mainImage: "/src/assets/instructing/mh-aviation-instructing-student-03.jpg"
+  mainImageAlt: "Main image alt"
+  descriptionParagraphs:
+    - "We don't just train students; we mentor future colleagues. We have a track record of taking students from zero experience to regional airline first officers."
+  opportunities:
+    - "Private Pilot License"
+    - "Instrument Rating"
+    - "Commercial Pilot"
+  disclaimer: "We tailor training plans to fit your schedule and goals."
+
+targetAudience:
+  title: "Who This Is For"
+  items:
+    - "Aspiring pilots starting from zero"
+    - "Students seeking affordable rates"
+    - "Pilots wanting less congested airspace"
+    - "Individuals valuing safety and maintenance"
+
+trainingProgression:
+  title: "Your Training Roadmap"
+  upperheader: "Step by Step"
+  descriptionParagraphs:
+    - "We guide you through a structured, safety-first environment."
+  phases:
+    - phaseTitle: "Discovery"
+      phaseBulletPoints:
+        - "Introductory flight"
+        - "Meet the team"
+    - phaseTitle: "Private Pilot Training"
+      phaseBulletPoints:
+        - "Flight maneuvers"
+        - "Solo flight"
+        - "Cross-country navigation"
+    - phaseTitle: "Certification"
+      phaseBulletPoints:
+        - "Written exam"
+        - "Checkride preparation"
+        - "Earn your wings"
+  outcome: "Private Pilot Certificate"
 
 enrollmentProcess:
-  title: "Start Your Adventure"
+  upperheader: "Step by Step"
+  title: "How to Get Started"
   steps:
     - stepNumber: 1
       title: "Contact Us"
-      description: "Call (661) 948-7779 or email info@mhaviation.com to discuss your goals."
+      description: "Call (661) 948-7779 or email info@mhaviation.com."
     - stepNumber: 2
-      title: "Discovery Flight"
-      description: "Take a Discovery Flight to see the local mountains and desert scenery."
+      title: "Schedule Discovery Flight"
+      description: "Book your introductory flight to experience our fleet and location."
     - stepNumber: 3
-      title: "Start Training"
-      description: "Begin your journey with our experienced instructors."
+      title: "Meet Your Instructor"
+      description: "Consult with experienced CFIs to build a tailored plan."
+    - stepNumber: 4
+      title: "Begin Training"
+      description: "Start your journey with structured lessons."
+
+faq:
+  title: "Common Questions"
+  upperheader: "FAQ"
+  qnas:
+    - question: "What are your hours?"
+      answer: "Mon–Fri 8:00 am–5:00 pm; closed Saturday and Sunday."
+    - question: "Where are you located?"
+      answer: "We are located at Gen. William Fox Airfield (KWJF) in Lancaster, CA."
 
 finalCTA:
   mainImage: "/src/assets/instructing/mh-aviation-instructing-student-03.jpg"
-  mainImageAlt: "MH Aviation Flight Training"
-  upperheader: "Get Started"
-  title: "Earn Your Wings"
+  mainImageAlt: "MH Aviation Discovery Flight"
+  title: "Ready to Fly?"
+  upperheader: "Start Today"
   descriptionParagraphs:
-    - "MH Aviation is a staple in the aviation community. Join us and experience a training environment that values integrity, safety, and family."
-  mainButtonText: "Contact Us"
+    - "Join the Antelope Valley's premier aviation family."
+  mainButtonText: "Book Discovery Flight"
   mainButtonLink: "/contact"
-  secondButtonText: "Call (661) 948-7779"
+  secondButtonText: "Call Us"
   secondButtonLink: "tel:6619487779"
 ---

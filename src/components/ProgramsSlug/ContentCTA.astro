@@ -1,0 +1,69 @@
+---
+/* src/components/ProgramSlug/ContentCTA.astro */
+import ImageComp from "../ImageComp.astro";
+import { FaArrowRight } from "react-icons/fa";
+
+interface Props {
+  data: {
+    mainImage?: string;
+    title?: string;
+    upperheader?: string;
+    descriptionParagraphs?: string[];
+  };
+}
+
+const { data } = Astro.props;
+---
+
+<section class="py-24 md:py-32 bg-ink-950 text-center relative overflow-hidden">
+  <div class="absolute inset-0 z-0 opacity-20">
+    <ImageComp
+      src={data.mainImage || "/src/assets/instructing/mh-aviation-instructing-student-how-to-repair-at-lancaster-california.webp"}
+      alt="Aviation Background"
+      class="w-full h-full object-cover object-center"
+    />
+  </div>
+
+  <div class="reveal-content max-w-4xl mx-auto px-5 md:px-8 lg:px-12 relative z-10 opacity-0 translate-y-8 transition-all duration-1000 ease-out">
+    {data.upperheader && (
+      <p class="text-ochre-400 font-bold uppercase tracking-widest text-sm mb-2">
+        {data.upperheader}
+      </p>
+    )}
+    
+    {data.title && (
+      <h2 class="title !text-[2.5rem] md:!text-5xl uppercase !font-main-header tracking-wide !text-ink-50 mb-6" set:html={data.title} />
+    )}
+
+    <div class="font-sans font-medium text-ink-50 mb-10 max-w-2xl mx-auto space-y-4 leading-relaxed">
+      {data.descriptionParagraphs?.map((p) => (
+        <p set:html={p} />
+      ))}
+    </div>
+
+    <div class="flex justify-center">
+      <a href="/contact" class="btn-primary hover:cursor-pointer inline-flex items-center gap-3 shadow-lg">
+        Start Conversation
+        <FaArrowRight />
+      </a>
+    </div>
+  </div>
+</section>
+
+<script>
+  const observerOptions = {
+    threshold: 0.1,
+    rootMargin: '0px 0px -50px 0px'
+  };
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.remove('opacity-0', 'translate-y-8');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, observerOptions);
+
+  document.querySelectorAll('.reveal-content').forEach((el) => observer.observe(el));
+</script>

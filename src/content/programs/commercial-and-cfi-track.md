@@ -1,111 +1,159 @@
 ---
-title: "Commercial & Flight Instructor Track"
-description: "A comprehensive pathway from Private to CFII, utilizing our modern fleet and experienced mentorship to prepare you for a professional career."
+title: "Commercial & CFI Track"
+description: "Advance your career with Commercial Pilot training and Flight Instructor certification."
+pricingRange: "Contact for Career Track Pricing"
 order: 2
 image: "/src/assets/instructing/mh-aviation-instructing-student-02.jpg"
-alt: "Commercial and CFI Training"
-top: true
+alt: "Flight instructor and student at MH Aviation"
+reverse: true
+top: false
 
 programIntroduction:
-  upperheader: "Professional Career"
-  title: "Commercial & CFI Track"
+  title: "Professional Pilot Training"
+  upperheader: "Career Aviation"
   descriptionParagraphs:
-    - "MH Aviation provides a clear pathway for pilots aiming for a career. From PPL to Multi to CFII, we have the resources and aircraft to take you all the way."
-    - "We are currently seeking experienced and dedicated Flight Instructors, meaning your training here could lead to joining our team."
+    - "MH Aviation is a well-established FBO and FAA Repair station that has expanded services to include quality and affordable flight instruction for all levels of students. We mentor future colleagues, helping you transition from general aviation to a professional career."
   highlights:
-    - highlightName: "Scope"
-      highlightValue: "PPL - Multi to CFII"
-    - highlightName: "Tech"
-      highlightValue: "Glass to Six Pack"
-    - highlightName: "Opportunity"
-      highlightValue: "Hiring CFIs"
+    - highlightName: "Focus"
+      highlightValue: "Professional Career"
+    - highlightName: "Mentorship"
+      highlightValue: "Airline Captains & Senior Cadre"
   programHighlights:
     benefits:
-      - "Quality and affordable flight instruction for all levels"
-      - "Fleet includes both single-engine and multi-engine aircraft"
-      - "Opportunities for CFII & MEI Instructors"
-      - "Partnership with Avlink Direct (Aircraft Management)"
+      - "Job opportunities with partner companies"
+      - "Mentorship from senior cadre"
+      - "Glass-panel fleet experience"
     requirements:
-      - "Dedication to safety and compliance"
-      - "Excellent communication skills"
-      - "Goal to become a professional aviator"
+      - "Private Pilot License"
 
 programExpectations:
+  title: "How The Program Works"
+  upperheader: "What to Expect"
   mainImage: "/src/assets/instructing/mh-aviation-instructing-student-02.jpg"
-  mainImageAlt: "Instructor and Student"
-  title: "Professional Standards"
+  mainImageAlt: "Commercial pilot training"
   descriptionParagraphs:
-    - "We expect our commercial students and future instructors to foster a supportive and productive learning environment."
-    - "You will learn to conduct ground briefings, tailor instruction to student needs, and ensure adherence to industry regulations."
+    - "We foster a supportive and productive learning environment. Our goal is to ensure safety and adherence to industry regulations while monitoring student progress."
+    - "We tailor instruction to meet individual student needs and learning styles."
   listItems:
-    - "Safety-first culture"
-    - "Adherence to FAA regulations"
-    - "Fast and respectful communication"
+    - "High-quality flight instruction"
+    - "Adherence to industry regulations"
+    - "Constructive feedback loops"
+
+firstCTA:
+  mainImage: "/src/assets/instructing/mh-aviation-instructing-student-02.jpg"
+  title: "Become an Instructor"
+  upperheader: "Join the Team"
+  descriptionParagraphs:
+    - "We are currently seeking experienced and dedicated Flight Instructors (CFI). CFII & MEI Instructors are preferred."
 
 whatIsIncluded:
-  upperheader: "Career Resources"
-  title: "Tools for Success"
+  mainImage: "/src/assets/instructing/mh-aviation-instructing-student-02.jpg"
+  title: "Advanced Training Scope"
+  upperheader: "Curriculum"
   descriptionParagraphs:
-    - "Our facility is equipped to support advanced training and professional development."
+    - "Prepare for the rigors of professional aviation with advanced ratings and commercial maneuvers."
   bulletPointLists:
-    - title: "Training Assets"
+    - title: "Commercial Training"
       items:
-        - "Modern fleet with Garmin avionics"
-        - "Complex aircraft for Commercial maneuvers"
-        - "Multi-engine aircraft for AMEL ratings"
-    - title: "Career Support"
+        - "Complex aircraft operations"
+        - "Commercial maneuvers"
+        - "Professional standards"
+    - title: "CFI Preparation"
       items:
-        - "Potential flying/job opportunities with aircraft management partner"
-        - "Independent contractor opportunities for CFIs"
-        - "Well-established FBO environment"
+        - "Teaching methodology"
+        - "Ground briefing delivery"
+        - "Student progress monitoring"
 
 whyUs:
-  upperheader: "The MH Difference"
-  title: "Train Where You Can Work"
-  topicTitle: "A Growing Ecosystem"
+  title: "A Professional Edge"
+  upperheader: "Career Focus"
+  topicTitle: "Mentorship & Opportunity"
   topicDescriptionParagraphs:
-    - "MH Aviation is more than just a flight school; we are an FBO, an FAA Repair Station, and a fuel provider. This diverse ecosystem provides a deeper understanding of aviation operations."
-  bulletTitle: "Hiring Preferences"
+    - "MH Aviation has flying/job opportunities in addition to flight instruction with its aircraft management partner company, Avlink Direct."
+    - "Our professionalism is described as 'military-grade' with seamless transitions to structured environments."
+  bulletTitle: "The MH Difference"
   bulletDescriptionParagraphs:
-    - "We are actively seeking Flight Instructors, specifically preferring CFII and MEI rated pilots. Training with us gives you the advantage of learning our safety culture and fleet from the inside."
+    - "Train in a modern fleet with 180 hp conversions and glass cockpits."
   bulletPoints:
-    - "Family-owned business that values integrity"
-    - "Responsive and quick management"
-    - "Newer fleet means less maintenance downtime"
+    - "Access to Avlink Direct opportunities"
+    - "Modern Garmin-equipped fleet"
+    - "In-house maintenance reliability"
+  closingTitle: "Real Success Stories"
+  closingDescriptionParagraphs:
+    - "From zero experience to regional airline first officer in 24 months. Our programs deliver on their promises."
 
 careerPathways:
-  upperheader: "Future Opportunities"
-  title: "Join Our Cadre"
+  title: "Your Career Trajectory"
+  upperheader: "Pilot Career"
+  mainImage: "/src/assets/instructing/mh-aviation-instructing-student-03.jpg"
+  mainImageAlt: "Main image alt"
   descriptionParagraphs:
-    - "MH Aviation has flying and job opportunities in addition to flight instruction with its aircraft management partner company, Avlink Direct."
+    - "We define your mission to help you reach the majors. Whether aiming for the airlines or a new rating, we provide the roadmap."
   opportunities:
-    - "Flight Instructor (CFI) positions"
-    - "CFII & MEI Instructor roles (Preferred)"
-    - "Aircraft management partner opportunities"
-  disclaimer: "CFIs are independent contractors. Employment is not guaranteed and depends on current openings and qualifications."
+    - "Commercial Pilot"
+    - "Certified Flight Instructor (CFI)"
+    - "Aircraft Management (Avlink Direct)"
+  disclaimer: "CFIs are independent contractors."
+
+targetAudience:
+  title: "Ideal Candidates"
+  items:
+    - "Pilots seeking airline careers"
+    - "Current pilots needing Commercial ratings"
+    - "CFIs looking for employment"
+
+trainingProgression:
+  title: "Advanced Ratings Path"
+  upperheader: "Progression"
+  descriptionParagraphs:
+    - "Move from Private to Professional with structured steps."
+  phases:
+    - phaseTitle: "Commercial Rating"
+      phaseBulletPoints:
+        - "Time building"
+        - "Advanced maneuvers"
+    - phaseTitle: "Instructor Certification"
+      phaseBulletPoints:
+        - "CFI/CFII Training"
+        - "MEI Training"
+    - phaseTitle: "Employment"
+      phaseBulletPoints:
+        - "Instructing at MH Aviation"
+        - "Avlink Direct opportunities"
+  outcome: "Commercial Pilot / CFI"
 
 enrollmentProcess:
+  upperheader: "Step by Step"
   title: "Advance Your Career"
   steps:
     - stepNumber: 1
-      title: "Contact"
-      description: "Email info@mhaviation.com or call (661) 948-7779."
+      title: "Define Your Mission"
+      description: "Meet with us to discuss your career timeline."
     - stepNumber: 2
-      title: "Visit"
-      description: "Visit our facility at KWJF to meet the team and see the fleet."
+      title: "Training Plan"
+      description: "Custom roadmap to Commercial or CFI ratings."
     - stepNumber: 3
-      title: "Apply"
-      description: "If you are already rated, submit your resume to info@mhaviation.com."
+      title: "Submit Resume"
+      description: "For CFI applicants: submit resume to info@mhaviation.com."
+
+faq:
+  title: "Career Track FAQ"
+  upperheader: "Questions"
+  qnas:
+    - question: "Are CFIs employees?"
+      answer: "CFIs are independent contractors."
+    - question: "What opportunities exist beyond instructing?"
+      answer: "MH Aviation has flying opportunities with its aircraft management partner company."
 
 finalCTA:
   mainImage: "/src/assets/instructing/mh-aviation-instructing-student-02.jpg"
-  mainImageAlt: "Professional Pilot"
-  upperheader: "Next Steps"
-  title: "Become a Professional"
+  mainImageAlt: "Commercial Pilot Training"
+  title: "Define Your Mission"
+  upperheader: "Go Pro"
   descriptionParagraphs:
-    - "Whether you are working towards your Commercial rating or looking to become an instructor, MH Aviation offers the environment you need to succeed."
-  mainButtonText: "Apply Now"
-  mainButtonLink: "/contact"
-  secondButtonText: "Call (661) 948-7779"
-  secondButtonLink: "tel:6619487779"
+    - "Let's reach the majors together. Start your professional training plan today."
+  mainButtonText: "Enroll Now"
+  mainButtonLink: "/enroll"
+  secondButtonText: "Contact Us"
+  secondButtonLink: "/contact"
 ---

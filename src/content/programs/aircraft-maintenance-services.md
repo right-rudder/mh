@@ -1,103 +1,164 @@
 ---
 title: "Aircraft Maintenance Services"
-description: "A full-service FAA Part 145 Repair Station (MHAR0094E) providing annual inspections, sheet metal repairs, and avionics upgrades with over 20 years of experience."
+description: "FAA Part 145 Repair Station (#MHAR0094E). Full-service maintenance, inspections, and avionics upgrades at Fox Field."
+pricingRange: "FAA Part 145 Certified"
 order: 4
 image: "/src/assets/old-website/crew-repairing-aircraft.webp"
-alt: "MH Aviation Maintenance Services"
-top: true
+alt: "Crew repairing aircraft at MH Aviation"
+reverse: true
+top: false
 
 programIntroduction:
-  upperheader: "FAA Repair Station 145"
-  title: "Aircraft Maintenance Services"
+  title: "FAA Part 145 Repair Station"
+  upperheader: "MHAR0094E"
   descriptionParagraphs:
-    - "MH Aviation began as a maintenance shop at Fox Field founded by Mike Haney, building a loyal customer base over more than 20 years."
-    - "We are a full-service repair and maintenance center. Clients from all over the country come to us because they know they'll get the job done while being fair and honest."
-    - "We handle everything from regular service to complex repairs, ensuring your aircraft is safe and compliant."
+    - "MH Aviation began as a maintenance shop at Fox Field founded by Mike Haney, building a loyal customer base over more than 20 years. Today, we anchor the community as an FAA Part 145 Repair Station."
+    - "We ensure every aircraft—whether ours or yours—is maintained to airline-grade standards."
   highlights:
-    - highlightName: "Station ID"
-      highlightValue: "MHAR0094E"
+    - highlightName: "Certification"
+      highlightValue: "FAA Part 145"
     - highlightName: "Experience"
-      highlightValue: "20+ Years"
-    - highlightName: "Team"
-      highlightValue: "Family Owned"
+      highlightValue: "35+ Years"
+    - highlightName: "Key Partner"
+      highlightValue: "Lockheed Martin"
   programHighlights:
     benefits:
-      - "Full-service FAA Repair Station 145"
-      - "Skilled technicians for complex sheet metal repairs"
-      - "Comprehensive pre-purchase inspections"
-      - "Emergency AOG services available"
-    requirements:
-      - "Contact us for specific inquiries"
-      - "Aircraft logbooks for inspections"
+      - "Annual & 100-hour inspections"
+      - "Sheet metal repairs"
+      - "Avionics upgrades"
+      - "Emergency AOG services"
 
 programExpectations:
+  title: "How The Program Works"
+  upperheader: "What to Expect"
   mainImage: "/src/assets/old-website/crew-repairing-aircraft.webp"
-  mainImageAlt: "Maintenance Operations"
-  title: "Service Standards"
+  mainImageAlt: "Maintenance technicians working"
   descriptionParagraphs:
-    - "Our annual and hourly inspections ensure that your aircraft is in compliance with all FAA regulations and is safe to fly. We discuss any necessary repairs or upgrades transparently."
-    - "We restore aircraft to their original condition, no matter how complex the job."
+    - "Our team is dedicated to providing exceptional customer service. We work with you every step of the way to ensure your satisfaction."
+    - "We maintain our own fleet to ensure unmatched safety for every student, and we bring that same level of care to client aircraft."
   listItems:
     - "Fair and honest service"
-    - "Regulatory compliance"
-    - "Detailed reporting on aircraft condition"
+    - "Safety-first culture"
+    - "Fast and respectful communication"
+
+firstCTA:
+  mainImage: "/src/assets/old-website/crew-repairing-aircraft.webp"
+  title: "Schedule Maintenance"
+  upperheader: "Keep Flying"
+  descriptionParagraphs:
+    - "From oil changes to major repairs, trust the team that has served Fox Field for over two decades."
 
 whatIsIncluded:
-  upperheader: "Comprehensive Care"
-  title: "Our Services"
+  mainImage: "/src/assets/old-website/crew-repairing-aircraft.webp"
+  title: "Our Capabilities"
+  upperheader: "Services"
   descriptionParagraphs:
-    - "Below is an overview of what MH Aviation offers. We provide a one-stop shop experience for aircraft owners."
+    - "We offer a comprehensive range of services to keep you in compliance and in the air."
   bulletPointLists:
     - title: "Inspections"
       items:
         - "Annual Inspections"
-        - "100 hour / 50 hour / 25 hour inspections"
+        - "100-hour / 50-hour / 25-hour inspections"
+        - "Pre-Purchase Inspections"
         - "Oil changes"
-        - "Comprehensive Pre-Purchase Inspections"
-    - title: "Repairs & Upgrades"
+    - title: "Repairs & Mods"
       items:
-        - "Major Repairs"
         - "Sheet Metal Repairs"
         - "Aircraft Modifications"
         - "Avionics Upgrades"
-        - "Emergency AOG Services (*fee may apply)"
+        - "Emergency AOG Services"
 
 whyUs:
-  upperheader: "The MH Team"
-  title: "Experience You Can Trust"
-  topicTitle: "A Family Tradition"
+  title: "Trusted by Industry Leaders"
+  upperheader: "G.O.A.T. Support"
+  topicTitle: "Aerospace Recognition"
   topicDescriptionParagraphs:
-    - "MH Aviation has been a staple in the aviation community for over two decades. Originally started by founder Mike Haney in the late 1980s, the business is now led by Jeff and Jessica Haney, maintaining the family legacy."
-  bulletTitle: "Expert Staff"
+    - "We support the fleets that keep the aerospace industry moving. MH Aviation is proud to provide 'G.O.A.T. Support' (Greatest of All Time) to Lockheed Martin’s local flight operations."
+  bulletTitle: "Family Values"
   bulletDescriptionParagraphs:
-    - "Our team is dedicated to exceptional customer service. From our Chief Inspector Michael Haney to our Shop Lead Palomo Olmedo, we work with you every step of the way."
+    - "MH Aviation has clients from all over the country who come for regular service because they know they'll get the job done while being fair and honest."
   bulletPoints:
-    - "Continuous operation for over 2 decades"
-    - "Quick and responsive communication"
-    - "Truly cares about the customer"
+    - "Trusted by Lockheed Martin"
+    - "Family owned and operated"
+    - "Clients return from all over the country"
+  closingTitle: "Expert Team"
+  closingDescriptionParagraphs:
+    - "Led by President Jeff Haney, Vice President Jessica Haney, Chief Inspector Michael Haney, and Shop Lead Palomo Olmedo."
+
+careerPathways:
+  title: "Maintenance Excellence"
+  upperheader: "Standard of Care"
+  mainImage: "/src/assets/instructing/mh-aviation-instructing-student-03.jpg"
+  mainImageAlt: "Main image alt"
+  descriptionParagraphs:
+    - "We operate with a safety-first mindset. Our goal is to ensure that your aircraft is in compliance with all FAA regulations and is safe to fly."
+  opportunities:
+    - "Owner-assisted annuals (contact for details)"
+    - "Detailed condition reports"
+    - "Customized upgrades"
+
+targetAudience:
+  title: "We Serve"
+  items:
+    - "Aircraft Owners"
+    - "Prospective Buyers (Pre-buy)"
+    - "Flight Departments"
+    - "General Aviation Pilots"
+
+trainingProgression:
+  title: "Maintenance Process"
+  upperheader: "Workflow"
+  descriptionParagraphs:
+    - "Our process ensures transparency and safety."
+  phases:
+    - phaseTitle: "Intake"
+      phaseBulletPoints:
+        - "Discuss issues"
+        - "Schedule drop-off"
+    - phaseTitle: "Inspection/Repair"
+      phaseBulletPoints:
+        - "Thorough examination"
+        - "Discuss necessary repairs"
+        - "Execute repairs"
+    - phaseTitle: "Return to Service"
+      phaseBulletPoints:
+        - "Logbook entry"
+        - "Test run"
+        - "Safe to fly"
+  outcome: "Airworthy Aircraft"
 
 enrollmentProcess:
-  title: "Schedule Service"
+  upperheader: "Step by Step"
+  title: "Book Service"
   steps:
     - stepNumber: 1
-      title: "Contact"
-      description: "Call (661) 948-7779 or email info@mhaviation.com for specific inquiries."
+      title: "Contact Us"
+      description: "Call (661) 948-7779 for inquiries."
     - stepNumber: 2
-      title: "Drop-off"
-      description: "Bring your aircraft to our facility at 4651 William J Barnes Avenue, Lancaster, CA."
+      title: "Schedule"
+      description: "Set a date for drop-off at KWJF."
     - stepNumber: 3
       title: "Service"
-      description: "We perform the inspection or repair and keep you informed."
+      description: "We handle the rest."
+
+faq:
+  title: "Maintenance FAQ"
+  upperheader: "Service Info"
+  qnas:
+    - question: "What is your Repair Station number?"
+      answer: "Our FAA Repair Station number is MHAR0094E."
+    - question: "Do you offer AOG services?"
+      answer: "Yes, we offer emergency AOG services to get you back in the air. *AOG fee may apply."
 
 finalCTA:
   mainImage: "/src/assets/old-website/crew-repairing-aircraft.webp"
-  mainImageAlt: "MH Aviation Hangar"
-  upperheader: "Safety First"
-  title: "Maintain Your Aircraft"
+  mainImageAlt: "Aircraft Repair"
+  title: "Schedule Your Inspection"
+  upperheader: "Maintenance"
   descriptionParagraphs:
-    - "Whether you need a simple oil change, a complex sheet metal repair, or a full annual inspection, MH Aviation is your trusted partner at Fox Field."
-  mainButtonText: "Contact Us"
-  mainButtonLink: "/contact"
-  secondButtonText: "Call (661) 948-7779"
-  secondButtonLink: "tel:6619487779"
+    - "Ensure your aircraft is safe, compliant, and ready for your next mission."
+  mainButtonText: "Call Now"
+  mainButtonLink: "tel:6619487779"
+  secondButtonText: "Email Us"
+  secondButtonLink: "mailto:info@mhaviation.com"
 ---

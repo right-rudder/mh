@@ -1,0 +1,43 @@
+---
+/* src/components/ProgramSlug/TargetAudience.astro */
+import { FaUserAstronaut, FaTimesCircle } from "react-icons/fa";
+
+interface Props {
+  data: {
+    title: string;
+    items: string[];
+    notFor?: string;
+  };
+}
+
+const { data } = Astro.props;
+---
+
+<section class="py-16 bg-ink-50 reveal-section opacity-0 translate-y-8 transition-all duration-1000 ease-out">
+  <div class="max-w-4xl mx-auto px-5">
+    <h2 class="text-2xl md:text-3xl !font-main-header text-ink-950 uppercase tracking-wide text-center mb-12">
+      {data.title}
+    </h2>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      {data.items.map((item, index) => (
+        <div class="bg-white p-6 rounded-sm shadow-sm border border-ink-100 flex items-start gap-4 hover:border-ochre-600 transition-colors duration-300">
+          <div class="bg-ink-100 p-3 rounded-full text-ink-950">
+            <FaUserAstronaut />
+          </div>
+          <p class="text-ink-800 font-medium mt-1">{item}</p>
+        </div>
+      ))}
+    </div>
+
+    {data.notFor && (
+      <div class="mt-12 bg-ink-100 p-6 rounded-sm flex items-start gap-4 border-l-4 border-red-500">
+        <FaTimesCircle className="text-red-500 text-xl mt-1 flex-shrink-0" />
+        <div>
+          <span class="block font-bold text-ink-950 uppercase text-xs tracking-widest mb-1">Who this is not for</span>
+          <p class="text-ink-600 text-sm">{data.notFor}</p>
+        </div>
+      </div>
+    )}
+  </div>
+</section>

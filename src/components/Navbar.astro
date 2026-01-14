@@ -76,13 +76,13 @@ const { pathname } = Astro.props;
           <li
             class={`menu-item ${sortedPrograms.length >= 1 ? "has-children" : ""}`}
           >
-            <a  class="hover:cursor-pointer">{sortedPrograms[0].collection}</a>
+            <a href={`/${sortedPrograms[0].collection}`} class="hover:cursor-pointer">{sortedPrograms[0].collection}</a>
             {sortedPrograms.length >= 1 ? (
               <ul class="sub-menu">
                 {sortedPrograms.map((program: Program) => (
                   <li>
                     <a
-                      
+                      href={`/programs/${program.slug}`}
                       class={
                         (`/programs/${program.slug}` === pathname ||
                           `/programs/${program.slug}/` === pathname) &&

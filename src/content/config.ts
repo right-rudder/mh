@@ -1,24 +1,12 @@
 import { defineCollection, z } from "astro:content";
 
-const crewCollection = defineCollection({
-  type: "content",
-  schema: z.object({
-    name: z.string(),
-    title: z.string(),
-    bio: z.string(),
-    image: z.string(),
-    order: z.number().optional(),
-    certifications: z.array(z.string()).optional(),
-    experience: z.string().optional(),
-  }),
-});
-
 const programsCollection = defineCollection({
   type: "content",
   schema: z.object({
     // Standard metadata
     title: z.string().optional(),
     description: z.string().optional(),
+    pricingRange: z.string().optional(),
     order: z.number().optional(),
     image: z.string().optional(),
     alt: z.string().optional(),
@@ -44,6 +32,7 @@ const programsCollection = defineCollection({
     //  Training Environment/Expectations
     programExpectations: z.object({
       title: z.string(),
+      upperheader: z.string().optional(),
       mainImage: z.string().optional(),
       mainImageAlt: z.string().optional(),
       descriptionParagraphs: z.array(z.string()),
@@ -87,6 +76,8 @@ const programsCollection = defineCollection({
     careerPathways: z.object({
       title: z.string(),
       upperheader: z.string().optional(),
+      mainImage: z.string().optional(),
+      mainImageAlt: z.string().optional(),
       descriptionParagraphs: z.array(z.string()).optional(),
       opportunities: z.array(z.string()),
       disclaimer: z.string().optional()
@@ -114,6 +105,7 @@ const programsCollection = defineCollection({
     //  Enrollment Process (How to Get Started)
     enrollmentProcess: z.object({
       title: z.string(),
+      upperheader: z.string().optional(),
       steps: z.array(z.object({
         stepNumber: z.number(),
         title: z.string(),
@@ -187,20 +179,9 @@ const blogCollection = defineCollection({
   }),
 });
 
-const faqsCollection = defineCollection({
-  type: "content",
-  schema: z.object({
-    question: z.string(),
-    answer: z.string().optional(),
-    category: z.string().optional(),
-    order: z.number().optional(),
-  }),
-});
 
 export const collections = {
-  crew: crewCollection,
   programs: programsCollection,
   aircraft: aircraftCollection,
   blog: blogCollection,
-  faqs: faqsCollection,
 };
