@@ -160,3 +160,45 @@ export const FLEET = []; // CONTEXT MISSING
 // ==============================
 
 export const VIDEOS = []; // CONTEXT MISSING
+
+export type MenuItem = {
+  label: string;
+  url: string;
+  children?: MenuItem[];
+};
+
+export const footerMenu: MenuItem[] = [
+  {
+    label: "About",
+    url: "/about",
+    children: [
+      { label: "New to Flying?", url: "/new-to-flying/" },
+      { label: "About Us", url: "/about/" },
+      { label: "FAQs", url: "/faqs/" },
+      { label: "Financing", url: "/financing/" },
+      { label: "Blog", url: "/blog" },
+      { label: "Contact Us", url: "/contact/" },
+    ],
+  },
+];
+
+export const navbarMenu: MenuItem[] = [
+  {
+    label: "New to Flying?",
+    url: "/new-to-flying",
+    children: [
+      { label: "New to Flying", url: "/new-to-flying" },
+      { label: "Financing", url: "/financing" },
+      { label: "FAQs", url: "/faqs" },
+    ],
+  },
+  {
+    label: "About Us",
+    url: "/about",
+    children: [
+      { label: "About Us", url: "/about" },
+      { label: "Our Fleet", url: "/aircraft" },
+      { label: "Our Blog", url: "/blog" },
+    ],
+  },
+];

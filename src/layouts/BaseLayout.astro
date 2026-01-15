@@ -157,7 +157,7 @@ const breadcrumbs = generateBreadcrumbs(pathname, customBreadcrumbs);
       <slot />
       <!-- Breadcrumb Navigation -->
       {breadcrumbs.length > 1 && (
-        <nav aria-label="Breadcrumb" class="font-ubuntu bg-ink-950 text-ink-50 border-y border-ink-900">
+        <nav aria-label="Breadcrumb" class="font-sans bg-ink-950 text-ink-50 border-y border-ink-900">
           <div class="max-w-7xl mx-auto px-5 md:px-10 lg:px-20 py-3">
             <ol class="flex items-center space-x-2 text-sm">
               {breadcrumbs.map((crumb, index) => (

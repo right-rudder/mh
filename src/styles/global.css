@@ -2,36 +2,8 @@
 @plugin "@tailwindcss/typography";
 
 @theme {
-  --font-title: 'Orbitron Variable', 'serif';
-  --font-ubuntu: 'Ubuntu Sans Variable', 'sans-serif';
-  /* --font-sans: 'Poppins', 'sans-serif'; */
-  /* --font-main-title: "Changa One", sans-serif; */
   --font-sans: 'Inter Variable', 'sans-serif';
   --font-main-header: 'Protest Strike', sans-serif;
-  --color-muted-50: #f5f6f6;
-  --color-muted-100: #e4e7e9;
-  --color-muted-200: #ccd2d5;
-  --color-muted-300: #a9b3b7;
-  --color-muted-400: #7e8b92;
-  --color-muted-500: #637077;
-  --color-muted-600: #555f65;
-  --color-muted-700: #495155;
-  --color-muted-800: #3d4246;
-  --color-muted-900: #393d40;
-  --color-muted-950: #232629;
-
-  --color-lucky-50: #f0f3fe;
-  --color-lucky-100: #dee3fb;
-  --color-lucky-200: #c4cff9;
-  --color-lucky-300: #9cb0f4;
-  --color-lucky-400: #6d87ed;
-  --color-lucky-500: #4b60e6;
-  --color-lucky-600: #3641da;
-  --color-lucky-700: #2d30c8;
-  --color-lucky-800: #2b2aa3;
-  --color-lucky-900: #272881;
-  --color-lucky-950: #242362;
-
 
   --color-ochre-50: #fdf8ed;
   --color-ochre-100: #f9eed3;
@@ -39,7 +11,7 @@
   --color-ochre-300: #e7bf6e;
   --color-ochre-400: #db9f41;
   --color-ochre-500: #d08b35;
-  --color-ochre-600: #bd7633; /* Base original website color */
+  --color-ochre-600: #bd7633; /* Main base color for the old website */
   --color-ochre-700: #9d5a2b;
   --color-ochre-800: #804928;
   --color-ochre-900: #6a3e24;
@@ -98,6 +70,9 @@
 .btn-primary-overviews {
   @apply bg-ochre-600 sm:mx-auto shadow-md hover:shadow-ochre-100/20 border sm:!max-w-[250px] border-ochre-600 text-white font-semibold px-5 py-2 flex items-center rounded-sm justify-center gap-2 cursor-pointer hover:bg-white hover:border-ochre-700 hover:text-ochre-700 transition duration-200 hover:scale-105;
 }
+.btn-primary-navbar {
+  @apply bg-ochre-600 mx-auto shadow-md hover:shadow-ochre-100/20 border border-ochre-600 text-white font-semibold px-5 py-2 flex items-center rounded-sm justify-center gap-2 cursor-pointer hover:bg-white hover:border-ochre-700 hover:text-ochre-700 transition duration-200 hover:scale-105;
+}
 
 
 .btn-transparent {
@@ -110,11 +85,9 @@
 .title-black {
   @apply !text-3xl sm:!text-[2.5rem] mb-8 uppercase !font-main-header tracking-wide !text-ink-950
 }
-
 .subtitle {
   @apply font-sans font-medium text-ochre-600 uppercase  !text-xs sm:!text-base inline-block
 }
-
 
 h1, h2, h3, h4, h5, h6 {
   @apply font-sans font-black

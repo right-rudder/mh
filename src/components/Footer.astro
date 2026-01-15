@@ -1,7 +1,6 @@
 ---
 /* src/components/Footer.astro */
 import ImageComp from "./ImageComp.astro";
-import { footerMenu } from "./Navbar.astro";
 import {
   COMPANY_NAME,
   FACEBOOK_URL,
@@ -10,6 +9,7 @@ import {
   X_URL,
   LOGO_ASSETS,
   SITE_DESCRIPTION,
+footerMenu,
 } from "../data/consts";
 import { getCollection } from "astro:content";
 import type { CollectionEntry } from "astro:content";
@@ -76,6 +76,11 @@ const today = new Date();
             Programs
           </a>
           <ul class="font-sans space-y-2">
+            <li class="text-sm">
+              <a href={`/programs`} class="text-ink-200 hover:text-ochre-600 transition-colors">
+                All Programs
+              </a>
+            </li>
             {sortedPrograms.map((program) => (
               <li class="text-sm">
                 <a href={`/programs/${program.slug}`} class="text-ink-200 hover:text-ochre-600 transition-colors">
@@ -93,6 +98,11 @@ const today = new Date();
             MAINTENANCE & FBO
           </a>
           <ul class="font-sans space-y-2">
+            <li class="text-sm">
+              <a href={`/services`} class="text-ink-200 hover:text-ochre-600 transition-colors">
+                All Services
+              </a>
+            </li>
             {sortedServices.map((service) => (
               <li class="text-sm">
                 <a href={`/services/${service.slug}`} class="text-ink-200 hover:text-ochre-600 transition-colors">
