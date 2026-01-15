@@ -36,7 +36,7 @@ const cost = program.data.programIntroduction?.highlights?.find(h => h.highlight
         </div>
       )}
       {cost && (
-          <div class="flex items-center gap-2 bg-white/95 backdrop-blur-md text-ink-950 text-xs font-black px-3 py-1.5 rounded-sm shadow-lg">
+          <div class="flex items-center gap-2 bg-ink-50/95 backdrop-blur-md text-ink-950 text-xs font-ink-950 px-3 py-1.5 rounded-sm shadow-lg">
           <FaTag className="text-ochre-600" />
           {cost}
         </div>
@@ -54,10 +54,10 @@ const cost = program.data.programIntroduction?.highlights?.find(h => h.highlight
     </p>
 
     <a 
-      class="relative hover:cursor-pointer w-full inline-flex items-center justify-center gap-3 px-6 py-4 font-bold text-sm tracking-wider uppercase text-ink-50 bg-ink-950 rounded-sm overflow-hidden transition-all duration-300 group-hover:bg-ochre-600 group-hover:text-white"
+      class="relative hover:cursor-pointer w-full inline-flex items-center justify-center gap-3 px-6 py-4 font-bold text-sm tracking-wider uppercase text-ink-50 bg-ink-950 rounded-sm overflow-hidden transition-all duration-300 group-hover:bg-ochre-600 group-hover:text-ink-50"
     >
       <span class="relative z-10">View Program Details</span>
-      <FaArrowRight className="relative z-10 text-ochre-600 group-hover:text-white transition-transform duration-300 group-hover:translate-x-1" />
+      <FaArrowRight className="relative z-10 text-ochre-600 group-hover:text-ink-50 transition-transform duration-300 group-hover:translate-x-1" />
     </a>
   </div>
 

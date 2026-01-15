@@ -1,5 +1,4 @@
 ---
-/* src/components/ProgramSlug/TimelineProgression.astro */
 import { FaCheck, FaAward, FaCalendarCheck } from "react-icons/fa";
 
 interface Props {
@@ -162,7 +161,7 @@ const { data } = Astro.props;
       
       if (dot) {
         dot.classList.remove('border-ink-700', 'bg-ink-950');
-        dot.classList.add('border-ochre-500', 'bg-white');
+        dot.classList.add('border-ochre-500', 'bg-ink-50');
       }
       if (dotText) {
         dotText.classList.remove('text-ink-500');

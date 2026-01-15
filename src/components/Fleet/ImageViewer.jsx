@@ -70,7 +70,7 @@ const VisualTourGallery = ({ images }) => {
             <div className="absolute inset-0 bg-ink-950/20 group-hover:bg-transparent transition-colors duration-300"></div>
 
             {/* Expand Icon - Always visible in bottom right */}
-            <div className="absolute bottom-3 right-3 bg-black/60 backdrop-blur-sm text-ink-50 p-2 rounded-sm border border-white/20 transition-transform duration-300 group-hover:scale-110 z-10">
+            <div className="absolute bottom-3 right-3 bg-ink-950/60 backdrop-blur-sm text-ink-50 p-2 rounded-sm border border-ink-50/20 transition-transform duration-300 group-hover:scale-110 z-10">
               <div className="flex items-center gap-2">
                  <span className="text-[10px] uppercase font-bold tracking-widest hidden md:block">Expand</span>
                  <FaExpand className="text-sm" />
@@ -89,7 +89,7 @@ const VisualTourGallery = ({ images }) => {
           {/* Close Button - Fixed to Screen (Independent of Image) */}
           <button
             onClick={closeLightBox}
-            className="absolute top-4 right-4 text-white/70 hover:text-white z-50 p-2 cursor-pointer transition-colors"
+            className="absolute top-4 right-4 text-ink-50/70 hover:text-ink-50 z-50 p-2 cursor-pointer transition-colors"
           >
             <FaTimes size={30} />
           </button>
@@ -105,8 +105,8 @@ const VisualTourGallery = ({ images }) => {
             />
 
             {/* Text Label */}
-            <div className="absolute bottom-6 left-1/2 -translate-x-1/2 bg-black/60 backdrop-blur-md px-4 py-2 rounded-sm border border-white/10 text-center pointer-events-none z-20 w-max max-w-[90%]">
-                <p className="text-white text-sm font-medium">{images[currentIndex].alt}</p>
+            <div className="absolute bottom-6 left-1/2 -translate-x-1/2 bg-ink-950/60 backdrop-blur-md px-4 py-2 rounded-sm border border-ink-50/10 text-center pointer-events-none z-20 w-max max-w-[90%]">
+                <p className="text-ink-50 text-sm font-medium">{images[currentIndex].alt}</p>
             </div>
 
             {/* --- NAVIGATION BUTTONS (Floating inside Image Wrapper) --- */}
@@ -114,7 +114,7 @@ const VisualTourGallery = ({ images }) => {
             {/* Prev Button */}
             <div
               onClick={prevImage}
-              className="absolute top-0 bottom-0 left-0 w-12 md:w-16 bg-black/40 flex items-center justify-center text-ink-50 cursor-pointer transition-all duration-300 opacity-100 md:opacity-0 md:group-hover:opacity-100 z-30"
+              className="absolute top-0 bottom-0 left-0 w-12 md:w-16 bg-ink-950/40 flex items-center justify-center text-ink-50 cursor-pointer transition-all duration-300 opacity-100 md:opacity-0 md:group-hover:opacity-100 z-30"
             >
               <FaChevronLeft size={32} />
             </div>
@@ -122,7 +122,7 @@ const VisualTourGallery = ({ images }) => {
             {/* Next Button */}
             <div
               onClick={nextImage}
-              className="absolute top-0 bottom-0 right-0 w-12 md:w-16 bg-black/40 flex items-center justify-center text-ink-50 cursor-pointer transition-all duration-300 opacity-100 md:opacity-0 md:group-hover:opacity-100 z-30"
+              className="absolute top-0 bottom-0 right-0 w-12 md:w-16 bg-ink-950/40 flex items-center justify-center text-ink-50 cursor-pointer transition-all duration-300 opacity-100 md:opacity-0 md:group-hover:opacity-100 z-30"
             >
               <FaChevronRight size={32} />
             </div>

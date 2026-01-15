@@ -27,7 +27,7 @@ const { data } = Astro.props;
           <span class="subtitle">
             {data.upperheader || "Career Outlook"}
           </span>
-          <h2 class="title-black">
+          <h2 class="title-ink-950">
             {data.title}
           </h2>
         </div>
@@ -42,7 +42,7 @@ const { data } = Astro.props;
           </h4>
           <div class="flex flex-wrap gap-3">
             {data.opportunities.map((opp) => (
-              <div class="group bg-white pl-4 pr-5 py-3 rounded-sm border-l-4 border-ochre-600 text-ink-900 font-bold text-sm flex items-center gap-3 shadow-sm hover:shadow-md hover:bg-ink-900 hover:text-white transition-all duration-400 easy-in cursor-default">
+              <div class="group bg-ink-50 pl-4 pr-5 py-3 rounded-sm border-l-4 border-ochre-600 text-ink-900 font-bold text-sm flex items-center gap-3 shadow-sm hover:shadow-md hover:bg-ink-900 hover:text-ink-50 transition-all duration-400 easy-in cursor-default">
                 <FaBriefcase className="text-ochre-600 group-hover:text-ochre-500 transition-colors" />
                 {opp}
               </div>

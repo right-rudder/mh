@@ -15,19 +15,19 @@ interface Props {
 const { data } = Astro.props;
 ---
 
-<section class="py-24 bg-white overflow-hidden">
+<section class="py-24 bg-ink-50 overflow-hidden">
   <div class="max-w-7xl mx-auto px-5 md:px-8 lg:px-12">
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
       
       <div class="order-2 lg:order-1">
-        <span class="text-ochre-600 font-bold uppercase tracking-widest text-sm mb-4 block">
+        <span class="subtitle">
           {data.upperheader}
         </span>
-        <h2 class="text-3xl md:text-5xl !font-main-header text-ink-950 uppercase tracking-wide mb-8">
+        <h2 class="title-ink-950">
           {data.title}
         </h2>
         
-        <div class="space-y-6 text-lg text-ink-600 leading-relaxed mb-10">
+        <div class="space-y-6 text-lg text-ink-950 leading-relaxed mb-10">
           {data.description.map(p => <p set:html={p} />)}
         </div>
 

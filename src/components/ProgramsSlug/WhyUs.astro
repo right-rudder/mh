@@ -1,5 +1,4 @@
 ---
-/* src/components/ProgramSlug/WhyUs.astro */
 import { FaCheck, FaQuoteLeft, FaShieldAlt } from "react-icons/fa";
 import ImageComp from "../ImageComp.astro";
 
@@ -71,7 +70,7 @@ const { data } = Astro.props;
         <ul class="space-y-4">
           {data.bulletPoints?.map(pt => (
             <li class="flex items-start gap-4 group/item">
-              <div class="transition-all duration-1000 ease-out mt-0.5 flex-shrink-0 w-6 h-6 rounded-full bg-ink-950 border border-ochre-600/30 flex items-center justify-center text-ochre-500 text-[10px] group-hover/item:bg-ochre-600 group-hover/item:text-white transition-all duration-300">
+              <div class="transition-all duration-1000 ease-out mt-0.5 flex-shrink-0 w-6 h-6 rounded-full bg-ink-950 border border-ochre-600/30 flex items-center justify-center text-ochre-500 text-[10px] group-hover/item:bg-ochre-600 group-hover/item:text-ink-50 transition-all duration-300">
                 <FaCheck />
               </div>
               <span class="text-ink-100 group-hover/item:text-ochre-600 font-medium leading-snug">{pt}</span>

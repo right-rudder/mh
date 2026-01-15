@@ -18,7 +18,7 @@ interface Props {
 const { data } = Astro.props;
 ---
 
-<section class="py-20 md:py-24 bg-white overflow-hidden">
+<section class="py-20 md:py-24 bg-ink-50 overflow-hidden">
   <div class="max-w-7xl mx-auto px-5 md:px-8 lg:px-12">
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
       
@@ -26,7 +26,7 @@ const { data } = Astro.props;
         <span class="subtitle">
           {data.upperheader}
         </span>
-        <h2 class="title-black" set:html= {data.title}>
+        <h2 class="title-ink-950" set:html= {data.title}>
         </h2>
         
         <div class="space-y-6 text-ink-950 text-lg leading-relaxed mb-10">
@@ -57,7 +57,7 @@ const { data } = Astro.props;
         {data.quote && (
             <div class="absolute bottom-0 left-0 w-full p-8 md:p-10 z-10">
                 
-                <p class="text-white bg-ink-300/20 text-base py-1 font-medium italic leading-relaxed mb-6 border-l-4 border-ochre-600 pl-4 opacity-95">
+                <p class="text-ink-50 bg-ink-300/20 text-base py-1 font-medium italic leading-relaxed mb-6 border-l-4 border-ochre-600 pl-4 opacity-95">
                     "{data.quote}"
                 </p>
                 

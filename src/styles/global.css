@@ -64,25 +64,25 @@
 
 
 .btn-primary {
-  @apply bg-ochre-600 shadow-md hover:shadow-ochre-100/20 border sm:!max-w-[250px] border-ochre-600 text-ink-50 font-semibold px-5 py-2 flex items-center rounded-sm justify-center gap-2 cursor-pointer hover:bg-white hover:border-ochre-700 hover:text-ochre-700 transition duration-200 hover:scale-105;
+  @apply bg-ochre-600 shadow-md hover:shadow-ochre-100/20 border sm:!max-w-[250px] border-ochre-600 text-ink-50 font-semibold px-5 py-2 flex items-center rounded-sm justify-center gap-2 cursor-pointer hover:bg-ink-50 hover:border-ochre-700 hover:text-ochre-700 transition duration-200 hover:scale-105;
 }
 
 .btn-primary-overviews {
-  @apply bg-ochre-600 sm:mx-auto shadow-md hover:shadow-ochre-100/20 border sm:!max-w-[250px] border-ochre-600 text-ink-50 font-semibold px-5 py-2 flex items-center rounded-sm justify-center gap-2 cursor-pointer hover:bg-white hover:border-ochre-700 hover:text-ochre-700 transition duration-200 hover:scale-105;
+  @apply bg-ochre-600 sm:mx-auto shadow-md hover:shadow-ochre-100/20 border sm:!max-w-[250px] border-ochre-600 text-ink-50 font-semibold px-5 py-2 flex items-center rounded-sm justify-center gap-2 cursor-pointer hover:bg-ink-50 hover:border-ochre-700 hover:text-ochre-700 transition duration-200 hover:scale-105;
 }
 .btn-primary-navbar {
-  @apply bg-ochre-600 mx-auto shadow-md hover:shadow-ochre-100/20 border border-ochre-600 text-ink-50 font-semibold px-5 py-2 flex items-center rounded-sm justify-center gap-2 cursor-pointer hover:bg-white hover:border-ochre-700 hover:text-ochre-700 transition duration-200 hover:scale-105;
+  @apply bg-ochre-600 mx-auto shadow-md hover:shadow-ochre-100/20 border border-ochre-600 text-ink-50 font-semibold px-5 py-2 flex items-center rounded-sm justify-center gap-2 cursor-pointer hover:bg-ink-50 hover:border-ochre-700 hover:text-ochre-700 transition duration-200 hover:scale-105;
 }
 
 
 .btn-transparent {
-  @apply bg-transparent rounded-sm border border-white px-5 py-2 text-ink-50 font-semibold cursor-pointer hover:bg-white hover:text-ochre-600 transition duration-200 hover:scale-105;
+  @apply bg-transparent rounded-sm border border-ink-50 px-5 py-2 text-ink-50 font-semibold cursor-pointer hover:bg-ink-50 hover:text-ochre-600 transition duration-200 hover:scale-105;
 }
 
 .title {
   @apply !text-3xl sm:!text-[2.5rem] mb-8 uppercase !font-main-header tracking-wide !text-ink-50
 }
-.title-black {
+.title-ink-950 {
   @apply !text-3xl sm:!text-[2.5rem] mb-8 uppercase !font-main-header tracking-wide !text-ink-950
 }
 .subtitle {
@@ -90,6 +90,6 @@
 }
 
 h1, h2, h3, h4, h5, h6 {
-  @apply font-sans font-black
+  @apply font-sans font-ink-950
 }
 

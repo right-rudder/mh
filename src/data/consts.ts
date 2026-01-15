@@ -102,7 +102,8 @@ export const X_URL = ""; // CONTEXT MISSING
 export const YOUTUBE_URL = ""; // CONTEXT MISSING
 export const YELP_URL = "https://www.yelp.com/biz/mh-aviation-lancaster";
 export const GITHUB_URL = ""; // CONTEXT MISSING
-      
+
+export const COMPANY_STRATUS_LINK = "https://apply.stratus.finance/"
 // ==============================
 // Locations
 // ==============================

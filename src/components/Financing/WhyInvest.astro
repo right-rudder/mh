@@ -23,17 +23,17 @@ const { data } = Astro.props;
         <div class="absolute inset-0 bg-ochre-600/20 mix-blend-multiply"></div>
       </div>
 
-      <div class="md:w-1/2 p-10 md:p-16 flex flex-col justify-center text-white">
-        <span class="text-ochre-500 font-bold uppercase tracking-widest text-sm block">
+      <div class="md:w-1/2 p-10 md:p-16 flex flex-col justify-center text-ink-50">
+        <span class="subtitle">
             {data.upperheader}
         </span>
-        <h2 class="text-3xl md:text-4xl !font-main-header uppercase tracking-wide mb-6" set:html={data.title}>
+        <h2 class="title" set:html={data.title}>
         </h2>
         <p class="text-ink-200 text-lg leading-relaxed mb-10">
             {data.description}
         </p>
         <div>
-            <a href={data.cta.href} class="inline-block bg-white text-ink-950 font-bold uppercase tracking-widest text-sm px-8 py-4 rounded-sm hover:bg-ochre-600 hover:text-white transition-all cursor-pointer shadow-lg">
+            <a href={data.cta.href} class="inline-block bg-ink-50 text-ink-950 font-bold uppercase tracking-widest text-sm px-8 py-4 rounded-sm hover:bg-ochre-600 hover:text-ink-50 transition-all cursor-pointer shadow-lg">
                 {data.cta.text}
             </a>
         </div>

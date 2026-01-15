@@ -31,7 +31,7 @@ const { data } = Astro.props;
           
           <div class="absolute bottom-8 left-8">
             <div class="flex items-center gap-3 bg-ochre-600/90 backdrop-blur-sm px-6 py-3 rounded-sm">
-                <FaShieldAlt className="text-white text-xl" />
+                <FaShieldAlt className="text-ink-50 text-xl" />
                 <span class="font-bold uppercase tracking-wider text-sm">FAA Part 145 Certified</span>
             </div>
           </div>
@@ -52,7 +52,7 @@ const { data } = Astro.props;
           ))}
         </div>
 
-        <a href={data.cta.href} class="text-white font-bold uppercase tracking-widest text-sm border-b-2 border-ochre-600 pb-1 hover:text-ochre-500 hover:border-white transition-all cursor-pointer">
+        <a href={data.cta.href} class="text-ink-50 font-bold uppercase tracking-widest text-sm border-b-2 border-ochre-600 pb-1 hover:text-ochre-500 hover:border-ink-50 transition-all cursor-pointer">
           {data.cta.text}
         </a>
       </div>

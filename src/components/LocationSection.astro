@@ -1,4 +1,4 @@
----
+ç---
 import { ADDRESS, ADDRESS_CITY, ADDRESS_STATE, AIRPORT } from "../data/consts";
 
 interface Props {
@@ -21,11 +21,11 @@ const { data } = Astro.props;
         >
           {data.eyebrow}
         </p>
-        <h2 class="title-black" set:html={data.headline}></h2>
+        <h2 class="title-ink-950" set:html={data.headline}></h2>
         <p class="font-sans text-ink-600 mb-8">
           {data.bodyCopy}
         </p>
-        <div class="bg-white p-6 rounded-sm shadow-md border-l-4 border-ochre-600">
+        <div class="bg-ink-50 p-6 rounded-sm shadow-md border-l-4 border-ochre-600">
             <h4 class="font-bold text-ink-950 text-lg mb-2">{AIRPORT}</h4>
              <p class="text-ink-600">{ADDRESS}</p>
              <p class="text-ink-600">{ADDRESS_CITY}, {ADDRESS_STATE}</p>

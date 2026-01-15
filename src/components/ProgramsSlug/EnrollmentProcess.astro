@@ -1,5 +1,4 @@
 ---
-/* src/components/ProgramSlug/EnrollmentProcess.astro */
 interface Props {
   data: {
     title: string;
@@ -24,7 +23,7 @@ const { data } = Astro.props;
           {data.upperheader}
         </span>
       )}
-    <h2 class="title-black">
+    <h2 class="title-ink-950">
       {data.title}
     </h2>
     </div>
@@ -32,7 +31,7 @@ const { data } = Astro.props;
 
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
       {data.steps.map((step) => (
-        <div class="bg-white p-8 rounded-sm shadow-md border-t-4 border-ink-900 hover:border-ochre-600 transition-colors duration-300 relative group h-full">
+        <div class="bg-ink-50 p-8 rounded-sm shadow-md border-t-4 border-ink-900 hover:border-ochre-600 transition-colors duration-300 relative group h-full">
           <div class="absolute -top-5 left-6 w-10 h-10 bg-ink-950 text-ink-50 flex items-center justify-center font-bold text-lg rounded-sm shadow-lg group-hover:bg-ochre-600 transition-colors">
             {step.stepNumber}
           </div>

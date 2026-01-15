@@ -1,5 +1,4 @@
 ---
-/* src/components/ProgramSlug/TargetAudience.astro */
 import { FaTimesCircle } from "react-icons/fa";
 import { PiPersonArmsSpreadFill } from "react-icons/pi";
 
@@ -18,14 +17,14 @@ const { data } = Astro.props;
   <div class="max-w-4xl mx-auto px-5">
     <div class="w-full flex flex-col items-center">
       <p class="subtitle">TARGET AUDIENCE</p>
-      <h2 class="title-black">
+      <h2 class="title-ink-950">
         {data.title}
       </h2>
     </div>
 
     <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
       {data.items.map((item, index) => (
-        <div class="group bg-white p-6 rounded-sm shadow-sm border-2 transition-transform easy-out duration-300 hover:-translate-y-1 border-ink-100 flex items-center gap-4 hover:border-ochre-600 transition-colors duration-300">
+        <div class="group bg-ink-50 p-6 rounded-sm shadow-sm border-2 transition-transform easy-out duration-300 hover:-translate-y-1 border-ink-100 flex items-center gap-4 hover:border-ochre-600 transition-colors duration-300">
           <div class="bg-ink-100 text-xl group-hover:bg-ochre-600 group-hover:text-ink-50 transition-all duration-300 easy-in p-5 rounded-full text-ink-950">
             <PiPersonArmsSpreadFill />
           </div>

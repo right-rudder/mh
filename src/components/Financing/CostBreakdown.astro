@@ -1,5 +1,4 @@
 ---
-/* src/components/Financing/CostBreakdown.astro */
 import ImageComp from "../ImageComp.astro";
 import { FaPlane, FaTools, FaCalendarCheck } from "react-icons/fa";
 
@@ -24,10 +23,10 @@ const icons = [FaPlane, FaTools, FaCalendarCheck];
     <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16">
       
       <div class="lg:col-span-5 flex flex-col justify-center">
-        <span class="text-ochre-600 font-bold uppercase tracking-widest text-sm block">
+        <span class="subtitle">
           {data.upperheader}
         </span>
-        <h2 class="text-3xl md:text-4xl !font-main-header text-ink-950 uppercase tracking-wide mb-6" set:html={data.title}></h2>
+        <h2 class="title" set:html={data.title}></h2>
         <p class="text-ink-600 text-lg leading-relaxed mb-10">
           {data.description}
         </p>
@@ -37,7 +36,7 @@ const icons = [FaPlane, FaTools, FaCalendarCheck];
                 const Icon = icons[index % icons.length];
                 return (
                     <div class="flex gap-4 group cursor-default">
-                        <div class="w-12 h-12 bg-white rounded-sm shadow-sm flex items-center justify-center text-ochre-600 text-xl border border-ink-100 flex-shrink-0 transition-all duration-300 group-hover:bg-ochre-600 group-hover:text-white group-hover:border-ochre-600">
+                        <div class="w-12 h-12 bg-ink-50 rounded-sm shadow-sm flex items-center justify-center text-ochre-600 text-xl border border-ink-100 flex-shrink-0 transition-all duration-300 group-hover:bg-ochre-600 group-hover:text-ink-50 group-hover:border-ochre-600">
                             <Icon />
                         </div>
                         <div>

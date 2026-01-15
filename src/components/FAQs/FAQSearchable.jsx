@@ -26,7 +26,7 @@ const FAQSearchable = ({ data }) => {
   }, [searchTerm, selectedCategory, data]);
 
   return (
-    <section className="py-20 bg-white min-h-[600px]">
+    <section className="py-20 bg-ink-50 min-h-[600px]">
       <div className="max-w-4xl mx-auto px-5">
         
         <div className="text-center mb-12 space-y-8">
@@ -60,7 +60,7 @@ const FAQSearchable = ({ data }) => {
                 className={`px-6 py-2 rounded-full text-sm font-bold uppercase tracking-wider transition-all duration-300 border ${
                   selectedCategory === cat
                     ? "bg-ochre-600 text-ink-50 border-ochre-600 shadow-md"
-                    : "bg-white text-ink-600 border-ink-200 hover:border-ochre-600 hover:text-ochre-600"
+                    : "bg-ink-50 text-ink-600 border-ink-200 hover:border-ochre-600 hover:text-ochre-600"
                 }`}
               >
                 {cat}

@@ -40,7 +40,7 @@ const getIcon = (text: string) => {
         </div>
 
         <div class="absolute -bottom-8 -right-4 md:-right-8 bg-ink-950 p-8 rounded-sm shadow-2xl max-w-xs border-l-4 border-ochre-600 hidden md:block transform transition-transform duration-500 hover:-translate-y-2 z-10">
-            <p class="text-white text-sm font-medium leading-relaxed italic opacity-90">
+            <p class="text-ink-50 text-sm font-medium leading-relaxed italic opacity-90">
                 "Fox Field offers great access to the scenic Antelope Valley... views of Lancaster, Palmdale, and Mojave."
             </p>
         </div>
@@ -50,7 +50,7 @@ const getIcon = (text: string) => {
         <span class="subtitle">
           {data.upperheader}
         </span>
-        <h2 class="title-black" set:html={data.title}></h2>
+        <h2 class="title-ink-950" set:html={data.title}></h2>
         <p class="text-ink-600 text-lg leading-relaxed mb-10 border-b border-ink-200 pb-8">
           {data.description}
         </p>
@@ -60,11 +60,11 @@ const getIcon = (text: string) => {
                 const Icon = getIcon(benefit);
                 return (
                 <div 
-                  class="bg-white p-6 rounded-sm shadow-sm border border-ink-100 hover:border-ochre-600 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group/card flex flex-col gap-3 cursor-default"
+                  class="bg-ink-50 p-6 rounded-sm shadow-sm border border-ink-100 hover:border-ochre-600 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group/card flex flex-col gap-3 cursor-default"
                   style={`transition-delay: ${index * 100}ms`}
                 >
                     <div class="w-10 h-10 rounded-full bg-ink-50 flex items-center justify-center group-hover/card:bg-ochre-600 transition-colors duration-300">
-                        <Icon className="text-ochre-600 text-lg group-hover/card:text-white transition-colors duration-300" />
+                        <Icon className="text-ochre-600 text-lg group-hover/card:text-ink-50 transition-colors duration-300" />
                     </div>
                     <span class="font-bold text-ink-900 text-sm uppercase tracking-wide group-hover/card:text-ochre-700 transition-colors">
                         {benefit}
