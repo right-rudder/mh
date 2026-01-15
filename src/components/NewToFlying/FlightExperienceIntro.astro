@@ -28,7 +28,7 @@ const { data } = Astro.props;
           {data.description.map(p => <p>{p}</p>)}
         </div>
 
-        <a href={data.cta.href} class="group inline-flex items-center gap-3 px-8 py-4 bg-ink-950 text-white font-bold uppercase tracking-widest text-sm rounded-sm hover:bg-ochre-600 transition-all duration-300 shadow-xl hover:cursor-pointer">
+        <a href={data.cta.href} class="group inline-flex items-center gap-3 px-8 py-4 bg-ink-950 text-ink-50 font-bold uppercase tracking-widest text-sm rounded-sm hover:bg-ochre-600 transition-all duration-300 shadow-xl hover:cursor-pointer">
           {data.cta.text}
           <FaArrowRight className="group-hover:translate-x-1 transition-transform" />
         </a>

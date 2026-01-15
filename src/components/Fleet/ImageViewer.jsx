@@ -70,7 +70,7 @@ const VisualTourGallery = ({ images }) => {
             <div className="absolute inset-0 bg-ink-950/20 group-hover:bg-transparent transition-colors duration-300"></div>
 
             {/* Expand Icon - Always visible in bottom right */}
-            <div className="absolute bottom-3 right-3 bg-black/60 backdrop-blur-sm text-white p-2 rounded-sm border border-white/20 transition-transform duration-300 group-hover:scale-110 z-10">
+            <div className="absolute bottom-3 right-3 bg-black/60 backdrop-blur-sm text-ink-50 p-2 rounded-sm border border-white/20 transition-transform duration-300 group-hover:scale-110 z-10">
               <div className="flex items-center gap-2">
                  <span className="text-[10px] uppercase font-bold tracking-widest hidden md:block">Expand</span>
                  <FaExpand className="text-sm" />
@@ -114,7 +114,7 @@ const VisualTourGallery = ({ images }) => {
             {/* Prev Button */}
             <div
               onClick={prevImage}
-              className="absolute top-0 bottom-0 left-0 w-12 md:w-16 bg-black/40 flex items-center justify-center text-white cursor-pointer transition-all duration-300 opacity-100 md:opacity-0 md:group-hover:opacity-100 z-30"
+              className="absolute top-0 bottom-0 left-0 w-12 md:w-16 bg-black/40 flex items-center justify-center text-ink-50 cursor-pointer transition-all duration-300 opacity-100 md:opacity-0 md:group-hover:opacity-100 z-30"
             >
               <FaChevronLeft size={32} />
             </div>
@@ -122,7 +122,7 @@ const VisualTourGallery = ({ images }) => {
             {/* Next Button */}
             <div
               onClick={nextImage}
-              className="absolute top-0 bottom-0 right-0 w-12 md:w-16 bg-black/40 flex items-center justify-center text-white cursor-pointer transition-all duration-300 opacity-100 md:opacity-0 md:group-hover:opacity-100 z-30"
+              className="absolute top-0 bottom-0 right-0 w-12 md:w-16 bg-black/40 flex items-center justify-center text-ink-50 cursor-pointer transition-all duration-300 opacity-100 md:opacity-0 md:group-hover:opacity-100 z-30"
             >
               <FaChevronRight size={32} />
             </div>

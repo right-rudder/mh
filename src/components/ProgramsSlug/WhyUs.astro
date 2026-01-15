@@ -35,13 +35,13 @@ const { data } = Astro.props;
 
   <div class="max-w-7xl mx-auto px-5 md:px-8 lg:px-12 relative z-10">
     
-    <div class="text-center mb-16 max-w-4xl mx-auto">
+    <div class="max-w-4xl lg:text-center lg:mx-auto mb-8">
       {data.upperheader && (
-        <span class="text-ochre-600 font-bold uppercase tracking-widest text-sm mb-3 block">
+        <span class="subtitle ">
           {data.upperheader}
         </span>
       )}
-      <h2 class="text-3xl md:text-5xl !font-main-header text-white uppercase tracking-wide leading-tight">
+      <h2 class="title ">
         {data.title || "The MH Aviation Advantage"}
       </h2>
     </div>
@@ -49,17 +49,17 @@ const { data } = Astro.props;
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
       
       <div>
-        <h3 class="text-2xl font-bold text-white mb-6 border-l-4 border-ochre-600 pl-6">
+        <h3 class="text-2xl font-bold text-ink-50 mb-6 border-l-4 border-ochre-600 pl-6 ">
           {data.topicTitle}
         </h3>
-        <div class="space-y-6 text-lg text-ink-200 leading-relaxed">
+        <div class="space-y-6 text-lg text-ink-50 leading-relaxed">
           {data.topicDescriptionParagraphs?.map(p => <p>{p}</p>)}
         </div>
       </div>
 
       <div class="bg-ink-900/40 backdrop-blur-sm border border-ink-800 p-8 md:p-10 rounded-sm relative group hover:border-ochre-600/40 transition-colors duration-500 shadow-2xl">
         
-        <h3 class="text-xl font-bold text-white mb-6 uppercase tracking-wider flex items-center gap-3">
+        <h3 class="text-xl font-bold text-ink-50 mb-6 uppercase tracking-wider flex items-center gap-3">
             <FaShieldAlt className="text-ochre-500 text-2xl" />
             {data.bulletTitle}
         </h3>
@@ -71,10 +71,10 @@ const { data } = Astro.props;
         <ul class="space-y-4">
           {data.bulletPoints?.map(pt => (
             <li class="flex items-start gap-4 group/item">
-              <div class="mt-0.5 flex-shrink-0 w-6 h-6 rounded-full bg-ink-950 border border-ochre-600/30 flex items-center justify-center text-ochre-500 text-[10px] group-hover/item:bg-ochre-600 group-hover/item:text-white transition-all duration-300">
+              <div class="transition-all duration-1000 ease-out mt-0.5 flex-shrink-0 w-6 h-6 rounded-full bg-ink-950 border border-ochre-600/30 flex items-center justify-center text-ochre-500 text-[10px] group-hover/item:bg-ochre-600 group-hover/item:text-white transition-all duration-300">
                 <FaCheck />
               </div>
-              <span class="text-ink-100 font-medium leading-snug">{pt}</span>
+              <span class="text-ink-100 group-hover/item:text-ochre-600 font-medium leading-snug">{pt}</span>
             </li>
           ))}
         </ul>
@@ -86,7 +86,7 @@ const { data } = Astro.props;
       <div class="mt-24 pt-12 border-t border-ink-800/50 text-center max-w-3xl mx-auto flex flex-col items-center">
         <FaQuoteLeft className="text-4xl text-ochre-600/30 mb-6" />
         
-        <h3 class="text-2xl !font-main-header text-white uppercase tracking-wide mb-4">
+        <h3 class="text-2xl !font-main-header text-ink-50 uppercase tracking-wide mb-4">
             {data.closingTitle}
         </h3>
         <div class="text-ink-300 text-lg leading-relaxed italic">

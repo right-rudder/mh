@@ -47,7 +47,7 @@ const { post = postPlaceholder, isHighlight = false } = Astro.props;
       post.data.tags && post.data.tags.length > 0 && (
         <div class="absolute -top-12 left-4 flex flex-wrap gap-1">
           {post.data.tags.map((tag: any) => (
-            <span class="bg-gray-900 text-white border-[1.5px] border-gray-300 text-xs px-3 py-1 rounded-full">
+            <span class="bg-gray-900 text-ink-50 border-[1.5px] border-gray-300 text-xs px-3 py-1 rounded-full">
               {tag}
             </span>
           ))}

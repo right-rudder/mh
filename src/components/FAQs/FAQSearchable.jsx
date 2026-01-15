@@ -59,7 +59,7 @@ const FAQSearchable = ({ data }) => {
                 onClick={() => setSelectedCategory(cat)}
                 className={`px-6 py-2 rounded-full text-sm font-bold uppercase tracking-wider transition-all duration-300 border ${
                   selectedCategory === cat
-                    ? "bg-ochre-600 text-white border-ochre-600 shadow-md"
+                    ? "bg-ochre-600 text-ink-50 border-ochre-600 shadow-md"
                     : "bg-white text-ink-600 border-ink-200 hover:border-ochre-600 hover:text-ochre-600"
                 }`}
               >

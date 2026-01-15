@@ -33,16 +33,16 @@ const { data } = Astro.props;
 
       <div class="flex flex-col justify-center">
         {data.upperheader && (
-          <span class="text-ochre-600 font-bold uppercase tracking-widest text-sm mb-2 block">
+          <span class="subtitle">
             {data.upperheader}
           </span>
         )}
         
-        <h2 class="text-3xl md:text-4xl !font-main-header text-ink-950 uppercase tracking-wide mb-6">
+        <h2 class="title-black">
           {data.title || "What is Included"}
         </h2>
 
-        <div class="prose prose-lg text-ink-600 mb-10">
+        <div class="prose prose-lg text-ink-950 mb-10">
           {data.descriptionParagraphs?.map(p => <p>{p}</p>)}
         </div>
 
