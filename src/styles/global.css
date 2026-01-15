@@ -20,18 +20,6 @@
   --color-muted-900: #393d40;
   --color-muted-950: #232629;
 
-  --color-monza-50: #fff1f2;
-  --color-monza-100: #ffe1e2;
-  --color-monza-200: #ffc7c9;
-  --color-monza-300: #ffa0a4;
-  --color-monza-400: #ff6a70;
-  --color-monza-500: #f83b43;
-  --color-monza-600: #e61c24;
-  --color-monza-700: #bb131a;
-  --color-monza-800: #a0141a;
-  --color-monza-900: #84181c;
-  --color-monza-950: #48070a;
-
   --color-lucky-50: #f0f3fe;
   --color-lucky-100: #dee3fb;
   --color-lucky-200: #c4cff9;
@@ -104,33 +92,29 @@
 
 
 .btn-primary {
-  @apply bg-ochre-600 border border-ochre-600 text-white font-semibold px-5 py-2 flex items-center rounded-sm justify-center gap-2 cursor-pointer hover:bg-white hover:border-ochre-700 hover:text-ochre-700 transition duration-200 hover:scale-105;
+  @apply bg-ochre-600 shadow-md hover:shadow-ochre-100/20 border sm:!max-w-[250px] border-ochre-600 text-white font-semibold px-5 py-2 flex items-center rounded-sm justify-center gap-2 cursor-pointer hover:bg-white hover:border-ochre-700 hover:text-ochre-700 transition duration-200 hover:scale-105;
 }
+
+.btn-primary-overviews {
+  @apply bg-ochre-600 sm:mx-auto shadow-md hover:shadow-ochre-100/20 border sm:!max-w-[250px] border-ochre-600 text-white font-semibold px-5 py-2 flex items-center rounded-sm justify-center gap-2 cursor-pointer hover:bg-white hover:border-ochre-700 hover:text-ochre-700 transition duration-200 hover:scale-105;
+}
+
 
 .btn-transparent {
   @apply bg-transparent rounded-sm border border-white px-5 py-2 text-white font-semibold cursor-pointer hover:bg-white hover:text-ochre-600 transition duration-200 hover:scale-105;
 }
 
 .title {
-  @apply font-sans text-3xl md:text-4xl lg:text-5xl mb-4
+  @apply !text-3xl sm:!text-[2.5rem] mb-8 uppercase !font-main-header tracking-wide !text-ink-50
+}
+.title-black {
+  @apply !text-3xl sm:!text-[2.5rem] mb-8 uppercase !font-main-header tracking-wide !text-ink-950
 }
 
 .subtitle {
-  @apply text-lg md:text-xl font-bold text-ochre-600 max-w-3xl mx-auto
+  @apply font-sans font-medium text-ochre-600 uppercase  !text-xs sm:!text-base inline-block
 }
 
-.key-detail-title {
-  @apply font-title text-lucky-950 font-extrabold italic
-}
-.paragraph-text {
-  @apply text-lg text-gray-600 mb-8 leading-relaxed;
-}
-.item-text {
-  @apply text-base text-gray-600 leading-relaxed;
-}
-.item-text-red {
-  @apply text-lg text-monza-600 font-bold leading-relaxed;
-}
 
 h1, h2, h3, h4, h5, h6 {
   @apply font-sans font-black

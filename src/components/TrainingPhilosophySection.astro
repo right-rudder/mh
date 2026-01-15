@@ -33,7 +33,10 @@ const { data } = Astro.props;
           alt={data.image.alt}
           class="w-full h-full object-cover object-[60%_30%] transition-transform duration-700 group-hover:scale-105"
         />
-        <div class="absolute bottom-6 left-6 bg-white/95 backdrop-blur-sm p-4 rounded-sm shadow-lg border-l-4 border-ochre-600 max-w-xs">
+        <div
+            class="
+              absolute bottom-4 left-1/2 -translate-x-1/2 sm:left-6 sm:translate-x-0 bg-white/95 backdrop-blur-sm p-4 rounded-sm shadow-lg border-l-4 border-ochre-600 max-w-xs w-[calc(100%-2rem)]"
+          >
           <div class="flex items-center gap-3 mb-2">
             <FaUsers className="text-ochre-600 text-xl" />
             <span class="font-bold text-ink-950 text-sm uppercase tracking-wide">Our Mission Statement</span>
@@ -46,12 +49,12 @@ const { data } = Astro.props;
 
       <div class="reveal-content order-1 opacity-0 -translate-x-8 transition-all duration-1000 ease-out">
         <div class="flex items-center gap-3">
-          <p class="text-ochre-600 font-bold uppercase tracking-widest text-sm">
+          <p class="subtitle">
             {data.eyebrow}
           </p>
         </div>
 
-        <h2 class="title !text-[2.5rem] uppercase !font-main-header tracking-wide !text-ink-950 mb-6" set:html={data.title} />
+        <h2 class="title-black" set:html={data.title} />
 
         <div class="bg-ink-100 border-l-4  border-ink-200 p-6 mb-8 rounded-r-sm">
            <p class="text-ink-700 font-medium italic text-lg leading-relaxed font-sans">
@@ -63,7 +66,7 @@ const { data } = Astro.props;
         <p class="paragraph-text text-ink-600 mb-8" set:html={data.description} />
 
         <div class="flex flex-col sm:flex-row gap-4">
-          <a class="btn-primary w-fit shadow-lg shadow-ochre-100">
+          <a class="btn-primary">
              {data.cta.text}
           </a>
         </div>

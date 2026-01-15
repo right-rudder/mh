@@ -54,11 +54,11 @@ const getStatIcon = (label: string, index: number) => {
   <div class="max-w-7xl mx-auto px-5 md:px-8 lg:px-12 relative z-10 w-full py-16 md:py-24">
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
       <div class="order-2 lg:order-1 text-white opacity-0 translate-y-10 transition-all duration-1000 ease-out reveal-content">
-        <p class="text-ochre-500 font-bold uppercase tracking-widest text-sm mb-2">
+        <p class="subtitle">
           {data.eyebrow}
         </p>
         
-        <h2 class="title !text-[2.5rem] uppercase !font-main-header tracking-wide !text-ink-50" set:html={data.headline}>
+        <h2 class="title" set:html={data.headline}>
           
         </h2>
 
@@ -85,13 +85,13 @@ const getStatIcon = (label: string, index: number) => {
         </div>
 
         {data.stats && data.stats.length > 0 && (
-          <div class="grid grid-cols-2 gap-4 mb-10">
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-10">
             {data.stats.map((stat, index) => {
               const Icon = getStatIcon(stat.label, index);
               return (
               <div class="bg-ink-900/60 backdrop-blur-sm border border-ink-800 rounded-sm p-5 hover:border-ochre-600 hover:bg-ink-800/80 transition-all duration-300 group flex flex-col justify-between h-full">
                 <div class="mb-3 text-ochre-600/80 group-hover:text-ochre-500 transition-colors">
-                     <Icon className="text-2xl" />
+                     <Icon className="text-2xl"/>
                 </div>
                 <div>
                     <div class="font-sans text-2xl md:text-3xl font-bold text-white mb-1 tracking-tight">

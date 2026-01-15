@@ -33,10 +33,10 @@ const { data } = Astro.props;
     </div>
   
   <div class="reveal-content max-w-4xl mx-auto px-5 md:px-8 lg:px-12 relative z-10 text-center opacity-0 translate-y-8 transition-all duration-1000 ease-out">
-    <p class="text-ochre-400 font-bold uppercase tracking-widest text-sm mb-1">
+    <p class="subtitle">
       {data.eyebrow}
     </p>
-    <h2 class="title !text-[2.5rem] uppercase !font-main-header tracking-wide !text-ink-50 mb-6" set:html= {data.headline}>
+    <h2 class="title" set:html= {data.headline}>
      
     </h2>
     <p class="font-sans font-medium text-ink-50 mb-10 text-xl font-light" set:html={data.bodyCopy}>

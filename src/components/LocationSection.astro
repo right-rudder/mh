@@ -17,11 +17,11 @@ const { data } = Astro.props;
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
       <div class="reveal-fade flex flex-col justify-center opacity-0 translate-y-8 transition-all duration-1000 ease-out">
         <p
-          class="text-ochre-600 font-bold uppercase tracking-widest text-sm mb-2"
+          class="subtitle"
         >
           {data.eyebrow}
         </p>
-        <h2 class="title !text-[2.5rem] uppercase !font-main-header tracking-wide !text-ink-950 !mb-2" set:html={data.headline}></h2>
+        <h2 class="title-black" set:html={data.headline}></h2>
         <p class="paragraph-text text-ink-600 mb-8">
           {data.bodyCopy}
         </p>

@@ -32,17 +32,17 @@ const { data } = Astro.props;
       </div>
       <div class="reveal opacity-0 translate-x-8 transition-all duration-1000 ease-out delay-200">
         <p
-          class="text-ochre-600 font-bold uppercase tracking-widest text-sm mb-2"
+          class="subtitle"
         >
           {data.eyebrow}
         </p>
-        <h2 class="title !text-[2.5rem] uppercase !font-main-header tracking-wide !text-ink-50 mb-6">
+        <h2 class="title">
           {data.headline}
         </h2>
-        <p class="font-sans text-ink-50" set:html={data.bodyCopy}>
+        <p class="font-sans text-ink-50 max-w-[95%]" set:html={data.bodyCopy}>
         </p>
         {
-          data.cta &&  (<a class="btn-primary !max-w-[200px] mt-4">Meet Our Services</a>)
+          data.cta &&  (<a class="btn-primary mt-4">Meet Our Services</a>)
         }
       </div>
     </div>
