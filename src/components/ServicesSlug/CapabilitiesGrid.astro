@@ -16,7 +16,6 @@ interface Props {
 
 const { data } = Astro.props;
 
-// Simple icon mapper
 const getIcon = (iconName?: string) => {
   if (iconName?.includes('inspect')) return FaClipboardCheck;
   if (iconName?.includes('repair')) return FaWrench;
@@ -29,15 +28,17 @@ const getIcon = (iconName?: string) => {
   <div class="max-w-7xl mx-auto px-5 md:px-8 lg:px-12 relative z-10">
     
     <div class="max-w-3xl mb-16 reveal-header opacity-0 translate-y-8 transition-all duration-1000 ease-out">
-      <span class="text-ochre-500 font-bold uppercase tracking-widest text-sm mb-3 block">
+      <div class="w-full flex flex-col justify-center md:items-center md:text-center">
+        <span class="subtitle">
         {data.upperheader}
       </span>
-      <h2 class="text-3xl md:text-4xl !font-main-header uppercase tracking-wide mb-6">
+      <h2 class="title">
         {data.title}
       </h2>
       {data.description && (
-        <p class="text-ink-200 text-lg leading-relaxed">{data.description}</p>
+        <p class="text-ink-50 text-lg leading-relaxed">{data.description}</p>
       )}
+      </div>
     </div>
 
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">

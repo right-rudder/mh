@@ -30,7 +30,9 @@ const { data } = Astro.props;
         <details class="group bg-ink-50 rounded-sm border border-ink-100 open:border-ochre-600/30 transition-colors">
           <summary class="flex justify-between items-center p-6 cursor-pointer list-none font-bold text-ink-900 hover:text-ochre-700 transition-colors">
             <span>{item.question}</span>
-            <FaChevronDown class="text-ochre-600 transform transition-transform duration-300 group-open:rotate-180" />
+            <span class="text-ochre-600 transform transition-transform duration-300 group-open:rotate-180">
+              <FaChevronDown  />
+            </span>
           </summary>
           <div class="px-6 pb-6 text-ink-600 leading-relaxed">
             <p>{item.answer}</p>

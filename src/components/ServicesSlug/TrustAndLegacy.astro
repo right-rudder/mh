@@ -23,13 +23,13 @@ const { data } = Astro.props;
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
       
       <div class="order-2 lg:order-1 reveal-text opacity-0 translate-y-8 transition-all duration-1000 ease-out">
-        <span class="text-ochre-600 font-bold uppercase tracking-widest text-sm mb-3 block">
+        <span class="subtitle">
           {data.upperheader}
         </span>
-        <h2 class="text-3xl md:text-4xl !font-main-header text-ink-950 uppercase tracking-wide mb-8" set:html= {data.title}>
+        <h2 class="title-black" set:html= {data.title}>
         </h2>
         
-        <div class="space-y-6 text-ink-600 text-lg leading-relaxed mb-10">
+        <div class="space-y-6 text-ink-950 text-lg leading-relaxed mb-10">
           {data.storyParagraphs.map(p => <p set:html={p} />)}
         </div>
 

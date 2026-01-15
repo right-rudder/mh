@@ -55,7 +55,7 @@ const { post = postPlaceholder, isHighlight = false } = Astro.props;
       )
     }
 
-    <div class="flex items-center gap-3 text-sm text-black border-b border-gray-300 pb-6">
+    <div class="flex items-center gap-3 text-sm text-ink-950 border-b border-gray-300 pb-6">
       <div class={`${isHighlight ? "p-3" : "p-2"} rounded-full flex items-center justify-center border-2 border-gray-300`}>
         <ImageComp class={`${isHighlight ? "w-6" : "w-4"}`} src={mhAviationLogo} alt=" logo" />
       </div>
@@ -76,7 +76,7 @@ const { post = postPlaceholder, isHighlight = false } = Astro.props;
         </a>
       </h2>
 
-      <p class="block sans text-black line-clamp-3">
+      <p class="block sans text-ink-950 line-clamp-3">
         {post.data.description}
       </p>
     </div>
