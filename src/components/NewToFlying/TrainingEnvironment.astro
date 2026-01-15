@@ -47,10 +47,10 @@ const getIcon = (text: string) => {
       </div>
 
       <div class="lg:w-1/2 flex flex-col justify-center">
-        <span class="text-ochre-600 font-bold uppercase tracking-widest text-sm block">
+        <span class="subtitle">
           {data.upperheader}
         </span>
-        <h2 class="text-3xl md:text-5xl !font-main-header text-ink-950 uppercase tracking-wide mb-6 leading-tight" set:html={data.title}></h2>
+        <h2 class="title-black" set:html={data.title}></h2>
         <p class="text-ink-600 text-lg leading-relaxed mb-10 border-b border-ink-200 pb-8">
           {data.description}
         </p>

@@ -21,14 +21,14 @@ const { data } = Astro.props;
     <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
       
       <div class="lg:col-span-5">
-        <span class="text-ochre-500 font-bold uppercase tracking-widest text-sm mb-3 block">{data.upperheader}</span>
-        <h2 class="text-3xl md:text-4xl !font-main-header uppercase tracking-wide mb-6">{data.title}</h2>
+        <span class="subtitle">{data.upperheader}</span>
+        <h2 class="title">{data.title}</h2>
         <p class="text-ink-200 text-lg leading-relaxed mb-8" set:html={data.description} />
         
         <ul class="space-y-4 mb-10">
           {data.features.map(feature => (
             <li class="flex items-center gap-3">
-              <div class="w-6 h-6 rounded-full bg-ochre-600 flex items-center justify-center text-xs text-white">
+              <div class="w-6 h-6 rounded-full bg-ochre-600 flex items-center justify-center text-xs text-ink-50">
                 <FaCheck />
               </div>
               <span class="font-medium text-ink-50">{feature}</span>

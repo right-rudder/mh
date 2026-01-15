@@ -25,9 +25,9 @@ const { data } = Astro.props;
       </div>
 
       <div class="lg:w-7/12 p-10 lg:p-16 flex flex-col justify-center">
-        <span class="text-ochre-600 font-bold uppercase tracking-widest text-sm mb-3 block">{data.upperheader}</span>
-        <h2 class="text-3xl md:text-4xl !font-main-header text-ink-950 uppercase tracking-wide mb-6">{data.title}</h2>
-        <p class="text-ink-600 text-lg leading-relaxed mb-8" set:html={data.description} />
+        <span class="subtitle">{data.upperheader}</span>
+        <h2 class="title-black">{data.title}</h2>
+        <p class="text-ink-950 text-lg leading-relaxed mb-8" set:html={data.description} />
         
         <div>
             <a href={data.cta.href} class="btn-primary hover:cursor-pointer">{data.cta.text}</a>

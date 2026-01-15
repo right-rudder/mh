@@ -15,12 +15,13 @@ import TrainingEnvironment from "../components/NewToFlying/TrainingEnvironment.a
 const heroData = {
   images: [
     {
-      src: "/src/assets/instructing/mh-aviation-instructing-on-top-of-plane.jpg",
+      src: "/src/assets/fleet/mh-aviation-modern-aircraft-at-lancaster-california.webp",
       alt: "Student pilot looking at the horizon",
+      imageCentering: "object-[50%_30%]"
     },
   ],
-  title: "Your Journey Starts Here",
-  subTitle: "Discover the freedom of flight with the Antelope Valley's most trusted, family-owned aviation hub.",
+  title: "New to Flying?",
+  subTitle: "Your journey starts here. Discover the freedom of flight with the Antelope Valley's most trusted, family-owned aviation hub.",
 };
 
 const introData = {
@@ -34,7 +35,7 @@ const introData = {
   cta: { text: "Learn About Us", href: "/about" },
   image: {
     src: "/src/assets/instructing/mh-aviation-instructing-student-with-checklist.webp",
-    alt: "Student pilot preparing for flight"
+    alt: "Student with"
   }
 };
 
@@ -89,7 +90,7 @@ const roadmapData = {
 const fleetData = {
   upperheader: "Modern Technology",
   title: "Train in a Glass Cockpit",
-  description: "Don't train in the past. We have invested over $150k to upgrade our fleet with <strong>Garmin G5 glass cockpits</strong> and 180 HP engine conversions. You will learn on the same modern avionics used in professional aviation.",
+  description: "Don't train in the past. We have invested over $150k to upgrade our fleet with <strong class=\"text-ochre-600\">Garmin G5 glass cockpits</strong> and 180 HP engine conversions. You will learn on the same modern avionics used in professional aviation.",
   features: ["Garmin Avionics", "180 HP Engines", "Autopilot Equipped"],
   cta: { text: "See Our Fleet", href: "/aircraft" },
   image: {
@@ -113,7 +114,7 @@ const environmentData = {
 const financeData = {
   upperheader: "Investment",
   title: "Accessible & Transparent",
-  description: "We believe in honest, fair pricing. Our aircraft rates are significantly lower than the regional competition (approx. $155/hr vs $205/hr). We also partner with <strong>Stratus Financial</strong> to help you fund your training.",
+  description: "We believe in honest, fair pricing. Our aircraft rates are significantly lower than the regional competition (approx. $155/hr vs $205/hr). We also partner with <strong class=\"text-ochre-600\">Stratus Financial</strong> to help you fund your training.",
   cta: { text: "Financing Options", href: "/financing" },
   image: {
     src: "/src/assets/facilities/mh-aviation-facilities-front-sd.webp",
@@ -123,9 +124,9 @@ const financeData = {
 
 const discoveryData = {
   upperheader: "Your First Step",
-  title: "The Discovery Flight",
+  title: "The First Flight",
   description: "The best way to know if aviation is for you is to try it. For a flat rate, you'll sit in the pilot's seat, take off, and control the aircraft under the supervision of a certified instructor. No commitment, just flying.",
-  cta: { text: "Meet Our Discovery Flight", href: "/discovery-flight" },
+  cta: { text: "Book A First Flight", href: "/contact" },
   image: {
     src: "/src/assets/instructing/mh-aviation-instructing-student-inside-cockpit-at-lancaster-california.webp",
     alt: "Happy student pilot in cockpit"

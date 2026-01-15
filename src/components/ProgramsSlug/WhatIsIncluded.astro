@@ -45,8 +45,7 @@ const { data } = Astro.props;
         <div class="prose prose-lg text-ink-950 mb-10">
           {data.descriptionParagraphs?.map(p => <p>{p}</p>)}
         </div>
-
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-8">
           {data.bulletPointLists?.map((list) => (
             <div>
               <h4 class="font-bold text-ink-950 uppercase tracking-wide mb-4 text-sm border-b border-ink-200 pb-2">
@@ -62,6 +61,10 @@ const { data } = Astro.props;
               </ul>
             </div>
           ))}
+        </div>
+        <div class="w-full flex mt-12">
+          <a href="/enroll" class="btn-primary w-full lg:w-fit">
+          Enroll Now</a>
         </div>
       </div>
 

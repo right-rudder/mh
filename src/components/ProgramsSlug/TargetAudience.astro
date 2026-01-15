@@ -33,7 +33,10 @@ const { data } = Astro.props;
         </div>
       ))}
     </div>
-
+    <div class="w-full flex sm:justify-center mt-8">
+      <a href="/enroll" class="btn-primary w-full">
+      Enroll Now</a>
+    </div>
     {data.notFor && (
       <div class="mt-12 bg-ink-100 p-6 rounded-sm flex items-start gap-4 border-l-4 border-red-500">
         <FaTimesCircle className="text-red-500 text-xl mt-1 flex-shrink-0" />
