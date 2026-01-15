@@ -36,11 +36,11 @@ const repairAlt = "FAA Part 145 Repair Station hangar at MH Aviation";
       
       <div class="order-2 lg:order-1 reveal-text opacity-0 translate-y-8 transition-all duration-1000 ease-out">
         
-        <span class="font-sans font-medium text-ochre-600 uppercase tracking-widest text-sm block mb-1">
+        <span class="subtitle">
           {data.eyebrow}
         </span>
 
-        <h2 class="title !text-[2.5rem] uppercase !font-main-header tracking-wide !text-ink-50" set:html={data.title}></h2>
+        <h2 class="title" set:html={data.title}></h2>
 
         <div class="space-y-6 mb-12">
             {data.description.map((paragraph) => (

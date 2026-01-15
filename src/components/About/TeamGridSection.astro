@@ -20,10 +20,10 @@ const { data } = Astro.props;
   <div class="max-w-7xl mx-auto px-5 md:px-8 lg:px-12">
     
     <div class="mb-12 reveal-header opacity-0 translate-y-6 transition-all duration-700">
-      <span class="text-ochre-600 font-bold uppercase tracking-widest text-sm">
+      <span class="subtitle">
         {data.eyebrow}
       </span>
-      <h2 class="title !text-[2.5rem] uppercase !font-main-header tracking-wide !text-ink-950 mt-2" set:html={data.title}></h2>
+      <h2 class="title-black" set:html={data.title}></h2>
     </div>
 
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-10">

@@ -22,7 +22,7 @@ const { data } = Astro.props;
         <span class="subtitle">
           {data.upperheader}
         </span>
-        <h2 class="title-ink-950" set:html={data.title} />
+        <h2 class="title-black" set:html={data.title} />
         
         <div class="space-y-6 text-xl text-ink-950 leading-relaxed mb-10 border-l-4 border-ochre-600 pl-6">
           {data.description.map(p => <p>{p}</p>)}
