@@ -82,7 +82,7 @@
 .title {
   @apply !text-3xl sm:!text-[2.5rem] mb-8 uppercase !font-main-header tracking-wide !text-ink-50
 }
-.title-ink-950 {
+.title-black {
   @apply !text-3xl sm:!text-[2.5rem] mb-8 uppercase !font-main-header tracking-wide !text-ink-950
 }
 .subtitle {

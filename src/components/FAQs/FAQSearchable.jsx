@@ -31,10 +31,10 @@ const FAQSearchable = ({ data }) => {
         
         <div className="text-center mb-12 space-y-8">
           <div>
-            <span className="text-ochre-600 font-bold uppercase tracking-widest text-sm block">
+            <span className="subtitle">
               Support Center
             </span>
-            <h2 className="text-3xl md:text-4xl !font-main-header text-ink-950 uppercase tracking-wide">
+            <h2 className="title-black">
               Frequently Asked<br/> Questions
             </h2>
           </div>
