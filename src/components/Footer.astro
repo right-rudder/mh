@@ -41,7 +41,7 @@ const today = new Date();
             alt={`${COMPANY_NAME} Logo`}
           />
         </a>
-        <p class="text-sm text-ink-200 mb-6 font-medium leading-relaxed text-center max-w-[85%] sm:max-w-[75%] md:max-w-full md:text-left xl:text-center">
+        <p class="text-sm text-ink-50 mb-6 font-medium leading-relaxed text-center max-w-[85%] sm:max-w-[75%] md:max-w-full md:text-left xl:text-center">
           {SITE_DESCRIPTION}
         </p>
 
@@ -76,13 +76,13 @@ const today = new Date();
           </a>
           <ul class="font-sans space-y-2">
             <li class="text-sm">
-              <a href={`/programs`} class="text-ink-200 hover:text-ochre-600 transition-colors">
+              <a href={`/programs`} class="text-ink-50 hover:text-ochre-600 transition-colors">
                 All Programs
               </a>
             </li>
             {sortedPrograms.map((program) => (
               <li class="text-sm">
-                <a href={`/programs/${program.slug}`} class="text-ink-200 hover:text-ochre-600 transition-colors">
+                <a href={`/programs/${program.slug}`} class="text-ink-50 hover:text-ochre-600 transition-colors">
                   {program.data.title}
                 </a>
               </li>
@@ -98,13 +98,13 @@ const today = new Date();
           </a>
           <ul class="font-sans space-y-2">
             <li class="text-sm">
-              <a href={`/services`} class="text-ink-200 hover:text-ochre-600 transition-colors">
+              <a href={`/services`} class="text-ink-50 hover:text-ochre-600 transition-colors">
                 All Services
               </a>
             </li>
             {sortedServices.map((service) => (
               <li class="text-sm">
-                <a href={`/services/${service.slug}`} class="text-ink-200 hover:text-ochre-600 transition-colors">
+                <a href={`/services/${service.slug}`} class="text-ink-50 hover:text-ochre-600 transition-colors">
                   {service.data.title}
                 </a>
               </li>
@@ -121,7 +121,7 @@ const today = new Date();
           <ul class="font-sans space-y-2">
             {item.children?.map((child) => (
               <li class="text-sm">
-                <a href={child.url} class="text-ink-200 hover:text-ochre-600 transition-colors">
+                <a href={child.url} class="text-ink-50 hover:text-ochre-600 transition-colors">
                   {child.label}
                 </a>
               </li>
@@ -149,7 +149,7 @@ const today = new Date();
 
     <div class="w-full h-px bg-ink-800 my-10"></div>
 
-    <div class="flex flex-col md:flex-row justify-between items-center gap-6 pb-8 text-sm text-ink-400">
+    <div class="flex flex-col md:flex-row justify-between items-center gap-6 pb-8 text-sm text-ink-50">
       
       <span class="text-center md:text-left w-full md:w-auto">
         Powered by

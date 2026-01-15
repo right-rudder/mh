@@ -58,16 +58,16 @@ const finalCtaData = {
       <div class="flex flex-col lg:flex-row gap-12 lg:gap-20">
         <div class="lg:w-7/12 order-2 lg:order-1">
           <div class="mb-8 reveal-element opacity-0 translate-y-8 transition-all duration-1000 ease-out">
-            <span class="text-ochre-600 font-bold uppercase tracking-widest text-sm mb-2 block">
+            <span class="subtitle">
               Aircraft Profile
             </span>
-            <h2 class="text-3xl md:text-4xl !font-main-header text-ink-950 uppercase tracking-wide">
+            <h2 class="title-black">
               {data.model}
             </h2>
             <div class="h-1 w-20 bg-ochre-600 mt-4 rounded-full"></div>
           </div>
 
-          <div class="prose prose-lg text-ink-600 mb-12 leading-relaxed reveal-element opacity-0 translate-y-8 transition-all duration-1000 ease-out delay-100">
+          <div class="prose prose-lg text-ink-950 mb-12 leading-relaxed reveal-element opacity-0 translate-y-8 transition-all duration-1000 ease-out delay-100">
             <p>{data.description}</p>
           </div>
 
@@ -79,8 +79,8 @@ const finalCtaData = {
               </h3>
               <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                 {data.features.map((feature) => (
-                  <div class="flex items-center gap-3 bg-ink-50 p-4 rounded-sm border border-ink-100 shadow-sm hover:border-ochre-600/50 transition-colors duration-300">
-                    <div class="flex-shrink-0 w-6 h-6 rounded-full bg-ochre-100 flex items-center justify-center text-ochre-600 text-xs">
+                  <div class="group hover:-translate-y-2 transition-transform easy-out duration-300 flex items-center gap-3 bg-ink-50 p-4 rounded-sm border border-ink-100 shadow-sm hover:border-ochre-600/50 transition-colors duration-300">
+                    <div class="flex-shrink-0 w-6 h-6 rounded-full bg-ochre-100 group-hover:bg-ochre-600 transition-all easy-out duration-300 group-hover:text-ink-50 flex items-center justify-center text-ochre-600 text-xs">
                       <FaCheck />
                     </div>
                     <span class="text-ink-900 font-medium">{feature}</span>
@@ -92,7 +92,7 @@ const finalCtaData = {
 
           {galleryImages.length > 0 && (
             <div class="mt-16">
-               <h3 class="text-xl !font-main-header text-ink-950 uppercase tracking-wide flex items-center gap-3 mb-6 reveal-element opacity-0 translate-y-8 transition-all duration-1000 ease-out delay-300">
+               <h3 class="title-black  reveal-element opacity-0 translate-y-8 transition-all duration-1000 ease-out delay-300">
                 <IoMdPhotos className="text-ochre-600"/>
                 Visual Tour
               </h3>
@@ -108,12 +108,12 @@ const finalCtaData = {
               <div class="absolute top-0 right-0 w-64 h-64 bg-ochre-600/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2 pointer-events-none"></div>
 
               <div class="p-8 relative z-10">
-                <div class="flex justify-between items-start mb-8">
+                <div class="flex justify-between gap-2 items-start mb-8">
                   <div>
                     <span class="text-ochre-500 font-bold uppercase tracking-widest text-xs block mb-1">Registration</span>
                     <h3 class="text-3xl font-mono font-bold text-ink-50 tracking-wider">{data.tailNumber}</h3>
                   </div>
-                  <div class="border border-ink-50/20 px-3 py-1 rounded text-[10px] uppercase font-bold tracking-widest text-ink-50/70">
+                  <div class="border max-w-[100px] border-ink-50/20 px-2 py-1 rounded  text-center text-[10px] uppercase font-bold tracking-widest text-ink-50/70">
                     FAA Part 145 Maintained
                   </div>
                 </div>
