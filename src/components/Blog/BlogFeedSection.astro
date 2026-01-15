@@ -1,5 +1,5 @@
 ---
-import BlogFeedSectionCard from "./BlogFeedSectionCard.astro"; // Renamed for clarity
+import BlogFeedSectionCard from "./BlogFeedSectionCard.astro"; 
 import { getCollection } from "astro:content";
 import type { CollectionEntry } from "astro:content";
 import { FaArrowRight } from "react-icons/fa";
@@ -29,12 +29,12 @@ const data = {
     
     <div class="text-center max-w-3xl mx-auto mb-16">
       <div class="flex items-center justify-center gap-3 mb-1">
-        <span class="text-ochre-600 font-bold uppercase tracking-widest text-sm">
+        <span class="subtitle">
           {data.eyebrow}
         </span>
       </div>
       
-      <h2 class="title !text-[2.5rem] uppercase !font-main-header tracking-wide !text-ink-50 mb-6">
+      <h2 class="title">
         {data.title}
       </h2>
       
