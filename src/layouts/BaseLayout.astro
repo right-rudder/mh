@@ -12,8 +12,8 @@ import BaseHead from "../components/BaseHead.astro";
 import Footer from "../components/Footer.astro";
 import { SITE_TITLE, SITE_DESCRIPTION, KEYWORDS, OG_IMAGE } from "../data/consts";
 import Navbar from "../components/Navbar.astro";
-import HeaderContact from "../components/HeaderContact.astro";
 import ChatWidgetDebounced from "../components/ChatWidgetDebounced.astro";
+import NavbarContact from "../components/NavbarContact.astro";
 
 const { pathname } = Astro.url;
 const { siteTitle, siteDescription, siteImage, siteKeywords, customBreadcrumbs, navBarBG = false } = Astro.props;
@@ -98,56 +98,13 @@ const breadcrumbs = generateBreadcrumbs(pathname, customBreadcrumbs);
       })}>
       </script>
     )}
-    
-    <!-- Google Tag Manager -->
-    <script>
-      (function (w, d, s, l, i) {
-        (w as any)[l] = (w as any)[l] || [];
-        (w as any)[l].push({
-          "gtm.start": new Date().getTime(),
-          event: "gtm.js",
-        });
-        var f = d.getElementsByTagName(s)[0],
-          j = d.createElement(s),
-          dl = l != "dataLayer" ? "&l=" + l : "";
-        var script = j as HTMLScriptElement;
-        script.async = true;
-        script.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
-        if (f && f.parentNode) {
-          f.parentNode.insertBefore(script, f);
-        }
-      })(window, document, "script", "dataLayer", "GTM-WQWV363W");
-    </script>
-    <!-- End Google Tag Manager -->
-    <!-- Preconnect to external domains to improve performance -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link rel="preconnect" href="https://www.googletagmanager.com" />
-    <link rel="preconnect" href="https://widgets.leadconnectorhq.com" />
-
-    <!-- Additional mobile-friendly meta tags -->
-    <meta name="apple-mobile-web-app-capable" content="yes" />
-    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
-    <meta name="format-detection" content="telephone=no" />
-    <meta name="theme-color" content="#1e40af" />
-    <meta name="mobile-web-app-capable" content="yes" />
-    <!-- <script
-      src="https://widgets.leadconnectorhq.com/loader.js"
-      data-resources-url="https://widgets.leadconnectorhq.com/chat-widget/loader.js"
-      data-widget-id=""></script> -->
   </head>
   <body class="font-sans bg-ink-50">
     <!-- Google Tag Manager (noscript) -->
-    <!-- <noscript
-      ><iframe
-        src="https://www.googletagmanager.com/ns.html?id="
-        height="0"
-        width="0"
-        style="display:none;visibility:hidden"></iframe></noscript
-    > -->
-
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-N49DDGFF"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <!-- End Google Tag Manager (noscript) -->
-    <HeaderContact />
+    <NavbarContact />
     <header class="sticky w-full h-0 inset-0 z-50">
       <Navbar pathname={pathname} navBarBG={navBarBG}></Navbar>
     </header>
