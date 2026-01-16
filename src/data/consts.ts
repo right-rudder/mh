@@ -188,7 +188,7 @@ export const navbarMenu: MenuItem[] = [
     label: "New to Flying?",
     url: "/new-to-flying",
     children: [
-      { label: "New to Flying", url: "/new-to-flying" },
+      { label: "New to Flying?", url: "/new-to-flying" },
       { label: "Financing", url: "/financing" },
       { label: "FAQs", url: "/faqs" },
     ],
