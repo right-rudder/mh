@@ -37,7 +37,7 @@ const { title, subtitle, description, imageCentering, image, cta } = Astro.props
         
         {
           cta && (
-            <div class="flex w-full sm:justify-start bg-red-500">
+            <div class="flex w-full sm:justify-start">
               <a
                 href={cta.href}
                 target={cta.href.includes("http") ? "_blank" : ""}
