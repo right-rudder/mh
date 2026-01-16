@@ -1,16 +1,79 @@
 // ==============================
-// Site Metadata
+// Brand Assets And Information
 // ==============================
+export const OG_IMAGE = "/og-image.png";
+export const FAVICON = "/favicon.png";
+export const LOGO = "/MH Aviation.png";
 
-export const SITE_TITLE = "MH Aviation | Flight Training & Aircraft Maintenance";
+export const LOGO_ASSETS = "/src/assets/brand/MH Aviation.png";
+export const LOGO_ASSETS_ALTERNATIVE = "/src/assets/brand/MH Aviation Alternative.png";
+export const LOGO_ASSETS_2 = "/src/assets/brand/MH Aviation White.png";
+export const LOGO_ASSETS_3 = "/src/assets/brand/MH Aviation Black.png"; 
 
+export const COMPANY_NAME = "MH Aviation";
+export const COMPANY_NAME_CAPS = "MH AVIATION";
+export const COMPANY_NICKNAME = "MH Aviation";
+
+export const COMPANY_PRIMARY_SERVICE = "Flight School"
+export const COMPANY_SECONDARY_SERVICE = "Aviation Maintenance"
+
+export const PHONE_NUMBER = "(661) 948-7779";
+export const PHONE_NUMBER_HEADER = "(661) 948-7779";
+
+export const ADDRESS_LINE_1 = "4651 William J Barnes Avenue";
+export const ADDRESS_LINE_2 = "Lancaster, CA 93536";
+
+export const ADDRESS = "4651 William J Barnes Avenue, Lancaster, CA 93536";
+export const ADDRESS_CITY = "Lancaster";
+export const ADDRESS_STATE = "California";
+export const ADDRESS_ZIP = "93536";
+
+export const AIRPORT = "Gen. William Fox Airfield";
+export const AIRPORT_CODE = "KWJF";
+export const AIRPORT_WITH_CODE = "Gen. William Fox Airfield (KWJF)"
+export const AIRPORT_WITH_CODE_SHORT = "Fox Field (KWJF)"
+
+export const GMAPS = ""; // CONTEXT MISSING
+export const EMAIL_ADDRESS = "info@mhaviation.com";
+export const WEBSITE_DOMAIN = "www.mhaviation.com"
+export const WEBSITE_DOMAIN_COMPLETE = "https://www.mhaviation.com"
+
+export const FACEBOOK_URL = "https://www.facebook.com/mhaviation/"; // CONTEXT MISSING
+export const INSTAGRAM_URL = "https://www.instagram.com/mhaviationinc"; // CONTEXT MISSING
+export const LINKEDIN_URL = ""; // CONTEXT MISSING
+export const X_URL = ""; // CONTEXT MISSING
+export const YOUTUBE_URL = ""; // CONTEXT MISSING
+export const YELP_URL = "https://www.yelp.com/biz/mh-aviation-lancaster";
+export const GITHUB_URL = ""; // CONTEXT MISSING
+export const COMPANY_STRATUS_LINK = "https://apply.stratus.finance/"
+
+export const LOCATIONS = [
+  {
+    title: "Gen. William Fox Airfield",
+    address: "4651 William J Barnes Avenue",
+    city: "Lancaster",
+    state: "CA",
+    zip: "93536",
+    gMaps: "https://maps.app.goo.gl/xFh24wDBdqwYerwx6", 
+    phone: "(661) 948-7779",
+    forwardPhone: "(661) 948-7779",
+    fullAddress: "4651 William J Barnes Avenue, Lancaster, CA 93536",
+    fullAddressLineBreak: "4651 William J Barnes Avenue\nLancaster, CA 93536",
+  },
+];
+
+// ==============================
+// SEO - Website Metatags
+// ==============================
+export const SITE_TITLE = `${COMPANY_NAME} | ${COMPANY_PRIMARY_SERVICE}${
+  COMPANY_SECONDARY_SERVICE?.trim() ? ` & ${COMPANY_SECONDARY_SERVICE}` : ""
+}`;
 export const SITE_DESCRIPTION =
-  "MH Aviation is a family-owned flight school, FBO, and FAA Repair Station at Gen. William Fox Airfield in Lancaster, CA, offering single and multi-engine training and full maintenance services.";
+  `${COMPANY_NAME} is a family-owned flight school, FBO, and FAA Repair Station at ${LOCATIONS[0].title} in ${LOCATIONS[0].city}, ${LOCATIONS[0].state}, offering ${COMPANY_PRIMARY_SERVICE} and ${COMPANY_SECONDARY_SERVICE}.`;
 
 // ==============================
-// SEO Keywords
+// SEO - Website Keywords
 // ==============================
-
 export const KEYWORDS = [
   "MH Aviation",
   "flight school Lancaster CA",
@@ -47,120 +110,23 @@ export const PROGRAM_KEYWORDS = {
     "CFI training, CFII instructor job, MEI training, multi-engine instructor",
 };
 
-// ==============================
-// Location Keywords
-// ==============================
-
 export const LOCATION_KEYWORDS = {
   primary: "Gen. William Fox Airfield flight training, Lancaster CA flight school",
   secondary:
     "Antelope Valley pilot training, Palmdale flight school, Quartz Hill aviation, Rosamond flight training",
 };
 
-// ==============================
-// Brand Assets
-// ==============================
-
-export const OG_IMAGE = "/og-image.png";
-export const FAVICON = "/favicon.png";
-export const LOGO = "/MH Aviation.png";
-
-export const LOGO_ASSETS = "/src/assets/brand/MH Aviation.png";
-export const LOGO_ASSETS_ALTERNATIVE = "/src/assets/brand/MH Aviation Alternative.png";
-export const LOGO_ASSETS_2 = "/src/assets/brand/MH Aviation White.png";
-export const LOGO_ASSETS_3 = "/src/assets/brand/MH Aviation Black.png"; 
+export const CITY_AND_STATE = "Lancaster, CA"
 
 // ==============================
-// Business Information
+// Others consts for program/service/crew information were removed, use content collections instead
+// If generates a specific page = Use Astro Content Collection (.md)
+// If used in pages = Use a const here
 // ==============================
 
-export const COMPANY_NAME = "MH Aviation";
-export const COMPANY_NAME_CAPS = "MH AVIATION";
-export const COMPANY_NICKNAME = "MH Aviation";
-
-export const PHONE_NUMBER = "(661) 948-7779";
-export const PHONE_NUMBER_HEADER = "(661) 948-7779";
-
-export const ADDRESS_LINE_1 = "4651 William J Barnes Avenue";
-export const ADDRESS_LINE_2 = "Lancaster, CA 93536";
-
-export const ADDRESS = "4651 William J Barnes Avenue, Lancaster, CA 93536";
-export const ADDRESS_CITY = "Lancaster";
-export const ADDRESS_STATE = "California";
-export const ADDRESS_ZIP = "93536";
-
-export const AIRPORT = "Gen. William Fox Airfield";
-export const AIRPORT_CODE = "KWJF";
-
-export const GMAPS = ""; // CONTEXT MISSING
-export const EMAIL_ADDRESS = "info@mhaviation.com";
-
-export const FACEBOOK_URL = "https://www.facebook.com/mhaviation/"; // CONTEXT MISSING
-export const INSTAGRAM_URL = "https://www.instagram.com/mhaviationinc"; // CONTEXT MISSING
-export const LINKEDIN_URL = ""; // CONTEXT MISSING
-export const X_URL = ""; // CONTEXT MISSING
-export const YOUTUBE_URL = ""; // CONTEXT MISSING
-export const YELP_URL = "https://www.yelp.com/biz/mh-aviation-lancaster";
-export const GITHUB_URL = ""; // CONTEXT MISSING
-
-export const COMPANY_STRATUS_LINK = "https://apply.stratus.finance/"
 // ==============================
-// Locations
+// Project Specific stuff
 // ==============================
-
-export const LOCATIONS = [
-  {
-    title: "Gen. William Fox Airfield",
-    address: "4651 William J Barnes Avenue",
-    city: "Lancaster",
-    state: "CA",
-    zip: "93536",
-    gMaps: "https://maps.app.goo.gl/xFh24wDBdqwYerwx6", 
-    phone: "(661) 948-7779",
-    forwardPhone: "(661) 948-7779",
-    fullAddress: "4651 William J Barnes Avenue, Lancaster, CA 93536",
-    fullAddressLineBreak: "4651 William J Barnes Avenue\nLancaster, CA 93536",
-  },
-];
-
-// ==============================
-// Courses (ONLY what is supported)
-// ==============================
-
-export const COURSES = [
-  "Private Pilot Certificate",
-  "Instrument Rating",
-  "Commercial Pilot Certificate",
-  "Multi-Engine Rating",
-  "Certified Flight Instructor (CFI)",
-  "Certified Flight Instructor Instrument (CFII)",
-  "Multi-Engine Instructor (MEI)",
-];
-
-// ==============================
-// Other Services (Supported)
-// ==============================
-
-export const OTHER_COURSES = [
-  "Aircraft Inspections (Annual, 100/50/25 hour)",
-  "Pre-Purchase Inspections",
-  "Sheet Metal Repairs",
-  "Aircraft Modifications",
-  "Emergency AOG Services",
-  "Fueling (MH Fuels)",
-];
-
-// ==============================
-// Fleet (Not specified in master)
-// ==============================
-
-export const FLEET = []; // CONTEXT MISSING
-
-// ==============================
-// Videos (None documented)
-// ==============================
-
-export const VIDEOS = []; // CONTEXT MISSING
 
 export type MenuItem = {
   label: string;
@@ -171,10 +137,10 @@ export type MenuItem = {
 export const footerMenu: MenuItem[] = [
   {
     label: "About",
-    url: "/about",
+    url: "/about-us",
     children: [
       { label: "New to Flying?", url: "/new-to-flying/" },
-      { label: "About Us", url: "/about/" },
+      { label: "About Us", url: "/about-us/" },
       { label: "FAQs", url: "/faqs/" },
       { label: "Financing", url: "/financing/" },
       { label: "Blog", url: "/blog" },
@@ -195,10 +161,10 @@ export const navbarMenu: MenuItem[] = [
   },
   {
     label: "About Us",
-    url: "/about",
+    url: "/about-us",
     children: [
-      { label: "About Us", url: "/about" },
-      { label: "Our Fleet", url: "/aircraft" },
+      { label: "About Us", url: "/about-us" },
+      { label: "Our Fleet", url: "/fleet" },
       { label: "Our Blog", url: "/blog" },
     ],
   },

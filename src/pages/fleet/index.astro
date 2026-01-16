@@ -4,12 +4,12 @@ import { getCollection } from "astro:content";
 import FleetIndexCard from "../../components/Fleet/FleetIndexCard.astro";
 import HeroGeneralPages from "../../components/HeroGeneralPages.astro";
 import FinalCTASection from "../../components/FinalCTASection.astro";
-import { PHONE_NUMBER } from "../../data/consts";
+import { ADDRESS_CITY, AIRPORT_CODE, AIRPORT_WITH_CODE_SHORT, CITY_AND_STATE, COMPANY_NAME, PHONE_NUMBER } from "../../data/consts";
 import LocationSectionBlack from "../../components/LocationSectionBlack.astro";
 import MaintenancePhilosophy from "../../components/Fleet/MaintenancePhilosophy.astro";
 
-const aircraft = await getCollection("aircraft");
-const sortedAircraft = aircraft.sort(
+const fleet = await getCollection("fleet");
+const sortedFleet = fleet.sort(
   (a, b) => (a.data.order || 999) - (b.data.order || 999)
 );
 
@@ -24,13 +24,6 @@ const heroData = {
   subTitle:
     "Train in our well-maintained fleet of modern aircraft equipped with the latest avionics.",
 };
-
-const metaProps = {
-  siteTitle: "Our Training Fleet | MH Aviation",
-  siteDescription: "Explore our exceptionally maintained aircraft. From technologically advanced single-engine trainers to multi-engine aircraft, our fleet is built for professional mastery.",
-  siteKeywords: " Aviation fleet, training aircraft, multi-engine trainer, single-engine airplane, TAA aircraft, flight school fleet North Carolina, aircraft maintenance"
-};
-
 
 const locationData = {
   eyebrow: "Strategic Location",
@@ -52,6 +45,12 @@ const finalCtaData = {
     src: "/src/assets/instructing/mh-aviation-instructing-on-top-of-plane.jpg",
     alt: "Runway view at sunset",
   },
+};
+
+const metaProps = {
+  siteTitle: `Our Fleet for Pilot Training in ${CITY_AND_STATE} | ${COMPANY_NAME}`,
+  siteDescription: `Explore the ${COMPANY_NAME} fleet at ${AIRPORT_WITH_CODE_SHORT}. Featuring modern, Garmin-equipped aircraft for flight training and multi-engine rentals in ${ADDRESS_CITY}.`,
+  siteKeywords: `flight school fleet, aircraft rental Lancaster, Cessna rental, Piper multi-engine, Garmin equipped aircraft, ${AIRPORT_CODE} aircraft`
 };
 ---
 
@@ -75,7 +74,7 @@ const finalCtaData = {
 
       <div class="flex flex-col gap-8">
         {
-          sortedAircraft.map((plane) => (
+          sortedFleet.map((plane) => (
             <div class="w-full">
           <FleetIndexCard aircraft={plane} />
         </div>

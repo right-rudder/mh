@@ -192,7 +192,7 @@ const servicesCollection = defineCollection({
   }),
 });
 
-const aircraftCollection = defineCollection({
+const fleetCollection = defineCollection({
   type: "content",
   schema: z.object({
     name: z.string().optional(),
@@ -236,6 +236,6 @@ const blogCollection = defineCollection({
 export const collections = {
   programs: programsCollection,
   services: servicesCollection,
-  aircraft: aircraftCollection,
+  fleet: fleetCollection,
   blog: blogCollection,
 };

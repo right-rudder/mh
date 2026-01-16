@@ -1,6 +1,6 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
-import { EMAIL_ADDRESS, LOCATIONS, PHONE_NUMBER } from "../data/consts";
+import { AIRPORT_CODE, AIRPORT_WITH_CODE_SHORT, CITY_AND_STATE, COMPANY_NAME, COMPANY_PRIMARY_SERVICE, COMPANY_SECONDARY_SERVICE, EMAIL_ADDRESS, LOCATIONS, PHONE_NUMBER } from "../data/consts";
 import HeroGeneralPages from "../components/HeroGeneralPages.astro";
 import FinalCTASection from "../components/FinalCTASection.astro";
 import MaintenancePhilosophy from "../components/Fleet/MaintenancePhilosophy.astro";
@@ -49,9 +49,9 @@ const finalCtaData = {
 };
 
 const metaProps = {
-  siteTitle: "Contact Us | MH Aviation",
-  siteDescription: "Contact MH Aviation at Fox Field (KWJF). Schedule flight training, maintenance, or FBO services in Lancaster, CA.",
-  siteKeywords: "Contact MH Aviation, Fox Field Phone Number, Flight Training Lancaster, Maintenance Appointment"
+  siteTitle: `Contact Us for Location & Hours in ${CITY_AND_STATE} | ${COMPANY_NAME}`,
+  siteDescription: `Get in touch with ${COMPANY_NAME} at ${AIRPORT_WITH_CODE_SHORT}. Contact our ${COMPANY_PRIMARY_SERVICE} or ${COMPANY_SECONDARY_SERVICE} department for inquiries, tours, and scheduling.`,
+  siteKeywords: `contact ${COMPANY_NAME}, flight school phone number, ${AIRPORT_CODE} directions, aircraft maintenance contact, Lancaster aviation inquiries`
 };
 ---
 

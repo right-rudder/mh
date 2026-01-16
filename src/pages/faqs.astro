@@ -2,7 +2,7 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 import HeroGeneralPages from "../components/HeroGeneralPages.astro";
 import FinalCTASection from "../components/FinalCTASection.astro";
-import { PHONE_NUMBER } from "../data/consts";
+import { ADDRESS_CITY, AIRPORT_CODE, CITY_AND_STATE, COMPANY_NAME, PHONE_NUMBER } from "../data/consts";
 import FAQSearchable from "../components/FAQs/FAQSearchable";
 import LocationSectionBlack from "../components/LocationSectionBlack.astro";
 import MaintenancePhilosophy from "../components/Fleet/MaintenancePhilosophy.astro";
@@ -97,9 +97,9 @@ const locationData = {
 };
 
 const metaProps = {
-  siteTitle: "FAQs | MH Aviation",
-  siteDescription: "Frequently asked questions about MH Aviation's flight school, Part 145 maintenance, and FBO services in Lancaster, CA.",
-  siteKeywords: "MH Aviation FAQ, Flight training questions, Pilot license cost, Aircraft maintenance FAQ"
+  siteTitle: `Pilot Training FAQs in ${CITY_AND_STATE} | ${COMPANY_NAME}`,
+  siteDescription: `Find answers to common questions about pilot training, aircraft maintenance, and flight school financing with Stratus Financial at ${COMPANY_NAME} in ${CITY_AND_STATE}.`,
+  siteKeywords: `flight school faqs, how to become a pilot, flight training cost ${ADDRESS_CITY}, stratus financial flight training, ${AIRPORT_CODE} flight school questions, ${COMPANY_NAME} faqs`
 };
 ---
 

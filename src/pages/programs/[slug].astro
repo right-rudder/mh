@@ -16,7 +16,7 @@ import CareerPathways from "../../components/ProgramsSlug/CareerPathways.astro";
 import EnrollmentProcess from "../../components/ProgramsSlug/EnrollmentProcess.astro";
 import FAQ from "../../components/ProgramsSlug/FAQ.astro";
 import FinalCTASection from "../../components/FinalCTASection.astro";
-import { PHONE_NUMBER } from "../../data/consts";
+import { AIRPORT_CODE, AIRPORT_WITH_CODE_SHORT, CITY_AND_STATE, COMPANY_NAME, PHONE_NUMBER } from "../../data/consts";
 
 
 export const getStaticPaths = (async () => {
@@ -62,9 +62,9 @@ const finalCtaData = {
 };
 
 const metaProps = {
-  siteTitle: `${data.title} | MH Aviation`,
-  siteDescription: data.description || "Professional flight training program at Fox Field.",
-  siteKeywords: `${data.title}, flight training, pilot license, Lancaster CA`
+  siteTitle: `Earn Your ${program.data.title} in ${CITY_AND_STATE} | ${COMPANY_NAME}`,
+  siteDescription: `Enroll in the ${program.data.title} program at ${COMPANY_NAME} based in ${AIRPORT_WITH_CODE_SHORT}. Get professional flight training and expert mentorship to reach your aviation goals in ${CITY_AND_STATE}.`,
+  siteKeywords: `${program.data.title}, ${program.data.title} Lancaster CA, learn to fly, flight training ${CITY_AND_STATE}, ${AIRPORT_CODE} flight school, ${COMPANY_NAME}`
 };
 ---
 

@@ -1,13 +1,15 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
-import { COMPANY_NAME, PHONE_NUMBER } from "../data/consts";
+import { CITY_AND_STATE, COMPANY_NAME, COMPANY_PRIMARY_SERVICE, COMPANY_SECONDARY_SERVICE, PHONE_NUMBER } from "../data/consts";
+
+const metaProps = {
+  siteTitle: `Enrollment Confirmation | Enrollment Successful at ${COMPANY_NAME}`,
+  siteDescription: `Your enrollment application for ${COMPANY_NAME} has been successfully received. Our admissions team will contact you within 24 hours to discuss your flight training in ${CITY_AND_STATE}.`,
+  siteKeywords: `enrollment confirmation, application received, ${COMPANY_NAME}`
+};
 ---
 
-<BaseLayout
-  siteTitle={`Application Confirmation | ${COMPANY_NAME}`}
-  siteDescription="Your enrollment application has been received. Our admissions team at MH Aviation will contact you shortly to discuss your training journey."
-  keywords={`${COMPANY_NAME}, enrollment confirmation, flight training California, pilot training application`}
->
+<BaseLayout {...metaProps}>
   <section class="min-h-[90vh] flex items-center justify-center bg-ink-50 px-4 pt-[20vh] sm:pt-[13vh] pb-12">
     <div class="max-w-2xl mx-auto">
       <div class="bg-ink-50 p-8 md:p-16 rounded-sm shadow-2xl border-t-4 border-ochre-600 text-center relative overflow-hidden">
@@ -50,13 +52,13 @@ import { COMPANY_NAME, PHONE_NUMBER } from "../data/consts";
           
           <div class="grid grid-cols-2 gap-4">
             <a
-              href="/aircraft"
+              href="/fleet"
               class="flex px-4 items-center justify-center text-xs font-bold uppercase tracking-widest text-ink-950 border border-ink-200 py-3 rounded-sm hover:bg-ink-950 hover:text-ink-50 transition-all duration-300 hover:cursor-pointer"
             >
               Meet Our Fleet
             </a>
             <a
-              href="/about"
+              href="/about-us"
               class="flex px-4 items-center justify-center text-xs font-bold uppercase tracking-widest text-ink-950 border border-ink-200 py-3 rounded-sm hover:bg-ink-950 hover:text-ink-50 transition-all duration-300 hover:cursor-pointer"
             >
               More About Us

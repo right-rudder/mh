@@ -6,7 +6,7 @@ import HeroGeneralPages from "../../components/HeroGeneralPages.astro";
 import FinalCTASection from "../../components/FinalCTASection.astro";
 import BlogFeedSectionCard from "../../components/Blog/BlogFeedSectionCard.astro";
 import { FaFacebookF, FaTwitter, FaLinkedinIn, FaArrowLeft, FaCalendarAlt } from "react-icons/fa";
-import { PHONE_NUMBER } from "../../data/consts";
+import { CITY_AND_STATE, COMPANY_NAME, PHONE_NUMBER } from "../../data/consts";
 import ImageComp from "../../components/ImageComp.astro";
 
 export const getStaticPaths = (async () => {
@@ -66,9 +66,9 @@ const finalCtaData = {
 };
 
 const metaProps = {
-  siteTitle: `${post.data.title} | MH Aviation Blog`,
-  siteDescription: post.data.description || "Stay updated with the latest flight training insights from MH Aviation.",
-  siteKeywords: `${post.data.title}, aviation blog, flight training tips`
+  siteTitle: `${post.data.title} | ${COMPANY_NAME} Blog`,
+  siteDescription: post.data.description || `Read our latest article: ${post.data.title}. Expert aviation insights from the team at ${COMPANY_NAME} in ${CITY_AND_STATE}.`,
+  siteKeywords: `${post.data.title.toLowerCase()}, aviation news, ${CITY_AND_STATE} flight school, ${COMPANY_NAME} blog`
 };
 ---
 

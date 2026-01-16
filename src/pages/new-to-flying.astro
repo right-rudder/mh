@@ -2,7 +2,7 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 import HeroGeneralPages from "../components/HeroGeneralPages.astro";
 import FinalCTASection from "../components/FinalCTASection.astro";
-import { PHONE_NUMBER } from "../data/consts";
+import { PHONE_NUMBER, AIRPORT,AIRPORT_WITH_CODE_SHORT,  AIRPORT_CODE, COMPANY_NAME, COMPANY_PRIMARY_SERVICE, COMPANY_SECONDARY_SERVICE, CITY_AND_STATE, LOCATIONS, ADDRESS_CITY } from "../data/consts";
 
 import FlightExperienceIntro from "../components/NewToFlying/FlightExperienceIntro.astro";
 import SafetyFoundation from "../components/NewToFlying/SafetyFoundation.astro";
@@ -32,7 +32,7 @@ const introData = {
     "At MH Aviation, we turn that dream into a structured reality. Whether you are pursuing flight for personal mastery or a professional career, your journey is supported by a family-owned legacy that has served Fox Field for over 35 years with integrity and professional care.",
     "You aren't just another student on a waitlist; you are part of a community where safety is a tradition and mentorship is personal. From your first discovery flight to your final checkride, we provide the consistent aircraft availability and expert guidance you need to earn your wings with confidence."
   ],
-  cta: { text: "Learn About Us", href: "/about" },
+  cta: { text: "Learn About Us", href: "/about-us" },
   image: {
     src: "/src/assets/instructing/mh-aviation-instructing-student-with-checklist.webp",
     alt: "Student with"
@@ -92,7 +92,7 @@ const fleetData = {
   title: "Train in a Glass Cockpit",
   description: "Don't train in the past. We have invested over $150k to upgrade our fleet with <strong class=\"text-ochre-600\">Garmin G5 glass cockpits</strong> and 180 HP engine conversions. You will learn on the same modern avionics used in professional aviation.",
   features: ["Garmin Avionics", "180 HP Engines", "Autopilot Equipped"],
-  cta: { text: "See Our Fleet", href: "/aircraft" },
+  cta: { text: "See Our Fleet", href: "/fleet" },
   image: {
     src: "/src/assets/fleet/mh-aviation-modern-aircraft-cockpit-at-lancaster-california.webp",
     alt: "Garmin glass cockpit avionics"
@@ -149,9 +149,9 @@ const finalCtaData = {
 };
 
 const metaProps = {
-  siteTitle: "New to Flying? Start Here | MH Aviation",
-  siteDescription: "Start your pilot journey at Fox Field. Learn about our discovery flights, modern fleet, and safety-first training in Lancaster, CA.",
-  siteKeywords: "Learn to fly Lancaster, Discovery Flight Fox Field, Pilot Training Beginners"
+  siteTitle: `New to Flying? Become a Pilot in ${CITY_AND_STATE} | ${COMPANY_NAME}`,
+  siteDescription: `Discover how to start your aviation journey at ${AIRPORT_WITH_CODE_SHORT}. Learn about pilot requirements, discovery flights, and training steps with ${COMPANY_NAME} in ${ADDRESS_CITY}.`,
+  siteKeywords: `how to become a pilot, learn to fly ${ADDRESS_CITY}, discovery flight ${AIRPORT_CODE}, pilot license requirements, flight school for beginners, ${COMPANY_NAME}`
 };
 ---
 

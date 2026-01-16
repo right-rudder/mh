@@ -10,7 +10,7 @@ import ServiceOverview from "../../components/ServicesSlug/ServiceOverview.astro
 import CapabilitiesGrid from "../../components/ServicesSlug/CapabilitiesGrid.astro";
 import TrustAndLegacy from "../../components/ServicesSlug/TrustAndLegacy.astro";
 import EcosystemPartners from "../../components/ServicesSlug/EcosystemPartners.astro";
-import { PHONE_NUMBER } from "../../data/consts";
+import { AIRPORT_CODE, AIRPORT_WITH_CODE_SHORT, CITY_AND_STATE, COMPANY_NAME, COMPANY_SECONDARY_SERVICE, PHONE_NUMBER } from "../../data/consts";
 import OperationalStandards from "../../components/ServicesSlug/OperationalStandards.astro";
 import FAQ from "../../components/ProgramsSlug/FAQ.astro";
 import MaintenancePhilosophy from "../../components/Fleet/MaintenancePhilosophy.astro";
@@ -64,12 +64,15 @@ const finalCtaData = {
     alt: "Runway view at sunset",
   },
 };
+
+const metaProps = {
+  siteTitle: `${service.data.title} in ${CITY_AND_STATE} | ${COMPANY_NAME}`,
+  siteDescription: `Expert ${service.data.title} at ${AIRPORT_WITH_CODE_SHORT}. Our FAA Part 145 Repair Station in ${CITY_AND_STATE} provides professional ${COMPANY_SECONDARY_SERVICE.toLowerCase()} for your aircraft.`,
+  siteKeywords: `${service.data.title}, ${COMPANY_SECONDARY_SERVICE} Lancaster, FAA Part 145, ${AIRPORT_CODE} aircraft repair, ${COMPANY_NAME}`
+};
 ---
 
-<BaseLayout
-  siteTitle={`${data.title} | MH Aviation`}
-  siteDescription={data.description}
->
+<BaseLayout {...metaProps}>
   <HeroGeneralPages data={heroData} />
 
   <ServiceOverview 

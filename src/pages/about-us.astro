@@ -6,7 +6,7 @@ import TeamGridSection from "../components/About/TeamGridSection.astro";
 import ValuesGridSection from "../components/About/ValuesGridSection.astro";
 import FacilityFeatureSection from "../components/About/FacilityFeatureSection.astro";
 import FinalCTASection from "../components/FinalCTASection.astro";
-import { COMPANY_NAME, PHONE_NUMBER } from "../data/consts";
+import { ADDRESS_CITY, AIRPORT_CODE, AIRPORT_WITH_CODE_SHORT, CITY_AND_STATE, COMPANY_NAME, COMPANY_PRIMARY_SERVICE, COMPANY_SECONDARY_SERVICE, PHONE_NUMBER } from "../data/consts";
 import MissionPrecisionSection from "../components/About/MissionPrecisionSection.astro";
 import RepairStationSection from "../components/About/RepairStationSection.astro";
 import LocationSection from "../components/LocationSection.astro";
@@ -211,9 +211,9 @@ const finalCtaData = {
 };
  
 const metaProps = {
-  siteTitle: `About ${COMPANY_NAME} | Family-Owned Flight School & Maintenance`,
-  siteDescription: `Learn about ${COMPANY_NAME}'s history at Fox Field. Family-owned since 1988, offering FAA Part 145 maintenance, flight training, and fueling services.`,
-  siteKeywords: `${COMPANY_NAME} history, Jeff Haney, Jessica Haney, flight school Lancaster CA, Fox Field maintenance, family owned aviation business`
+  siteTitle: `About Our Family-Owned Flight School in ${CITY_AND_STATE} | ${COMPANY_NAME}`,
+  siteDescription: `Discover the legacy of ${COMPANY_NAME} at ${AIRPORT_WITH_CODE_SHORT}. Learn about our 35+ years of experience in ${COMPANY_PRIMARY_SERVICE}, our Part 145 ${COMPANY_SECONDARY_SERVICE}, and our commitment to pilot success.`,
+  siteKeywords: `about ${COMPANY_NAME}, flight school history, aviation experts ${ADDRESS_CITY}, family owned aviation business, ${AIRPORT_CODE} flight training, ${COMPANY_SECONDARY_SERVICE} experts`
 };
 ---
 

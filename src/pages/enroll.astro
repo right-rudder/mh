@@ -1,6 +1,6 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
-import { EMAIL_ADDRESS, PHONE_NUMBER } from "../data/consts";
+import { AIRPORT_CODE, AIRPORT_WITH_CODE_SHORT, CITY_AND_STATE, COMPANY_NAME, COMPANY_PRIMARY_SERVICE, EMAIL_ADDRESS, PHONE_NUMBER } from "../data/consts";
 import HeroGeneralPages from "../components/HeroGeneralPages.astro";
 import FinalCTASection from "../components/FinalCTASection.astro";
 import MaintenancePhilosophy from "../components/Fleet/MaintenancePhilosophy.astro";
@@ -95,9 +95,9 @@ const finalCtaData = {
 };
 
 const metaProps = {
-  siteTitle: "Enrollment | MH Aviation",
-  siteDescription: "Apply to MH Aviation flight school in Lancaster, CA. Start your pilot training journey today.",
-  siteKeywords: "flight school enrollment, pilot application, learn to fly Lancaster, aviation academy admission"
+  siteTitle: `Enroll in ${COMPANY_PRIMARY_SERVICE} in ${CITY_AND_STATE} | ${COMPANY_NAME}`,
+  siteDescription: `Apply for professional pilot training at ${AIRPORT_WITH_CODE_SHORT}. Join our Zero to Airlines track or private pilot programs in ${CITY_AND_STATE}. Secure your future in the cockpit today.`,
+  siteKeywords: `enroll in flight school, pilot training application ${CITY_AND_STATE}, learn to fly ${AIRPORT_CODE}, ${COMPANY_NAME} admission, professional pilot career`
 };
 ---
 

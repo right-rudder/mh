@@ -55,8 +55,8 @@ export default defineConfig({
           };
         }
 
-        // Inventory/Aircraft Pages
-        if (cleanPath.startsWith("/aircraft")) {
+        // Inventory/Aircraft/Fleet Pages
+        if (cleanPath.startsWith("/fleet")) {
           return {
             ...item,
             priority: 0.8,
@@ -97,7 +97,7 @@ export default defineConfig({
         }
 
         // Legal and Static info (Lower Priority)
-        const legalPages = ["/privacy-policy", "/terms-of-service", "/faqs", "/about"];
+        const legalPages = ["/privacy-policy", "/terms-of-service", "/faqs", "/about-us"];
         if (legalPages.includes(cleanPath)) {
           return {
             ...item,

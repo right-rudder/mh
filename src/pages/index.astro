@@ -2,7 +2,7 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 import ValueProposition from "../components/ValueProposition.astro";
 import Testimonials from "../components/Testimonials.astro";
-import { PHONE_NUMBER, AIRPORT, AIRPORT_CODE, COMPANY_NAME } from "../data/consts";
+import { PHONE_NUMBER, AIRPORT,AIRPORT_WITH_CODE_SHORT,  AIRPORT_CODE, COMPANY_NAME, COMPANY_PRIMARY_SERVICE, COMPANY_SECONDARY_SERVICE, CITY_AND_STATE } from "../data/consts";
 import HeroLandingPage from "../components/HeroLandingPage.astro";
 import BlogFeed from "../components/Blog/BlogFeed.astro";
 import IntroductionSection from "../components/IntroductionSection.astro";
@@ -15,6 +15,7 @@ import SocialProofSection from "../components/SocialProofSection.astro";
 import ImageSliderWithCopySection from "../components/ImageSliderWithCopySection.astro";
 import ProgramsOverviewSection from "../components/ProgramsOverview/ProgramsOverviewSection.astro";
 import SocialProofLeftSection from "../components/SocialProofLeftSection.astro";
+import { LOCATIONS } from "../data/consts";
 
 const heroData = {
   images: [
@@ -253,7 +254,7 @@ const teamCultureData = {
     "At MH Aviation, you aren't just a number. From our President Jeff Haney to our Shop Lead Palomo Olmedo, our entire team is dedicated to your safety and progress. We offer private briefing rooms, a comfortable break area, and a supportive culture that feels like family.",
   cta: {
     text: "Meet Our Team",
-    href: "/about#team",
+    href: "/about-us#team",
   },
   image: {
     src: "/src/assets/instructing/mh-aviation-instructing-student-02.jpg",
@@ -312,9 +313,9 @@ const mentorshipData = {
 };
 
 const metaProps = {
-  siteTitle: `${COMPANY_NAME} | Professional Pilot Training in North Carolina`,
-  siteDescription: `Visit ${COMPANY_NAME}  at ${AIRPORT}. Contact our team to schedule a tour, discuss financing, or start your professional flight training journey.`,
-  siteKeywords: `contact ${COMPANY_NAME} , flight school tour, pilot training info, ${AIRPORT} address,  phone number, aviation academy North Carolina`
+  siteTitle: `${COMPANY_PRIMARY_SERVICE} & ${COMPANY_SECONDARY_SERVICE} in ${CITY_AND_STATE} | ${COMPANY_NAME}`,
+  siteDescription: `${COMPANY_NAME} is a premier flight school and FAA Part 145 Repair Station at ${AIRPORT_WITH_CODE_SHORT}. Start your pilot training or schedule aircraft maintenance today.`,
+  siteKeywords: `${COMPANY_PRIMARY_SERVICE} ${LOCATIONS[0].city} ${LOCATIONS[0].state}, pilot training, ${COMPANY_SECONDARY_SERVICE}, ${LOCATIONS[0].title}, ${COMPANY_NAME}`
 };
 ---
 

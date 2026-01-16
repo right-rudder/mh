@@ -3,7 +3,7 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
 import { getCollection } from "astro:content";
 import HeroGeneralPages from "../../components/HeroGeneralPages.astro";
 import FinalCTASection from "../../components/FinalCTASection.astro";
-import { PHONE_NUMBER } from "../../data/consts";
+import { AIRPORT_WITH_CODE_SHORT, CITY_AND_STATE, COMPANY_NAME, PHONE_NUMBER } from "../../data/consts";
 import ProgramsOverviewSectionCard from "../../components/Programs/ProgramsOverviewSectionCard.astro";
 import MaintenancePhilosophy from "../../components/Fleet/MaintenancePhilosophy.astro";
 import LocationSectionBlack from "../../components/LocationSectionBlack.astro";
@@ -49,9 +49,9 @@ const locationData = {
 };
 
 const metaProps = {
-  siteTitle: "Flight Training Programs | MH Aviation",
-  siteDescription: "Antelope Valley's premier training programs. Private, Instrument, Commercial, and Multi-Engine courses at competitive rates.",
-  siteKeywords: "Multi-engine rating, Private Pilot, Commercial Pilot, MH Aviation Lancaster"
+  siteTitle: `Pilot Training Programs in ${CITY_AND_STATE} | ${COMPANY_NAME}`,
+  siteDescription: `Explore professional flight training at ${AIRPORT_WITH_CODE_SHORT}. From Zero to Airlines to Multi-Engine ratings, start your aviation career with ${COMPANY_NAME} in Lancaster, CA.`,
+  siteKeywords: `pilot training programs, learn to fly ${CITY_AND_STATE}, flight school courses, commercial pilot license, private pilot license Lancaster, multi-engine rating CA`
 };
 ---
 

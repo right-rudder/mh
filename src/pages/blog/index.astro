@@ -2,7 +2,7 @@
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import { getCollection } from "astro:content";
 import HeroGeneralPages from "../../components/HeroGeneralPages.astro";
-import { AIRPORT, AIRPORT_CODE, COMPANY_NAME, PHONE_NUMBER } from "../../data/consts";
+import { AIRPORT, AIRPORT_CODE, AIRPORT_WITH_CODE_SHORT, CITY_AND_STATE, COMPANY_NAME, PHONE_NUMBER } from "../../data/consts";
 import FinalCTASection from "../../components/FinalCTASection.astro";
 import BlogFeedSection from "../../components/Blog/BlogFeedSection.astro";
 
@@ -45,9 +45,9 @@ const finalCtaData = {
 };
 
 const metaProps = {
-  siteTitle: `Aviation Blog & Training Insights | ${COMPANY_NAME}`,
-  siteDescription: `Read the latest flight training tips, academy news, and career advice from the senior instructor cadre at ${COMPANY_NAME}.`,
-  siteKeywords: `${COMPANY_NAME} blog, flight training tips, airline pilot career advice, student pilot news, aviation articles, learn to fly blog North Carolina`
+  siteTitle: `Aviation News & Pilot Training Tips | ${COMPANY_NAME}`,
+  siteDescription: `Explore the ${COMPANY_NAME} blog for expert aviation insights, flight training tips in ${CITY_AND_STATE}, and aircraft maintenance updates from ${AIRPORT_WITH_CODE_SHORT}.`,
+  siteKeywords: `aviation blog, flight training tips, learn to fly Lancaster, aircraft maintenance news, ${COMPANY_NAME} news`
 };
 ---
 

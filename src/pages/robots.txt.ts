@@ -78,13 +78,13 @@ Disallow: /success*
 # Guiding bots to the core training products
 Allow: /programs/
 Allow: /programs/*
-Allow: /aircraft/
-Allow: /aircraft/*
+Allow: /fleet/
+Allow: /fleet/*
 Allow: /crew/
 Allow: /crew/*
 Allow: /blog/
 Allow: /blog/*
-Allow: /about/
+Allow: /about-us/
 Allow: /contact/
 Allow: /enroll/
 Allow: /financing/

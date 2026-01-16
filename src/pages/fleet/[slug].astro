@@ -3,15 +3,15 @@ import { getCollection } from "astro:content";
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import HeroGeneralPages from "../../components/HeroGeneralPages.astro";
 import FinalCTASection from "../../components/FinalCTASection.astro";
-import { PHONE_NUMBER } from "../../data/consts";
+import { ADDRESS_CITY, AIRPORT_CODE, AIRPORT_WITH_CODE_SHORT, CITY_AND_STATE, COMPANY_NAME, PHONE_NUMBER } from "../../data/consts";
 
 import ImageViewer from "../../components/Fleet/ImageViewer.astro"
 
 import { FaTachometerAlt, FaUsers, FaPlane, FaWeightHanging, FaCogs, FaCheck } from "react-icons/fa";
 import { IoMdPhotos } from "react-icons/io";
 export async function getStaticPaths() {
-  const aircraftEntries = await getCollection("aircraft");
-  return aircraftEntries.map((entry) => ({
+  const fleetEntries = await getCollection("fleet");
+  return fleetEntries.map((entry) => ({
     params: { slug: entry.slug },
     props: { entry },
   }));
@@ -29,12 +29,6 @@ const heroData = {
 
 const galleryImages = data.images && data.images.length > 1 ? data.images.slice(1) : [];
 
-const metaProps = {
-  siteTitle: `${data.name} (${data.tailNumber}) | MH Aviation`,
-  siteDescription: data.description || `Detailed specifications and features for our ${data.name}.`,
-  siteKeywords: `${data.model}, ${data.tailNumber}, flight training aircraft, aircraft rental`
-};
-
 const finalCtaData = {
   eyebrow: "Fly This Aircraft",
   headline: "Ready for Takeoff?",
@@ -47,6 +41,12 @@ const finalCtaData = {
     src: "/src/assets/instructing/mh-aviation-instructing-on-top-of-plane.jpg",
     alt: "Student pilot preparing for flight",
   },
+};
+
+const metaProps = {
+  siteTitle: `${data.model} Training in ${CITY_AND_STATE} | ${COMPANY_NAME}`,
+  siteDescription: `Train in our ${data.model} at ${AIRPORT_WITH_CODE_SHORT}. High-standard maintenance and advanced avionics for student pilots and rentals in ${CITY_AND_STATE}.`,
+  siteKeywords: `${data.model}, aircraft rental ${ADDRESS_CITY}, fly ${data.model} Lancaster, pilot training aircraft, ${COMPANY_NAME} fleet`
 };
 ---
 

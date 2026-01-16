@@ -3,7 +3,7 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
 import { getCollection } from "astro:content";
 import HeroGeneralPages from "../../components/HeroGeneralPages.astro";
 import FinalCTASection from "../../components/FinalCTASection.astro";
-import { PHONE_NUMBER } from "../../data/consts";
+import { AIRPORT_WITH_CODE_SHORT, CITY_AND_STATE, COMPANY_NAME, PHONE_NUMBER } from "../../data/consts";
 import ServicesOverviewSectionCard from "../../components/Services/ServicesOverviewSectionCard.astro";
 import LocationSectionBlack from "../../components/LocationSectionBlack.astro";
 import MaintenancePhilosophy from "../../components/Fleet/MaintenancePhilosophy.astro";
@@ -49,9 +49,9 @@ const locationData = {
 };
 
 const metaProps = {
-  siteTitle: "Aviation Maintenance & FBO Services | MH Aviation",
-  siteDescription: "FAA Part 145 Repair Station and Full-Service FBO at Fox Field (KWJF). Maintenance, Avionics, Fueling, and Aircraft Management.",
-  siteKeywords: "Aircraft Maintenance Lancaster, FBO Fox Field, Part 145 Repair Station, MH Fuels, Aircraft Management"
+  siteTitle: `Aircraft Maintenance & FBO Services in ${CITY_AND_STATE} | ${COMPANY_NAME}`,
+  siteDescription: `FAA Part 145 Repair Station at ${AIRPORT_WITH_CODE_SHORT}. We offer expert aircraft maintenance, avionics upgrades, fueling, and full-service FBO solutions in Lancaster, CA.`,
+  siteKeywords: `aircraft maintenance ${CITY_AND_STATE}, FAA Part 145 repair station, FBO services Fox Field, aircraft mechanic Lancaster CA, avionics repair, ${COMPANY_NAME}`
 };
 ---
 
