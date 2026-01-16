@@ -26,16 +26,16 @@ const { data } = Astro.props;
       
       <div class="reveal opacity-0 -translate-x-8 transition-all duration-1000 ease-out delay-200">
         <p
-          class="text-ochre-600 font-bold uppercase tracking-widest text-sm mb-2"
+          class="subtitle"
         >
           {data.eyebrow}
         </p>
-        <h2 class="title !text-[2.5rem] uppercase !font-main-header tracking-wide !text-ink-50 mb-6" set:html={data.headline}>
+        <h2 class="title" set:html={data.headline}>
         </h2>
         <p class="font-sans text-ink-50 leading-relaxed" set:html={data.bodyCopy}>
         </p>
         {
-          data.cta &&  (<a class="btn-primary !max-w-[283px] mt-4">
+          data.cta &&  (<a href="/about-us/#repair-station" class="btn-primary !max-w-[283px] mt-4">
             <svg xmlns="http://www.w3.org/2000/svg" class="w-5" viewBox="0 0 24 24"><path fill="currentColor" d="M19.249 6.872a1 1 0 0 1 1.645.36a7.001 7.001 0 0 1-8.912 9.037l-4.013 4.013a3 3 0 1 1-4.243-4.243l4.013-4.013a7 7 0 0 1 9.025-8.917a1 1 0 0 1 .36 1.645L14.768 7.11a1.5 1.5 0 0 0 2.121 2.122z"/></svg>
             Discover Our Repair Station
             </a>)

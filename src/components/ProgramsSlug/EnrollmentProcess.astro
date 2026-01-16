@@ -1,0 +1,44 @@
+---
+interface Props {
+  data: {
+    title: string;
+    upperheader?: string;
+    steps: {
+      stepNumber: number;
+      title: string;
+      description: string;
+    }[];
+  };
+}
+
+const { data } = Astro.props;
+---
+
+<section class="py-20 bg-ink-50 reveal-section opacity-0 translate-y-8 transition-all duration-1000 ease-out">
+  <div class="max-w-7xl mx-auto px-5 md:px-8">
+    <div class="w-full flex md:justify-center">
+    <div class="flex flex-col md:items-center">
+        {data.upperheader && (
+        <span class="subtitle">
+          {data.upperheader}
+        </span>
+      )}
+    <h2 class="title-black">
+      {data.title}
+    </h2>
+    </div>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+      {data.steps.map((step) => (
+        <div class="bg-ink-50 p-8 rounded-sm shadow-md border-t-4 border-ink-900 hover:border-ochre-600 transition-colors duration-300 relative group h-full">
+          <div class="absolute -top-5 left-6 w-10 h-10 bg-ink-950 text-ink-50 flex items-center justify-center font-bold text-lg rounded-sm shadow-lg group-hover:bg-ochre-600 transition-colors">
+            {step.stepNumber}
+          </div>
+          <h3 class="mt-4 text-lg font-bold text-ink-950 mb-3">{step.title}</h3>
+          <p class="text-sm text-ink-600 leading-relaxed">{step.description}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

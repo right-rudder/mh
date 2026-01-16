@@ -1,92 +1,52 @@
 ---
 import ImageComp from "./ImageComp.astro";
-import { LOGO_ASSETS, LOGO_ASSETS_ALTERNATIVE } from "../data/consts";
+import { LOGO_ASSETS, navbarMenu } from "../data/consts";
 import { getCollection } from "astro:content";
 import type { CollectionEntry } from "astro:content";
 
 type Program = CollectionEntry<"programs">;
+type Service = CollectionEntry<"services">;
 
 const programs = await getCollection("programs");
 const sortedPrograms = programs.sort(
   (a: Program, b: Program) => (a.data.order || 999) - (b.data.order || 999)
 );
 
-export type MenuItem = {
-  label: string;
-  url: string;
-  children?: MenuItem[];
-};
-
-export const menu: MenuItem[] = [
-  {
-    label: "New to Flying?",
-    url: "/new-to-flying",
-    children: [
-      { label: "New to Flying", url: "/new-to-flying" },
-      { label: "Financing", url: "/financing" },
-      { label: "FAQs", url: "/faqs" },
-    ],
-  },
-  {
-    label: "About Us",
-    url: "/about",
-    children: [
-      { label: "About MH Aviation", url: "/about" },
-      { label: "Our Fleet", url: "/aircraft" },
-      { label: "Our Blog", url: "/blog" },
-    ],
-  },
-  {
-    label: "Maintenance & FBO",
-    url: "/about"
-  },
-];
-
-export const footerMenu: MenuItem[] = [
-  {
-    label: "About",
-    url: "/about",
-    children: [
-      { label: "New to Flying?", url: "/new-to-flying" },
-      { label: "About MH Aviation", url: "/about/" },
-      { label: "FAQs", url: "/faq/" },
-      { label: "Financing", url: "/financing" },
-      { label: "Blog", url: "/blog" },
-      { label: "Contact Us", url: "/contact/" },
-    ],
-  },
-];
+const services = await getCollection("services");
+const sortedServices = services.sort(
+  (a: Service, b: Service) => (a.data.order || 999) - (b.data.order || 999)
+);
 
 const { pathname } = Astro.props;
 ---
-
-<nav id="navbar" class="navbar font-ubuntu">
+<nav id="navbar" class="navbar font-sans px-4 py-4 lg:px-12">
+  <!-- Desktop menu -->
   <div class="container px-4 md:px-0">
-    <a class="hover:cursor-pointer object-contain h-auto mx-auto lg:mx-0">
+    <a href="/" class="hover:cursor-pointer object-contain h-auto mx-auto lg:mx-0">
       <ImageComp
-        class="mx-4 w-24 md:w-24"
+        class="w-24 md:w-24"
         src={LOGO_ASSETS}
         alt="MH Aviation Logo"
       />
     </a>
-
+    <!-- Programs -->
     <ul class="nav">
       {
         sortedPrograms && (
           <li
             class={`menu-item ${sortedPrograms.length >= 1 ? "has-children" : ""}`}
           >
-            <a  class="hover:cursor-pointer">{sortedPrograms[0].collection}</a>
+            <a href={`/${sortedPrograms[0].collection}/`} class="hover:cursor-pointer">Programs</a>
             {sortedPrograms.length >= 1 ? (
               <ul class="sub-menu">
                 {sortedPrograms.map((program: Program) => (
                   <li>
                     <a
-                      
+                      href={`/programs/${program.slug}/`}
                       class={
-                        (`/programs/${program.slug}` === pathname ||
+                        (`/programs/${program.slug}/` === pathname ||
                           `/programs/${program.slug}/` === pathname) &&
-                        `/programs/${program.slug}` !== "/programs/"
+                        `/programs/${program.slug}/` !== "/programs/"
                           ? "menu-link-hover hover:cursor-pointer"
                           : "hover:cursor-pointer"
                       }
@@ -102,19 +62,51 @@ const { pathname } = Astro.props;
           </li>
         )
       }
+      <!-- Services -->
       {
-        menu.map((item, index) => (
+        sortedServices && (
+          <li
+            class={`menu-item ${sortedServices.length >= 1 ? "has-children" : ""}`}
+          >
+            <a href="/services/" class="hover:cursor-pointer">Maintenance & FBO</a>
+            {sortedServices.length >= 1 ? (
+              <ul class="sub-menu">
+                {sortedServices.map((service: Service) => (
+                  <li>
+                    <a
+                      href={`/services/${service.slug}/`}
+                      class={
+                        (`/services/${service.slug}/` === pathname ||
+                          `/services/${service.slug}/` === pathname)
+                          ? "menu-link-hover hover:cursor-pointer"
+                          : "hover:cursor-pointer"
+                      }
+                    >
+                      {service.data.title}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            ) : (
+              ""
+            )}
+          </li>
+        )
+      }
+      <!-- General links (About Us, etc) -->
+      {
+        navbarMenu.map((item, index) => (
           <li
             class={`menu-item ${item.children ? "has-children" : ""}`}
             data-index={index}
           >
-            <a class="hover:cursor-pointer" target={item.url.includes("http") ? "_blank" : ""}>{item.label}</a>
+            <a class="hover:cursor-pointer" href={item.url} target={item.url.includes("http") ? "_blank" : ""}>{item.label}</a>
             {item.children && (
               <ul class="sub-menu">
                 {item.children.map((child) => (
                   <li>
                     <a
-                     
+                      href={child.url}
                       target={child.url.includes("http") ? "_blank" : ""}
                       class={
                         (child.url === pathname ||
@@ -134,9 +126,9 @@ const { pathname } = Astro.props;
         ))
       }
     </ul>
-
+    <!-- CTA Button -->
     <div class="buttons">
-      <a  class="btn-primary !text-md hover:cursor-pointer">
+      <a href="/contact/" class="btn-primary !text-md hover:cursor-pointer">
         CONTACT US
       </a>
     </div>
@@ -173,21 +165,31 @@ const { pathname } = Astro.props;
       </svg>
     </button>
   </div>
+  <!-- Desktop menu ends-->
 
+  <!-- Mobile menu -->
   <div id="mobile-menu" class="mobile-menu">
     <ul>
+      <!-- Programs -->
       {
         sortedPrograms && (
           <li class="mobile-item">
-            <a class="hover:cursor-pointer">Programs</a>
+            <a href={`/${sortedPrograms[0].collection}/`} class="hover:cursor-pointer">Programs</a>
             {sortedPrograms.length >= 1 ? (
               <ul class="mobile-submenu">
+                <li>
+                  <a
+                    href={`/programs/`}
+                    class="menu-link hover:cursor-pointer">
+                      All Programs
+                  </a>
+                </li>
                 {sortedPrograms.map((program: Program) => (
                   <li>
                     <a
-                      
+                      href={`/programs/${program.slug}/`}
                       class={
-                        (`/programs/${program.slug}` === pathname ||
+                        (`/programs/${program.slug}/` === pathname ||
                           `/programs/${program.slug}/` === pathname) &&
                         `/programs/${program.slug}` !== "/programs/"
                           ? "menu-link-hover hover:cursor-pointer"
@@ -205,8 +207,45 @@ const { pathname } = Astro.props;
           </li>
         )
       }
+      <!-- Services -->
       {
-        menu.map((item, index) => (
+        sortedServices && (
+          <li class="mobile-item">
+            <a class="hover:cursor-pointer">Maintenance & FBO</a>
+            {sortedServices.length >= 1 ? (
+              <ul class="mobile-submenu">
+                <li>
+                  <a
+                    href={`/services/`}
+                    class="menu-link hover:cursor-pointer">
+                      All Services
+                  </a>
+                </li>
+                {sortedServices.map((service: Service) => (
+                  <li>
+                    <a
+                      href={`/services/${service.slug}/`}
+                      class={
+                        (`/services/${service.slug}/` === pathname ||
+                          `/services/${service.slug}/` === pathname)
+                          ? "menu-link-hover hover:cursor-pointer"
+                          : "hover:cursor-pointer"
+                      }
+                    >
+                      {service.data.title}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            ) : (
+              ""
+            )}
+          </li>
+        )
+      }
+    <!-- General links (About Us, etc) -->
+      {
+        navbarMenu.map((item, index) => (
           <li class="mobile-item" data-index={index}>
             <a class="hover:cursor-pointer ">{item.label}</a>
             {item.children && (
@@ -214,7 +253,7 @@ const { pathname } = Astro.props;
                 {item.children.map((child) => (
                   <li>
                     <a
-                     
+                      href={child.url}
                       class={
                         (child.url === pathname ||
                           child.url + "/" === pathname) &&
@@ -233,13 +272,14 @@ const { pathname } = Astro.props;
         ))
       }
     </ul>
-
+    <!-- CTA Button -->
     <div class="mobile-buttons">
-      <a class="btn-primary !text-lg hover:cursor-pointer ">
+      <a href="/contact/" class="btn-primary-navbar">
         CONTACT US
       </a>
     </div>
   </div>
+  <!-- Mobile menu ends -->
 </nav>
 
 <style>
@@ -247,7 +287,6 @@ const { pathname } = Astro.props;
     width: 100%;
     display: flex;
     justify-content: center;
-    padding: 16px 16px;
     background: #0e0e0e;
     position: sticky;
     top: 0;
@@ -258,6 +297,8 @@ const { pathname } = Astro.props;
     display: flex;
     align-items: center;
     justify-content: space-between;
+    width: 100%;
+    max-width: 1280px; 
   }
 
   .nav {
@@ -414,6 +455,11 @@ const { pathname } = Astro.props;
   }
 
   @media (max-width: 1023px) {
+    .container {
+      position: relative;
+      justify-content: center;
+    }
+
     .nav,
     .buttons {
       display: none;
@@ -421,6 +467,10 @@ const { pathname } = Astro.props;
 
     .hamburger {
       display: flex;
+      position: absolute;
+      right: 16px;
+      top: 50%;
+      transform: translateY(-50%);
     }
 
     .mobile-menu {
@@ -444,13 +494,16 @@ const { pathname } = Astro.props;
     }
 
     .mobile-item > a::after {
-      content: "⟫";
+      content: "+";
       margin-left: 0.5rem;
+      font-size: 1.5rem;
+      font-weight: 300;
+      line-height: 1;
       transition: transform 0.25s ease;
     }
 
     .mobile-item > a.open::after {
-      transform: rotate(90deg);
+      transform: rotate(45deg);
     }
 
     .mobile-submenu {

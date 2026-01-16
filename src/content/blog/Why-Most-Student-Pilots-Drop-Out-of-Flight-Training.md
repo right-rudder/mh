@@ -3,7 +3,7 @@ title: "Why Most Student Pilots Drop Out of Flight Training"
 description: "A clear look at why so many student pilots quit flight training and how structure, consistency, and outcomes-focused programs change the odds."
 pubDate: 2025-11-03
 author: "MH Aviation"
-image: "/src/assets/chris-leipelt-xrKEQ70S3O0-unsplash.jpg"
+image: "/src/assets/fleet/N53742/mh-aviation-cessna-172P-N53742-aircraft-front-of-hangar-close-up-at-lancaster-california.webp"
 tags:
   - "flight training"
   - "student pilots"

@@ -1,0 +1,49 @@
+---
+import { FaTimesCircle } from "react-icons/fa";
+import { PiPersonArmsSpreadFill } from "react-icons/pi";
+
+interface Props {
+  data: {
+    title: string;
+    items: string[];
+    notFor?: string;
+  };
+}
+
+const { data } = Astro.props;
+---
+
+<section class="py-16 bg-ink-50 reveal-section opacity-0 translate-y-8 transition-all duration-1000 ease-out">
+  <div class="max-w-4xl mx-auto px-5">
+    <div class="w-full flex flex-col items-center">
+      <p class="subtitle">TARGET AUDIENCE</p>
+      <h2 class="title-black">
+        {data.title}
+      </h2>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      {data.items.map((item, index) => (
+        <div class="group bg-ink-50 p-6 rounded-sm shadow-sm border-2 transition-transform easy-out duration-300 hover:-translate-y-1 border-ink-100 flex items-center gap-4 hover:border-ochre-600 transition-colors duration-300">
+          <div class="bg-ink-100 text-xl group-hover:bg-ochre-600 group-hover:text-ink-50 transition-all duration-300 easy-in p-5 rounded-full text-ink-950">
+            <PiPersonArmsSpreadFill />
+          </div>
+          <p class="text-ink-800 font-medium mt-1">{item}</p>
+        </div>
+      ))}
+    </div>
+    <div class="w-full flex sm:justify-center mt-8">
+      <a href="/enroll/" class="btn-primary w-full">
+      Enroll Now</a>
+    </div>
+    {data.notFor && (
+      <div class="mt-12 bg-ink-100 p-6 rounded-sm flex items-start gap-4 border-l-4 border-red-500">
+        <FaTimesCircle className="text-red-500 text-xl mt-1 flex-shrink-0" />
+        <div>
+          <span class="block font-bold text-ink-950 uppercase text-xs tracking-widest mb-1">Who this is not for</span>
+          <p class="text-ink-600 text-sm">{data.notFor}</p>
+        </div>
+      </div>
+    )}
+  </div>
+</section>
