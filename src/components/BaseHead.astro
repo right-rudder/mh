@@ -1,4 +1,3 @@
-
 ---
 import "../styles/global.css";
 import { 
@@ -27,7 +26,6 @@ interface Props {
   keywords?: string;
 }
 
-const canonicalURL = Astro.url.href;
 
 const {
   title,
@@ -35,8 +33,22 @@ const {
   image = OG_IMAGE,
   keywords = KEYWORDS,
 } = Astro.props;
----
 
+// Makes sure canonical URL ends with trailing slash always
+const pathname = Astro.url.pathname;
+const cleanPath = pathname.endsWith('/') ? pathname : `${pathname}/`;
+const canonicalURL = new URL(cleanPath, Astro.site).toString();
+
+// Enhanced title with proper length and brand consistency
+const optimizedTitle =
+  title.length > 60 ? title.substring(0, 57) + "..." : title;
+
+// Enhanced description with proper length
+const optimizedDescription =
+  description.length > 160
+    ? description.substring(0, 157) + "..."
+    : description;
+---
 
 <!-- Global Metadata -->
 <meta charset="utf-8" />
@@ -143,9 +155,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 </script>
 
 <!-- Primary Meta Tags -->
-<title>{title}</title>
-<meta name="title" content={title} />
-<meta name="description" content={description} />
+<title>{optimizedTitle}</title>
+<meta name="title" content={optimizedTitle} />
+<meta name="description" content={optimizedDescription} />
 <meta name="keywords" content={keywords} />
 <meta name="author" content={COMPANY_NAME} />
 <meta name="geo.region" content="US-CA" />

@@ -155,7 +155,7 @@ finalCTA:
   descriptionParagraphs:
     - "Save money and time by training with the region's exclusive multi-engine provider."
   mainButtonText: "Enroll Now"
-  mainButtonLink: "/enroll"
+  mainButtonLink: "/enroll/"
   secondButtonText: "Contact Us"
-  secondButtonLink: "/contact"
+  secondButtonLink: "/contact/"
 ---

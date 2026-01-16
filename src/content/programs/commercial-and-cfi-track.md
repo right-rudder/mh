@@ -153,7 +153,7 @@ finalCTA:
   descriptionParagraphs:
     - "Let's reach the majors together. Start your professional training plan today."
   mainButtonText: "Enroll Now"
-  mainButtonLink: "/enroll"
+  mainButtonLink: "/enroll/"
   secondButtonText: "Contact Us"
-  secondButtonLink: "/contact"
+  secondButtonLink: "/contact/"
 ---

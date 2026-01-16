@@ -36,17 +36,17 @@ const { pathname } = Astro.props;
           <li
             class={`menu-item ${sortedPrograms.length >= 1 ? "has-children" : ""}`}
           >
-            <a href={`/${sortedPrograms[0].collection}`} class="hover:cursor-pointer">Programs</a>
+            <a href={`/${sortedPrograms[0].collection}/`} class="hover:cursor-pointer">Programs</a>
             {sortedPrograms.length >= 1 ? (
               <ul class="sub-menu">
                 {sortedPrograms.map((program: Program) => (
                   <li>
                     <a
-                      href={`/programs/${program.slug}`}
+                      href={`/programs/${program.slug}/`}
                       class={
-                        (`/programs/${program.slug}` === pathname ||
+                        (`/programs/${program.slug}/` === pathname ||
                           `/programs/${program.slug}/` === pathname) &&
-                        `/programs/${program.slug}` !== "/programs/"
+                        `/programs/${program.slug}/` !== "/programs/"
                           ? "menu-link-hover hover:cursor-pointer"
                           : "hover:cursor-pointer"
                       }
@@ -68,15 +68,15 @@ const { pathname } = Astro.props;
           <li
             class={`menu-item ${sortedServices.length >= 1 ? "has-children" : ""}`}
           >
-            <a href="/services" class="hover:cursor-pointer">Maintenance & FBO</a>
+            <a href="/services/" class="hover:cursor-pointer">Maintenance & FBO</a>
             {sortedServices.length >= 1 ? (
               <ul class="sub-menu">
                 {sortedServices.map((service: Service) => (
                   <li>
                     <a
-                      href={`/services/${service.slug}`}
+                      href={`/services/${service.slug}/`}
                       class={
-                        (`/services/${service.slug}` === pathname ||
+                        (`/services/${service.slug}/` === pathname ||
                           `/services/${service.slug}/` === pathname)
                           ? "menu-link-hover hover:cursor-pointer"
                           : "hover:cursor-pointer"
@@ -128,7 +128,7 @@ const { pathname } = Astro.props;
     </ul>
     <!-- CTA Button -->
     <div class="buttons">
-      <a href="/contact" class="btn-primary !text-md hover:cursor-pointer">
+      <a href="/contact/" class="btn-primary !text-md hover:cursor-pointer">
         CONTACT US
       </a>
     </div>
@@ -174,12 +174,12 @@ const { pathname } = Astro.props;
       {
         sortedPrograms && (
           <li class="mobile-item">
-            <a href={`/${sortedPrograms[0].collection}`} class="hover:cursor-pointer">Programs</a>
+            <a href={`/${sortedPrograms[0].collection}/`} class="hover:cursor-pointer">Programs</a>
             {sortedPrograms.length >= 1 ? (
               <ul class="mobile-submenu">
                 <li>
                   <a
-                    href={`/programs`}
+                    href={`/programs/`}
                     class="menu-link hover:cursor-pointer">
                       All Programs
                   </a>
@@ -187,9 +187,9 @@ const { pathname } = Astro.props;
                 {sortedPrograms.map((program: Program) => (
                   <li>
                     <a
-                      href={`/programs/${program.slug}`}
+                      href={`/programs/${program.slug}/`}
                       class={
-                        (`/programs/${program.slug}` === pathname ||
+                        (`/programs/${program.slug}/` === pathname ||
                           `/programs/${program.slug}/` === pathname) &&
                         `/programs/${program.slug}` !== "/programs/"
                           ? "menu-link-hover hover:cursor-pointer"
@@ -216,7 +216,7 @@ const { pathname } = Astro.props;
               <ul class="mobile-submenu">
                 <li>
                   <a
-                    href={`/services`}
+                    href={`/services/`}
                     class="menu-link hover:cursor-pointer">
                       All Services
                   </a>
@@ -224,9 +224,9 @@ const { pathname } = Astro.props;
                 {sortedServices.map((service: Service) => (
                   <li>
                     <a
-                      href={`/services/${service.slug}`}
+                      href={`/services/${service.slug}/`}
                       class={
-                        (`/services/${service.slug}` === pathname ||
+                        (`/services/${service.slug}/` === pathname ||
                           `/services/${service.slug}/` === pathname)
                           ? "menu-link-hover hover:cursor-pointer"
                           : "hover:cursor-pointer"
@@ -274,7 +274,7 @@ const { pathname } = Astro.props;
     </ul>
     <!-- CTA Button -->
     <div class="mobile-buttons">
-      <a href="/contact" class="btn-primary-navbar">
+      <a href="/contact/" class="btn-primary-navbar">
         CONTACT US
       </a>
     </div>

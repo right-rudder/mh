@@ -42,7 +42,7 @@ const { data } = Astro.props;
         <p class="font-sans text-ink-50 max-w-[95%]" set:html={data.bodyCopy}>
         </p>
         {
-          data.cta &&  (<a class="btn-primary mt-4">Meet Our Services</a>)
+          data.cta &&  (<a href={data.cta.href} class="btn-primary mt-4">{data.cta.text}</a>)
         }
       </div>
     </div>

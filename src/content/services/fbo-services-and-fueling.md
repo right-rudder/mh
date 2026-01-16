@@ -96,5 +96,5 @@ finalCTA:
   descriptionParagraphs:
     - "Experience the hospitality of Fox Field's family-owned FBO."
   mainButtonText: "Contact Us"
-  mainButtonLink: "/contact"
+  mainButtonLink: "/contact/"
 ---

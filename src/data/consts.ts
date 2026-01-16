@@ -137,7 +137,7 @@ export type MenuItem = {
 export const footerMenu: MenuItem[] = [
   {
     label: "About",
-    url: "/about-us",
+    url: "/about-us/",
     children: [
       { label: "New to Flying?", url: "/new-to-flying/" },
       { label: "About Us", url: "/about-us/" },
@@ -152,20 +152,20 @@ export const footerMenu: MenuItem[] = [
 export const navbarMenu: MenuItem[] = [
   {
     label: "New to Flying?",
-    url: "/new-to-flying",
+    url: "/new-to-flying/",
     children: [
-      { label: "New to Flying?", url: "/new-to-flying" },
-      { label: "Financing", url: "/financing" },
-      { label: "FAQs", url: "/faqs" },
+      { label: "New to Flying?", url: "/new-to-flying/" },
+      { label: "Financing", url: "/financing/" },
+      { label: "FAQs", url: "/faqs/" },
     ],
   },
   {
     label: "About Us",
-    url: "/about-us",
+    url: "/about-us/",
     children: [
-      { label: "About Us", url: "/about-us" },
-      { label: "Our Fleet", url: "/fleet" },
-      { label: "Our Blog", url: "/blog" },
+      { label: "About Us", url: "/about-us/" },
+      { label: "Our Fleet", url: "/fleet/" },
+      { label: "Our Blog", url: "/blog/" },
     ],
   },
 ];

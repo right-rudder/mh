@@ -39,7 +39,7 @@ const { data } = Astro.props;
           ))}
         </div>
 
-        <a class="btn-primary">
+        <a href={data.cta.href} class="btn-primary">
           {data.cta.text}
         </a>
       </div>

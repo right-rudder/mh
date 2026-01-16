@@ -71,18 +71,18 @@ const today = new Date();
 
       {sortedPrograms && (
         <div class="w-full md:w-1/4 2xl:w-1/5 flex flex-col items-center md:items-start text-center md:text-left px-4 xl:pl-4 xl:pr-0">
-          <a href="/programs" class="font-main-header uppercase tracking-wide font-black text-xl hover:text-ochre-600 transition-colors mb-4 block">
+          <a href="/programs/" class="font-main-header uppercase tracking-wide font-black text-xl hover:text-ochre-600 transition-colors mb-4 block">
             Programs
           </a>
           <ul class="font-sans space-y-2">
             <li class="text-sm">
-              <a href={`/programs`} class="text-ink-50 hover:text-ochre-600 transition-colors">
+              <a href={`/programs/`} class="text-ink-50 hover:text-ochre-600 transition-colors">
                 All Programs
               </a>
             </li>
             {sortedPrograms.map((program) => (
               <li class="text-sm">
-                <a href={`/programs/${program.slug}`} class="text-ink-50 hover:text-ochre-600 transition-colors">
+                <a href={`/programs/${program.slug}/`} class="text-ink-50 hover:text-ochre-600 transition-colors">
                   {program.data.title}
                 </a>
               </li>
@@ -93,12 +93,12 @@ const today = new Date();
 
       {sortedServices && (
         <div class="w-full md:w-1/4 2xl:w-1/5 flex flex-col items-center md:items-start text-center md:text-left px-4 xl:pr-4 xl:pr-0">
-          <a href="/maintenance-and-services" class="font-main-header uppercase tracking-wide font-black text-xl hover:text-ochre-600 transition-colors mb-4 block">
+          <a href="/maintenance-and-services/" class="font-main-header uppercase tracking-wide font-black text-xl hover:text-ochre-600 transition-colors mb-4 block">
             MAINTENANCE & FBO
           </a>
           <ul class="font-sans space-y-2">
             <li class="text-sm">
-              <a href={`/services`} class="text-ink-50 hover:text-ochre-600 transition-colors">
+              <a href={`/services/`} class="text-ink-50 hover:text-ochre-600 transition-colors">
                 All Services
               </a>
             </li>
@@ -163,9 +163,9 @@ const today = new Date();
       </p>
 
       <p class="text-center md:text-right w-full md:w-auto">
-        <a href="/privacy-policy" class="hover:text-ochre-600 transition-colors">Privacy Policy</a>
+        <a href="/privacy-policy/" class="hover:text-ochre-600 transition-colors">Privacy Policy</a>
         <span class="mx-2">•</span>
-        <a href="/terms-of-service" class="hover:text-ochre-600 transition-colors">Terms of Service</a>
+        <a href="/terms-of-service/" class="hover:text-ochre-600 transition-colors">Terms of Service</a>
       </p>
     </div>
   </div>

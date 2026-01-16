@@ -96,5 +96,5 @@ finalCTA:
   descriptionParagraphs:
     - "Discuss your acquisition or management needs with our team today."
   mainButtonText: "Inquire Now"
-  mainButtonLink: "/contact"
+  mainButtonLink: "/contact/"
 ---

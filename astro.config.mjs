@@ -1,41 +1,47 @@
-// @ts-check
 import { defineConfig } from "astro/config";
 import react from "@astrojs/react";
 import tailwindcss from "@tailwindcss/vite";
 import sitemap from "@astrojs/sitemap";
+import { WEBSITE_DOMAIN_COMPLETE } from "./src/data/consts";
 
-// https://astro.build/config
 export default defineConfig({
-  site: "https://mil2atp.com",
+  site: WEBSITE_DOMAIN_COMPLETE,
+  trailingSlash: 'always',
+  build: {
+    format: 'directory'
+  },
   integrations: [
     react(),
     sitemap({
-      entryLimit: 45000,
-      
-      // 1. Filter out technical and system pages
+      // 1. Filter pages to exclude from the sitemap
       filter: (page) => {
-        const isErrorPage = page.includes("/404") || page.includes("/500");
-        const isDynamicParam = page.includes("?") || page.includes("#");
-        // Returns false to exclude, true to include in the sitemap
-        return !isErrorPage && !isDynamicParam;
+        // Exclude system pages, error pages, and post-submission confirmations
+        // SEO Tip: We exclude confirmation pages to prevent direct access via search results
+        const excludePatterns = [
+          "/404",
+          "/500",
+          "/admin",
+          "/draft",
+          "-confirmation", // Matches contact-confirmation, enroll-confirmation
+          "rss.xml",       // Exclude RSS feed from sitemap (it has its own discovery meta tag)
+          "robots.txt"     // Exclude robots file
+        ];
+
+        // Returns false if the page matches any exclusion pattern
+        return !excludePatterns.some((pattern) => page.includes(pattern));
       },
 
-      // 2. Map priorities based on your folder structure
+      // 2. Customize priority and frequency based on your site structure
       serialize: (item) => {
         const { pathname } = new URL(item.url);
         const today = new Date().toISOString().split("T")[0];
 
-        /**
-         * TRAILING SLASH FIX:
-         * To ensure comparisons work regardless of build settings, 
-         * we create a 'cleanPath' that removes the trailing slash.
-         * Example: "/contact/" becomes "/contact"
-         */
+        // Normalize path for comparison (removes trailing slash for logic checks)
         const cleanPath = pathname.endsWith("/") && pathname !== "/" 
           ? pathname.slice(0, -1) 
           : pathname;
 
-        // Homepage (Root is always just "/")
+        // --- Priority Level 1: Homepage ---
         if (pathname === "/") {
           return {
             ...item,
@@ -45,18 +51,27 @@ export default defineConfig({
           };
         }
 
-        // Educational/Core Programs (High Priority)
-        if (cleanPath.startsWith("/programs")) {
+        // --- Priority Level 2: Core Business Pages (Money Pages) ---
+        // Includes main programs and high-intent conversion pages
+        const conversionPages = [
+          "/enroll", 
+          "/contact", 
+          "/financing", 
+          "/new-to-flying"
+        ];
+        
+        // Check for Programs folder OR conversion pages
+        if (cleanPath.startsWith("/programs") || conversionPages.includes(cleanPath)) {
           return {
             ...item,
             priority: 0.9,
-            changefreq: "monthly",
+            changefreq: "weekly", // Increased frequency as these are critical
             lastmod: today,
           };
         }
 
-        // Inventory/Aircraft/Fleet Pages
-        if (cleanPath.startsWith("/fleet")) {
+        // --- Priority Level 3: Services & Fleet (Inventory) ---
+        if (cleanPath.startsWith("/services") || cleanPath.startsWith("/fleet")) {
           return {
             ...item,
             priority: 0.8,
@@ -65,7 +80,7 @@ export default defineConfig({
           };
         }
 
-        // Dynamic Content (Blog)
+        // --- Priority Level 4: Blog Content ---
         if (cleanPath.startsWith("/blog")) {
           return {
             ...item,
@@ -75,7 +90,7 @@ export default defineConfig({
           };
         }
 
-        // Team and Staff
+        // --- Priority Level 5: Staff/Crew ---
         if (cleanPath.startsWith("/crew")) {
           return {
             ...item,
@@ -85,29 +100,26 @@ export default defineConfig({
           };
         }
 
-        // Conversion Pages (High Priority for Business)
-        const conversionPages = ["/enroll", "/contact", "/financing", "/new-to-flying"];
-        if (conversionPages.includes(cleanPath)) {
-          return {
-            ...item,
-            priority: 0.8,
-            changefreq: "monthly",
-            lastmod: today,
-          };
-        }
-
-        // Legal and Static info (Lower Priority)
-        const legalPages = ["/privacy-policy", "/terms-of-service", "/faqs", "/about-us"];
+        // --- Priority Level 6: Legal & Informational (Trust Signals) ---
+        // SEO Tip: Don't exclude these. Google checks them for E-E-A-T (Trustworthiness).
+        // Just give them low priority.
+        const legalPages = [
+            "/privacy-policy", 
+            "/terms-of-service", 
+            "/faqs", 
+            "/about-us" // Updated from '/about' to match your file 'about-us.astro'
+        ];
+        
         if (legalPages.includes(cleanPath)) {
           return {
             ...item,
-            priority: 0.4,
+            priority: 0.3, // Lower priority tells Google to crawl these less often
             changefreq: "yearly",
             lastmod: today,
           };
         }
 
-        // Default fallback for any other page not caught above
+        // --- Fallback for any missed pages ---
         return {
           ...item,
           priority: 0.5,
@@ -117,7 +129,6 @@ export default defineConfig({
       },
     }),
   ],
-  // 'static' is the default, ensures all routes are pre-rendered for the sitemap
   output: "static",
   vite: {
     plugins: [tailwindcss()],

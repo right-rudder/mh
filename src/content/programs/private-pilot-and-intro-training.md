@@ -164,7 +164,7 @@ finalCTA:
   descriptionParagraphs:
     - "Join the Antelope Valley's premier aviation family."
   mainButtonText: "Book Discovery Flight"
-  mainButtonLink: "/contact"
+  mainButtonLink: "/contact/"
   secondButtonText: "Call Us"
   secondButtonLink: "tel:6619487779"
 ---
