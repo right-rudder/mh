@@ -9,6 +9,8 @@ images:
     alt: "Side view of Cessna 172N N737DW at Lancaster, California"
   - src: "/src/assets/fleet/N737DW/mh-aviation-at-lancaster-california-n737dw-cockpit-view.png"
     alt: "Cockpit view of Cessna 172N N737DW at Lancaster, California"
+  - src: "/src/assets/fleet/N737DW/mh-aviation-at-lancaster-california-n737dw-flying-view.png"
+    alt: "Flying view of Cessna 172N N737DW at Lancaster, California"
 specifications:
   engine: "Lycoming O-320 Series"
   horsepower: 180
