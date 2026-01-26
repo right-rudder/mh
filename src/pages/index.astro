@@ -17,34 +17,58 @@ import ProgramsOverviewSection from "../components/ProgramsOverview/ProgramsOver
 import SocialProofLeftSection from "../components/SocialProofLeftSection.astro";
 import { LOCATIONS } from "../data/consts";
 
+// const heroData = {
+//   images: [
+//     {
+//       src: "/src/assets/facilities/mh-aviation-facilities-front-sd.webp",
+//       alt: "MH Aviation fleet and maintenance hangar at Fox Field",
+//       imageCentering: "object-[50%_30%]"
+//     },
+//     {
+//       src: "/src/assets/instructing/mh-aviation-instructing-on-top-of-plane.jpg",
+//       alt: "MH Aviation instructing on top of multi-engine aircraft",
+//       imageCentering: "object-[50%_30%]"
+//     },
+//     {
+//       src: "/src/assets/instructing/mh-aviation-instructing-student-with-checklist.webp",
+//       alt: "MH Aviation instructing with pilot checklist on hands",
+//       imageCentering: "object-[50%_30%]"
+//     },
+//     {
+//       src: "/src/assets/general/mh-aviation-jet-fueling-services.webp",
+//       alt: "MH Aviation jet fueling services",
+//       imageCentering: "object-[20%_50%]"
+//     },
+//     {
+//       src: "/src/assets/fleet/mh-aviation-the-baron-aircraft.webp",
+//       alt: "MH Aviation The Baron aircraft",
+//       imageCentering: "object-[50%_30%]"
+//     },
+//   ],
+//   title: "Family-Owned <span class=\"\">Excellence<span></br>Providing Aviation Training<br>& Full-Service Maintenance",
+//   subTitle: `The Antelope Valley’s Only One-Stop Aviation Hub for<br> Professional Flight Training & Part 145 Certified Maintenance at ${AIRPORT} (${AIRPORT_CODE})`,
+//   cta: [
+//     {
+//       url: "/programs/",
+//       text: "Explore Programs",
+//       variant: "primary",
+//     },
+//     {
+//       url: "/contact/",
+//       text: "Book a Discovery Flight",
+//       variant: "secondary",
+//     },
+//   ],
+// };
+
 const heroData = {
-  images: [
-    {
-      src: "/src/assets/facilities/mh-aviation-facilities-front-sd.webp",
-      alt: "MH Aviation fleet and maintenance hangar at Fox Field",
-      imageCentering: "object-[50%_30%]"
-    },
-    {
-      src: "/src/assets/instructing/mh-aviation-instructing-on-top-of-plane.jpg",
-      alt: "MH Aviation instructing on top of multi-engine aircraft",
-      imageCentering: "object-[50%_30%]"
-    },
-    {
-      src: "/src/assets/instructing/mh-aviation-instructing-student-with-checklist.webp",
-      alt: "MH Aviation instructing with pilot checklist on hands",
-      imageCentering: "object-[50%_30%]"
-    },
-    {
-      src: "/src/assets/general/mh-aviation-jet-fueling-services.webp",
-      alt: "MH Aviation jet fueling services",
-      imageCentering: "object-[20%_50%]"
-    },
-    {
-      src: "/src/assets/fleet/mh-aviation-the-baron-aircraft.webp",
-      alt: "MH Aviation The Baron aircraft",
-      imageCentering: "object-[50%_30%]"
-    },
-  ],
+  image: {
+    src: "/src/assets/facilities/mh-aviation-facilities-front-sd.webp",
+    alt: "MH Aviation fleet and maintenance hangar at Fox Field",
+    imageCentering: "object-[50%_30%]"
+  },
+  videoSrc: "https://cdn.jsdelivr.net/gh/right-rudder/mh@main/public/mh-aviation-hero-horizontal.mp4",
+  videoSrcVertical: "https://cdn.jsdelivr.net/gh/right-rudder/mh@main/public/mh-aviation-hero-vertical.mp4",
   title: "Family-Owned <span class=\"\">Excellence<span></br>Providing Aviation Training<br>& Full-Service Maintenance",
   subTitle: `The Antelope Valley’s Only One-Stop Aviation Hub for<br> Professional Flight Training & Part 145 Certified Maintenance at ${AIRPORT} (${AIRPORT_CODE})`,
   cta: [
@@ -322,6 +346,7 @@ const metaProps = {
 
 <BaseLayout {...metaProps}>
   <HeroLandingPage data={heroData}/>
+
   <IntroductionSection {...valuePropositionData} />
   <ValueProposition data={valueAdvantageData}/>
   <RoadmapSection data={roadmapData}/>
