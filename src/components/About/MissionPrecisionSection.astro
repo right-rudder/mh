@@ -18,7 +18,7 @@ const { data } = Astro.props;
 <section class="relative py-20 md:py-32 bg-ink-50 overflow-hidden">
   <div class="absolute top-10 right-0 select-none pointer-events-none opacity-[0.03] hidden lg:block">
     <span class="text-[15rem] !font-main-header leading-none uppercase text-ink-950 whitespace-nowrap">
-      FAMILY & CARE
+      FAMILY<br>OWNED
     </span>
   </div>
 
@@ -34,7 +34,7 @@ const { data } = Astro.props;
           />
         </div>
         
-        <div class="absolute -bottom-12 -right-6 lg:-right-12 z-20 w-3/5 aspect-square overflow-hidden rounded-sm shadow-2xl border-4 border-ink-50 hidden sm:block">
+        <div class="absolute -bottom-22 -right-6 lg:-right-12 z-20 w-3/5 aspect-square overflow-hidden rounded-sm shadow-2xl border-4 border-ink-50 hidden sm:block">
           <ImageComp 
             src={data.imageSecondary} 
             alt="MH Aviation Detail" 
@@ -60,7 +60,7 @@ const { data } = Astro.props;
         <h2 class="title-black" set:html={data.title}></h2>
         
         <div class="relative mb-10">
-          <p class="text-xl text-ink-600 leading-relaxed italic border-l-4 border-ochre-200 pl-8 py-2">
+          <p class="text-base text-ink-600 leading-relaxed italic border-l-4 border-ochre-200 pl-8 py-2">
             "{data.quote}"
           </p>
         </div>

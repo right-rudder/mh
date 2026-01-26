@@ -1,5 +1,4 @@
 ---
-/* src/components/FleetOverviewSection.astro */
 import { getCollection } from "astro:content";
 import FleetOverviewSectionCard from "./FleetOverviewSectionCard.astro";
 import { FaArrowRight } from "react-icons/fa";
@@ -14,7 +13,7 @@ const {
   includeOrders = [1, 2, 3] 
 } = Astro.props;
 
-const allAircraft = await getCollection("aircraft");
+const allAircraft = await getCollection("fleet");
 
 const displayedAircraft = allAircraft
   .filter((aircraft) => {

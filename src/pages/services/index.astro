@@ -7,6 +7,7 @@ import { AIRPORT_WITH_CODE_SHORT, CITY_AND_STATE, COMPANY_NAME, PHONE_NUMBER } f
 import ServicesOverviewSectionCard from "../../components/Services/ServicesOverviewSectionCard.astro";
 import LocationSectionBlack from "../../components/LocationSectionBlack.astro";
 import MaintenancePhilosophy from "../../components/Fleet/MaintenancePhilosophy.astro";
+import ImageSliderWithCopySection from "../../components/ImageSliderWithCopySection.astro";
 
 const servicesEntries = await getCollection("services");
 const sortedServices = servicesEntries.sort((a, b) => {
@@ -23,6 +24,53 @@ const heroData = {
   ],
   title: "Maintenance And FBO",
   subTitle: "From FAA Part 145 certified maintenance to premier FBO fueling. We provide the professional services and infrassertructure that powers your flight.",
+};
+
+const imageSliderData = {
+  eyebrow: "The Faces Behind Your Safety",
+  title: "The Hardest Working Crew in the Valley",
+  paragraphs: [
+    "Expertise isn't just a certificate on the wall, it’s the <strong class=\"text-ochre-600\">grit and dedication</strong> of a team that lives and breathes aviation. Our mechanics and ground crew don't just 'check boxes'; they obsess over every bolt and fuel line to ensure that when you push the throttle, you do it with 100% confidence.",
+    "We’ve built a culture where <strong class=\"text-ochre-600\">effort is the standard</strong>. From the scorching heat on the ramp during a quick-turn fueling to the late nights in the hangar chasing a complex electrical gremlin, our team is relentless. We treat every aircraft as if our own families were flying in them, because at MH Aviation, professional service is a personal mission."
+  ],
+  cta: {
+    text: "Meet Our Expert Team",
+    href: "/about-us/",
+  },
+  images: [
+      {
+        imageSrc: "/src/assets/equipment/mh-aviation-equipment-and-team.jpg",
+        imageAlt: "Expert maintenance crew with professional equipment at MH Aviation at Lancaster, California",
+      },
+      {
+        imageSrc: "/src/assets/equipment/mh-aviation-equipment-and-maintenance-on-stair.jpg",
+        imageAlt: "Technician performing hands-on aircraft maintenance on a ladder at MH Aviation at Lancaster, California",
+      },
+      {
+        imageSrc: "/src/assets/equipment/mh-aviation-equipment-and-team-distance-shot.jpg",
+        imageAlt: "Wide shot of the professional service team at MH Aviation at Lancaster, California",
+      },
+      {
+        imageSrc: "/src/assets/facilities/mh-aviation-handshake-at-repair-station.jpg",
+        imageAlt: "Professional handshake at the FAA certified repair station of MH Aviation at Lancaster, California",
+      },
+      {
+        imageSrc: "/src/assets/repair-station/mh-aviation-repair-table.jpg",
+        imageAlt: "Detailed view of the precision repair workbench at MH Aviation at Lancaster, California",
+      },
+      {
+        imageSrc: "/src/assets/repair-station/mh-aviation-repair-station-overview.jpg",
+        imageAlt: "Full overview of the FAA Part 145 repair station facilities at MH Aviation at Lancaster, California",
+      },
+      {
+        imageSrc: "/src/assets/repair-station/mh-aviation-repair-under-aircraft.jpg",
+        imageAlt: "Specialized technician performing under-aircraft repairs at MH Aviation at Lancaster, California",
+      },
+      {
+        imageSrc: "/src/assets/instructing/mh-aviation-instructing-student-on-table-laughing.jpg",
+        imageAlt: "Flight instructor and student pilot during a briefing at MH Aviation at Lancaster, California",
+      },
+    ],
 };
 
 const finalCtaData = {
@@ -59,7 +107,7 @@ const metaProps = {
   
   <HeroGeneralPages data={heroData} />
 
-  <section class="py-16 md:py-32 bg-ink-50 min-h-screen px-4 overflow-hidden">
+  <section class="pt-16 pb-8 md:pb-16 md:pt-32 bg-ink-50 min-h-screen px-4 overflow-hidden">
     <div class="max-w-7xl mx-auto">
       
       <div class="max-w-3xl mx-auto text-center mb-20 reveal-text opacity-0 translate-y-8 transition-all duration-1000 ease-out">
@@ -73,15 +121,14 @@ const metaProps = {
           At MH Aviation, we anchor the community with our <strong class="text-ochre-600">FAA Part 145 Repair Station (#MHAR0094E)</strong> and full-service FBO. We ensure <strong class="text-ochre-600">safety, compliance, and comfort</strong> for every pilot that lands on our ramp.
         </p>
       </div>
-
       <div class="grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-16">
         {sortedServices.map((service, index) => (
           <ServicesOverviewSectionCard service={service} index={index} />
         ))}
       </div>
-
     </div>
   </section>
+  <ImageSliderWithCopySection imagePosition="right" data={imageSliderData}/>
   <MaintenancePhilosophy/>
   <LocationSectionBlack data={locationData}/>
   <FinalCTASection data={finalCtaData} />

@@ -12,6 +12,7 @@ import RepairStationSection from "../components/About/RepairStationSection.astro
 import LocationSection from "../components/LocationSection.astro";
 import FleetOverviewSection from "../components/Fleet/FleetOverviewSection.astro";
 import HeroGeneralPages from "../components/HeroGeneralPages.astro";
+import ImageSliderWithCopyWideSection from "../components/ImageSliderWithCopyWideSection.astro";
 
 const heroData = {
   images: [
@@ -37,8 +38,8 @@ const missionData = {
   title: "A Tradition of<br>Safety & Excellence",
   quote: "We don't just maintain airplanes; we build the dreams of those who fly them.",
   missionText: "MH Aviation strives to create a <strong class=\"text-ochre-600\">welcoming</strong>, <strong class=\"text-ochre-600\">family-style flight school</strong> where safety is paramount, aircraft are updated and readily available, and every student receives detailed, personalized training. Our goal is to  <strong class=\"text-ochre-600\">help pilots of all levels succeed</strong> and make learning attainable through honest pricing and a supportive aviation community.",
-  imageMain: "/src/assets/instructing/mh-aviation-instructing-student-how-to-repair-at-lancaster-california.webp",
-  imageSecondary: "/src/assets/instructing/mh-aviation-instructing-student-how-to-repair-at-lancaster-california.webp"
+  imageMain: "/src/assets/crew/mh-aviation-jeff-and-jessica.jpg",
+  imageSecondary:  "/src/assets/equipment/mh-aviation-equipment-and-team.jpg",
 };
 
 const introData = {
@@ -49,7 +50,7 @@ const introData = {
     "What began as a dedicated maintenance shop founded by Mike Haney in 1988 has evolved into a complete aviation hub. Today, led by Jeff and Jessica Haney, we continue that tradition while expanding into flight training and FBO services."
   ],
   image: {
-    src: "/src/assets/instructing/mh-aviation-instructing-student-how-to-repair-at-lancaster-california.webp",
+    src: "/src/assets/instructing/mh-aviation-instructing-student-on-table-with-map.jpg",
     alt: "MH Aviation founders and current owners",
   },
   imageCentering: "object-center",
@@ -63,35 +64,43 @@ const historyData = {
   eyebrow: "Our History",
   title: "From Maintenance to<br>Full-Service Aviation",
   steps: [
-    {
-      year: "1988",
-      title: "The Foundation",
-      description: "Mike Haney founds the business at Fox Field as a dedicated maintenance shop. Over the next 30 years, he builds a reputation for integrity, serving the local aviation community with high-quality aircraft inspections and repairs."
-    },
-    {
-      year: "2021",
-      title: "The Next Generation",
-      description: "Jeff and Jessica Haney purchase the business, keeping it in the family. They begin modernizing operations while maintaining the core values of safety and customer care established by Mike."
-    },
-    {
-      year: "2024",
-      title: "Expansion & Growth",
-      description: "MH Aviation expands into a full FBO, launching 'MH Fuels' and a comprehensive flight school. The fleet is upgraded with modern Garmin avionics, and the facility becomes a one-stop shop for training, maintenance, and fueling."
-    }
-  ],
+      {
+        year: "1988",
+        title: "The Foundation",
+        description: "Mike Haney founds the business at Fox Field as a dedicated maintenance shop. Over the next 30 years, he builds a reputation for integrity, serving the local aviation community with high-quality aircraft inspections and repairs."
+      },
+      {
+        year: "2021",
+        title: "The Next Generation",
+        description: "Jeff and Jessica Haney purchase the business, keeping it in the family. They begin modernizing operations while maintaining the core values of safety and customer care established by Mike."
+      },
+      {
+        year: "2024",
+        title: "Expansion & Growth",
+        description: "MH Aviation expands the professional flight training, upgrading the fleet with modern Garmin avionics and transforming the facility into a premier one-stop shop for maintenance, fueling, and instruction."
+      }
+    ],
   images: [
     {
-      src: "/src/assets/instructing/mh-aviation-instructing-student-how-to-repair-at-lancaster-california.webp",
-      alt: "Historical view of MH Aviation hangar",
-    },
-    {
-      src: "/src/assets/instructing/mh-aviation-instructing-on-top-of-plane.jpg",
+      src: "/src/assets/instructing/mh-aviation-instructing-student-on-table-with-map-close-up.jpg",
       alt: "MH Aviation early days",
     },
     {
-      src: "/src/assets/facilities/mh-aviation-facilities-front.jpg",
+      src: "/src/assets/instructing/mh-aviation-instructing-student-on-table-with-map-student-pointing.jpg",
+      alt: "Historical view of MH Aviation hangar",
+    },
+    {
+      src: "/src/assets/instructing/mh-aviation-instructing-student-with-white-board.jpg",
+      alt: "MH Aviation instructor with white board",
+    },
+    {
+      src: "/src/assets/facilities/mh-aviation-pushing-plane-to-hangar.jpg",
       alt: "Modern expansion of MH Aviation facilities",
-    }
+    },
+    {
+      src: "/src/assets/crew/mh-aviation-doggo.jpg",
+      alt: "Modern expansion of MH Aviation facilities",
+    },
   ]
 };
 
@@ -116,6 +125,48 @@ const valuesData = {
       text: "We believe in equipping students with the best tools. That is why we invested in upgrading our fleet with glass-panel Garmin G5s and 180hp engine conversions."
     }
   ]
+};
+
+const facilitiesData = {
+  eyebrow: "Built for Pilots & Crew",
+  title: "A Home Base Designed for Comfort & Capability",
+  paragraphs: [
+    "We know that a great flight starts long before takeoff and ends well after landing. That’s why our facilities at Fox Field are designed to serve as a complete <strong class=\"text-ochre-600\">aviation hub</strong>. <br>Whether you are debriefing in our pilot lounge, prepping a meal in the full kitchen, or overseeing maintenance in our state-of-the-art hangar, every square foot is optimized for your needs.",
+  ],
+  images: [
+      {
+        imageSrc: "/src/assets/equipment/mh-aviation-equipment-and-team.jpg",
+        imageAlt: "Expert maintenance crew with professional equipment at MH Aviation at Lancaster, California",
+      },
+      {
+        imageSrc: "/src/assets/equipment/mh-aviation-equipment-and-maintenance-on-stair.jpg",
+        imageAlt: "Technician performing hands-on aircraft maintenance on a ladder at MH Aviation at Lancaster, California",
+      },
+      {
+        imageSrc: "/src/assets/equipment/mh-aviation-equipment-and-team-distance-shot.jpg",
+        imageAlt: "Wide shot of the professional service team at MH Aviation at Lancaster, California",
+      },
+      {
+        imageSrc: "/src/assets/facilities/mh-aviation-handshake-at-repair-station.jpg",
+        imageAlt: "Professional handshake at the FAA certified repair station of MH Aviation at Lancaster, California",
+      },
+      {
+        imageSrc: "/src/assets/repair-station/mh-aviation-repair-table.jpg",
+        imageAlt: "Detailed view of the precision repair workbench at MH Aviation at Lancaster, California",
+      },
+      {
+        imageSrc: "/src/assets/repair-station/mh-aviation-repair-station-overview.jpg",
+        imageAlt: "Full overview of the FAA Part 145 repair station facilities at MH Aviation at Lancaster, California",
+      },
+      {
+        imageSrc: "/src/assets/repair-station/mh-aviation-repair-under-aircraft.jpg",
+        imageAlt: "Specialized technician performing under-aircraft repairs at MH Aviation at Lancaster, California",
+      },
+      {
+        imageSrc: "/src/assets/instructing/mh-aviation-instructing-student-on-table-laughing.jpg",
+        imageAlt: "Flight instructor and student pilot during a briefing at MH Aviation at Lancaster, California",
+      },
+    ],
 };
 
 const teamData = {
@@ -223,6 +274,7 @@ const metaProps = {
   <IntroductionSection {...introData} />
   <HistoryTimelineSection data={historyData} />
   <ValuesGridSection data={valuesData} />
+  <ImageSliderWithCopyWideSection theme="dark" data={facilitiesData}/>
   <TeamGridSection data={teamData} />
   <RepairStationSection data={repairStationData}/>
   <FacilityFeatureSection data={facilityData} />
