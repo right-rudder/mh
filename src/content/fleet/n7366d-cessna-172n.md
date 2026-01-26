@@ -3,7 +3,7 @@ name: "Cessna 172N Skyhawk"
 model: "1979 Cessna 172N"
 tailNumber: "N7366D"
 description: "A legendary trainer known for its stability and reliability. This 1979 Skyhawk N model features an upgraded 180HP Lycoming engine, offering superior climb performance compared to standard trainers. It is the perfect platform for primary flight training and instrument rating."
-order: 2
+order: 1
 images:
   - src: "/src/assets/fleet/N7366D/mh-aviation-cessna-172n-aircraft-at-lancaster-california.webp"
     alt: "N7366D Cessna 172N taxiing at Fox Field"
