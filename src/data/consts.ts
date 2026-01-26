@@ -19,6 +19,7 @@ export const COMPANY_SECONDARY_SERVICE = "Aviation Maintenance"
 
 export const PHONE_NUMBER = "(661) 948-7779";
 export const PHONE_NUMBER_HEADER = "(661) 948-7779";
+export const PHONE_NUMBER_SHORT = "+16619487779";
 
 export const ADDRESS_LINE_1 = "4651 William J Barnes Avenue";
 export const ADDRESS_LINE_2 = "Lancaster, CA 93536";

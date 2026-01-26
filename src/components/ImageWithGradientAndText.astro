@@ -7,9 +7,10 @@ interface Props {
   title?: string;
   subtitle?: string;
   class?: string;
+  quality?: number;
 }
 
-const { src, alt, title, subtitle, class: className = "" } = Astro.props;
+const { src, alt, title, subtitle, class: className = "", quality = 85 } = Astro.props;
 ---
 
 <div class="group relative overflow-hidden w-full h-full">
@@ -17,6 +18,7 @@ const { src, alt, title, subtitle, class: className = "" } = Astro.props;
     src={src}
     alt={alt}
     class={`w-full h-full object-cover ${className}`}
+    quality={quality}
   />
 
   <div class="absolute inset-0 

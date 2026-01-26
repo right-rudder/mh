@@ -25,7 +25,7 @@ const { data } = Astro.props;
     <div class="flex flex-col lg:flex-row items-center gap-16 lg:gap-24">
       
       <div class="w-full lg:w-1/2 relative reveal-images opacity-0 translate-x-[-20px] transition-all duration-1000 ease-out">
-        <div class="relative z-10 w-full aspect-[4/5] overflow-hidden rounded-sm shadow-2xl border-8 border-ink-50">
+        <div class="max-h-[550px] relative z-10 w-full aspect-[4/5] overflow-hidden rounded-sm shadow-2xl border-8 border-ink-50">
           <ImageComp 
             src={data.imageMain} 
             alt="MH Aviation Precision" 
@@ -33,11 +33,11 @@ const { data } = Astro.props;
           />
         </div>
         
-        <div class="absolute -bottom-22 -right-6 lg:-right-12 z-20 w-3/5 aspect-square overflow-hidden rounded-sm shadow-2xl border-4 border-ink-50 hidden sm:block">
+        <div class="absolute -bottom-22 -right-6 lg:-right-12 z-20 w-3/5 max-h-[250px] aspect-video overflow-hidden rounded-sm shadow-2xl border-4 border-ink-50 hidden lg:block">
           <ImageComp 
             src={data.imageSecondary} 
             alt="MH Aviation Detail" 
-            class="w-full h-full object-cover transition-transform duration-[2s] hover:scale-105" 
+            class="w-full h-full object-cover transition-transform duration-[3s] hover:scale-110" 
           />
           <div class="absolute inset-0 bg-ochre-600/10 mix-blend-multiply"></div>
         </div>
@@ -57,13 +57,6 @@ const { data } = Astro.props;
         </span>
         
         <h2 class="title-black" set:html={data.title}></h2>
-        
-        <div class="relative mb-10">
-          <p class="text-base text-ink-600 leading-relaxed italic border-l-4 border-ochre-200 pl-8 py-2">
-            "{data.quote}"
-          </p>
-        </div>
-
         <p class="text-ink-950 text-lg leading-relaxed mb-10 max-w-xl" set:html={data.missionText}></p>
 
         <div class="flex flex-wrap gap-8 items-center">
