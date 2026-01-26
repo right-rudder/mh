@@ -3,7 +3,7 @@ name: "Piper Twin Comanche"
 model: "1966 Piper PA-30"
 tailNumber: "N8267Y"
 description: "The Twin Comanche is a sleek, efficient multi-engine aircraft ideal for advanced ratings. With its twin Lycoming IO-320 engines and complex systems, N8267Y offers the perfect transition for pilots looking to master multi-engine aerodynamics and procedures."
-order: 2
+order: 5
 images:
   - src: "/src/assets/fleet/N8267Y/mh-aviation-piper-aircraft-at-lancaster-california.webp"
     alt: "N8267Y Piper Twin Comanche on the ramp"

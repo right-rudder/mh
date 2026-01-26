@@ -24,7 +24,9 @@ const firstImage = data.images && data.images.length > 0 ? data.images[0] : null
 const heroData = {
   images: firstImage ? [firstImage] : [],
   title: data.name || "Our Aircraft",
-  subTitle: `<span class=\"text-ochre-500\ bg-ink-950 border-l-2 border-ochre-600 py-2 px-3">Tail Number: ${data.tailNumber}</span>`,
+  subTitle: data.tailNumber === "The Baron" ?
+    `<span class=\"text-ochre-500\ bg-ink-950 border-l-2 border-ochre-600 py-2 px-3">Aircraft: ${data.tailNumber}</span>`
+  : `<span class=\"text-ochre-500\ bg-ink-950 border-l-2 border-ochre-600 py-2 px-3">Tail Number: ${data.tailNumber}</span>`,
 };
 
 const galleryImages = data.images && data.images.length > 1 ? data.images.slice(1) : [];
