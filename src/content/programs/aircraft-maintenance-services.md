@@ -46,7 +46,7 @@ firstCTA:
   title: "Schedule Maintenance"
   upperheader: "Keep Flying"
   descriptionParagraphs:
-    - "From oil changes to major repairs, trust the team that has served Fox Field for over two decades."
+    - "From oil changes to major repairs, trust the team that has served Fox Field for over three decades."
 
 whatIsIncluded:
   mainImage: "/src/assets/old-website/crew-repairing-aircraft-mh-aviation-california-become-a-pilot.webp"
