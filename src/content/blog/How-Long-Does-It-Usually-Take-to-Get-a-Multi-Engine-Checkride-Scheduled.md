@@ -3,7 +3,7 @@ title: "How Long Does It Usually Take to Get a Multi-Engine Checkride Scheduled?
 description: "Why multi-engine checkride delays are so common, how long students typically wait, and how MH Aviation's fleet reliability changes the timeline."
 pubDate: 2025-10-12
 author: "MH Aviation"
-image: "/src/assets/fleet/N53742/mh-aviation-cessna-172P-N53742-aircraft-front-of-hangar-close-up-at-lancaster-california.webp"
+image: "/src/assets/fleet/N53742/cessna-172P-N53742-aircraft-front-of-hangar-close-up-at-california-mh-aviation-lancaster-private-pilot.webp"
 tags:
   - "multi-engine"
   - "checkride"

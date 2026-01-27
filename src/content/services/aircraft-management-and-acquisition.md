@@ -1,14 +1,14 @@
 ---
 title: "Aircraft Management & Acquisition"
 description: "Comprehensive aircraft management and acquisition support through our partner, Avlink Direct."
-image: "/src/assets/fleet/mh-aviation-modern-aircraft-cockpit-at-lancaster-california.webp"
+image: "/src/assets/fleet/modern-aircraft-cockpit-at-california-mh-aviation-lancaster-flight-training.webp"
 alt: "Modern aircraft cockpit interior"
 order: 3
 pricingRange: "Contact Us for Quotation"
 serviceOverview:
   upperheader: "Avlink Direct Partnership"
   title: "Professional Aircraft Management"
-  image: "/src/assets/fleet/mh-aviation-modern-aircraft-cockpit-at-lancaster-california.webp"
+  image: "/src/assets/fleet/modern-aircraft-cockpit-at-california-mh-aviation-lancaster-flight-training.webp"
   alt: "Modern aircraft cockpit interior picture of MH Aviation at Lancaster, California"
   mainParagraphs:
     - "Through our partnership with <strong>Avlink Direct</strong>, MH Aviation offers comprehensive aircraft management and acquisition support. We take the complexity out of aircraft ownership."
@@ -40,7 +40,7 @@ capabilities:
 trustAndLegacy:
   upperheader: "Industry Recognition"
   title: "Trusted by<br>Aerospace Giants"
-  image: "/src/assets/instagram/goat-badge-from-lockhead-and-martin.jpg"
+  image: "/src/assets/instagram/goat-badge-from-lockhead-and-martin-mh-aviation-lancaster-commercial-pilot.jpg"
   alt: "GOAT badge from Lockheed and Martin"
   storyParagraphs:
     - "We don't just maintain general aviation aircraft; we support the fleets that keep the aerospace industry moving."
@@ -55,7 +55,7 @@ trustAndLegacy:
 operationalStandards:
   upperheader: "Oversight"
   title: "Managed by Experts"
-  mainImage: "/src/assets/fleet/mh-aviation-the-baron-aircraft.webp"
+  mainImage: "/src/assets/fleet/the-baron-aircraft-mh-aviation-lancaster-private-pilot.webp"
   features:
     - "Detailed Logbook Reviews"
     - "Regulatory Compliance"
@@ -90,7 +90,7 @@ faq:
     - question: "How do I pay for fueling or maintenance services?"
       answer: "We accept standard payments and are partnered with Stratus for financial services. Please contact our office for specific billing inquiries."
 finalCTA:
-  mainImage: "/src/assets/instructing/mh-aviation-instructing-student-02.jpg"
+  mainImage: "/src/assets/instructing/instructing-student-02-mh-aviation-california-flight-school.jpg"
   title: "Let Us Manage Your Aircraft"
   upperheader: "Avlink Direct"
   descriptionParagraphs:

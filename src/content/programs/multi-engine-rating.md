@@ -3,7 +3,7 @@ title: "Multi-Engine Rating"
 description: "The only Multi-Engine training program within 100 miles. Affordable, efficient, and professional."
 pricingRange: "Aircraft Rate: $295/hr"
 order: 3
-image: "/src/assets/instructing/mh-aviation-instructing-student-01.jpg"
+image: "/src/assets/instructing/instructing-student-01-mh-aviation-california-become-a-pilot.jpg"
 alt: "Multi-engine aircraft training at MH Aviation"
 reverse: false
 top: false
@@ -33,7 +33,7 @@ programIntroduction:
 programExpectations:
   title: "How The Program Works"
   upperheader: "What to Expect"
-  mainImage: "/src/assets/instructing/mh-aviation-instructing-student-01.jpg"
+  mainImage: "/src/assets/instructing/instructing-student-01-mh-aviation-california-become-a-pilot.jpg"
   mainImageAlt: "Multi-engine cockpit"
   descriptionParagraphs:
     - "The multi-engine training at MH Aviation is exceptional. You will experience real Instrument Meteorological Conditions (IMC) flying."
@@ -44,14 +44,14 @@ programExpectations:
     - "Advanced avionics usage"
 
 firstCTA:
-  mainImage: "/src/assets/instructing/mh-aviation-instructing-student-01.jpg"
+  mainImage: "/src/assets/instructing/instructing-student-01-mh-aviation-california-become-a-pilot.jpg"
   title: "Add Your Multi Rating"
   upperheader: "Upgrade Your Certificate"
   descriptionParagraphs:
     - "Don't wait on a waitlist in LA. Train locally with open availability and better rates."
 
 whatIsIncluded:
-  mainImage: "/src/assets/instructing/mh-aviation-instructing-student-01.jpg"
+  mainImage: "/src/assets/instructing/instructing-student-01-mh-aviation-california-become-a-pilot.jpg"
   title: "Multi-Engine Curriculum"
   upperheader: "What You Learn"
   descriptionParagraphs:
@@ -88,7 +88,7 @@ whyUs:
 careerPathways:
   title: "Next Steps"
   upperheader: "Career Progression"
-  mainImage: "/src/assets/instructing/mh-aviation-instructing-student-03.jpg"
+  mainImage: "/src/assets/instructing/instructing-student-03-mh-aviation-lancaster-certified-flight-instructor.jpg"
   mainImageAlt: "Main image alt"
   descriptionParagraphs:
     - "A Multi-Engine rating is a critical step for professional pilots aiming for the airlines."
@@ -148,7 +148,7 @@ faq:
       answer: "No, we have open availability and instructors ready to fly."
 
 finalCTA:
-  mainImage: "/src/assets/instructing/mh-aviation-instructing-student-01.jpg"
+  mainImage: "/src/assets/instructing/instructing-student-01-mh-aviation-california-become-a-pilot.jpg"
   mainImageAlt: "Multi-Engine Aircraft"
   title: "Get Multi-Engine Rated"
   upperheader: "Upgrade Now"

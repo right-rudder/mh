@@ -3,7 +3,7 @@ title: "Aircraft Maintenance Services"
 description: "FAA Part 145 Repair Station (#MHAR0094E). Full-service maintenance, inspections, and avionics upgrades at Fox Field."
 pricingRange: "FAA Part 145 Certified"
 order: 4
-image: "/src/assets/old-website/crew-repairing-aircraft.webp"
+image: "/src/assets/old-website/crew-repairing-aircraft-mh-aviation-california-become-a-pilot.webp"
 alt: "Crew repairing aircraft at MH Aviation"
 reverse: true
 top: false
@@ -31,7 +31,7 @@ programIntroduction:
 programExpectations:
   title: "How The Program Works"
   upperheader: "What to Expect"
-  mainImage: "/src/assets/old-website/crew-repairing-aircraft.webp"
+  mainImage: "/src/assets/old-website/crew-repairing-aircraft-mh-aviation-california-become-a-pilot.webp"
   mainImageAlt: "Maintenance technicians working"
   descriptionParagraphs:
     - "Our team is dedicated to providing exceptional customer service. We work with you every step of the way to ensure your satisfaction."
@@ -42,14 +42,14 @@ programExpectations:
     - "Fast and respectful communication"
 
 firstCTA:
-  mainImage: "/src/assets/old-website/crew-repairing-aircraft.webp"
+  mainImage: "/src/assets/old-website/crew-repairing-aircraft-mh-aviation-california-become-a-pilot.webp"
   title: "Schedule Maintenance"
   upperheader: "Keep Flying"
   descriptionParagraphs:
     - "From oil changes to major repairs, trust the team that has served Fox Field for over two decades."
 
 whatIsIncluded:
-  mainImage: "/src/assets/old-website/crew-repairing-aircraft.webp"
+  mainImage: "/src/assets/old-website/crew-repairing-aircraft-mh-aviation-california-become-a-pilot.webp"
   title: "Our Capabilities"
   upperheader: "Services"
   descriptionParagraphs:
@@ -88,7 +88,7 @@ whyUs:
 careerPathways:
   title: "Maintenance Excellence"
   upperheader: "Standard of Care"
-  mainImage: "/src/assets/instructing/mh-aviation-instructing-student-03.jpg"
+  mainImage: "/src/assets/instructing/instructing-student-03-mh-aviation-lancaster-certified-flight-instructor.jpg"
   mainImageAlt: "Main image alt"
   descriptionParagraphs:
     - "We operate with a safety-first mindset. Our goal is to ensure that your aircraft is in compliance with all FAA regulations and is safe to fly."
@@ -151,7 +151,7 @@ faq:
       answer: "Yes, we offer emergency AOG services to get you back in the air. *AOG fee may apply."
 
 finalCTA:
-  mainImage: "/src/assets/old-website/crew-repairing-aircraft.webp"
+  mainImage: "/src/assets/old-website/crew-repairing-aircraft-mh-aviation-california-become-a-pilot.webp"
   mainImageAlt: "Aircraft Repair"
   title: "Schedule Your Inspection"
   upperheader: "Maintenance"

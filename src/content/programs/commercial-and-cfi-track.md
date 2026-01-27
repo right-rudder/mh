@@ -3,7 +3,7 @@ title: "Commercial & CFI Track"
 description: "Advance your career with Commercial Pilot training and Flight Instructor certification."
 pricingRange: "Contact for Career Track Pricing"
 order: 2
-image: "/src/assets/instructing/mh-aviation-instructing-student-02.jpg"
+image: "/src/assets/instructing/instructing-student-02-mh-aviation-california-flight-school.jpg"
 alt: "Flight instructor and student at MH Aviation"
 reverse: true
 top: false
@@ -29,7 +29,7 @@ programIntroduction:
 programExpectations:
   title: "How The Program Works"
   upperheader: "What to Expect"
-  mainImage: "/src/assets/instructing/mh-aviation-instructing-student-02.jpg"
+  mainImage: "/src/assets/instructing/instructing-student-02-mh-aviation-california-flight-school.jpg"
   mainImageAlt: "Commercial pilot training"
   descriptionParagraphs:
     - "We foster a supportive and productive learning environment. Our goal is to ensure safety and adherence to industry regulations while monitoring student progress."
@@ -40,14 +40,14 @@ programExpectations:
     - "Constructive feedback loops"
 
 firstCTA:
-  mainImage: "/src/assets/instructing/mh-aviation-instructing-student-02.jpg"
+  mainImage: "/src/assets/instructing/instructing-student-02-mh-aviation-california-flight-school.jpg"
   title: "Become an Instructor"
   upperheader: "Join the Team"
   descriptionParagraphs:
     - "We are currently seeking experienced and dedicated Flight Instructors (CFI). CFII & MEI Instructors are preferred."
 
 whatIsIncluded:
-  mainImage: "/src/assets/instructing/mh-aviation-instructing-student-02.jpg"
+  mainImage: "/src/assets/instructing/instructing-student-02-mh-aviation-california-flight-school.jpg"
   title: "Advanced Training Scope"
   upperheader: "Curriculum"
   descriptionParagraphs:
@@ -85,7 +85,7 @@ whyUs:
 careerPathways:
   title: "Your Career Trajectory"
   upperheader: "Pilot Career"
-  mainImage: "/src/assets/instructing/mh-aviation-instructing-student-03.jpg"
+  mainImage: "/src/assets/instructing/instructing-student-03-mh-aviation-lancaster-certified-flight-instructor.jpg"
   mainImageAlt: "Main image alt"
   descriptionParagraphs:
     - "We define your mission to help you reach the majors. Whether aiming for the airlines or a new rating, we provide the roadmap."
@@ -146,7 +146,7 @@ faq:
       answer: "MH Aviation has flying opportunities with its aircraft management partner company."
 
 finalCTA:
-  mainImage: "/src/assets/instructing/mh-aviation-instructing-student-02.jpg"
+  mainImage: "/src/assets/instructing/instructing-student-02-mh-aviation-california-flight-school.jpg"
   mainImageAlt: "Commercial Pilot Training"
   title: "Define Your Mission"
   upperheader: "Go Pro"

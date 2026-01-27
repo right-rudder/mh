@@ -3,7 +3,7 @@ title: "Why Most Student Pilots Drop Out of Flight Training"
 description: "A clear look at why so many student pilots quit flight training and how MH Aviation's family approach and reliable fleet change the odds."
 pubDate: 2025-11-03
 author: "MH Aviation"
-image: "/src/assets/instructing/mh-aviation-instructing-student-with-white-board.jpg"
+image: "/src/assets/instructing/instructing-student-with-white-board-mh-aviation-california-pilot-training.jpg"
 tags:
   - "flight training"
   - "student pilots"

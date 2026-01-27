@@ -3,7 +3,7 @@ title: "What Is the 1,500 Hour Rule?"
 description: "A clear explanation of the FAA’s 1,500 hour rule, why it exists, how Restricted ATP works, and what it really means for your airline pilot career starting at MH Aviation."
 pubDate: 2026-01-05
 author: "MH Aviation"
-image: "/src/assets/fleet/N737DW/mh-aviation-at-lancaster-california-n737dw-flying-view.png"
+image: "/src/assets/fleet/N737DW/at-n737dw-flying-view-mh-aviation-california-pilot-training.png"
 tags:
   - "airline pilot"
   - "ATP"

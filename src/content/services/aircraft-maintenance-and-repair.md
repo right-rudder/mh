@@ -1,14 +1,14 @@
 ---
 title: "Aircraft Maintenance & Repair"
 description: "FAA Part 145 Repair Station (#MHAR0094E) providing annuals, avionics upgrades, and major repairs at Fox Field."
-image: "/src/assets/facilities/mh-aviation-repair-facilities-at-lancaster-california.webp"
+image: "/src/assets/facilities/repair-facilities-at-california-mh-aviation-california-multi-engine-rating.webp"
 alt: "MH Aviation maintenance hangar and technician working"
 order: 1
 pricingRange: "Contact Us for Quotation"
 serviceOverview:
   upperheader: "FAA Part 145 Repair Station"
   title: "MHAR0094E: A Legacy of Airworthiness"
-  image: "/src/assets/facilities/mh-aviation-repair-facilities-at-lancaster-california.webp"
+  image: "/src/assets/facilities/repair-facilities-at-california-mh-aviation-california-multi-engine-rating.webp"
   alt: "Aircraft Maintenance & Repair picture of MH Aviation at Lancaster, California"
   mainParagraphs:
     - "MH Aviation began as a maintenance shop at Fox Field founded by Mike Haney, building a loyal customer base over more than 35 years. Today, under the leadership of Jeff and Jessica Haney, we operate as a full <strong class=\"text-ochre-600\">FAA Part 145 Repair Station (#MHAR0094E)</strong>."
@@ -43,7 +43,7 @@ capabilities:
 trustAndLegacy:
   upperheader: "Industry Recognition"
   title: "Trusted by<br>Aerospace Giants"
-  image: "/src/assets/instagram/goat-badge-from-lockhead-and-martin.jpg"
+  image: "/src/assets/instagram/goat-badge-from-lockhead-and-martin-mh-aviation-lancaster-commercial-pilot.jpg"
   alt: "GOAT badge from Lockheed and Martin"
   storyParagraphs:
     - "We don't just maintain general aviation aircraft; we support the fleets that keep the aerospace industry moving."
@@ -58,7 +58,7 @@ trustAndLegacy:
 operationalStandards:
   upperheader: "Safety Culture"
   title: "The Safety Mindset"
-  mainImage: "/src/assets/facilities/mh-aviation-facilities-front-sd.webp"
+  mainImage: "/src/assets/facilities/facilities-front-sd-mh-aviation-california-flying-lessons.webp"
   features:
     - "Safety-First Culture"
     - "Regulatory Compliance"
@@ -94,7 +94,7 @@ faq:
     - question: "How do I pay for fueling or maintenance services?"
       answer: "We accept standard payments and are partnered with Stratus for financial services. Please contact our office for specific billing inquiries."
 finalCTA:
-  mainImage: "/src/assets/instructing/mh-aviation-instructing-student-how-to-repair-at-lancaster-california.webp"
+  mainImage: "/src/assets/instructing/instructing-student-how-to-repair-at-california-mh-aviation-california-commercial-pilot.webp"
   title: "Schedule Your Service"
   upperheader: "Maintenance"
   descriptionParagraphs:

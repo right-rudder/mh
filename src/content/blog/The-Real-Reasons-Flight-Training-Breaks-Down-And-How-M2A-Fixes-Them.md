@@ -3,7 +3,7 @@ title: "The Real Reasons Flight Training Breaks Down (And How MH Aviation Fixes 
 description: "An honest look at the systemic reasons flight training fails and how MH Aviation's maintenance capability and family values eliminate inconsistency and delays."
 pubDate: 2025-10-26
 author: "MH Aviation"
-image: "/src/assets/instructing/mh-aviation-instructing-with-student-checklist-at-lancaster-california.webp"
+image: "/src/assets/instructing/instructing-with-student-checklist-at-california-mh-aviation-california-flying-lessons.webp"
 tags:
   - "flight training"
   - "pilot education"

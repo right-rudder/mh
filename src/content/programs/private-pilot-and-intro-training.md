@@ -3,7 +3,7 @@ title: "Private Pilot & Intro Training"
 description: "Start your aviation journey with Discovery Flights and Private Pilot certification in the Antelope Valley."
 pricingRange: "Aircraft Rates starting at ~$155/hr"
 order: 1
-image: "/src/assets/instructing/mh-aviation-instructing-student-03.jpg"
+image: "/src/assets/instructing/instructing-student-03-mh-aviation-lancaster-certified-flight-instructor.jpg"
 alt: "Student pilot receiving instruction at MH Aviation"
 reverse: false
 top: true
@@ -34,7 +34,7 @@ programIntroduction:
 programExpectations:
   title: "How The Program Works"
   upperheader: "What to Expect"
-  mainImage: "/src/assets/instructing/mh-aviation-instructing-student-03.jpg"
+  mainImage: "/src/assets/instructing/instructing-student-03-mh-aviation-lancaster-certified-flight-instructor.jpg"
   mainImageAlt: "Instructor teaching student pilot"
   descriptionParagraphs:
     - "Experience catered, honest training where you are treated like family. We offer a modern Garmin-equipped fleet including 180 hp conversions and glass-panel Garmin G5s."
@@ -45,14 +45,14 @@ programExpectations:
     - "Supportive family-owned culture"
 
 firstCTA:
-  mainImage: "/src/assets/instructing/mh-aviation-instructing-student-03.jpg"
+  mainImage: "/src/assets/instructing/instructing-student-03-mh-aviation-lancaster-certified-flight-instructor.jpg"
   title: "Book a Discovery Flight"
   upperheader: "Take the Controls"
   descriptionParagraphs:
     - "See if aviation is right for you. Take the controls for the first time over the scenic Antelope Valley."
 
 whatIsIncluded:
-  mainImage: "/src/assets/instructing/mh-aviation-instructing-student-03.jpg"
+  mainImage: "/src/assets/instructing/instructing-student-03-mh-aviation-lancaster-certified-flight-instructor.jpg"
   title: "Training Curriculum"
   upperheader: "Course Content"
   descriptionParagraphs:
@@ -90,7 +90,7 @@ whyUs:
 careerPathways:
   title: "From Student to Pilot"
   upperheader: "Growth Opportunities"
-  mainImage: "/src/assets/instructing/mh-aviation-instructing-student-03.jpg"
+  mainImage: "/src/assets/instructing/instructing-student-03-mh-aviation-lancaster-certified-flight-instructor.jpg"
   mainImageAlt: "Main image alt"
   descriptionParagraphs:
     - "We don't just train students; we mentor future colleagues. We have a track record of taking students from zero experience to regional airline first officers."
@@ -157,7 +157,7 @@ faq:
       answer: "We are located at Gen. William Fox Airfield (KWJF) in Lancaster, CA."
 
 finalCTA:
-  mainImage: "/src/assets/instructing/mh-aviation-instructing-student-03.jpg"
+  mainImage: "/src/assets/instructing/instructing-student-03-mh-aviation-lancaster-certified-flight-instructor.jpg"
   mainImageAlt: "MH Aviation Discovery Flight"
   title: "Ready to Fly?"
   upperheader: "Start Today"

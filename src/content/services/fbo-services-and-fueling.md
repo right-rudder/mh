@@ -1,14 +1,14 @@
 ---
 title: "FBO Services & Fueling"
 description: "MH Fuels and FBO services at Fox Field. Fueling, amenities, and a pilot-focused environment in Lancaster, CA."
-image: "/src/assets/general/mh-aviation-fueling-service.webp"
+image: "/src/assets/general/fueling-service-mh-aviation-california-become-a-pilot.webp"
 alt: "MH Aviation fueling service truck"
 order: 2
 pricingRange: "Contact Us for Quotation"
 serviceOverview:
   upperheader: "Fox Field's Premier FBO"
   title: "The One-Stop Aviation Hub"
-  image: "/src/assets/general/mh-aviation-fueling-service.webp"
+  image: "/src/assets/general/fueling-service-mh-aviation-california-become-a-pilot.webp"
   alt: "MH Aviation fueling service truck at MH Aviation at Lancaster, California"
   mainParagraphs:
     - "MH Aviation is redefining service at Gen. William Fox Airfield (KWJF). Since expanding into full FBO operations with the launch of <strong>MH Fuels</strong> in June 2024, we have created a true 'One-Stop Shop' for pilots in the Antelope Valley."
@@ -40,7 +40,7 @@ capabilities:
 trustAndLegacy:
   upperheader: "Industry Recognition"
   title: "Trusted by<br>Aerospace Giants"
-  image: "/src/assets/instagram/goat-badge-from-lockhead-and-martin.jpg"
+  image: "/src/assets/instagram/goat-badge-from-lockhead-and-martin-mh-aviation-lancaster-commercial-pilot.jpg"
   alt: "GOAT badge from Lockheed and Martin"
   storyParagraphs:
     - "We don't just maintain general aviation aircraft; we support the fleets that keep the aerospace industry moving."
@@ -55,7 +55,7 @@ trustAndLegacy:
 operationalStandards:
   upperheader: "Operations"
   title: "Efficient & Accessible"
-  mainImage: "/src/assets/facilities/mh-aviation-facilities-front.jpg"
+  mainImage: "/src/assets/facilities/facilities-front-mh-aviation-california-multi-engine-rating.jpg"
   features:
     - "Open Mon-Fri 08:00 am – 05:00 pm"
     - "Located at Gen. William Fox Airfield"
@@ -90,7 +90,7 @@ faq:
     - question: "How do I pay for fueling or maintenance services?"
       answer: "We accept standard payments and are partnered with Stratus for financial services. Please contact our office for specific billing inquiries."
 finalCTA:
-  mainImage: "/src/assets/instructing/mh-aviation-instructing-on-top-of-plane.jpg"
+  mainImage: "/src/assets/instructing/instructing-on-top-of-plane-mh-aviation-california-discovery-flight.jpg"
   title: "Visit MH Aviation"
   upperheader: "Stop By"
   descriptionParagraphs:

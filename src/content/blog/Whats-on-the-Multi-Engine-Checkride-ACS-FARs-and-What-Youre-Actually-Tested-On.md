@@ -3,7 +3,7 @@ title: "What’s on the Multi-Engine Checkride? (ACS, FARs, and What You’re Ac
 description: "A plain-language breakdown of the multi-engine checkride, including the ACS, required FARs, and what to expect in the MH Aviation Piper PA-30."
 pubDate: 2025-12-22
 author: "MH Aviation"
-image: "/src/assets/fleet/N254MJ/mh-aviation-at-lancaster-california-the-baron-aircraft-front-view.webp"
+image: "/src/assets/fleet/N254MJ/at-the-baron-aircraft-front-view-mh-aviation-california-instrument-rating.webp"
 tags:
   - "multi-engine"
   - "checkride"

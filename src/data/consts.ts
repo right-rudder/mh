@@ -1,14 +1,14 @@
 // ==============================
 // Brand Assets And Information
 // ==============================
-export const OG_IMAGE = "/og-image.png";
-export const FAVICON = "/favicon.png";
-export const LOGO = "/logo.png";
+export const OG_IMAGE = "/og-image-mh-aviation-california-instrument-rating.png";
+export const FAVICON = "/favicon-mh-aviation-lancaster-discovery-flight.png";
+export const LOGO = "/logo-mh-aviation-lancaster-discovery-flight.png";
 
-export const LOGO_ASSETS = "/src/assets/brand/logo.png";
+export const LOGO_ASSETS = "/src/assets/brand/logo-mh-aviation-lancaster-instrument-rating.png";
 export const LOGO_ASSETS_ALTERNATIVE = "/src/assets/brand/logo-anternative.png";
-export const LOGO_ASSETS_2 = "/src/assets/brand/MH Aviation White.png";
-export const LOGO_ASSETS_3 = "/src/assets/brand/MH Aviation Black.png"; 
+export const LOGO_ASSETS_2 = "/src/assets/brand/MH-Aviation-White-mh-aviation-california-multi-engine-rating.png";
+export const LOGO_ASSETS_3 = "/src/assets/brand/MH-Aviation-Black-mh-aviation-lancaster-commercial-pilot.png"; 
 
 export const COMPANY_NAME = "MH Aviation";
 export const COMPANY_NAME_CAPS = "MH AVIATION";

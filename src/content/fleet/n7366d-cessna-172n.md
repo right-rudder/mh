@@ -5,13 +5,13 @@ tailNumber: "N7366D"
 description: "A legendary trainer known for its stability and reliability. This 1979 Skyhawk N model features an upgraded 180HP Lycoming engine, offering superior climb performance compared to standard trainers. It is the perfect platform for primary flight training and instrument rating."
 order: 1
 images:
-  - src: "/src/assets/fleet/N7366D/mh-aviation-cessna-172n-aircraft-at-lancaster-california.webp"
+  - src: "/src/assets/fleet/N7366D/cessna-172n-aircraft-at-california-mh-aviation-california-private-pilot.webp"
     alt: "N7366D Cessna 172N taxiing at Fox Field"
-  - src: "/src/assets/fleet/N7366D/mh-aviation-piper-standard-analog-six-pack-panel-aircraft-at-lancaster-california.webp"
+  - src: "/src/assets/fleet/N7366D/piper-standard-analog-six-pack-panel-aircraft-at-california-mh-aviation-california-multi-engine-rating.webp"
     alt: "Cockpit view of Cessna 172N N7366D"
-  - src: "/src/assets/fleet/N7366D/mh-aviation-cessna-172n-aircraft-front-of-hangar-at-lancaster-california.webp"
+  - src: "/src/assets/fleet/N7366D/cessna-172n-aircraft-front-of-hangar-at-california-mh-aviation-california-commercial-pilot.webp"
     alt: "Side front view of the Cessna 172N N7366D"
-  - src: "/src/assets/fleet/N7366D/mh-aviation-cessna-172n-aircraft-front-of-hangar-backview-at-lancaster-california.webp"
+  - src: "/src/assets/fleet/N7366D/cessna-172n-aircraft-front-of-hangar-backview-at-california-mh-aviation-california-become-a-pilot.webp"
     alt: "Side back view of the Cessna 172N N7366D"
 specifications:
   engine: "Lycoming O-320 Series"
