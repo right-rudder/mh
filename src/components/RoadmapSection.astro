@@ -13,6 +13,7 @@ interface Props {
     cards: {
       title: string;
       text: string;
+      href?: string;
       icon: string;
     }[];
   };
@@ -49,7 +50,8 @@ const getIcon = (iconName: string) => {
         data.cards.map((card, index) => {
           const Icon = getIcon(card.icon);
           return (
-            <div 
+            <a 
+              href={card.href}
               class="stagger-card opacity-0 translate-y-10 flex flex-col items-center group border-[2px] border-t-5 border-t-ochre-600 border-gray-200 hover:border-ochre-600 hover:-translate-y-1 transition-all duration-700 px-4 py-10 rounded shadow-sm hover:shadow-lg"
               style={`transition-delay: ${index * 150}ms;`}
             >
@@ -61,7 +63,7 @@ const getIcon = (iconName: string) => {
               </div>
               <h3 class="text-xl font-bold text-ink-950 mb-3">{card.title}</h3>
               <p class="text-ink-600 leading-relaxed text-sm">{card.text}</p>
-            </div>
+            </a>
           );
         })
       }

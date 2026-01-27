@@ -140,10 +140,11 @@ export const footerMenu: MenuItem[] = [
     label: "About",
     url: "/about-us/",
     children: [
-      { label: "New to Flying?", url: "/new-to-flying/" },
       { label: "About Us", url: "/about-us/" },
-      { label: "FAQs", url: "/faqs/" },
+      { label: "New to Flying?", url: "/new-to-flying/" },
+      { label: "What's In The Future of Pilots?", url: "/future-of-pilots/" },
       { label: "Financing", url: "/financing/" },
+      { label: "FAQs", url: "/faqs/" },
       { label: "Blog", url: "/blog" },
       { label: "Contact Us", url: "/contact/" },
     ],
@@ -156,6 +157,7 @@ export const navbarMenu: MenuItem[] = [
     url: "/new-to-flying/",
     children: [
       { label: "New to Flying?", url: "/new-to-flying/" },
+      { label: "What's In The Future of Pilots?", url: "/future-of-pilots/" },
       { label: "Financing", url: "/financing/" },
       { label: "FAQs", url: "/faqs/" },
     ],

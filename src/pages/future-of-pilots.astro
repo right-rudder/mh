@@ -1,0 +1,142 @@
+---
+import ValuesGridSection from "../components/About/ValuesGridSection.astro";
+import FinalCTASection from "../components/FinalCTASection.astro";
+import HeroGeneralPages from "../components/HeroGeneralPages.astro";
+import FlightExperienceIntro from "../components/NewToFlying/FlightExperienceIntro.astro";
+import SafetyFoundation from "../components/NewToFlying/SafetyFoundation.astro";
+import TrainingEnvironment from "../components/NewToFlying/TrainingEnvironment.astro";
+import { AIRPORT_WITH_CODE_SHORT, CITY_AND_STATE, COMPANY_NAME, COMPANY_PRIMARY_SERVICE, COMPANY_SECONDARY_SERVICE, LOCATIONS, PHONE_NUMBER } from "../data/consts";
+import BaseLayout from "../layouts/BaseLayout.astro";
+
+
+const heroData = {
+  images: [
+    { 
+        src: "/src/assets/instructing/mh-aviation-instructing-student-on-table-laughing.jpg",
+        alt: "Instructor teaching at MH Aviation at Lancaster" 
+    }
+  ],
+  title: `What's in the<br>future of Pilots?`,
+  subTitle: `From first solo to the flight deck, discover how today’s training decisions shape tomorrow’s aviation careers.`
+};
+
+const introData = {
+  upperheader: "Beyond the Checkride",
+  title: "A Career With<br>Unlimited Altitude",
+  description: [
+    "The aviation industry is facing an unprecedented demand for professional pilots. As the 'Silver Tsunami' of mandatory retirements hits major airlines, the door is wide open for a new generation of aviators to step into the cockpit.",
+    "At MH Aviation, we don't just teach you to fly; we prepare you for the captain's seat. Our structured training at Fox Field is designed to move you efficiently from zero hours to your Commercial and CFI ratings, bridging the gap between a student pilot and a career professional.",
+    "Your future isn't just about logging hours; it's about the quality of those hours. Training in our meticulously maintained fleet ensures you gain the reliable, uninterrupted experience airlines look for, right here in the high desert of Lancaster."
+  ],
+  cta: { text: "Start Your Journey", href: "/enroll/" },
+  image: {
+    src: "/src/assets/facilities/mh-aviation-facilities-front.jpg",
+    alt: "MH Aviation facilities at Lancaster, California"
+  }
+};
+
+const marketData = {
+  upperheader: "Industry Outlook",
+  title: "The Golden Age<br>of Aviation Hiring",
+  description: "The data is clear: there has never been a better time to become a professional pilot. According to the Boeing Pilot & Technician Outlook, North America alone requires <span class='text-ochre-600 font-bold'>over 127,000 new pilots</span> over the next 20 years. Airlines are offering record-breaking signing bonuses and competitive salaries to secure talent, making aviation one of the most lucrative career paths today.",
+  slogan: "Launch Your Professional Flight Career",
+  stats: [
+    { label: "Annual Openings (USA)", value: "18,000+" },
+    { label: "New Pilots Needed (20Yr)", value: "127k" },
+    { label: "Median Pay (BLS)", value: "$219k+" },
+  ],
+  cta: { text: "Start Your Career Pathway", href: "/programs/" },
+  image: {
+    src: "/src/assets/fleet/N737DW/mh-aviation-at-lancaster-california-n737dw-flying-view.png",
+    alt: "Commercial airliner flying over California"
+  }
+};
+
+const careerPathsData = {
+  eyebrow: "Your Trajectory",
+  title: "Where Your Wings<br>Can Take You",
+  values: [
+    {
+      title: "Commercial Airlines",
+      text: "The ultimate goal for many. With the 1,500-hour rule, airlines are aggressively hiring from regional carriers. Your journey starts with building a solid foundation of safety and decision-making here at MH Aviation."
+    },
+    {
+      title: "Flight Instruction (CFI)",
+      text: "The most reliable path to 1,500 hours. MH Aviation actively hires talented CFIs to join our team. We offer a supportive environment and a busy schedule, allowing you to earn while you build time in our fleet."
+    },
+    {
+      title: "Corporate & Charter",
+      text: "Fly business jets for private clients. This sector values precision and customer service—skills ingrained in our students through our family-style, client-first approach at Fox Field."
+    },
+    {
+      title: "Cargo Operations",
+      text: "A vital part of the global economy. Cargo carriers like FedEx and UPS offer some of the highest salaries in the industry. Our multi-engine training in the Piper PA-30 prepares you for these complex operations."
+    }
+  ]
+};
+
+const timeBuildingData = {
+  upperheader: "The MH Aviation Advantage",
+  title: "Accelerate Your<br>Path to 1,500 Hours",
+  description: "The biggest obstacle to an airline career is downtime due to mechanical issues. Because MH Aviation is an <span class='text-ochre-600 font-bold'>FAA Part 145 Repair Station</span>, our aircraft are always ready to fly. While students at other schools wait for parts, our pilots are in the air building the time they need to get hired.",
+  slogan: "Less Time Waiting, More Time Flying",
+  benefits: ["In-House Maintenance", "Hiring CFIs Now", "Complex Airspace"],
+  cta: { text: "Start Your Journey Now", href: "/programs/" },
+  image: {
+    src: "/src/assets/fleet/N8267Y/mh-aviation-piper-aircraft-at-lancaster-california.webp",
+    alt: "Piper PA-30 at Hangar at Fox Field"
+  }
+};
+
+const finalCtaData = {
+  eyebrow: "Ready to Fly?",
+  headline: "Your Aviation Journey<br>Begins Here",
+  bodyCopy:
+    "Whether you are looking for your first flight, aircraft maintenance,<br> or fueling services, MH Aviation is ready to serve you.",
+  cta: {
+    text: "Schedule a Visit",
+    subtext: `Call us directly at ${PHONE_NUMBER}`,
+    href: "/contact/"
+  },
+  image: {
+    src: "/src/assets/instructing/mh-aviation-instructing-on-top-of-plane.jpg",
+    alt: "Runway view at sunset",
+  },
+};
+
+const metaProps = {
+  siteTitle: `What's in the Future of Pilots? | ${COMPANY_NAME}`,
+  siteDescription: `${COMPANY_NAME} is a premier flight school and FAA Part 145 Repair Station at ${AIRPORT_WITH_CODE_SHORT}. Start your pilot training or schedule aircraft maintenance today.`,
+  siteKeywords: `${COMPANY_PRIMARY_SERVICE} ${LOCATIONS[0].city} ${LOCATIONS[0].state}, pilot training, ${COMPANY_SECONDARY_SERVICE}, ${LOCATIONS[0].title}, ${COMPANY_NAME}`
+};
+
+---
+<BaseLayout {...metaProps}>
+  <HeroGeneralPages data={heroData} />
+  <FlightExperienceIntro data={introData} />
+  <SafetyFoundation data={marketData} />
+  <ValuesGridSection data={careerPathsData} />
+  <TrainingEnvironment data={timeBuildingData} />
+  <FinalCTASection data={finalCtaData}/>
+</BaseLayout>
+
+<script>
+  const observerOptions = {
+    root: null,
+    rootMargin: '0px',
+    threshold: 0.1
+  };
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.remove('opacity-0', 'translate-y-8');
+        entry.target.classList.add('opacity-100', 'translate-y-0');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, observerOptions);
+  document.querySelectorAll('.reveal-section, .reveal-fade, .reveal-card').forEach((el) => {
+    observer.observe(el);
+  });
+</script>

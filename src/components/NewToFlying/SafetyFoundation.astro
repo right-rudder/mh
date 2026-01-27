@@ -7,6 +7,7 @@ interface Props {
     upperheader: string;
     title: string;
     description: string;
+    slogan?: string;
     stats: { label: string; value: string }[];
     cta: { text: string; href: string };
     image: { src: string; alt: string };
@@ -32,7 +33,7 @@ const { data } = Astro.props;
           <div class="absolute bottom-8 left-8">
             <div class="flex items-center gap-3 bg-ochre-600/90 backdrop-blur-sm px-6 py-3 rounded-sm">
                 <FaShieldAlt className="text-ink-50 text-xl" />
-                <span class="font-bold uppercase tracking-wider text-sm">FAA Part 145 Certified</span>
+                <span class="font-bold uppercase tracking-wider text-sm">{data.slogan ? data.slogan : "FAA Part 145 Certified"}</span>
             </div>
           </div>
         </div>
@@ -40,7 +41,7 @@ const { data } = Astro.props;
 
       <div class="order-1 lg:order-2">
         <span class="subtitle">{data.upperheader}</span>
-        <h2 class="title">{data.title}</h2>
+        <h2 class="title" set:html={data.title}></h2>
         <p class="text-ink-200 text-lg leading-relaxed mb-10" set:html={data.description} />
 
         <div class="grid grid-cols-3 gap-6 mb-10 border-y border-ink-800 py-8">

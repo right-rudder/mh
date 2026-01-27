@@ -8,6 +8,7 @@ interface Props {
     title: string;
     description: string;
     benefits: string[];
+    slogan?: string;
     cta: { text: string; href: string };
     image: { src: string; alt: string };
   };
@@ -41,7 +42,7 @@ const getIcon = (text: string) => {
 
         <div class="absolute -bottom-8 -right-4 md:-right-8 bg-ink-950 p-8 rounded-sm shadow-2xl max-w-xs border-l-4 border-ochre-600 hidden md:block transform transition-transform duration-500 hover:-translate-y-2 z-10">
             <p class="text-ink-50 text-sm font-medium leading-relaxed italic opacity-90">
-                "Fox Field offers great access to the scenic Antelope Valley... views of Lancaster, Palmdale, and Mojave."
+                {data.slogan ? data.slogan : "Fox Field offers great access to the scenic Antelope Valley with views of Lancaster, Palmdale, and Mojave."}
             </p>
         </div>
       </div>
@@ -51,8 +52,7 @@ const getIcon = (text: string) => {
           {data.upperheader}
         </span>
         <h2 class="title-black" set:html={data.title}></h2>
-        <p class="text-ink-600 text-lg leading-relaxed mb-10 border-b border-ink-200 pb-8">
-          {data.description}
+        <p class="text-ink-600 text-lg leading-relaxed mb-10 border-b border-ink-200 pb-8" set:html={data.description}>
         </p>
 
         <div class="grid grid-cols-1 sm:grid-cols-2 gap-5 mb-12">
