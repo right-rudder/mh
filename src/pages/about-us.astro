@@ -1,0 +1,289 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import IntroductionSection from "../components/IntroductionSection.astro";
+import HistoryTimelineSection from "../components/About/HistoryTimelineSection.astro";
+import TeamGridSection from "../components/About/TeamGridSection.astro";
+import ValuesGridSection from "../components/About/ValuesGridSection.astro";
+import FacilityFeatureSection from "../components/About/FacilityFeatureSection.astro";
+import FinalCTASection from "../components/FinalCTASection.astro";
+import { ADDRESS_CITY, AIRPORT_CODE, AIRPORT_WITH_CODE_SHORT, CITY_AND_STATE, COMPANY_NAME, COMPANY_PRIMARY_SERVICE, COMPANY_SECONDARY_SERVICE, PHONE_NUMBER } from "../data/consts";
+import MissionPrecisionSection from "../components/About/MissionPrecisionSection.astro";
+import RepairStationSection from "../components/About/RepairStationSection.astro";
+import LocationSection from "../components/LocationSection.astro";
+import FleetOverviewSection from "../components/Fleet/FleetOverviewSection.astro";
+import HeroGeneralPages from "../components/HeroGeneralPages.astro";
+import ImageSliderWithCopyWideSection from "../components/ImageSliderWithCopyWideSection.astro";
+
+const heroData = {
+  images: [
+    {
+      src: "/src/assets/facilities/facilities-front-sd-mh-aviation-california-flying-lessons.webp",
+      alt: "MH Aviation main facility shot at Lancaster, California",
+      imageCentering: ""
+    }
+  ],
+  title: "Family-Owned<br>Integrity-Driven",
+  subTitle: "Serving the Fox Field aviation community for over 35 years with honesty, safety, and professional mentorship.",
+  cta: [
+    {
+      url: "/contact/",
+      text: "Contact Our Team",
+      variant: "primary",
+    },
+  ],
+};
+
+const missionData = {
+  eyebrow: "The Heart of Fox Field",
+  title: "A Tradition of<br>Safety & Excellence",
+  quote: "We don't just maintain airplanes; we build the dreams of those who fly them.",
+  missionText: "MH Aviation strives to create a <strong class=\"text-ochre-600\">welcoming</strong>, <strong class=\"text-ochre-600\">family-style flight school</strong> where safety is paramount, aircraft are updated and readily available, and every student receives detailed, personalized training. Our goal is to  <strong class=\"text-ochre-600\">help pilots of all levels succeed</strong> and make learning attainable through honest pricing and a supportive aviation community.",
+  imageMain: "/src/assets/crew/jeff-and-jessica-mh-aviation-california-commercial-pilot.jpg",
+  imageSecondary:  "/src/assets/equipment/equipment-and-team-mh-aviation-lancaster-flight-school.jpg",
+};
+
+const introData = {
+  title: "More Than Business,<br>It's Our Legacy",
+  subtitle: "Why We Do What We Do",
+  description: [
+    "MH Aviation has been a staple in the aviation community for over three decades. As a family-owned and operated business, we have built a loyal client base from all over the country. Pilots and aircraft owners come to us because they know they will get the job done with <strong class=\"text-ochre-600\">fairness and honesty</strong>.",
+    "What began as a dedicated maintenance shop founded by Mike Haney in 1988 has evolved into a complete aviation hub. Today, led by Jeff and Jessica Haney, we continue that tradition while expanding into flight training and FBO services."
+  ],
+  image: {
+    src: "/src/assets/instructing/instructing-student-on-table-with-map-mh-aviation-california-flight-school.jpg",
+    alt: "MH Aviation founders and current owners",
+  },
+  imageCentering: "object-center",
+    cta: {
+    text: "Enroll With Us",
+    href: "/enroll"
+  }
+};
+
+const historyData = {
+  eyebrow: "Our History",
+  title: "From Maintenance to<br>Full-Service Aviation",
+  steps: [
+      {
+        year: "1988",
+        title: "The Foundation",
+        description: "Mike Haney founds the business at Fox Field as a dedicated maintenance shop. Over the next 30 years, he builds a reputation for integrity, serving the local aviation community with high-quality aircraft inspections and repairs."
+      },
+      {
+        year: "2021",
+        title: "The Next Generation",
+        description: "Jeff and Jessica Haney purchase the business, keeping it in the family. They begin modernizing operations while maintaining the core values of safety and customer care established by Mike."
+      },
+      {
+        year: "2024",
+        title: "Expansion & Growth",
+        description: "MH Aviation expands the professional flight training, upgrading the fleet with modern Garmin avionics and transforming the facility into a premier one-stop shop for maintenance, fueling, and instruction."
+      }
+    ],
+  images: [
+    {
+      src: "/src/assets/instructing/instructing-student-on-table-with-map-close-up-mh-aviation-lancaster-commercial-pilot.jpg",
+      alt: "MH Aviation early days",
+    },
+    {
+      src: "/src/assets/instructing/instructing-student-on-table-with-map-student-pointing-mh-aviation-california-flying-lessons.jpg",
+      alt: "Historical view of MH Aviation hangar",
+    },
+    {
+      src: "/src/assets/instructing/instructing-student-with-white-board-mh-aviation-california-pilot-training.jpg",
+      alt: "MH Aviation instructor with white board",
+    },
+    {
+      src: "/src/assets/facilities/pushing-plane-to-hangar-mh-aviation-lancaster-pilot-training.jpg",
+      alt: "Modern expansion of MH Aviation facilities",
+    },
+    {
+      src: "/src/assets/crew/doggo-mh-aviation-lancaster-become-a-pilot.jpg",
+      alt: "Modern expansion of MH Aviation facilities",
+    },
+  ]
+};
+
+const valuesData = {
+  eyebrow: "Our Philosophy",
+  title: "Guided by<br>Core Values",
+  values: [
+    {
+      title: "Family Style",
+      text: "We are a small business that truly cares about the customer. You are not just a number here; we build long-term relationships with customers who return from all over the country."
+    },
+    {
+      title: "Safety & Compliance",
+      text: "Operating an FAA Part 145 Repair Station means we adhere to strict regulatory compliance. Our safety-first culture ensures that every aircraft is maintained to the highest standard."
+    },
+    {
+      title: "Responsiveness",
+      text: "We pride ourselves on fast, respectful communication. Whether it is a maintenance squawk or a training question, our team is available and ready to help."
+    },
+    {
+      title: "Modern Training",
+      text: "We believe in equipping students with the best tools. That is why we invested in upgrading our fleet with glass-panel Garmin G5s and 180hp engine conversions."
+    }
+  ]
+};
+
+const facilitiesData = {
+  eyebrow: "Built for Pilots & Crew",
+  title: "A Home Base Designed for Comfort & Capability",
+  paragraphs: [
+    "We know that a great flight starts long before takeoff and ends well after landing. That’s why our facilities at Fox Field are designed to serve as a complete <strong class=\"text-ochre-600\">aviation hub</strong>. <br>Whether you are debriefing in our pilot lounge, prepping a meal in the full kitchen, or overseeing maintenance in our state-of-the-art hangar, every square foot is optimized for your needs.",
+  ],
+  images: [
+    {
+      imageSrc: "/src/assets/facilities/living-room-mh-aviation-california-multi-engine-rating.jpg",
+      imageAlt: "Living room area at MH Aviation at Lancaster, California",
+    },
+    {
+      imageSrc: "/src/assets/facilities/reception-view-mh-aviation-lancaster-become-a-pilot.jpg",
+      imageAlt: "Reception front desk at MH Aviation at Lancaster, California",
+    },
+    {
+      imageSrc: "/src/assets/facilities/reception-zoomed-out-view-mh-aviation-california-flight-school.jpg",
+      imageAlt: "Reception area at MH Aviation at Lancaster, California",
+    },
+    {
+      imageSrc: "/src/assets/facilities/office-mh-aviation-california-flight-training.jpg",
+      imageAlt: "Office view at MH Aviation at Lancaster, California",
+    },
+    {
+      imageSrc: "/src/assets/facilities/waiting-room-mh-aviation-california-multi-engine-rating.jpg",
+      imageAlt: "Fully equipped waiting room at MH Aviation at Lancaster, California",
+    },
+    {
+      imageSrc: "/src/assets/facilities/office-instructor-view-mh-aviation-california-certified-flight-instructor.jpg",
+      imageAlt: "Office instructor view at MH Aviation at Lancaster, California",
+    },
+    {
+      imageSrc: "/src/assets/facilities/other-office-view-mh-aviation-lancaster-become-a-pilot.jpg",
+      imageAlt: "Office view area at MH Aviation at Lancaster, California",
+    },
+    {
+      imageSrc: "/src/assets/facilities/other-kitchen-mh-aviation-california-instrument-rating.jpg",
+      imageAlt: "Kitchen view at MH Aviation at Lancaster, California",
+    },
+    {
+      imageSrc: "/src/assets/facilities/pulling-aircraft-mh-aviation-california-flight-school.jpg",
+      imageAlt: "Aircraft being pulled at MH Aviation at Lancaster, California",
+    },
+  ],
+};
+
+const teamData = {
+  eyebrow: "Meet the Crew",
+  title: "The Professionals<br>Behind Your Success",
+  members: [
+    {
+      name: "Jeff Haney",
+      role: "President",
+      imageSrc: "/src/assets/crew/crew-member-jeff-haney-mh-aviation-lancaster-flight-training.webp",
+    },
+    {
+      name: "Jessica Haney",
+      role: "Vice President",
+      imageSrc: "/src/assets/crew/crew-member-jessica-haney-mh-aviation-lancaster-become-a-pilot.webp",
+    },
+    {
+      name: "Palomo Olmedo",
+      role: "Shop Lead",
+      imageSrc: "/src/assets/crew/crew-member-palomo-olmedo-mh-aviation-california-certified-flight-instructor.webp",
+    },
+    {
+      name: "Michael Graves",
+      role: "Maintenance Technician",
+      imageSrc: "/src/assets/crew/crew-member-mike-graves-mh-aviation-lancaster-commercial-pilot.webp",
+    },
+    {
+      name: "Wyatt Evan",
+      role: "Supervisor of All Things",
+      imageSrc: "/src/assets/crew/crew-member-wyatt-evan-mh-aviation-california-become-a-pilot.webp",
+    }
+  ]
+};
+
+const repairStationData = {
+  eyebrow: "Authorized Excellence",
+  title: "FAA Part 145<br>Repair Station",
+  stationNumber: "MHAR0094E",
+  backgroundImage: "/src/assets/facilities/repair-station-mh-aviation-lancaster-private-pilot.jpg",
+  description: [
+    "At MH Aviation, we operate on the simple truth that <strong class=\"text-ochre-600\">safety is non-negotiable</strong>. As the premier FAA Part 145 Repair Station at Fox Field, we maintain the standard by which others are measured, ensuring your aircraft is cared for by the <strong class=\"text-ochre-600\">most experienced hands</strong> in the valley. By combining old-school integrity with modern technical precision, our team treats every aircraft as if our own families were flying in it, delivering a service experience that is transparent and undeniably superior.",
+    "We are the only operation in the region to offer a true <strong class=\"text-ochre-600\">'One-Stop' ecosystem</strong>, providing a reliability that pilot mills simply cannot match. While other schools lose weeks waiting for outside mechanics, our in-house team ensures our fleet—and yours—stays mission-ready. From annual inspections to complex avionics upgrades, our integrated approach means <strong class=\"text-ochre-600\">less downtime</strong> and more flight time, keeping you in the air."
+  ],
+  features: [
+    "Annual Inspections",
+    "Major Airframe Repairs",
+    "Powerplant Services",
+    "Avionics Upgrades",
+    "Pre-Purchase Inspections",
+    "Sheet Metal Repairs"
+  ]
+};
+
+const facilityData = {
+  eyebrow: "Our Facilities",
+  title: "Comfort and Quality<br>At Fox Field",
+  description: "We have remodeled our facilities to provide a professional yet welcoming environment. Unlike other schools where you might struggle to find space, we offer distinct amenities to support your training and comfort.",
+  features: [
+    "Private Briefing Rooms",
+    "Comfortable Break Area",
+    "Full Kitchen",
+    "On-site Maintenance Hangar",
+    "Engine Build Room",
+    "Modern Lobby"
+  ],
+  image: {
+    src: "/src/assets/facilities/facilities-front-sd-mh-aviation-california-flying-lessons.webp",
+    alt: "MH Aviation facilities at Fox Field at Lancaster, California",
+  }
+};
+
+const locationData = {
+  eyebrow: "Strategic Location",
+  headline: "Train Where The<br> Skies Are Clear",
+  bodyCopy:
+    "Located at Gen. William Fox Airfield (KWJF) in Lancaster, CA. Enjoy the scenic high desert views and learn to master real-world wind conditions without the heavy congestion of busy city airports.",
+};
+
+
+const finalCtaData = {
+  eyebrow: "Ready to Fly?",
+  headline: "Your Aviation Journey<br>Begins Here",
+  bodyCopy:
+    "Whether you are looking for your first flight, aircraft maintenance,<br> or fueling services, MH Aviation is ready to serve you.",
+  cta: {
+    text: "Schedule a Visit",
+    href: "/contact/",
+    subtext: `Call us directly at ${PHONE_NUMBER}`,
+  },
+  image: {
+    src: "/src/assets/instructing/instructing-on-top-of-plane-mh-aviation-california-discovery-flight.jpg",
+    alt: "Runway view at sunset",
+  },
+};
+ 
+const metaProps = {
+  siteTitle: `About Our Family-Owned Flight School in ${CITY_AND_STATE} | ${COMPANY_NAME}`,
+  siteDescription: `Discover the legacy of ${COMPANY_NAME} at ${AIRPORT_WITH_CODE_SHORT}. Learn about our 35+ years of experience in ${COMPANY_PRIMARY_SERVICE}, our Part 145 ${COMPANY_SECONDARY_SERVICE}, and our commitment to pilot success.`,
+  siteKeywords: `about ${COMPANY_NAME}, flight school history, aviation experts ${ADDRESS_CITY}, family owned aviation business, ${AIRPORT_CODE} flight training, ${COMPANY_SECONDARY_SERVICE} experts`
+};
+---
+
+<BaseLayout {...metaProps}>
+  <HeroGeneralPages data={heroData} />
+  <MissionPrecisionSection data={missionData}/>
+  <IntroductionSection {...introData} />
+  <HistoryTimelineSection data={historyData} />
+  <ValuesGridSection data={valuesData} />
+  <ImageSliderWithCopyWideSection theme="dark" data={facilitiesData}/>
+  <TeamGridSection data={teamData} />
+  <RepairStationSection data={repairStationData}/>
+  <FacilityFeatureSection data={facilityData} />
+  <FleetOverviewSection all={false}/>
+  <LocationSection data={locationData}/>
+  <FinalCTASection data={finalCtaData} />
+</BaseLayout>

@@ -1,8 +1,8 @@
 ---
 import { getCollection } from "astro:content";
 import type { CollectionEntry } from "astro:content";
-import ImageComp from "./ImageComp.astro";
-import { FaClock, FaTag, FaArrowRight } from "react-icons/fa";
+import { FaArrowRight } from "react-icons/fa";
+import ProgramsOverviewCard from "./ProgramsOverviewCard.astro";
 
 type Program = CollectionEntry<"programs">;
 
@@ -12,10 +12,10 @@ const sortedPrograms = programs
   .slice(0, 4);
 ---
 
-<section class="py-16 md:py-24 bg-ink-50">
+<section class="py-16 md:py-24 bg-ink-50 overflow-hidden">
   <div class="max-w-7xl mx-auto px-5 md:px-8 lg:px-12">
     
-    <div class="text-center max-w-3xl mx-auto mb-16">
+    <div class="text-center max-w-3xl mx-auto mb-16 reveal-text opacity-0 translate-y-8 transition-all duration-1000 ease-out">
       <div class="flex items-center justify-center mb-4">
         <span class="text-ochre-600 font-bold uppercase tracking-widest text-sm">
           MH Aviation Training
@@ -26,70 +26,21 @@ const sortedPrograms = programs
         Family-Owned,<br> Integrity-Driven Training
       </h2>
       
-      <p class="paragraph-text text-ink-600">
+      <p class="font-sans text-ink-600">
         From our family to yours, we offer fair, honest, and safety-focused flight instruction. Whether you're launching a professional career or fulfilling a lifelong dream, experience the difference of a true one-stop aviation hub at Fox Field.
       </p>
     </div>
 
     <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
-      {sortedPrograms.map((program) => {
-        const duration = program.data.programIntroduction?.highlights?.find(h => h.highlightName.toLowerCase().includes('duration') || h.highlightName.toLowerCase().includes('timeline'))?.highlightValue;
-        const cost = program.data.programIntroduction?.highlights?.find(h => h.highlightName.toLowerCase().includes('cost') || h.highlightName.toLowerCase().includes('price'))?.highlightValue;
-
-        return (
-          <article class="group relative flex flex-col bg-white rounded-sm shadow-md hover:shadow-2xl hover:shadow-ink-950/10 transition-all duration-500 overflow-hidden border-b-0 border-x border-t-4 border-muted-200  hover:border-t-ochre-600 hover:-translate-y-2">
-            
-            <div class="relative h-72 overflow-hidden bg-ink-950">
-              <ImageComp
-                src={program.data.image}
-                alt={program.data.alt || program.data.title}
-                class="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-110 opacity-90 group-hover:opacity-100"
-              />
-              
-              <div class="absolute inset-0 bg-gradient-to-t from-ink-950/80 to-transparent opacity-60"></div>
-
-              <div class="absolute bottom-6 left-6 right-6 flex justify-between items-end">
-                {duration && (
-                  <div class="flex items-center gap-2 bg-ink-950/80 backdrop-blur-md text-white text-xs font-bold px-3 py-1.5 rounded-sm uppercase tracking-wide ">
-                    <FaClock className="text-ochre-500" />
-                    {duration}
-                  </div>
-                )}
-                {cost && (
-                   <div class="flex items-center gap-2 bg-white/95 backdrop-blur-md text-ink-950 text-xs font-black px-3 py-1.5 rounded-sm shadow-lg">
-                    <FaTag className="text-ochre-600" />
-                    {cost}
-                  </div>
-                )}
-              </div>
-            </div>
-
-            <div class="p-8 flex flex-col flex-1">
-              <h3 class="text-2xl font-title font-bold text-ink-950 mb-3 group-hover:text-ochre-600 transition-colors duration-300">
-                {program.data.title}
-              </h3>
-
-              <p class="text-ink-600 text-sm leading-relaxed mb-8 flex-1 line-clamp-3">
-                {program.data.description}
-              </p>
-
-              <a 
-                
-                class="relative hover:cursor-pointer w-full inline-flex items-center justify-center gap-3 px-6 py-4 font-bold text-sm tracking-wider uppercase text-ink-50 bg-ink-950 rounded-sm overflow-hidden transition-all duration-300 group-hover:bg-ochre-600 group-hover:text-white"
-              >
-                <span class="relative z-10">View Program Details</span>
-                <FaArrowRight className="relative z-10 text-ochre-600 group-hover:text-white transition-transform duration-300 group-hover:translate-x-1" />
-              </a>
-            </div>
-
-          </article>
-        );
-      })}
+      {sortedPrograms.map((program, index) => (
+        <ProgramsOverviewCard program={program} index={index} />
+      ))}
     </div>
 
-    <div class="text-center">
+    <div class="text-center reveal-text opacity-0 translate-y-8 transition-all duration-1000 delay-500 ease-out">
       <a 
-        class="inline-flex hover:cursor-pointer items-center gap-3 px-8 py-4 bg-ochre-600 text-white font-bold uppercase tracking-wider text-sm rounded-sm hover:bg-ochre-700 transition-colors shadow-lg shadow-ochre-600/20"
+        href="/programs/"
+        class="inline-flex hover:cursor-pointer items-center gap-3 px-8 py-4 bg-ochre-600 text-ink-50 font-bold uppercase tracking-wider text-sm rounded-sm hover:bg-ochre-700 transition-colors shadow-lg shadow-ochre-600/20"
       >
         See Other Programs
         <FaArrowRight />
@@ -98,3 +49,23 @@ const sortedPrograms = programs
 
   </div>
 </section>
+
+<script>
+  const observerOptions = {
+    threshold: 0.1,
+    rootMargin: '0px 0px -50px 0px'
+  };
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.remove('opacity-0', 'translate-y-8');
+        entry.target.classList.add('opacity-100', 'translate-y-0');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, observerOptions);
+
+  // Observa tanto o texto quanto os cards dos programas
+  document.querySelectorAll('.reveal-text, .program-card').forEach((el) => observer.observe(el));
+</script>

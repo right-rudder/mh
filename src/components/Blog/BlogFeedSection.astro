@@ -1,0 +1,70 @@
+---
+import BlogFeedSectionCard from "./BlogFeedSectionCard.astro"; 
+import { getCollection } from "astro:content";
+import type { CollectionEntry } from "astro:content";
+import { FaArrowRight } from "react-icons/fa";
+
+const blogEntries = await getCollection("blog", ({ id }) => {
+  return id;
+});
+
+const blogPosts: CollectionEntry<"blog">[] = blogEntries.sort(
+  (a: CollectionEntry<"blog">, b: CollectionEntry<"blog">) =>
+    b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
+);
+
+// Get the top 5 posts (1 main + 4 grid)
+const mostRecentPost: CollectionEntry<"blog"> = blogPosts[0];
+const otherPosts: CollectionEntry<"blog">[] = blogPosts.slice(1, 5);
+
+const data = {
+  eyebrow: "Intel & Insights",
+  title: "From the Flight Deck",
+  subTitle: "Mission-focused insights, training tips from the cadre, and industry news for future professional pilots.",
+};
+---
+
+<section class="py-20 bg-ink-950">
+  <div class="max-w-7xl mx-auto px-5 md:px-8 lg:px-12">
+    
+    <div class="text-center max-w-3xl mx-auto mb-16">
+      <div class="flex items-center justify-center gap-3 mb-1">
+        <span class="subtitle">
+          {data.eyebrow}
+        </span>
+      </div>
+      
+      <h2 class="title">
+        {data.title}
+      </h2>
+      
+      <p class="text-lg text-ink-400">
+        {data.subTitle}
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-16">
+      
+      <div class="lg:col-span-2">
+        {mostRecentPost && (
+          <BlogFeedSectionCard 
+            blogEntry={mostRecentPost} 
+            index={0} 
+            class="h-full" 
+          />
+        )}
+      </div>
+
+      {otherPosts.map((blogEntry, i) => (
+        <div class="flex">
+           <BlogFeedSectionCard 
+             blogEntry={blogEntry} 
+             index={i + 1} 
+             class="h-full w-full" 
+           />
+        </div>
+      ))}
+      
+    </div>
+  </div>
+</section>

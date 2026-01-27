@@ -1,0 +1,181 @@
+---
+import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
+import ImageWithGradientAndText from "./ImageWithGradientAndText.astro";
+
+interface Props {
+  theme?: "light" | "dark";
+  data: {
+    eyebrow: string;
+    title: string;
+    paragraphs: string[];
+    images: {
+      imageSrc: string;
+      imageAlt: string;
+    }[];
+  };
+}
+
+const { data, theme = "light" } = Astro.props;
+const isDark = theme === "dark";
+
+const themeClasses = {
+  sectionBg: isDark ? "bg-ink-950" : "bg-ink-50",
+  eyebrow: "subtitle",
+  title: isDark ? "title" : "title-black",
+  paragraph: isDark ? "text-ink-200" : "text-ink-600",
+  btnBorder: isDark ? "border-ink-700" : "border-ink-200",
+};
+---
+
+<section class={`py-16 md:py-24 ${themeClasses.sectionBg} overflow-hidden scroll-reveal opacity-0 transition-all duration-1000 ease-out`}>
+  <div class="max-w-7xl mx-auto px-5 md:px-8 lg:px-12 flex flex-col items-center text-center">
+    
+    <div class="max-w-3xl mb-12 flex flex-col items-center">
+      <p class={themeClasses.eyebrow}>
+        {data.eyebrow}
+      </p>
+      <h2 class={`${themeClasses.title} mb-6 text-4xl md:text-5xl font-bold tracking-tight max-w-2xl`}>
+        {data.title}
+      </h2>
+      
+      <div class={`space-y-6 text-lg leading-relaxed ${themeClasses.paragraph}`}>
+        {data.paragraphs.map((paragraph) => (
+          <p set:html={paragraph} />
+        ))}
+      </div>
+    </div>
+
+    <div class="relative w-full max-w-5xl aspect-video mb-12">
+      <div class="relative w-full h-full perspective-1000" id="carousel-container-wide">
+        {data.images.map((img, index) => (
+          <div 
+            class="absolute inset-0 transition-all duration-700 ease-in-out transform rounded-md shadow-2xl carousel-item-wide bg-ink-900"
+            data-index={index}
+            style={`z-index: ${data.images.length - index};`}
+          >
+            <ImageWithGradientAndText
+              src={img.imageSrc}
+              alt={img.imageAlt}
+              quality={60}
+              class="w-full h-full object-cover object-center"
+            />
+            <div class="absolute inset-0 bg-ink-900/10 mix-blend-multiply"></div>
+          </div>
+        ))}
+      </div>
+
+      <div class="absolute -bottom-6 left-1/2 -translate-x-1/2 flex gap-4 z-30">
+        <button 
+          id="prev-btn-wide"
+          class={`w-16 h-12 rounded-l-full border ${themeClasses.btnBorder} bg-ochre-600 text-ink-50 flex items-center justify-center hover:bg-ochre-500 hover:border-ochre-600 transition-all duration-300 shadow-lg cursor-pointer`}
+          aria-label="Imagem Anterior"
+        >
+          <FaChevronLeft />
+        </button>
+        <button 
+          id="next-btn-wide"
+          class={`w-16 h-12 rounded-r-full border ${themeClasses.btnBorder} bg-ochre-600 text-ink-50 flex items-center justify-center hover:bg-ochre-500 hover:border-ochre-600 transition-all duration-300 shadow-lg cursor-pointer`}
+          aria-label="Próxima Imagem"
+        >
+          <FaChevronRight />
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  section {
+    overflow-x: hidden;
+  }
+
+  .carousel-item-wide {
+    width: 90%; 
+    height: 90%;
+    top: 5%;
+    left: 5%;
+    opacity: 0;
+    transform: scale(0.9) translateX(0) translateY(0) rotate(0deg);
+    pointer-events: none;
+    transition: all 0.7s ease-in-out;
+  }
+
+  .carousel-item-wide.active {
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    opacity: 1;
+    transform: scale(1) translateX(0) translateY(0) rotate(0deg);
+    z-index: 20 !important;
+    pointer-events: auto;
+  }
+
+  .carousel-item-wide.prev {
+    opacity: 0.7;
+    transform: scale(0.96) translateX(-35px) translateY(15px) rotate(-5deg);
+    z-index: 10 !important;
+  }
+
+  .carousel-item-wide.next {
+    opacity: 0.7;
+    transform: scale(0.96) translateX(35px) translateY(15px) rotate(5deg);
+    z-index: 9 !important;
+  }
+
+  :global(.visible) {
+    opacity: 1 !important;
+    transform: translateY(0) !important;
+  }
+</style>
+
+<script>
+  function setupCarouselWide() {
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.scroll-reveal').forEach(el => revealObserver.observe(el));
+    const items = document.querySelectorAll('.carousel-item-wide');
+    const prevBtn = document.getElementById('prev-btn-wide');
+    const nextBtn = document.getElementById('next-btn-wide');
+    
+    let currentIndex = 0;
+    const totalItems = items.length;
+
+    if (totalItems === 0) return;
+
+    function updateCarousel() {
+      items.forEach((item, index) => {
+        item.classList.remove('active', 'prev', 'next');
+        if (index === currentIndex) {
+          item.classList.add('active');
+        } else if (index === (currentIndex - 1 + totalItems) % totalItems) {
+          item.classList.add('prev');
+        } else if (index === (currentIndex + 1) % totalItems) {
+           item.classList.add('next');
+        }
+      });
+    }
+
+    updateCarousel();
+
+    nextBtn?.addEventListener('click', () => {
+      currentIndex = (currentIndex + 1) % totalItems;
+      updateCarousel();
+    });
+
+    prevBtn?.addEventListener('click', () => {
+      currentIndex = (currentIndex - 1 + totalItems) % totalItems;
+      updateCarousel();
+    });
+  }
+
+  setupCarouselWide();
+  document.addEventListener('astro:after-swap', setupCarouselWide);
+</script>

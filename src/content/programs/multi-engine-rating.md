@@ -1,101 +1,161 @@
 ---
 title: "Multi-Engine Rating"
-description: "The only multi-engine training program within 100 miles, offering competitive rates, modern avionics, and exceptional availability."
+description: "The only Multi-Engine training program within 100 miles. Affordable, efficient, and professional."
+pricingRange: "Aircraft Rate: $295/hr"
 order: 3
-image: "/src/assets/instructing/mh-aviation-instructing-student-01.jpg"
-alt: "Multi-Engine Flight Training"
-top: true
+image: "/src/assets/instructing/instructing-student-01-mh-aviation-california-become-a-pilot.jpg"
+alt: "Multi-engine aircraft training at MH Aviation"
+reverse: false
+top: false
 
 programIntroduction:
-  upperheader: "Advanced Training"
-  title: "Multi-Engine Rating"
+  title: "Exclusive Multi-Engine Training"
+  upperheader: "Expand Your Capabilities"
   descriptionParagraphs:
-    - "MH Aviation offers local exclusivity in multi-engine training within roughly 60 to 100 miles of our location. We provide a high-quality, affordable path to earning your multi-engine rating."
-    - "Our program is designed to be cost-effective without compromising on safety or equipment quality."
+    - "MH Aviation is the only provider of Multi-Engine training within 100 miles of Lancaster, CA. We offer a competitive edge others can't match, allowing you to skip the congested LA airspace and train locally."
+    - "Our program features real IMC flying and immediate checkride scheduling."
   highlights:
     - highlightName: "Exclusivity"
-      highlightValue: "Only ME training in 100 miles"
-    - highlightName: "Rate"
-      highlightValue: "$155/hr (Approx.)"
-      pricingObservation: "Significantly lower than the $205/hr competition"
-    - highlightName: "Avionics"
-      highlightValue: "Brand New / Autopilot"
+      highlightValue: "Only one in 100 miles"
+    - highlightName: "Aircraft Rate"
+      highlightValue: "$295/hr"
+      pricingObservation: "Compare to ~$395/hr in LA"
+    - highlightName: "Availability"
+      highlightValue: "Open Availability"
   programHighlights:
     benefits:
-      - "Rates are much cheaper compared to the competition"
-      - "Brand new avionics and autopilot/complex configurations"
-      - "High aircraft availability—planes don't get grounded for long"
-      - "Training available for PPL through to CFII"
+      - "Substantially more affordable"
+      - "Real IMC flying experience"
+      - "Immediate checkride scheduling"
     requirements:
-      - "Private Pilot Certificate (ASEL)"
-      - "Current FAA Medical"
+      - "Private Pilot License"
 
 programExpectations:
-  mainImage: "/src/assets/instructing/mh-aviation-instructing-student-01.jpg"
-  mainImageAlt: "Multi-Engine Aircraft"
-  title: "Training Standards"
+  title: "How The Program Works"
+  upperheader: "What to Expect"
+  mainImage: "/src/assets/instructing/instructing-student-01-mh-aviation-california-become-a-pilot.jpg"
+  mainImageAlt: "Multi-engine cockpit"
   descriptionParagraphs:
-    - "We set ourselves apart with a newer, better-equipped fleet. While competitors may lack glass cockpits or availability, we ensure you train on modern systems."
-    - "Safety is always the priority. Our on-site maintenance team ensures our multi-engine aircraft are ready when you are."
+    - "The multi-engine training at MH Aviation is exceptional. You will experience real Instrument Meteorological Conditions (IMC) flying."
+    - "Instructors genuinely care about your success, and our in-house maintenance ensures the twin-engine aircraft doesn't get grounded for long periods."
   listItems:
-    - "Complex aircraft training with Autopilot"
-    - "Focus on safety and regulatory compliance"
-    - "Catered service with responsive communication"
+    - "Complex aircraft mastery"
+    - "Engine-out procedures"
+    - "Advanced avionics usage"
+
+firstCTA:
+  mainImage: "/src/assets/instructing/instructing-student-01-mh-aviation-california-become-a-pilot.jpg"
+  title: "Add Your Multi Rating"
+  upperheader: "Upgrade Your Certificate"
+  descriptionParagraphs:
+    - "Don't wait on a waitlist in LA. Train locally with open availability and better rates."
 
 whatIsIncluded:
-  upperheader: "The MH Advantage"
-  title: "Program Features"
+  mainImage: "/src/assets/instructing/instructing-student-01-mh-aviation-california-become-a-pilot.jpg"
+  title: "Multi-Engine Curriculum"
+  upperheader: "What You Learn"
   descriptionParagraphs:
-    - "We offer a complete multi-engine training environment supported by our full-service FBO and maintenance facilities."
+    - "Our program takes you through all necessary procedures to safely operate multi-engine aircraft."
   bulletPointLists:
-    - title: "Aircraft & Equipment"
+    - title: "Flight Training"
       items:
-        - "Multi-engine aircraft fleet"
-        - "Glass-panel Garmin G5"
-        - "Garmin GPS"
-        - "Autopilot equipped"
+        - "Normal and emergency operations"
+        - "Single-engine aerodynamics"
+        - "Performance calculations"
     - title: "Support"
       items:
-        - "On-site fueling (MH Fuels)"
-        - "Emergency AOG services if needed"
-        - "Remodeled facilities with private rooms"
+        - "Dedicated multi-engine instructor"
+        - "Immediate checkride scheduling"
 
 whyUs:
-  upperheader: "Competitive Edge"
-  title: "Why Choose MH For Multi-Engine"
-  topicTitle: "Unmatched Value"
+  title: "Unmatched Value"
+  upperheader: "Why Train Here"
+  topicTitle: "Availability & Cost"
   topicDescriptionParagraphs:
-    - "Our rates are significantly more affordable than the competition, sitting around $155/hr compared to $205/hr elsewhere. We believe in fair and honest service."
-  bulletTitle: "Availability & Speed"
+    - "We are significantly lower than the competition. Our multi-engine rate is $295/hr compared to ~$395/hr in the LA area."
+    - "Competitors often have waitlists. We have instructors ready to take you tomorrow."
+  bulletTitle: "Strategic Advantages"
   bulletDescriptionParagraphs:
-    - "We are the only provider of this training within a vast radius. With our own maintenance shop (FAA Repair Station 145), we minimize downtime so you can finish your rating faster."
+    - "Training at Fox Field allows for better weather conditions without the marine layer delays common in the basin."
   bulletPoints:
-    - "Local exclusivity in multi-engine training"
-    - "Weather generally better than LA for consistent scheduling"
-    - "Family-owned business that truly cares about your progress"
+    - "Only provider within 100 miles"
+    - "Save ~$100/hr vs LA rates"
+    - "No marine layer delays"
+  closingTitle: "Student Feedback"
+  closingDescriptionParagraphs:
+    - "'The multi-engine training was exceptional. Real IMC flying, immediate checkride scheduling, and instructors who genuinely care.'"
+
+careerPathways:
+  title: "Next Steps"
+  upperheader: "Career Progression"
+  mainImage: "/src/assets/instructing/instructing-student-03-mh-aviation-lancaster-certified-flight-instructor.jpg"
+  mainImageAlt: "Main image alt"
+  descriptionParagraphs:
+    - "A Multi-Engine rating is a critical step for professional pilots aiming for the airlines."
+  opportunities:
+    - "Multi-Engine Instructor (MEI)"
+    - "Regional Airline First Officer"
+    - "Corporate Aviation"
+
+targetAudience:
+  title: "Who Needs This Rating"
+  items:
+    - "Career-track pilots"
+    - "Pilots seeking complex aircraft experience"
+    - "Students wanting to save money on twin time"
+
+trainingProgression:
+  title: "Rating Timeline"
+  upperheader: "Fast Track"
+  descriptionParagraphs:
+    - "Efficient training designed to get you checkride ready."
+  phases:
+    - phaseTitle: "Ground School"
+      phaseBulletPoints:
+        - "Multi-engine aerodynamics"
+        - "Systems knowledge"
+    - phaseTitle: "Flight Training"
+      phaseBulletPoints:
+        - "Maneuvers and procedures"
+        - "Simulated engine failures"
+    - phaseTitle: "Checkride"
+      phaseBulletPoints:
+        - "Practical test"
+        - "Certification"
+  outcome: "Multi-Engine Land Rating"
 
 enrollmentProcess:
-  title: "Get Rated"
+  upperheader: "Step by Step"
+  title: "Start Multi Training"
   steps:
     - stepNumber: 1
-      title: "Inquire"
-      description: "Contact us for specific inquiries regarding multi-engine availability."
+      title: "Contact Us"
+      description: "Verify availability (currently open)."
     - stepNumber: 2
-      title: "Schedule"
-      description: "Call (661) 948-7779 to book your slot."
+      title: "Schedule Flight"
+      description: "Book your first lesson in the twin."
     - stepNumber: 3
       title: "Train"
-      description: "Fly our glass-panel equipped multi-engine aircraft."
+      description: "Master the aircraft at $295/hr."
+
+faq:
+  title: "Multi-Engine FAQ"
+  upperheader: "Details"
+  qnas:
+    - question: "What is the hourly rate?"
+      answer: "Our multi-engine rate is currently $295/hr."
+    - question: "Is there a waitlist?"
+      answer: "No, we have open availability and instructors ready to fly."
 
 finalCTA:
-  mainImage: "/src/assets/instructing/mh-aviation-instructing-student-01.jpg"
-  mainImageAlt: "MH Aviation Multi-Engine"
-  upperheader: "Upgrade Your Certificate"
-  title: "Fly Multi-Engine Today"
+  mainImage: "/src/assets/instructing/instructing-student-01-mh-aviation-california-become-a-pilot.jpg"
+  mainImageAlt: "Multi-Engine Aircraft"
+  title: "Get Multi-Engine Rated"
+  upperheader: "Upgrade Now"
   descriptionParagraphs:
-    - "Don't overpay for older aircraft. Train with MH Aviation for the best rates and equipment in the region."
-  mainButtonText: "Contact Us"
-  mainButtonLink: "/contact"
-  secondButtonText: "Call (661) 948-7779"
-  secondButtonLink: "tel:6619487779"
+    - "Save money and time by training with the region's exclusive multi-engine provider."
+  mainButtonText: "Enroll Now"
+  mainButtonLink: "/enroll/"
+  secondButtonText: "Contact Us"
+  secondButtonLink: "/contact/"
 ---

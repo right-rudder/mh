@@ -1,6 +1,23 @@
 ---
 import "../styles/global.css";
-import { SITE_TITLE, KEYWORDS, OG_IMAGE, FAVICON } from "../data/consts";
+import { 
+  SITE_TITLE, 
+  KEYWORDS, 
+  OG_IMAGE, 
+  FAVICON, 
+  COMPANY_NAME, 
+  ADDRESS_CITY, 
+  ADDRESS_STATE, 
+  ADDRESS_ZIP, 
+  ADDRESS_LINE_1, 
+  PHONE_NUMBER, 
+  EMAIL_ADDRESS, 
+  WEBSITE_DOMAIN_COMPLETE,
+  FACEBOOK_URL,
+  INSTAGRAM_URL,
+  YELP_URL,
+CITY_AND_STATE
+} from "../data/consts";
 
 interface Props {
   title: string;
@@ -9,7 +26,6 @@ interface Props {
   keywords?: string;
 }
 
-const canonicalURL = Astro.url.href;
 
 const {
   title,
@@ -17,10 +33,28 @@ const {
   image = OG_IMAGE,
   keywords = KEYWORDS,
 } = Astro.props;
+
+// Makes sure canonical URL ends with trailing slash always
+const pathname = Astro.url.pathname;
+const cleanPath = pathname.endsWith('/') ? pathname : `${pathname}/`;
+const canonicalURL = new URL(cleanPath, Astro.site).toString();
+
+// Enhanced title with proper length and brand consistency
+const optimizedTitle =
+  title.length > 60 ? title.substring(0, 57) + "..." : title;
+
+// Enhanced description with proper length
+const optimizedDescription =
+  description.length > 160
+    ? description.substring(0, 157) + "..."
+    : description;
 ---
 
 <!-- Global Metadata -->
 <meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<link rel="icon" type="image/png" href={FAVICON} />
+
 <!-- Site Created By:    
        _____  _       _     _     _____           _     _           
       |  __ \(_)     | |   | |   |  __ \         | |   | |          
@@ -38,11 +72,11 @@ const {
 
     Nice to see you here.  Find new student pilots with Right Rudder Marketing.  https://rightruddermarketing.com/contact-us -->
 
-<meta name="viewport" content="width=device-width,initial-scale=1" />
-<link rel="icon" type="image/png" href={FAVICON} />
 
 <!-- Canonical URL -->
 <link rel="canonical" href={canonicalURL} />
+<!-- Generator -->
+<meta name="generator" content={Astro.generator} />
 
 <!-- SiteMap -->
 <link rel="sitemap" href="/sitemap-index.xml" />
@@ -53,123 +87,83 @@ const {
   href={"/rss.xml"}
 />
 
-<meta name="generator" content={Astro.generator} />
+<!-- Google Tag Manager -->
+<script type="text/javascript" is:inline>
+(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-N49DDGFF');
+</script>
 
-<!-- TODO : Google tag (gtag.js) -->
-<!-- <script async src="https://www.googletagmanager.com/gtag/js?id=G-HCNNK7Z4RF"></script>
-  <script type="text/javascript">
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-
-    gtag('config', 'G-HCNNK7Z4RF');
-</script> -->
-
-<script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "FlightSchool",
-    "name": "MH Aviation",
-    "alternateName": "",
-    "url": "https://mhaviation.com/",
-    "logo": "https://mhaviation.com/favicon.png",
-    "image": "https:/mhaviation.com/MH Aviation.png",
-    "description": "MH Aviation is a Part 141 flight school in Pikeville, North Carolina, focused on rigorous, full-time pilot training for individuals pursuing professional aviation careers.",
-    "telephone": "+19109008043",
-    "email": "info@mail.mhaviation.com",
-    "currenciesAccepted": "USD",
-    "priceRange": "$$$",
-    "address": {
-      "@type": "PostalAddress",
-      "streetAddress": "278 Aviation Rd.",
-      "addressLocality": "Pikeville",
-      "addressRegion": "NC",
-      "postalCode": "27863",
-      "addressCountry": "US"
-    },
-    "geo": {
-      "@type": "GeoCoordinates",
-      "latitude": 35.4929,
-      "longitude": -77.9834
-    },
-    "openingHoursSpecification": [
-      {
-        "@type": "OpeningHoursSpecification",
-        "dayOfWeek": [
-          "Monday",
-          "Tuesday",
-          "Wednesday",
-          "Thursday",
-          "Friday"
-        ],
-        "opens": "09:00",
-        "closes": "17:00"
-      }
-    ],
-    "sameAs": [
-      "https://www.facebook.com/mil2ATP",
-      "https://twitter.com/mil2atp",
-      "https://www.instagram.com/mil2ATP",
-      "https://www.linkedin.com/company/mil2atp-inc."
-    ],
-    "areaServed": {
-      "@type": "Place",
-      "name": ["Pikeville, NC", "Goldsboro, NC", "Wayne County, NC", "Eastern North Carolina"]
-    },
-    "hasOfferCatalog": {
-      "@type": "OfferCatalog",
-      "name": "Professional Pilot Training Programs",
-      "itemListElement": [
-        {
-          "@type": "Offer",
-          "itemOffered": {
-            "@type": "Service",
-            "name": "Professional Airline Pilot Track"
-          }
-        },
-        {
-          "@type": "Offer",
-          "itemOffered": {
-            "@type": "Service",
-            "name": "Private Pilot Certificate (ASEL)"
-          }
-        },
-        {
-          "@type": "Offer",
-          "itemOffered": {
-            "@type": "Service",
-            "name": "Instrument Rating (ASEL)"
-          }
-        },
-        {
-          "@type": "Offer",
-          "itemOffered": {
-            "@type": "Service",
-            "name": "Commercial Pilot Certificate (ASEL)"
-          }
-        },
-        {
-          "@type": "Offer",
-          "itemOffered": {
-            "@type": "Service",
-            "name": "Multi-Engine Rating"
-          }
-        }
-      ]
+<!-- Schema -->
+<script type="application/ld+json" is:inline set:html={JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "FlightSchool",
+  "name": COMPANY_NAME,
+  "alternateName": `${COMPANY_NAME} Inc`,
+  "url": WEBSITE_DOMAIN_COMPLETE,
+  "logo": `${WEBSITE_DOMAIN_COMPLETE}/favicon.png`,
+  "image": `${WEBSITE_DOMAIN_COMPLETE}/og-image.png`,
+  "description": description,
+  "telephone": `+1${PHONE_NUMBER.replace(/\D/g, '')}`,
+  "email": EMAIL_ADDRESS,
+  "currenciesAccepted": "USD",
+  "priceRange": "$$$",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": ADDRESS_LINE_1,
+    "addressLocality": ADDRESS_CITY,
+    "addressRegion": "CA",
+    "postalCode": ADDRESS_ZIP,
+    "addressCountry": "US"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 34.738306,
+    "longitude": -118.218611
+  },
+  "openingHoursSpecification": [
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+      "opens": "08:00",
+      "closes": "17:00"
     }
+  ],
+  "sameAs": [
+    FACEBOOK_URL,
+    INSTAGRAM_URL,
+    YELP_URL
+  ].filter(url => url !== ""),
+  "areaServed": {
+    "@type": "Place",
+    "name": [CITY_AND_STATE, "Antelope Valley", "Palmdale, CA", "Southern California"]
+  },
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Professional Pilot Training Programs",
+    "itemListElement": [
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Private Pilot Training" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Instrument Rating Training" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Commercial Pilot Training" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Multi-Engine Training" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Aviation Maintenance (FAA Part 145)" } }
+    ]
   }
+})}>
 </script>
 
 <!-- Primary Meta Tags -->
- <title>{title}</title>
-<meta name="title" content={title} />
-<meta name="description" content={description} />
+<title>{optimizedTitle}</title>
+<meta name="title" content={optimizedTitle} />
+<meta name="description" content={optimizedDescription} />
 <meta name="keywords" content={keywords} />
-<meta name="author" content="MH Aviation" />
-<meta name="geo.region" content="US-NC" />
-<meta name="geo.placename" content="Pikeville" />
-<meta name="geo.position" content="35.4929;-77.9834" />
-<meta name="ICBM" content="35.4929, -77.9834" />
+<meta name="author" content={COMPANY_NAME} />
+<meta name="geo.region" content="US-CA" />
+<meta name="geo.placename" content={ADDRESS_CITY} />
+<meta name="geo.position" content="34.738306;-118.218611" />
+<meta name="ICBM" content="34.738306, -118.218611" />
 
 <!-- Open Graph / Facebook -->
 <meta property="og:type" content="website" />
@@ -178,7 +172,7 @@ const {
 <meta property="og:description" content={description} />
 <meta property="og:image" content={new URL(image, Astro.url)} />
 <meta property="og:locale" content="en_US" />
-<meta property="og:site_name" content="MH Aviation" />
+<meta property="og:site_name" content={COMPANY_NAME} />
 
 <!-- Twitter -->
 <meta property="twitter:card" content="summary_large_image" />
@@ -186,3 +180,16 @@ const {
 <meta property="twitter:title" content={title} />
 <meta property="twitter:description" content={description} />
 <meta property="twitter:image" content={new URL(image, Astro.url)} />
+
+<!-- Preconnect to external domains to improve performance -->
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="preconnect" href="https://www.googletagmanager.com" />
+<link rel="preconnect" href="https://widgets.leadconnectorhq.com" />
+
+<!-- Additional mobile-friendly meta tags -->
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+<meta name="format-detection" content="telephone=no" />
+<meta name="theme-color" content="#1e40af" />
+<meta name="mobile-web-app-capable" content="yes" />

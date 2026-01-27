@@ -2,7 +2,7 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 import ValueProposition from "../components/ValueProposition.astro";
 import Testimonials from "../components/Testimonials.astro";
-import { PHONE_NUMBER, AIRPORT, AIRPORT_CODE } from "../data/consts";
+import { PHONE_NUMBER, AIRPORT,AIRPORT_WITH_CODE_SHORT,  AIRPORT_CODE, COMPANY_NAME, COMPANY_PRIMARY_SERVICE, COMPANY_SECONDARY_SERVICE, CITY_AND_STATE } from "../data/consts";
 import HeroLandingPage from "../components/HeroLandingPage.astro";
 import BlogFeed from "../components/Blog/BlogFeed.astro";
 import IntroductionSection from "../components/IntroductionSection.astro";
@@ -15,45 +15,70 @@ import SocialProofSection from "../components/SocialProofSection.astro";
 import ImageSliderWithCopySection from "../components/ImageSliderWithCopySection.astro";
 import ProgramsOverviewSection from "../components/ProgramsOverview/ProgramsOverviewSection.astro";
 import SocialProofLeftSection from "../components/SocialProofLeftSection.astro";
+import { LOCATIONS } from "../data/consts";
+
+// const heroData = {
+//   images: [
+//     {
+//       src: "/src/assets/facilities/facilities-front-sd-mh-aviation-california-flying-lessons.webp",
+//       alt: "MH Aviation fleet and maintenance hangar at Fox Field",
+//       imageCentering: "object-[50%_30%]"
+//     },
+//     {
+//       src: "/src/assets/instructing/instructing-on-top-of-plane-mh-aviation-california-discovery-flight.jpg",
+//       alt: "MH Aviation instructing on top of multi-engine aircraft",
+//       imageCentering: "object-[50%_30%]"
+//     },
+//     {
+//       src: "/src/assets/instructing/instructing-student-with-checklist-mh-aviation-california-pilot-training.webp",
+//       alt: "MH Aviation instructing with pilot checklist on hands",
+//       imageCentering: "object-[50%_30%]"
+//     },
+//     {
+//       src: "/src/assets/general/jet-fueling-services-mh-aviation-lancaster-pilot-training.webp",
+//       alt: "MH Aviation jet fueling services",
+//       imageCentering: "object-[20%_50%]"
+//     },
+//     {
+//       src: "/src/assets/fleet/the-baron-aircraft-mh-aviation-lancaster-private-pilot.webp",
+//       alt: "MH Aviation The Baron aircraft",
+//       imageCentering: "object-[50%_30%]"
+//     },
+//   ],
+//   title: "Family-Owned <span class=\"\">Excellence<span></br>Providing Aviation Training<br>& Full-Service Maintenance",
+//   subTitle: `The Antelope Valley’s Only One-Stop Aviation Hub for<br> Professional Flight Training & Part 145 Certified Maintenance at ${AIRPORT} (${AIRPORT_CODE})`,
+//   cta: [
+//     {
+//       url: "/programs/",
+//       text: "Explore Programs",
+//       variant: "primary",
+//     },
+//     {
+//       url: "/contact/",
+//       text: "Book a Discovery Flight",
+//       variant: "secondary",
+//     },
+//   ],
+// };
 
 const heroData = {
-  images: [
-    {
-      src: "/src/assets/facilities/mh-aviation-facilities-front-sd.webp",
-      alt: "MH Aviation fleet and maintenance hangar at Fox Field",
-      imageCentering: ""
-    },
-    {
-      src: "/src/assets/instructing/mh-aviation-instructing-on-top-of-plane.jpg",
-      alt: "MH Aviation instructing on top of multi-engine aircraft",
-      imageCentering: "object-[50%_30%]" // change this to change the position of the image!
-    },
-    {
-      src: "/src/assets/instructing/mh-aviation-instructing-student-with-checklist.webp",
-      alt: "MH Aviation instructing with pilot checklist on hands",
-      imageCentering: ""
-    },
-    {
-      src: "/src/assets/general/mh-aviation-jet-fueling-services.webp",
-      alt: "MH Aviation jet fueling services",
-      imageCentering: ""
-    },
-    {
-      src: "/src/assets/fleet/mh-aviation-the-baron-aircraft.webp",
-      alt: "MH Aviation The Baron aircraft",
-      imageCentering: ""
-    },
-  ],
+  image: {
+    src: "/src/assets/facilities/facilities-front-sd-mh-aviation-california-flying-lessons.webp",
+    alt: "MH Aviation fleet and maintenance hangar at Fox Field",
+    imageCentering: "object-[50%_30%]"
+  },
+  videoSrc: "https://cdn.jsdelivr.net/gh/right-rudder/mh@main/public/mh-aviation-hero-horizontal.mp4",
+  videoSrcVertical: "https://cdn.jsdelivr.net/gh/right-rudder/mh@main/public/mh-aviation-hero-vertical.mp4",
   title: "Family-Owned <span class=\"\">Excellence<span></br>Providing Aviation Training<br>& Full-Service Maintenance",
   subTitle: `The Antelope Valley’s Only One-Stop Aviation Hub for<br> Professional Flight Training & Part 145 Certified Maintenance at ${AIRPORT} (${AIRPORT_CODE})`,
   cta: [
     {
-      url: "/programs",
+      url: "/programs/",
       text: "Explore Programs",
       variant: "primary",
     },
     {
-      url: "/contact",
+      url: "/contact/",
       text: "Book a Discovery Flight",
       variant: "secondary",
     },
@@ -61,7 +86,7 @@ const heroData = {
 };
 
 const valuePropositionData = {
-  title: "More Than Training <br>and Services —<br>Your Aviation Home",
+  title: "More Than Training <br>and Services,<br>Your Aviation Home",
   subtitle: "A Legacy of Integrity & Safety",
   description: [
     "A <strong class=\"text-ochre-600\">Fox Field cornerstone</strong> for over 20 years, the Haney family has built a premier aviation hub. As an <strong class=\"text-ochre-600\">FAA Part 145 Repair Station</strong>, we personally maintain our fleet to ensure <strong class=\"text-ochre-600\">unmatched safety</strong> for every student.",
@@ -72,12 +97,12 @@ const valuePropositionData = {
 ],
 imageCentering: "object-[60%_50%]",
   image: {
-    src: "/src/assets/instructing/mh-aviation-instructing-student-03.jpg",
+    src: "/src/assets/instructing/instructing-student-with-white-board-mh-aviation-california-pilot-training.jpg",
     alt: "Pilot training at MH Aviation",
   },
   cta: {
     text: "Learn Entry Requirements",
-    href: "/programs",
+    href: "/programs/",
   },
 };
 
@@ -87,12 +112,12 @@ const socialProofData = {
   bodyCopy:
     "We don't just maintain training aircraft; we support the fleets that keep the aerospace industry moving. MH Aviation is proud to provide <strong class=\"text-ochre-600\">'G.O.A.T. Support' (Greatest of All Time)</strong> to <strong class=\"text-ochre-600\">Lockheed Martin’s</strong> local flight operations. If the industry giants trust our maintenance, you can trust us with your training.",
   image: {
-    src: "/src/assets/instagram/goat-badge-from-lockhead-and-martin.jpg",
+    src: "/src/assets/instagram/goat-badge-from-lockhead-and-martin-mh-aviation-lancaster-commercial-pilot.jpg",
     alt: "Lockheed Martin Recognition Badge",
   },
   cta: {
     text: "Enroll Now",
-    href: "/enroll",
+    href: "/enroll/",
   },
 };
 
@@ -104,12 +129,12 @@ const repairStationData = {
   
   Our "One-Stop Shop" capabilities extend beyond maintenance. Through <strong class=\"text-ochre-600\">MH Fuels</strong>, we provide essential fueling services, and via <strong class=\"text-ochre-600\">Avlink Direct</strong>, we offer comprehensive aircraft management and acquisition support. We are the professional infrastructure that powers your aviation journey.`,
   image: {
-    src: "/src/assets/facilities/mh-aviation-repair-station.jpg",
+    src: "/src/assets/facilities/repair-station-mh-aviation-lancaster-private-pilot.jpg",
     alt: "FAA Part 145 Repair Station hangar at MH Aviation",
   },
     cta: {
     text: "Enroll Now",
-    href: "/enroll",
+    href: "/enroll/",
   },
 };
 
@@ -122,31 +147,31 @@ const imageSliderData = {
   ],
   cta: {
     text: "Explore Our Services",
-    href: "/services",
+    href: "/services/",
   },
   images: [
     {
-      imageSrc: "/src/assets/instructing/mh-aviation-instructing-student-how-to-repair-at-lancaster-california.webp",
+      imageSrc: "/src/assets/instructing/instructing-student-how-to-repair-at-california-mh-aviation-california-commercial-pilot.webp",
       imageAlt: "Instructor showing how to repair aircraft at MH Aviation training at Lancaster, California",
     },
     {
-      imageSrc: "/src/assets/facilities/mh-aviation-facilities-front.jpg",
+      imageSrc: "/src/assets/facilities/facilities-front-mh-aviation-california-multi-engine-rating.jpg",
       imageAlt: "Front view of MH Aviation facilities and hangars at Fox Field Airport",
     },
     {
-      imageSrc: "/src/assets/facilities/mh-aviation-repair-facilities-at-lancaster-california.webp",
+      imageSrc: "/src/assets/facilities/repair-facilities-at-california-mh-aviation-california-multi-engine-rating.webp",
       imageAlt: "MH Aviation aircraft maintenance and repair facilities in Lancaster, California",
     },
     {
-      imageSrc: "/src/assets/fleet/mh-aviation-modern-aircraft-cockpit-at-lancaster-california.webp",
+      imageSrc: "/src/assets/fleet/modern-aircraft-cockpit-at-california-mh-aviation-lancaster-flight-training.webp",
       imageAlt: "Modern training aircraft cockpit operated by MH Aviation in Lancaster, California",
     },
     {
-      imageSrc: "/src/assets/general/mh-aviation-fueling-service.webp",
+      imageSrc: "/src/assets/general/fueling-service-mh-aviation-california-become-a-pilot.webp",
       imageAlt: "MH Aviation aircraft fueling service on the airport ramp",
     },
     {
-      imageSrc: "/src/assets/fleet/mh-aviation-modern-aircraft-at-lancaster-california.webp",
+      imageSrc: "/src/assets/fleet/modern-aircraft-at-california-mh-aviation-lancaster-discovery-flight.webp",
       imageAlt: "Modern MH Aviation training aircraft parked at Lancaster, California",
     },
   ],
@@ -187,10 +212,10 @@ const valueAdvantageData = {
   ],
   cta: {
     text: "Enroll Now",
-    href: "/enroll",
+    href: "/enroll/",
   },
   image: {
-    src: "/src/assets/instructing/mh-aviation-instructing-student-02.jpg",
+    src: "/src/assets/instructing/instructing-student-02-mh-aviation-california-flight-school.jpg",
     alt: "MH Aviation modern fleet training at Fox Field",
   },
   imageCentering: "object-[60%_50%]",
@@ -202,23 +227,27 @@ const roadmapData = {
   headline: "Cleared for Takeoff<br> in 4 Simple Steps",
   cards: [
     {
-      title: "Book a Discovery Flight",
+      title: "Book a First Flight",
       text: "Take the controls for the first time over the scenic Antelope Valley and see if aviation is right for you.",
+      href: "/contact/#contact-form-top",
       icon: "flight",
     },
     {
       title: "Meet Your Instructor",
       text: "Consult with our experienced CFIs to build a tailored training plan that fits your schedule and goals.",
+      href: "/about-us/#team",
       icon: "instructor",
     },
     {
       title: "Train & Master",
       text: "Progress from Private Pilot to Multi-Engine ratings in our structured, safety-first environment.",
+      href: "/programs/",
       icon: "train",
     },
     {
       title: "Earn Your Wings",
       text: "Pass your checkride with confidence and join the ranks of certified pilots.",
+      href: "/future-of-pilots/",
       icon: "wings",
     },
   ],
@@ -239,9 +268,10 @@ const finalCtaData = {
   cta: {
     text: "Schedule a Visit",
     subtext: `Call us directly at ${PHONE_NUMBER}`,
+    href: "/contact/"
   },
   image: {
-    src: "/src/assets/instructing/mh-aviation-instructing-on-top-of-plane.jpg",
+    src: "/src/assets/instructing/instructing-on-top-of-plane-mh-aviation-california-discovery-flight.jpg",
     alt: "Runway view at sunset",
   },
 };
@@ -252,44 +282,44 @@ const teamCultureData = {
   bodyCopy:
     "At MH Aviation, you aren't just a number. From our President Jeff Haney to our Shop Lead Palomo Olmedo, our entire team is dedicated to your safety and progress. We offer private briefing rooms, a comfortable break area, and a supportive culture that feels like family.",
   cta: {
-    text: "Meet Our Staff",
-    href: "/about",
+    text: "Meet Our Team",
+    href: "/about-us/#team",
   },
   image: {
-    src: "/src/assets/instructing/mh-aviation-instructing-student-02.jpg",
+    src: "/src/assets/instructing/instructing-student-02-mh-aviation-california-flight-school.jpg",
     alt: "MH Aviation team and facilities",
   },
 };
 
 const testimonials = [
   {
-    quote: "MH Aviation's transparent pricing and professional instruction exceeded my expectations. No hidden costs, no surprises—just quality training with airline captains.",
-    author: "Peter Gibbons",
-    role: "Commercial Pilot & CFI",
+    quote: "Great School. Just did 50+ hours here for my ppl and it was awesome. The 172 was in great condition and the guys here were constantly on top of everything. I was able to do the time in less than 2 months. Thank you weather gods. And my CFI Chloe is fantastic. Great instruction and insane availability. Definitely request her. I’ll be back for my instrument.",
+    author: "Cody M.",
+    role: "October, 2025",
     rating: 5,
   },
   {
-    quote: "The multi-engine training at  was exceptional. Real IMC flying, immediate checkride scheduling, and instructors who genuinely care about your success.",
-    author: "Sarah Johnson",
-    role: "Regional Airline First Officer",
+    quote: "Just had a great discovery flight for my daughter and I. Carl was a great instructor full of positivity and enthusiasm for his craft. He made us feel welcome and made my daughter's first flight experience a super amazing one! The facility , scheduling, aircraft availability and support was top notch! Gonna try to make it out again soon!",
+    author: "Erik G.",
+    role: "February, 2025",
     rating: 5,
   },
   {
-    quote: "From zero experience to regional airline first officer in 24 months. 's Zero to Airlines program delivered everything they promised.",
-    author: "Mike Reynolds",
-    role: "SkyWest Airlines First Officer",
+    quote: "MH Aviation was an excellent choice! Rarely do I give out 5 star reviews, but they deserve it. My aircraft was AOG and they made sure to work hard to get me airborne. The A&P's were very friendly, passionate and knowledgeable about servicing my plane. I would gladly make the trip back to Fox field for maintenance. Highly recommend.",
+    author: "Andrew S.",
+    role: "December, 2025",
     rating: 5,
   },
   {
-    quote: "The professionalism here is military-grade. The transition from GA to a structured Part 141 environment was seamless thanks to the senior cadre's mentorship. If you are serious about the majors, this is the only place to train.",
-    author: "David Chen",
-    role: "Corporate Pilot",
+    quote: "MH Aviation is a fantastic flight school, FBO and MX shop. I fly for a major airline and have been teaching for over 10 years and know a good aviation organization when I see one. MH is top notch. The front office staff, management and mechanics are all very professional, knowledgeable and very committed to high quality aircraft maintenance, servicing and flight training. I look forward to teaching my students and servicing my plane for years to come.",
+    author: "Joseph V.",
+    role: "September, 2025",
     rating: 5,
   },
   {
-    quote: "Best maintenance team I have ever seen. The planes are high-quality and reliable.",
-    author: "James Miller",
-    role: "Private Pilot",
+    quote: "MH Aviation is a great place to do flight training. They have airplanes in good shape that are well maintained and taken care of at an affordable price. Jeff and team really take pride in making MH a great experience for anyone who comes in.",
+    author: "Aaron O.",
+    role: "December, 2025",
     rating: 5,
   },
 ];
@@ -297,35 +327,36 @@ const testimonials = [
 const mentorshipData = {
   eyebrow: "The MH Aviation Legacy",
   title: "Where Family Values<br>Meet Professional Precision and Care",
-  quote: "We don’t just train students; we mentor future colleagues. At MH Aviation, you’re part of a family-owned legacy that has served Fox Field for over two decades.",
+  quote: "We don’t just train students; we mentor future colleagues. At MH Aviation, you’re part of a family-owned legacy that has served Fox Field for over three decades.",
   quoteAuthor: "President Jeff Haney",
   description:
     "Founded by Mike Haney in 1988 and led today by Jeff and Jessica, MH Aviation is a <strong class=\"text-ochre-600\">one-stop aviation hub</strong>. By training at an active FAA Part 145 Repair Station and FBO, you gain a professional edge that 'pilot mills' can't match. You’ll learn in a <strong class=\"text-ochre-600\">modern, glass-panel fleet</strong> and benefit from our exclusive <strong class=\"text-ochre-600\">multi-engine training</strong>—all while supported by a team that treats your success as a personal mission.",
   image: {
-    src: "/src/assets/instructing/mh-aviation-instructing-student-inside-cockpit-at-lancaster-california.webp", 
+    src: "/src/assets/instructing/instructing-student-inside-cockpit-at-california-mh-aviation-lancaster-instrument-rating.webp", 
     alt: "MH Aviation flight instructor mentoring a student pilot at Fox Field at Lancaster California",
   },
   cta: {
     text: "Contact Us",
-    href: "/contact",
+    href: "/contact/",
   },
 };
 
 const metaProps = {
-  siteTitle: "MH Aviation | Professional Pilot Training in North Carolina",
-  siteDescription: "Visit MH Aviation at Wayne Executive Jetport. Contact our team to schedule a tour, discuss financing, or start your professional flight training journey.",
-  siteKeywords: "contact  Aviation, flight school tour, pilot training info, Wayne Executive Jetport address,  phone number, aviation academy North Carolina"
+  siteTitle: `${COMPANY_PRIMARY_SERVICE} & ${COMPANY_SECONDARY_SERVICE} in ${CITY_AND_STATE} | ${COMPANY_NAME}`,
+  siteDescription: `${COMPANY_NAME} is a premier flight school and FAA Part 145 Repair Station at ${AIRPORT_WITH_CODE_SHORT}. Start your pilot training or schedule aircraft maintenance today.`,
+  siteKeywords: `${COMPANY_PRIMARY_SERVICE} ${LOCATIONS[0].city} ${LOCATIONS[0].state}, pilot training, ${COMPANY_SECONDARY_SERVICE}, ${LOCATIONS[0].title}, ${COMPANY_NAME}`
 };
 ---
 
 <BaseLayout {...metaProps}>
   <HeroLandingPage data={heroData}/>
+
   <IntroductionSection {...valuePropositionData} />
   <ValueProposition data={valueAdvantageData}/>
   <RoadmapSection data={roadmapData}/>
   <SocialProofSection data={socialProofData}/>
   <SocialProofLeftSection data={repairStationData}/>
-  <ImageSliderWithCopySection data={imageSliderData}/>
+  <ImageSliderWithCopySection imagePosition="right" data={imageSliderData}/>
   <Testimonials testimonials={testimonials} />
   <ProgramsOverviewSection/>
   <TrainingPhilosophySection data={mentorshipData}/>

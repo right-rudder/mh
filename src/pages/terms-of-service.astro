@@ -1,0 +1,278 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { EMAIL_ADDRESS, PHONE_NUMBER } from "../data/consts";
+import HeroGeneralPages from "../components/HeroGeneralPages.astro";
+
+const heroData = {
+  images: [
+    {
+      src: "/src/assets/facilities/facilities-front-mh-aviation-california-multi-engine-rating.jpg",
+      alt: "Terms of Service",
+      imageCentering: "object-center"
+    }
+  ],
+  title: "Terms of Service",
+  subTitle:
+    "Please read these terms carefully before using our services, scheduling maintenance, or enrolling in our flight training programs.",
+};
+
+const lastUpdated = "January 14, 2026";
+---
+
+<BaseLayout
+  siteTitle="Terms of Service | MH Aviation"
+  siteDescription="MH Aviation's Terms of Service. Review the terms and conditions for using our flight school, Part 145 repair station, and FBO services."
+>
+  <HeroGeneralPages data={heroData} />
+
+  <section class="py-16 md:py-24 bg-ink-50">
+    <div class="max-w-4xl mx-auto px-5 md:px-8 lg:px-12">
+      <div class="mb-8 border-b border-ink-100 pb-8">
+        <p class="text-sm text-ink-500">
+          <strong>Last Updated:</strong>
+          {lastUpdated}
+        </p>
+      </div>
+
+      <div class="prose prose-lg max-w-none text-ink-600">
+        <div class="mb-12">
+          <p class="leading-relaxed">
+            Welcome to MH Aviation. These Terms of Service ("Terms")
+            govern your use of our website, flight training programs, aircraft maintenance services (Part 145), 
+            and FBO facilities located at Gen. William Fox Airfield (KWJF). By accessing our website or utilizing our services, you
+            agree to be bound by these Terms.
+          </p>
+          <p class="leading-relaxed mt-4">
+            Please read these Terms carefully. If you do not agree to these
+            Terms, you may not use our services or enroll in our programs.
+          </p>
+        </div>
+
+        <div class="mb-12">
+          <h2 class="text-2xl font-bold !font-main-header text-ink-950 uppercase tracking-wide mb-6">
+            Acceptance of Terms
+          </h2>
+          <p class="leading-relaxed mb-4">
+            By accessing or using our website and services, you acknowledge that
+            you have read, understood, and agree to be bound by these Terms and
+            our Privacy Policy. If you are enrolling or scheduling services on behalf of an
+            organization or aircraft owner, you represent that you have the authority to bind that
+            entity to these Terms.
+          </p>
+          <p class="leading-relaxed">
+            These Terms constitute a legally binding agreement between you and
+            MH Aviation. We reserve the right to modify these Terms at
+            any time, and your continued use of our services constitutes
+            acceptance of any changes.
+          </p>
+        </div>
+
+        <div class="mb-12">
+          <h2 class="text-2xl font-bold !font-main-header text-ink-950 uppercase tracking-wide mb-6">
+            Flight Training Eligibility
+          </h2>
+          <p class="leading-relaxed mb-4">
+            To enroll in our flight training programs, you must:
+          </p>
+          <ul class="list-disc pl-6 space-y-2 marker:text-ochre-600">
+            <li>Be at least 16 years old to solo (17 for Private Pilot Certification)</li>
+            <li>
+              Be able to read, speak, write, and understand the English language (FAA Requirement)
+            </li>
+            <li>
+              Hold a valid FAA medical certificate appropriate for the rating sought
+            </li>
+            <li>
+              Provide proof of U.S. citizenship or comply with TSA Alien Flight Student Program (AFSP) requirements
+            </li>
+            <li>
+              Possess a valid government-issued photo ID
+            </li>
+          </ul>
+        </div>
+
+        <div class="mb-12">
+          <h2 class="text-2xl font-bold !font-main-header text-ink-950 uppercase tracking-wide mb-6">
+            Maintenance Services (Part 145)
+          </h2>
+          <p class="leading-relaxed mb-4">
+            For services provided by our FAA Part 145 Repair Station (#MHAR0094E):
+          </p>
+          <ul class="list-disc pl-6 space-y-2 marker:text-ochre-600">
+            <li>
+              **Work Scope:** All work will be performed in accordance with current manufacturer maintenance manuals and FAA regulations.
+            </li>
+            <li>
+              **Authorization:** Owners must provide written or verbal authorization for all work performed. Additional discrepancies found during inspection will be communicated for approval before repair.
+            </li>
+            <li>
+              **Parts & Labor:** Estimates are good faith approximations. Final invoices will reflect actual parts and labor used.
+            </li>
+            <li>
+              **Mechanic's Lien:** MH Aviation reserves the right to retain possession of an aircraft under a mechanic's lien until all invoices are paid in full.
+            </li>
+          </ul>
+        </div>
+
+        <div class="mb-12">
+          <h2 class="text-2xl font-bold !font-main-header text-ink-950 uppercase tracking-wide mb-6">Payment Terms</h2>
+
+          <h3 class="text-xl font-bold text-ink-900 mb-3 mt-6">
+            Tuition and Fees
+          </h3>
+          <p class="leading-relaxed mb-4">
+            Students and customers are responsible for payment of all tuition, maintenance fees, fuel charges, and
+            associated costs at the time services are rendered unless a prior financing agreement is in place.
+          </p>
+          <ul class="list-disc pl-6 space-y-2 marker:text-ochre-600">
+            <li>Credit/debit cards</li>
+            <li>Bank transfers / ACH</li>
+            <li>Financing through approved partners (e.g., Stratus Financial)</li>
+            <li>Cash or check (in person at our FBO)</li>
+          </ul>
+
+          <h3 class="text-xl font-bold text-ink-900 mb-3 mt-6">
+            Late Payments & Accounts
+          </h3>
+          <p class="leading-relaxed">
+            Accounts with outstanding balances may be subject to late fees. Flight training or maintenance work may be suspended until the account is brought current. Aircraft left in our hangar/ramp with unpaid balances may accrue storage fees.
+          </p>
+        </div>
+
+        <div class="mb-12">
+          <h2 class="text-2xl font-bold !font-main-header text-ink-950 uppercase tracking-wide mb-6">
+            Cancellation Policy
+          </h2>
+
+          <h3 class="text-xl font-bold text-ink-900 mb-3 mt-6">
+            Flight Lesson Cancellations
+          </h3>
+          <p class="leading-relaxed mb-4">
+            We require at least **24 hours' notice** to cancel or reschedule a flight lesson. Cancellations made with less than 24 hours' notice may be charged a cancellation fee equivalent to 1 hour of ground instruction. Weather-related cancellations made by the instructor or due to safety concerns will not incur penalties.
+          </p>
+
+          <h3 class="text-xl font-bold text-ink-900 mb-3 mt-6">
+            Refunds
+          </h3>
+          <p class="leading-relaxed mb-4">
+            <ul class="list-disc pl-6 space-y-2 marker:text-ochre-600">
+              <li>
+                **Block Rate Funds:** Unused funds on account for block rates are refundable but will be recalculated at the standard hourly rate for hours flown.
+              </li>
+              <li>
+                **Supplies:** Pilot supplies, headsets, and charts are non-refundable once opened or used.
+              </li>
+            </ul>
+          </p>
+        </div>
+
+        <div class="mb-12">
+          <h2 class="text-2xl font-bold !font-main-header text-ink-950 uppercase tracking-wide mb-6">
+            Student & Renter Responsibilities
+          </h2>
+          <p class="leading-relaxed mb-4">
+            As a student or aircraft renter, you agree to:
+          </p>
+          <ul class="list-disc pl-6 space-y-2 marker:text-ochre-600">
+            <li>
+              Operate aircraft strictly in accordance with the POH and FAA regulations
+            </li>
+            <li>
+              Perform a thorough pre-flight inspection before every flight
+            </li>
+            <li>
+              Report any squawks, incidents, or safety concerns immediately to the maintenance department
+            </li>
+            <li>
+              Treat facilities, staff, and fellow pilots with professional respect
+            </li>
+            <li>
+              Maintain renter's insurance if required by MH Aviation policy
+            </li>
+          </ul>
+        </div>
+
+        <div class="mb-12">
+          <h2 class="text-2xl font-bold !font-main-header text-ink-950 uppercase tracking-wide mb-6">
+            Limitation of Liability
+          </h2>
+          <p class="leading-relaxed mb-4">
+            To the maximum extent permitted by law, MH Aviation, its
+            officers, employees, and instructors shall not be liable for any indirect, incidental, 
+            special, or consequential damages arising out of or relating to your use of our services.
+          </p>
+          <p class="leading-relaxed">
+            By participating in flight training or renting aircraft, you acknowledge the inherent risks associated with aviation and agree to release MH Aviation from liability regarding personal injury or property damage, except in cases of gross negligence.
+          </p>
+        </div>
+
+        <div class="mb-12">
+          <h2 class="text-2xl font-bold !font-main-header text-ink-950 uppercase tracking-wide mb-6">
+            Governing Law
+          </h2>
+          <p class="leading-relaxed mb-4">
+            These Terms shall be governed by and construed in accordance with
+            the laws of the State of **California**. Any disputes arising from these Terms 
+            shall be resolved exclusively in the state or federal courts located in **Los Angeles County, California**.
+          </p>
+        </div>
+
+        <div class="mb-12">
+          <h2 class="text-2xl font-bold !font-main-header text-ink-950 uppercase tracking-wide mb-6">Contact Us</h2>
+          <p class="leading-relaxed mb-6">
+            If you have questions about these Terms of Service, please contact us:
+          </p>
+
+          <div class="bg-ink-50 rounded-sm p-8 border-l-4 border-ochre-600 shadow-lg">
+            <p class="text-ink-950 font-bold uppercase tracking-widest text-lg mb-4">MH Aviation</p>
+            <div class="space-y-3 text-ink-700">
+              <p>
+                <strong class="text-ink-950">Address:</strong><br />
+                Gen. William Fox Airfield (KWJF)<br />
+                4651 William J Barnes Avenue<br />
+                Lancaster, California 93536
+              </p>
+              <p>
+                <strong class="text-ink-950">Phone:</strong>
+                <a
+                  href={`tel:${PHONE_NUMBER}`}
+                  class="text-ochre-600 hover:text-ochre-700 font-medium ml-1"
+                >
+                  {PHONE_NUMBER}
+                </a>
+              </p>
+              <p>
+                <strong class="text-ink-950">Email:</strong>
+                <a
+                  href={`mailto:${EMAIL_ADDRESS}`}
+                  class="text-ochre-600 hover:text-ochre-700 font-medium ml-1"
+                >
+                  {EMAIL_ADDRESS}
+                </a>
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div
+          class="bg-ink-950 text-ink-50 border-l-4 border-ochre-600 p-8 rounded-r-sm mt-12 shadow-2xl"
+        >
+          <p class="font-bold text-lg mb-2 uppercase tracking-wide text-ochre-500">Acknowledgment</p>
+          <p class="text-ink-200">
+            By using our services or enrolling in our programs, you acknowledge
+            that you have read, understood, and agree to be bound by these Terms
+            of Service. If you do not agree to these Terms, please do not use
+            our services.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .prose h2 {
+    border-bottom: 1px solid #e5e7eb;
+    padding-bottom: 0.75rem;
+  }
+</style>

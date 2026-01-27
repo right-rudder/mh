@@ -3,6 +3,7 @@ import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 import ImageWithGradientAndText from "./ImageWithGradientAndText.astro";
 
 interface Props {
+  imagePosition?: "left" | "right"; // Nova prop
   data: {
     eyebrow: string;
     title: string;
@@ -18,18 +19,19 @@ interface Props {
   };
 }
 
-const { data } = Astro.props;
+const { data, imagePosition = "right" } = Astro.props;
+const isImageLeft = imagePosition === "left";
 ---
 
-<section class="py-16 md:py-24 bg-white overflow-hidden scroll-reveal opacity-0 translate-y-8 transition-all duration-1000 ease-out">
+<section class="py-16 md:py-24 bg-ink-50 overflow-hidden scroll-reveal opacity-0 translate-y-8 transition-all duration-1000 ease-out">
   <div class="max-w-7xl mx-auto px-5 md:px-8 lg:px-12">
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
       
-      <div class="order-2 lg:order-1">
-        <p class="text-ochre-600 font-bold uppercase tracking-widest text-sm mb-2">
+      <div class={`order-2 ${isImageLeft ? 'lg:order-2 text-left' : 'lg:order-1 text-left'}`}>
+        <p class="subtitle">
           {data.eyebrow}
         </p>
-        <h2 class="title !text-[2.5rem] uppercase !font-main-header tracking-wide !text-ink-950 mb-8 max-w-lg">
+        <h2 class="title-black">
           {data.title}
         </h2>
         
@@ -39,12 +41,12 @@ const { data } = Astro.props;
           ))}
         </div>
 
-        <a class="btn-primary w-fit shadow-lg shadow-ochre-100">
+        <a href={data.cta.href} class="btn-primary">
           {data.cta.text}
         </a>
       </div>
 
-      <div class="order-1 lg:order-2 relative h-[500px] w-full flex items-center justify-center">
+      <div class={`order-1 ${isImageLeft ? 'lg:order-1' : 'lg:order-2'} relative h-[400px] md:h-[500px] w-full flex items-center justify-center`}>
         <div class="relative w-full h-full" id="carousel-container">
           {data.images.map((img, index) => (
             <div 
@@ -118,14 +120,14 @@ const { data } = Astro.props;
     z-index: 9 !important;
   }
 
-  .visible {
+  :global(.visible) {
     opacity: 1 !important;
     transform: translateY(0) !important;
   }
 </style>
 
 <script>
-  document.addEventListener('DOMContentLoaded', () => {
+  function setupCarousel() {
     const revealObserver = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
@@ -143,11 +145,11 @@ const { data } = Astro.props;
     let currentIndex = 0;
     const totalItems = items.length;
 
+    if (totalItems === 0) return;
+
     function updateCarousel() {
       items.forEach((item, index) => {
         item.classList.remove('active', 'prev', 'next');
-        (item as HTMLElement).style.zIndex = '';
-
         if (index === currentIndex) {
           item.classList.add('active');
         } else if (index === (currentIndex - 1 + totalItems) % totalItems) {
@@ -169,5 +171,7 @@ const { data } = Astro.props;
       currentIndex = (currentIndex - 1 + totalItems) % totalItems;
       updateCarousel();
     });
-  });
+  }
+  setupCarousel();
+  document.addEventListener('astro:after-swap', setupCarousel);
 </script>

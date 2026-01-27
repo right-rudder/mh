@@ -1,0 +1,76 @@
+---
+import { FaGasPump, FaPlaneDeparture, FaArrowRight } from "react-icons/fa";
+
+interface Props {
+  data: {
+    upperheader: string;
+    title: string;
+    description: string;
+    partners: {
+      name: string;
+      role: string;
+      description: string;
+      href: string;
+    }[];
+  };
+}
+
+const { data } = Astro.props;
+---
+
+<section class="py-20 md:py-24 bg-ink-50">
+  <div class="max-w-7xl mx-auto px-5 md:px-8 lg:px-12">
+    
+    <div class="text-center max-w-3xl mx-auto mb-16 reveal-center opacity-0 translate-y-8 transition-all duration-1000">
+      <span class="subtitle">
+        {data.upperheader}
+      </span>
+      <h2 class="title-black">
+        {data.title}
+      </h2>
+      <p class="text-ink-600 text-lg leading-relaxed">
+        {data.description}
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+      {data.partners.map((partner, index) => (
+        <div 
+          class="hover:-translate-y-2 transition-transform easy-out duration-300 bg-ink-50 p-10 rounded-sm shadow-lg border-2 border-ink-100 hover:border-ochre-600 transition-all duration-300 group flex flex-col items-start reveal-card opacity-0 translate-y-8"
+          style={`transition-delay: ${index * 200}ms`}
+        >
+          <div class="w-16 h-16 bg-ink-950 text-ochre-500 rounded-sm flex items-center justify-center text-2xl mb-6 group-hover:scale-110 transition-transform duration-300">
+            {partner.name.toLowerCase().includes('fuel') ? <FaGasPump /> : <FaPlaneDeparture />}
+          </div>
+          
+          <h3 class="text-2xl font-bold text-ink-950 mb-2">{partner.name}</h3>
+          <span class="text-xs font-bold uppercase tracking-widest text-ochre-600 mb-4 block">
+            {partner.role}
+          </span>
+          
+          <p class="text-ink-600 leading-relaxed mb-8 flex-grow">
+            {partner.description}
+          </p>
+
+          <a href={partner.href} target={partner.href.includes("http") ? "_blank" : ""} class="group mt-auto flex items-center text-sm font-bold text-ink-950 uppercase tracking-widest group-hover:text-ochre-600 transition-colors">
+            Learn More <FaArrowRight className="ml-2 group-hover:translate-x-1 transition-transform easy-out duration-300" />
+          </a>
+        </div>
+      ))}
+    </div>
+
+  </div>
+</section>
+
+<script>
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.remove('opacity-0', 'translate-y-8');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1 });
+
+  document.querySelectorAll('.reveal-center, .reveal-card').forEach((el) => observer.observe(el));
+</script>

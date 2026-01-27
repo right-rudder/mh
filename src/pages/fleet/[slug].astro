@@ -1,0 +1,227 @@
+---
+import { getCollection } from "astro:content";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import HeroGeneralPages from "../../components/HeroGeneralPages.astro";
+import FinalCTASection from "../../components/FinalCTASection.astro";
+import { ADDRESS_CITY, AIRPORT_CODE, AIRPORT_WITH_CODE_SHORT, CITY_AND_STATE, COMPANY_NAME, PHONE_NUMBER } from "../../data/consts";
+
+import ImageViewer from "../../components/Fleet/ImageViewer.astro"
+
+import { FaTachometerAlt, FaUsers, FaPlane, FaWeightHanging, FaCogs, FaCheck } from "react-icons/fa";
+import { IoMdPhotos } from "react-icons/io";
+export async function getStaticPaths() {
+  const fleetEntries = await getCollection("fleet");
+  return fleetEntries.map((entry) => ({
+    params: { slug: entry.slug },
+    props: { entry },
+  }));
+}
+
+const { entry } = Astro.props;
+const { data } = entry;
+
+const firstImage = data.images && data.images.length > 0 ? data.images[0] : null;
+const heroData = {
+  images: firstImage ? [firstImage] : [],
+  title: data.name || "Our Aircraft",
+  subTitle: data.tailNumber === "The Baron" ?
+    `<span class=\"text-ochre-500\ bg-ink-950 border-l-2 border-ochre-600 py-2 px-3">Aircraft: ${data.tailNumber}</span>`
+  : `<span class=\"text-ochre-500\ bg-ink-950 border-l-2 border-ochre-600 py-2 px-3">Tail Number: ${data.tailNumber}</span>`,
+};
+
+const galleryImages = data.images && data.images.length > 1 ? data.images.slice(1) : [];
+
+const finalCtaData = {
+  eyebrow: "Fly This Aircraft",
+  headline: "Ready for Takeoff?",
+  bodyCopy: "Schedule your flight training or rental block with this aircraft today.",
+  cta: {
+    text: "Book Now",
+    href: "/enroll/",
+    subtext: `Call us at ${PHONE_NUMBER}`,
+  },
+  image: {
+    src: "/src/assets/instructing/instructing-on-top-of-plane-mh-aviation-california-discovery-flight.jpg",
+    alt: "Student pilot preparing for flight",
+  },
+};
+
+const metaProps = {
+  siteTitle: `${data.model} Training in ${CITY_AND_STATE} | ${COMPANY_NAME}`,
+  siteDescription: `Train in our ${data.model} at ${AIRPORT_WITH_CODE_SHORT}. High-standard maintenance and advanced avionics for student pilots and rentals in ${CITY_AND_STATE}.`,
+  siteKeywords: `${data.model}, aircraft rental ${ADDRESS_CITY}, fly ${data.model} Lancaster, pilot training aircraft, ${COMPANY_NAME} fleet`
+};
+---
+
+<BaseLayout {...metaProps}>
+  <HeroGeneralPages data={heroData} />
+
+  <section class="py-16 md:py-24 bg-ink-50 px-4">
+    <div class="max-w-7xl mx-auto">
+      <div class="flex flex-col lg:flex-row gap-12 lg:gap-20">
+        <div class="lg:w-7/12 order-2 lg:order-1">
+          <div class="mb-8 reveal-element opacity-0 translate-y-8 transition-all duration-1000 ease-out">
+            <span class="subtitle">
+              Aircraft Profile
+            </span>
+            <h2 class="title-black">
+              {data.model}
+            </h2>
+            <div class="h-1 w-20 bg-ochre-600 mt-4 rounded-full"></div>
+          </div>
+
+          <div class="prose prose-lg text-ink-950 mb-12 leading-relaxed reveal-element opacity-0 translate-y-8 transition-all duration-1000 ease-out delay-100">
+            <p>{data.description}</p>
+          </div>
+
+          {data.features && (
+            <div class="mb-12 reveal-element opacity-0 translate-y-8 transition-all duration-1000 ease-out delay-200">
+              <h3 class="text-xl !font-main-header text-ink-950 !font-main-header uppercase tracking-wide mb-6 flex items-center gap-3">
+                <FaCogs className="text-ochre-600" />
+                Key Equipment & Features
+              </h3>
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                {data.features.map((feature) => (
+                  <div class="group hover:-translate-y-2 transition-transform easy-out duration-300 flex items-center gap-3 bg-ink-50 p-4 rounded-sm border border-ink-100 shadow-sm hover:border-ochre-600/50 transition-colors duration-300">
+                    <div class="flex-shrink-0 w-6 h-6 rounded-full bg-ochre-100 group-hover:bg-ochre-600 transition-all easy-out duration-300 group-hover:text-ink-50 flex items-center justify-center text-ochre-600 text-xs">
+                      <FaCheck />
+                    </div>
+                    <span class="text-ink-900 font-medium">{feature}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          )}
+
+          {galleryImages.length > 0 && (
+            <div class="mt-16">
+               <h3 class="title-black flex gap-4 items-center  reveal-element opacity-0 translate-y-8 transition-all duration-1000 ease-out delay-300">
+                <IoMdPhotos className="text-ochre-600"/>
+                Visual Tour
+              </h3>
+              <ImageViewer images={galleryImages} />
+            </div>
+          )}
+        </div>
+
+        <div class="lg:w-5/12 order-1 lg:order-2">
+          <div class="lg:sticky lg:top-32">
+            
+            <div class="bg-ink-950 text-ink-50 rounded-sm shadow-2xl overflow-hidden border-t-4 border-ochre-600 relative reveal-element opacity-0 translate-y-8 transition-all duration-1000 ease-out">
+              <div class="absolute top-0 right-0 w-64 h-64 bg-ochre-600/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2 pointer-events-none"></div>
+
+              <div class="p-8 relative z-10">
+                <div class="flex justify-between gap-2 items-start mb-8">
+                  <div>
+                    <span class="text-ochre-500 font-bold uppercase tracking-widest text-xs block mb-1">Registration</span>
+                    <h3 class="text-3xl font-mono font-bold text-ink-50 tracking-wider">{data.tailNumber}</h3>
+                  </div>
+                  <div class="border max-w-[100px] border-ink-50/20 px-2 py-1 rounded  text-center text-[10px] uppercase font-bold tracking-widest text-ink-50/70">
+                    FAA Part 145 Maintained
+                  </div>
+                </div>
+
+                {data.specifications && (
+                  <div class="space-y-6">
+                    
+                    <div class="flex items-center justify-between border-b border-ink-50/10 pb-4">
+                      <div class="flex items-center gap-3">
+                        <div class="w-8 h-8 rounded-full bg-ink-50/5 flex items-center justify-center text-ochre-500">
+                          <FaPlane />
+                        </div>
+                        <div>
+                          <span class="block text-xs text-ink-50/50 uppercase tracking-widest">Powerplant</span>
+                          <span class="block text-sm font-bold">{data.specifications.engine || "N/A"}</span>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="flex items-center justify-between border-b border-ink-50/10 pb-4">
+                      <div class="flex items-center gap-3">
+                        <div class="w-8 h-8 rounded-full bg-ink-50/5 flex items-center justify-center text-ochre-500">
+                          <FaTachometerAlt />
+                        </div>
+                        <div>
+                          <span class="block text-xs text-ink-50/50 uppercase tracking-widest">Performance</span>
+                          <span class="block text-sm font-bold">{data.specifications.horsepower ? `${data.specifications.horsepower} HP` : "N/A"}</span>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="flex items-center justify-between border-b border-ink-50/10 pb-4">
+                      <div class="flex items-center gap-3">
+                        <div class="w-8 h-8 rounded-full bg-ink-50/5 flex items-center justify-center text-ochre-500">
+                          <FaTachometerAlt />
+                        </div>
+                        <div>
+                          <span class="block text-xs text-ink-50/50 uppercase tracking-widest">Cruise Speed</span>
+                          <span class="block text-sm font-bold">{data.specifications.cruiseSpeed || "N/A"}</span>
+                        </div>
+                      </div>
+                    </div>
+
+                     <div class="flex items-center justify-between border-b border-ink-50/10 pb-4">
+                      <div class="flex items-center gap-3">
+                        <div class="w-8 h-8 rounded-full bg-ink-50/5 flex items-center justify-center text-ochre-500">
+                          <FaWeightHanging />
+                        </div>
+                        <div>
+                          <span class="block text-xs text-ink-50/50 uppercase tracking-widest">Max Weight</span>
+                          <span class="block text-sm font-bold">{data.specifications.maxWeight || "N/A"}</span>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="flex items-center justify-between">
+                      <div class="flex items-center gap-3">
+                        <div class="w-8 h-8 rounded-full bg-ink-50/5 flex items-center justify-center text-ochre-500">
+                          <FaUsers />
+                        </div>
+                        <div>
+                          <span class="block text-xs text-ink-50/50 uppercase tracking-widest">Capacity</span>
+                          <span class="block text-sm font-bold">{data.specifications.seats ? `${data.specifications.seats} Seats` : "N/A"}</span>
+                        </div>
+                      </div>
+                    </div>
+
+                  </div>
+                )}
+              </div>
+              
+              <div class="bg-ink-900 p-4 border-t border-ink-50/10 text-center">
+                <span class="text-xs text-ink-50/40 uppercase tracking-widest font-medium">Verified Specifications</span>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+  
+  <FinalCTASection data={finalCtaData} />
+</BaseLayout>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const observerOptions = {
+      root: null,
+      rootMargin: '0px',
+      threshold: 0.1
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.remove('opacity-0', 'translate-y-8');
+          entry.target.classList.add('opacity-100', 'translate-y-0');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, observerOptions);
+
+    const elementsToReveal = document.querySelectorAll('.reveal-element');
+    elementsToReveal.forEach(el => observer.observe(el));
+  });
+</script>

@@ -1,0 +1,63 @@
+---
+import ImageComp from "../ImageComp.astro";
+import { FaShieldAlt } from "react-icons/fa";
+
+interface Props {
+  data: {
+    upperheader: string;
+    title: string;
+    description: string;
+    slogan?: string;
+    stats: { label: string; value: string }[];
+    cta: { text: string; href: string };
+    image: { src: string; alt: string };
+  };
+}
+
+const { data } = Astro.props;
+---
+
+<section class="py-24 bg-ink-950 text-ink-50 relative overflow-hidden reveal-section opacity-0 translate-y-8 transition-all duration-1000 ease-out">
+  <div class="max-w-7xl mx-auto px-5 md:px-8 lg:px-12">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+      
+      <div class="order-2 lg:order-1 relative">
+        <div class="relative h-[500px] rounded-sm overflow-hidden shadow-2xl border border-ink-800">
+          <ImageComp 
+            src={data.image.src} 
+            alt={data.image.alt} 
+            class="w-full h-full object-cover opacity-80" 
+          />
+          <div class="absolute inset-0 bg-gradient-to-t from-ink-950 via-transparent to-transparent"></div>
+          
+          <div class="absolute bottom-8 left-8">
+            <div class="flex items-center gap-3 bg-ochre-600/90 backdrop-blur-sm px-6 py-3 rounded-sm">
+                <FaShieldAlt className="text-ink-50 text-xl" />
+                <span class="font-bold uppercase tracking-wider text-sm">{data.slogan ? data.slogan : "FAA Part 145 Certified"}</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="order-1 lg:order-2">
+        <span class="subtitle">{data.upperheader}</span>
+        <h2 class="title" set:html={data.title}></h2>
+        <p class="text-ink-200 text-lg leading-relaxed mb-10" set:html={data.description} />
+
+        <div class="grid grid-cols-3 gap-6 mb-10 border-y border-ink-800 py-8">
+          {data.stats.map(stat => (
+            <div>
+              <div class="text-3xl font-bold text-ink-50 mb-1 !font-main-header">{stat.value}</div>
+              <div class="text-xs text-ochre-600 text-bold uppercase tracking-widest">{stat.label}</div>
+            </div>
+          ))}
+        </div>
+
+        <a href={data.cta.href} class="text-ink-50 font-bold uppercase tracking-widest text-sm border-b-2 border-ochre-600 pb-1 hover:text-ochre-500 hover:border-ink-50 transition-all cursor-pointer">
+          {data.cta.text}
+        </a>
+      </div>
+
+    </div>
+  </div>
+</section>

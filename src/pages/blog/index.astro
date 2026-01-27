@@ -1,0 +1,59 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import { getCollection } from "astro:content";
+import HeroGeneralPages from "../../components/HeroGeneralPages.astro";
+import { AIRPORT, AIRPORT_CODE, AIRPORT_WITH_CODE_SHORT, CITY_AND_STATE, COMPANY_NAME, PHONE_NUMBER } from "../../data/consts";
+import FinalCTASection from "../../components/FinalCTASection.astro";
+import BlogFeedSection from "../../components/Blog/BlogFeedSection.astro";
+
+const heroData = {
+  images: [
+    {
+      src: "/src/assets/fleet/the-baron-aircraft-mh-aviation-lancaster-private-pilot.webp",
+      alt: "MH Aviation The Baron aircraft",
+      imageCentering: ""
+    },
+  ],
+  title: "OUR BLOG",
+  subTitle: `Expert Perspectives on Professional Flight Training, <br>Part 145 Maintenance Standards, and Life in the Antelope Valley Skies at ${AIRPORT} (${AIRPORT_CODE})`,
+  cta: [
+    {
+      url: "/programs/",
+      text: "Explore Programs",
+      variant: "primary",
+    },
+    {
+      url: "/contact/",
+      text: "Book a Discovery Flight",
+      variant: "secondary",
+    },
+  ] 
+};
+
+const finalCtaData = {
+  eyebrow: "Fly This Aircraft",
+  headline: "Ready for Takeoff?",
+  bodyCopy: "Schedule your flight training or rental block with this aircraft today.",
+  cta: {
+    text: "Book Now",
+    href: "/enroll/",
+    subtext: `Call us at ${PHONE_NUMBER}`,
+  },
+  image: {
+    src: "/src/assets/instructing/instructing-on-top-of-plane-mh-aviation-california-discovery-flight.jpg",
+    alt: "Student pilot preparing for flight",
+  },
+};
+
+const metaProps = {
+  siteTitle: `Aviation News & Pilot Training Tips | ${COMPANY_NAME}`,
+  siteDescription: `Explore the ${COMPANY_NAME} blog for expert aviation insights, flight training tips in ${CITY_AND_STATE}, and aircraft maintenance updates from ${AIRPORT_WITH_CODE_SHORT}.`,
+  siteKeywords: `aviation blog, flight training tips, learn to fly Lancaster, aircraft maintenance news, ${COMPANY_NAME} news`
+};
+---
+
+<BaseLayout {...metaProps}>
+  <HeroGeneralPages data={heroData} />
+    <BlogFeedSection/>
+    <FinalCTASection data={finalCtaData} />
+</BaseLayout>

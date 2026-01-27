@@ -1,0 +1,116 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import HeroGeneralPages from "../components/HeroGeneralPages.astro";
+import FinalCTASection from "../components/FinalCTASection.astro";
+import { ADDRESS_CITY, AIRPORT_CODE, CITY_AND_STATE, COMPANY_NAME, PHONE_NUMBER } from "../data/consts";
+import FAQSearchable from "../components/FAQs/FAQSearchable";
+import LocationSectionBlack from "../components/LocationSectionBlack.astro";
+import MaintenancePhilosophy from "../components/Fleet/MaintenancePhilosophy.astro";
+
+
+
+const heroData = {
+  images: [
+    {
+      src: "/src/assets/repair-station/repair-station-open-engine-close-up-pistons-at-california-mh-aviation-lancaster-commercial-pilot.webp",
+      alt: "Open Engine at FAA Approved Repair Station at MH Aviation at Lancastar California",
+    },
+  ],
+  title: "Frequently Asked Questions",
+  subTitle: "Everything you need to know about our flight training, maintenance services, and FBO operations.",
+};
+
+const finalCtaData = {
+  eyebrow: "Still have questions?",
+  headline: "Talk to a<br>Real Person",
+  bodyCopy:
+    "Our family-owned team is here to help. Whether you have a complex maintenance question or just want to book a discovery flight, give us a call.",
+  cta: {
+    text: "Contact Us",
+    href: "/contact/",
+    subtext: `Call us at ${PHONE_NUMBER}`,
+  },
+  image: {
+    src: "/src/assets/facilities/facilities-front-mh-aviation-california-multi-engine-rating.jpg",
+    alt: "MH Aviation Office Front",
+  },
+};
+const faqData = [
+  {
+    category: "Flight Training",
+    questions: [
+      {
+        question: "What are the requirements to start flight training?",
+        answer: "To begin training, you simply need to be a U.S. citizen (or complete TSA clearance) and be able to read, speak, and understand English. To solo, you must be at least 16 years old and hold a Student Pilot Certificate and FAA Medical Certificate."
+      },
+      {
+        question: "Do you offer financing for flight school?",
+        answer: "Yes. We partner with <strong>Stratus Financial</strong> to offer funding options for our students. We also offer competitive 'pay-as-you-go' rates if you prefer not to take out a loan."
+      },
+      {
+        question: "How long does it take to get a Private Pilot License?",
+        answer: "The FAA minimum is 40 hours, but the national average is closer to 60-70 hours. At MH Aviation, our open schedule and structured maintenance availability often allow students to finish closer to the minimums than at busy, congested schools."
+      },
+      {
+        question: "Why should I train at Fox Field (KWJF) instead of LA?",
+        answer: "Fox Field offers less air traffic congestion, meaning you spend less time taxiing and holding, and more time flying. Additionally, the high desert winds provide excellent training conditions to master crosswind landings."
+      }
+    ]
+  },
+  {
+    category: "Maintenance (Part 145)",
+    questions: [
+      {
+        question: "What specific maintenance services do you offer?",
+        answer: "As an FAA Part 145 Repair Station (#MHAR0094E), we offer Annual Inspections, 100-hour inspections, sheet metal repairs, major airframe repairs, and avionics upgrades (specifically Garmin G5 glass cockpit installations)."
+      },
+      {
+        question: "Do you offer pre-purchase inspections?",
+        answer: "Yes. Our President, Jeff Haney, frequently travels to perform pre-buy inspections to ensure the aircraft you are buying is safe and worth the investment."
+      },
+      {
+        question: "What is your hourly labor rate?",
+        answer: "Please contact our office directly at (661) 948-7779 for the most current labor rates and flat-rate inspection estimates."
+      }
+    ]
+  },
+  {
+    category: "FBO & Fueling",
+    questions: [
+      {
+        question: "What are your FBO hours?",
+        answer: "MH Fuels and our FBO facilities are open Monday through Friday from 8:00 am to 5:00 pm. We are closed on Saturdays and Sundays."
+      },
+      {
+        question: "Do you have amenities for transient pilots?",
+        answer: "Yes. We offer a remodeled facility with private briefing rooms, a comfortable break area/lobby, a kitchen, and clean restrooms."
+      }
+    ]
+  }
+];
+
+const locationData = {
+  eyebrow: "Visit Us",
+  headline: "Fox Field's<br> Premier Hub",
+  bodyCopy:
+    "Located at Gen. William Fox Airfield (KWJF). We offer easy ramp access, pilot amenities, and immediate maintenance support for transient and based aircraft.",
+};
+
+const metaProps = {
+  siteTitle: `Pilot Training FAQs in ${CITY_AND_STATE} | ${COMPANY_NAME}`,
+  siteDescription: `Find answers to common questions about pilot training, aircraft maintenance, and flight school financing with Stratus Financial at ${COMPANY_NAME} in ${CITY_AND_STATE}.`,
+  siteKeywords: `flight school faqs, how to become a pilot, flight training cost ${ADDRESS_CITY}, stratus financial flight training, ${AIRPORT_CODE} flight school questions, ${COMPANY_NAME} faqs`
+};
+---
+
+<BaseLayout {...metaProps}>
+  
+  <HeroGeneralPages data={heroData} />
+
+  <FAQSearchable client:load data={faqData} />
+  <MaintenancePhilosophy/>
+  <LocationSectionBlack data={locationData}/>
+
+  <FinalCTASection data={finalCtaData} />
+
+</BaseLayout>

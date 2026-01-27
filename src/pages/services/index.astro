@@ -1,0 +1,152 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import { getCollection } from "astro:content";
+import HeroGeneralPages from "../../components/HeroGeneralPages.astro";
+import FinalCTASection from "../../components/FinalCTASection.astro";
+import { AIRPORT_WITH_CODE_SHORT, CITY_AND_STATE, COMPANY_NAME, PHONE_NUMBER } from "../../data/consts";
+import ServicesOverviewSectionCard from "../../components/Services/ServicesOverviewSectionCard.astro";
+import LocationSectionBlack from "../../components/LocationSectionBlack.astro";
+import MaintenancePhilosophy from "../../components/Fleet/MaintenancePhilosophy.astro";
+import ImageSliderWithCopySection from "../../components/ImageSliderWithCopySection.astro";
+
+const servicesEntries = await getCollection("services");
+const sortedServices = servicesEntries.sort((a, b) => {
+  return (a.data.order || 99) - (b.data.order || 99);
+});
+
+const heroData = {
+  images: [
+    {
+      src: "/src/assets/facilities/faa-certified-repair-station-mh-aviation-lancaster-flying-lessons.webp",
+      alt: "MH Aviation Maintenance And FAA Certified Repair Shop at Lancaster California",
+      imageCentering: "object-[50%_30%]"
+    },
+  ],
+  title: "Maintenance And FBO",
+  subTitle: "From FAA Part 145 certified maintenance to premier FBO fueling. We provide the professional services and infrassertructure that powers your flight.",
+};
+
+const imageSliderData = {
+  eyebrow: "The Faces Behind Your Safety",
+  title: "The Hardest Working Crew in the Valley",
+  paragraphs: [
+    "Expertise isn't just a certificate on the wall, it’s the <strong class=\"text-ochre-600\">grit and dedication</strong> of a team that lives and breathes aviation. Our mechanics and ground crew don't just 'check boxes'; they obsess over every bolt and fuel line to ensure that when you push the throttle, you do it with 100% confidence.",
+    "We’ve built a culture where <strong class=\"text-ochre-600\">effort is the standard</strong>. From the scorching heat on the ramp during a quick-turn fueling to the late nights in the hangar chasing a complex electrical gremlin, our team is relentless. We treat every aircraft as if our own families were flying in them, because at MH Aviation, professional service is a personal mission."
+  ],
+  cta: {
+    text: "Meet Our Expert Team",
+    href: "/about-us/",
+  },
+  images: [
+      {
+        imageSrc: "/src/assets/equipment/equipment-and-team-mh-aviation-lancaster-flight-school.jpg",
+        imageAlt: "Expert maintenance crew with professional equipment at MH Aviation at Lancaster, California",
+      },
+      {
+        imageSrc: "/src/assets/equipment/equipment-and-maintenance-on-stair-mh-aviation-lancaster-pilot-training.jpg",
+        imageAlt: "Technician performing hands-on aircraft maintenance on a ladder at MH Aviation at Lancaster, California",
+      },
+      {
+        imageSrc: "/src/assets/equipment/equipment-and-team-distance-shot-mh-aviation-california-pilot-training.jpg",
+        imageAlt: "Wide shot of the professional service team at MH Aviation at Lancaster, California",
+      },
+      {
+        imageSrc: "/src/assets/facilities/handshake-at-repair-station-mh-aviation-lancaster-flight-training.jpg",
+        imageAlt: "Professional handshake at the FAA certified repair station of MH Aviation at Lancaster, California",
+      },
+      {
+        imageSrc: "/src/assets/repair-station/repair-table-mh-aviation-california-flight-school.jpg",
+        imageAlt: "Detailed view of the precision repair workbench at MH Aviation at Lancaster, California",
+      },
+      {
+        imageSrc: "/src/assets/repair-station/repair-station-overview-mh-aviation-lancaster-flight-training.jpg",
+        imageAlt: "Full overview of the FAA Part 145 repair station facilities at MH Aviation at Lancaster, California",
+      },
+      {
+        imageSrc: "/src/assets/repair-station/repair-under-aircraft-mh-aviation-california-flight-school.jpg",
+        imageAlt: "Specialized technician performing under-aircraft repairs at MH Aviation at Lancaster, California",
+      },
+      {
+        imageSrc: "/src/assets/instructing/instructing-student-on-table-laughing-mh-aviation-california-flight-training.jpg",
+        imageAlt: "Flight instructor and student pilot during a briefing at MH Aviation at Lancaster, California",
+      },
+    ],
+};
+
+const finalCtaData = {
+  eyebrow: "Service Excellence",
+  headline: "Experience the<br>MH Difference",
+  bodyCopy:
+    "Whether you need an annual inspection, a quick turn on fuel, or aircraft management, our family-owned team is ready to serve.",
+  cta: {
+    text: "Contact Us",
+    href: "/contact/",
+    subtext: `Call us at ${PHONE_NUMBER}`,
+  },
+  image: {
+    src: "/src/assets/old-website/crew-repairing-aircraft-mh-aviation-california-become-a-pilot.webp",
+    alt: "Mechanics working on aircraft engine",
+  },
+};
+
+const locationData = {
+  eyebrow: "Visit Us",
+  headline: "Fox Field's<br> Premier Hub",
+  bodyCopy:
+    "Located at Gen. William Fox Airfield (KWJF). We offer easy ramp access, pilot amenities, and immediate maintenance support for transient and based aircraft.",
+};
+
+const metaProps = {
+  siteTitle: `Aircraft Maintenance & FBO Services in ${CITY_AND_STATE} | ${COMPANY_NAME}`,
+  siteDescription: `FAA Part 145 Repair Station at ${AIRPORT_WITH_CODE_SHORT}. We offer expert aircraft maintenance, avionics upgrades, fueling, and full-service FBO solutions in Lancaster, CA.`,
+  siteKeywords: `aircraft maintenance ${CITY_AND_STATE}, FAA Part 145 repair station, FBO services Fox Field, aircraft mechanic Lancaster CA, avionics repair, ${COMPANY_NAME}`
+};
+---
+
+<BaseLayout {...metaProps}>
+  
+  <HeroGeneralPages data={heroData} />
+
+  <section class="pt-16 pb-8 md:pb-16 md:pt-32 bg-ink-50 min-h-screen px-4 overflow-hidden">
+    <div class="max-w-7xl mx-auto">
+      
+      <div class="max-w-3xl mx-auto text-center mb-20 reveal-text opacity-0 translate-y-8 transition-all duration-1000 ease-out">
+        <span class="subtitle">
+          One-Stop Aviation Hub
+        </span>
+        <h2 class="title-black">
+          Total Aircraft <br/>Care & Support
+        </h2>
+        <p class="mt-8 text-xl text-ink-950 max-w-[95%] leading-relaxed">
+          At MH Aviation, we anchor the community with our <strong class="text-ochre-600">FAA Part 145 Repair Station (#MHAR0094E)</strong> and full-service FBO. We ensure <strong class="text-ochre-600">safety, compliance, and comfort</strong> for every pilot that lands on our ramp.
+        </p>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-16">
+        {sortedServices.map((service, index) => (
+          <ServicesOverviewSectionCard service={service} index={index} />
+        ))}
+      </div>
+    </div>
+  </section>
+  <ImageSliderWithCopySection imagePosition="right" data={imageSliderData}/>
+  <MaintenancePhilosophy/>
+  <LocationSectionBlack data={locationData}/>
+  <FinalCTASection data={finalCtaData} />
+
+</BaseLayout>
+
+<script>
+  const observerOptions = { threshold: 0.1 };
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.remove('opacity-0', 'translate-y-8');
+        entry.target.classList.add('opacity-100', 'translate-y-0');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, observerOptions);
+
+  document.querySelectorAll('.reveal-text, .program-card').forEach((el) => observer.observe(el));
+</script>

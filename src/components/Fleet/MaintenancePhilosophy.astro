@@ -1,0 +1,112 @@
+---
+import ImageComp from "../ImageComp.astro";
+import { FaWrench, FaShieldAlt, FaArrowRight } from "react-icons/fa";
+
+const bgImage = "/src/assets/facilities/repair-station-mh-aviation-lancaster-private-pilot.jpg"; 
+
+const content = {
+  eyebrow: "Uncompromising Standards",
+  title: `The Art of <br /> Aviation Safety`,
+  col1: `
+    <p>
+      At MH Aviation, we believe that the soul of flight lies not in the air, but on the ground, in the meticulous, often unseen hours spent ensuring every rivet, piston, and circuit is functioning in perfect harmony. In an industry where "good enough" is a dangerous phrase, we have built our reputation on a philosophy of <span class="text-ochre-600 font-medium">absolute obsession</span>. We do not simply repair aircraft; we curate them. As a premier FAA Part 145 Repair Station, our maintenance floor is a sanctuary of precision, where the standard is set far above the regulatory minimums.
+    </p>
+    <br />
+    <p>
+      We understand that when a student steps into the cockpit for their first solo, or when a seasoned pilot navigates through complex weather, their confidence is directly tethered to the integrity of the machine. That is why we operate on a <span class="text-ochre-600 font-medium">"Zero-Inference" policy</span> regarding mechanical health. If a component shows even the slightest hint of fatigue, it is replaced. If a system operates within limits but below our personal standards, it is overhauled. We refuse to defer safety for the sake of economy.
+    </p>
+  `,
+  col2: `
+    <p>
+      This creates an ecosystem where our fleet is not just available, but truly <span class="text-ochre-600 font-medium">mission-ready</span>. While other schools may struggle with downtime, waiting on third-party mechanics or juggling deferred maintenance items, our in-house team of master technicians ensures that our aircraft are the most reliable in the valley. We treat every aircraft in our hangar as if our own families were strapped into the seats, because often, they are. This personal stake in the quality of our work drives a level of accountability that no checklist alone can enforce.
+    </p>
+    <br />
+    <p>
+      From the deep rumble of our multi-engine trainers to the agile response of our Cessna fleet, every sound you hear is the result of thousands of hours of expert care. We invite you to look closer at our fleet. You will see cleaner engines, clearer logs, and a level of transparency that is rare in general aviation. At MH Aviation, we don't just teach you to fly; we provide you with a machine that honors the <span class="text-ochre-600 font-medium">gravity of flight</span>, allowing you to focus on the horizon with total peace of mind.
+    </p>
+  `
+};
+
+---
+
+<section class="relative py-24 md:py-32 overflow-hidden group cursor-default">
+  
+  <div class="absolute inset-0 z-0">
+    <ImageComp 
+      src={bgImage} 
+      alt="Mechanic working on aircraft engine" 
+      class="w-full h-full object-cover opacity-40 transition-transform duration-[3s] ease-out group-hover:scale-105"
+    />
+  </div>
+
+  <div class="absolute inset-0 z-10 bg-gradient-to-t from-ink-950 via-ink-950/95 to-ink-950/80"></div>
+
+  <div class="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-ochre-600/50 to-transparent z-20"></div>
+  <div class="absolute bottom-0 right-0 w-96 h-96 bg-ochre-600/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2 z-10 pointer-events-none"></div>
+
+  <div class="relative z-20 max-w-7xl mx-auto px-5 md:px-8 lg:px-12">
+    
+    <div class="max-w-3xl mb-8 reveal-text opacity-0 translate-y-8 transition-all duration-1000">
+      <div class="flex items-center gap-4">
+        <span class="subtitle">
+          {content.eyebrow}
+        </span>
+      </div>
+      
+      <h2 class="title" set:html={content.title}></h2>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16 text-ink-200 text-lg leading-relaxed reveal-text opacity-0 translate-y-8 transition-all duration-1000 delay-200">
+      
+      <div class="flex flex-col h-full group-hover:text-ink-100 transition-colors duration-500">
+        <div class="space-y-6" set:html={content.col1}></div>
+        
+        <div class="pt-8 mt-auto border-t border-transparent flex justify-start"> 
+          <a href="/about-us/#repair-station" class="btn-primary max-w-fit !py-4 inline-flex items-center gap-2 bg-ochre-600 hover:bg-ochre-700 text-ink-50 px-6 py-3 rounded-sm uppercase tracking-widest text-xs font-bold transition-all duration-300">
+            Meet Our FAA Approved Repair Station
+            <FaArrowRight size={12} />
+          </a>
+        </div>
+      </div>
+
+      <div class="flex flex-col h-full group-hover:text-ink-100 transition-colors duration-500">
+        <div class="space-y-6" set:html={content.col2}></div>
+        
+        <div class="pt-8 flex items-center gap-6 border-t border-ink-800/50 mt-auto">
+            <div class="flex flex-col">
+                <span class="font-main-header text-2xl text-ink-50 uppercase tracking-wider">FAA Part 145</span>
+                <span class="text-xs text-ochre-500 uppercase tracking-widest font-bold">Certified Repair Station</span>
+            </div>
+            <div class="flex gap-4 text-ink-400">
+                <div class="hover:text-ochre-500">
+                    <FaShieldAlt size={24}/>
+                </div>
+                <div class="hover:text-ochre-500">
+                    <FaWrench size={24}/>
+                </div>
+            </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<script>
+  const observerOptions = {
+    threshold: 0.15,
+    rootMargin: '0px 0px -50px 0px'
+  };
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.remove('opacity-0', 'translate-y-8');
+        entry.target.classList.add('opacity-100', 'translate-y-0');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, observerOptions);
+
+  document.querySelectorAll('.reveal-text').forEach((el) => observer.observe(el));
+</script>
