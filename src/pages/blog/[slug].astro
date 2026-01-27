@@ -57,6 +57,7 @@ const finalCtaData = {
     "Whether you're looking to start your private pilot training or advance your career, MH Aviation provides the mentorship and aircraft you need.",
   cta: {
     text: "Contact Us",
+    href: "/contact/",
     subtext: `Call us at ${PHONE_NUMBER}`,
   },
   image: {
@@ -122,7 +123,7 @@ const metaProps = {
           <Content />
         </div>
         <div class="mt-12 pt-8 border-t border-ink-100">
-            <h3 class="font-main-header text-xl text-ink-950 uppercase mb-4">Share Intel</h3>
+            <h3 class="!font-main-header !text-xl text-ink-950 uppercase mb-4">Share Intel</h3>
             <div class="flex gap-4">
                 <a
                     href={`https://twitter.com/intent/tweet?text=${encodeURIComponent(post.data.title)}&url=${encodeURIComponent(Astro.url.toString())}`}
